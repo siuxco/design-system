@@ -8,6 +8,7 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
   ],
+  staticDirs: ['../public'],
   framework: "@storybook/react",
   previewHead: (head) => {
     return `
@@ -19,6 +20,11 @@ module.exports = {
   />
   <link
     href="https://cdn.siux.studio/static/brand/632213d5a467b1178b31dde0/latest/siux.main.responsive.css"
+    type="text/css"
+    rel="stylesheet"
+  />
+  <link
+    href="/siux/assets/css/siux.icon.remixicon.css"
     type="text/css"
     rel="stylesheet"
   />
