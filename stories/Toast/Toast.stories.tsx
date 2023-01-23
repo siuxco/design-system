@@ -53,9 +53,3 @@ WithLink.args = {
   ],
   title: 'With link alert',
 };
-
-export const WithOtherState = Template.bind({});
-WithOtherState.args = {
-  state: 'default',
-  title: 'With other state',
-};
