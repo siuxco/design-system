@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const states = {
 	parent: {
 		default: 'border-grey-2 hover:border-primary-8 focus:border-primary-8 background-white',
-		checked: 'border-primary-8 background-primary-8',
+		checked: 'border-primary-8 background-primary-8 color-white',
 		disable: 'border-grey-2 cursor-not-allowed color-grey-3 background-grey-1',
 	},
 	label: {
