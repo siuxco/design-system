@@ -1,38 +1,37 @@
 {
-    "compilerOptions": {
-      "target": "ES2017",
-      "lib": [
-        "dom",
-        "dom.iterable",
-        "esnext"
-      ],
-      "allowJs": true,
-      "skipLibCheck": true,
-      "strict": false,
-      "forceConsistentCasingInFileNames": true,
-      "noEmit": true,
-      "incremental": true,
-      "esModuleInterop": true,
-      "module": "esnext",
-      "resolveJsonModule": true,
-      "isolatedModules": true,
-      "jsx": "preserve",
-      "moduleResolution": "Node",
-      "importHelpers": true
-    },
-    "ts-node": {
-      "compilerOptions": {
-        "module": "CommonJS",
-        "target": "ES2022"
-      }
-    },
-    "include": [
-      "**/*.ts",
-      "**/*.tsx",
-      "utils/common.d.ts"
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
     ],
-    "exclude": [
-      "node_modules"
-    ]
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "moduleResolution": "Node",
+    "importHelpers": true
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS",
+      "target": "ES2022"
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "utils/common.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
-  

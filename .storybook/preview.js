@@ -11,4 +11,14 @@ export const parameters = {
       order: ['Intro', 'Atoms', 'Molecules'],
     },
   },
+  html: {
+    prettier: {
+      tabWidth: 4,
+      useTabs: false,
+      htmlWhitespaceSensitivity: 'strict',
+      highlighter: {
+        showLineNumbers: true, // default: false
+      },
+    },
+  },
 }
