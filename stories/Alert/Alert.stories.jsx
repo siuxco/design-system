@@ -7,6 +7,13 @@ export default {
   argTypes: {
     state: {control: { type: "select"}},
   },
+  decorators: [
+    (Story) => (
+      <div style={{ maxWidth: '350px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 const Template = (args) => <Alert {...args} />;
