@@ -23,9 +23,12 @@ const Template: ComponentStory<typeof Select> = (arguments_) => <Select {...argu
 export const Default = Template.bind({});
 Default.args = {
   status: 'default',
-  children: [
-    <Select.Option>Uno</Select.Option>
-    <Select.Option>Dos</Select.Option>
-    <Select.Option>Tres</Select.Option>
-  ]
+  label: 'Select an option',
+  children: (
+    <>
+      <Select.Option value="1">One</Select.Option>
+      <Select.Option value="2">Two</Select.Option>
+      <Select.Option value="3">Three</Select.Option>
+    </>
+  ),
 };
