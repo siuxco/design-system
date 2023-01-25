@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React, { FC, HTMLProps } from 'react';
 
 export interface ITooltipProperties extends HTMLProps<HTMLElement> {
