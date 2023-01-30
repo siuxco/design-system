@@ -1,5 +1,11 @@
+
+import siuxTheme from './SiuxTheme';
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
+  docs: {
+    theme: siuxTheme,
+  },
   controls: {
     matchers: {
       color: /(background|color)$/i,
