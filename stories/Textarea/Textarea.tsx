@@ -1,19 +1,22 @@
-import React, { HTMLProps, FC } from 'react';
+import React, { HTMLProps, FC, ChangeEventHandler } from 'react';
 
 const statuses = {
   parent: {
     default: 'border-neutral-2 hover:border-neutral-6 focus:border-primary-7 box-shadow-xs',
     error: 'border-error-6 hover:border-error-6 focus:border-error-6 background-opacity-error-2 box-shadow-xs',
-    disable: 'border-neutral-1 color-neutral-3 background-neutral-1',
+    disable: 'border-neutral-1 color-neutral-3 background-neutral-1 color-neutral-3 cursor-not-allowed',
   },
 };
 
-const Textarea: FC<ITextareaProperties> = ({ placeholder, label, status, className, id, disabled, ...rest }) => {
+const Textarea: FC<ITextareaProperties> = ({ placeholder, label, error, disabled, className, onChange, ...rest }) => {
   const getStatusClasses = (object) => {
     if (disabled) {
       return object.disable;
     }
-    return object[status] || object.default;
+    if (error) {
+      return object.error;
+    }
+    return object.default;
   };
   return (
     <label className={`transition-fast ${className} ${disabled && 'cursor-not-allowed'}`}>
@@ -21,11 +24,9 @@ const Textarea: FC<ITextareaProperties> = ({ placeholder, label, status, classNa
       <textarea
         placeholder={placeholder}
         disabled={disabled}
+        onChange={onChange}
         className={`transition-fast resize-vertical padding-s background-white border-radius-xs border-width-1 border-style-solid
-				${disabled && 'color-neutral-3 cursor-not-allowed'}
-				${getStatusClasses(statuses.parent)}
-				`}
-        id={id}
+        ${getStatusClasses(statuses.parent)}`}
         {...rest}
       />
     </label>
@@ -33,11 +34,11 @@ const Textarea: FC<ITextareaProperties> = ({ placeholder, label, status, classNa
 };
 
 export interface ITextareaProperties extends HTMLProps<HTMLTextAreaElement> {
-  id: string;
   placeholder?: string;
   label?: string;
-  status: 'default' | 'error';
+  error?: boolean;
   disabled?: boolean;
+  onChange?: ChangeEventHandler<HTMLTextAreaElement>;
   className?: string;
 }
 

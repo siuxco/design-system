@@ -4,12 +4,12 @@ import { Tooltip } from './TooltipFixed';
 import { Icon } from '../Icon/Icon';
 
 export default {
-  title: 'Atoms/Tooltip Fixed',
+  title: 'Components/Tooltip Fixed',
   component: Tooltip,
   argTypes: {
     trigger: {
-      control: {
-        type: null,
+      table: {
+        disable: true,
       },
     },
   },
