@@ -6,8 +6,12 @@ export default {
   title: 'Components/Heading',
   component: Heading,
   argTypes: {
-    state: { control: { type: 'select' } },
     size: { control: { type: 'select' } },
+    className: {
+      table: {
+        disable: true,
+      },
+    },
   },
 } as ComponentMeta<typeof Heading>;
 

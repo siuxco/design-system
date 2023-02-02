@@ -7,6 +7,21 @@ export default {
   component: Input,
   argTypes: {
     status: { control: { type: 'select' } },
+    className: {
+      table: {
+        disable: true,
+      },
+    },
+    type: {
+      table: {
+        disable: true,
+      },
+    },
+    id: {
+      table: {
+        disable: true,
+      },
+    },
   },
   decorators: [
     (Story) => (
