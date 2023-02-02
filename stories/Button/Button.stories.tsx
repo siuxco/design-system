@@ -8,19 +8,13 @@ export default {
   argTypes: {
     size: { control: { type: 'select' } },
     className: {
-      table: {
-        disable: true,
-      },
+      control: false,
     },
     style: {
-      table: {
-        disable: true,
-      },
+      control: false,
     },
     onClick: {
-      table: {
-        disable: true,
-      },
+      control: false,
     },
   },
 } as ComponentMeta<typeof Button>;

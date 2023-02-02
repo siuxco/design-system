@@ -123,12 +123,33 @@ const Button = forwardRef<HTMLInputElement, IButtonProperties>(
 Button.displayName = 'Button';
 
 export interface IButtonProperties extends ComponentProps<'button'> {
+  /**
+   * Add inline styles to the component
+   */
   style?: React.CSSProperties;
+  /**
+   * Icon placed before button text
+   */
   iconLeft?: IIconProperties['icon'];
+  /**
+   * Icon placed after button text
+   */
   iconRight?: IIconProperties['icon'];
+  /**
+   * If 'true' loading icon will appear before button text
+   */
   loading?: boolean;
+  /**
+   * The size of the component
+   */
   size?: 'extra-small' | 'small' | 'medium' | 'large' | 'extra-large';
+  /**
+   * The content of the component
+   */
   children?: any;
+  /**
+   * The variant of the component
+   */
   variant?:
     | 'primary'
     | 'primary-light'
@@ -146,8 +167,18 @@ export interface IButtonProperties extends ComponentProps<'button'> {
     | 'delete-light'
     | 'black'
     | 'white';
+  /**
+   * If 'true' the component is disabled
+   */
   disabled?: boolean;
+  /**
+   * Callback fired when the button is clicked.
+   * You can pull out the new value by accessing event.target.value (string).
+   */
   onClick?: MouseEventHandler;
+  /**
+   * Add classes to the component
+   */
   className?: string;
 }
 
