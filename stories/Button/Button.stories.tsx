@@ -7,6 +7,21 @@ export default {
   component: Button,
   argTypes: {
     size: { control: { type: 'select' } },
+    className: {
+      table: {
+        disable: true,
+      },
+    },
+    style: {
+      table: {
+        disable: true,
+      },
+    },
+    onClick: {
+      table: {
+        disable: true,
+      },
+    },
   },
 } as ComponentMeta<typeof Button>;
 
@@ -14,18 +29,6 @@ const Template: ComponentStory<typeof Button> = (arguments_) => <Button {...argu
 
 export const Primary = Template.bind({});
 Primary.args = {
-  type: 'primary',
-  children: 'Button',
-};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  type: 'secondary',
-  children: 'Button',
-};
-
-export const Tertiary = Template.bind({});
-Tertiary.args = {
-  type: 'tertiary',
+  variant: 'primary',
   children: 'Button',
 };

@@ -1,7 +1,7 @@
-import React, { MouseEventHandler, forwardRef } from 'react';
+import React, { MouseEventHandler, forwardRef, ComponentProps } from 'react';
 import { IIconProperties } from '../Icon/Icon';
 
-const types = {
+const variants = {
   parent: {
     // Primary buttons
     primary: 'background-primary-7 hover:background-primary-6 color-white',
@@ -66,7 +66,7 @@ const Button = forwardRef<HTMLInputElement, IButtonProperties>(
   (
     {
       size = 'medium',
-      type = 'primary',
+      variant = 'primary',
       className = '',
       iconLeft,
       iconRight,
@@ -79,22 +79,24 @@ const Button = forwardRef<HTMLInputElement, IButtonProperties>(
     },
     ref,
   ) => {
-    const finalType = disabled ? 'disabled' : type;
+    const finalVariant = disabled ? 'disabled' : variant;
     return (
       <button
         disabled={disabled || loading}
         ref={ref}
-        type="submit"
+        type="button"
         onClick={onClick}
         className={`border-radius-xs text-align-center transition-fast ${sizes.parent[size]} ${
-          types.parent[finalType]
+          variants.parent[finalVariant]
         } ${!loading && !disabled && 'cursor-pointer'} ${loading && 'cursor-progress'} ${className}`}
         style={{ ...style }}
         {...rest}>
         <div
           className={`display-flex align-items-center font-weight-500 padding-top-none padding-bottom-none pointer-events-none ${sizes.child[size]}`}>
           {loading ? (
-            <i className={`icon-system-loader-4-line opacity-7 button-loading margin-right-xxs ${sizes.icon[size]}`} />
+            <i
+              className={`icon-system-loader-4-line opacity-7 button-loading margin-right-xxs animation-rotate ${sizes.icon[size]}`}
+            />
           ) : (
             iconLeft && (
               <i
@@ -120,14 +122,14 @@ const Button = forwardRef<HTMLInputElement, IButtonProperties>(
 
 Button.displayName = 'Button';
 
-export interface IButtonProperties {
+export interface IButtonProperties extends ComponentProps<'button'> {
   style?: React.CSSProperties;
   iconLeft?: IIconProperties['icon'];
   iconRight?: IIconProperties['icon'];
   loading?: boolean;
-  children?: any;
   size?: 'extra-small' | 'small' | 'medium' | 'large' | 'extra-large';
-  type?:
+  children?: any;
+  variant?:
     | 'primary'
     | 'primary-light'
     | 'primary-link'
@@ -143,23 +145,10 @@ export interface IButtonProperties {
     | 'delete'
     | 'delete-light'
     | 'black'
-    | 'white'
-    | 'disabled';
+    | 'white';
   disabled?: boolean;
   onClick?: MouseEventHandler;
   className?: string;
 }
-
-Button.defaultProps = {
-  style: {},
-  iconLeft: null,
-  iconRight: null,
-  loading: false,
-  size: 'medium',
-  type: 'primary',
-  disabled: false,
-  onClick: () => {},
-  className: '',
-};
 
 export { Button };
