@@ -3,7 +3,7 @@ import { Message } from './Message';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Atoms/Message',
+  title: 'Components/Message',
   component: Message,
   argTypes: {
     type: { control: { type: 'select' } },

@@ -3,7 +3,7 @@ import { RadioButton } from './RadioButton';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Atoms/RadioButton',
+  title: 'Components/RadioButton',
   component: RadioButton,
   argTypes: {
     state: { control: { type: 'select' } },

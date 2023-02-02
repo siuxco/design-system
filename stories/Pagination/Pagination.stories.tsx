@@ -3,7 +3,7 @@ import { Pagination } from './Pagination';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Molecules/Pagination',
+  title: 'Components/Pagination',
   component: Pagination,
   argTypes: {
     type: { control: { type: 'select' } },

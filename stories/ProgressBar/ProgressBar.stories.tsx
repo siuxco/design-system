@@ -3,7 +3,7 @@ import { ProgressBar } from './ProgressBar';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Atoms/ProgressBar',
+  title: 'Components/ProgressBar',
   component: ProgressBar,
   argTypes: {
     type: { control: { type: 'select' } },

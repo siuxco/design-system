@@ -3,7 +3,7 @@ import React from "react";
 import { Tooltip } from "./TooltipFixed";
 
 export default {
-  title: "Atoms/Tooltip Fixed",
+  title: "Components/Tooltip Fixed",
   component: Tooltip,
   argTypes: {
     trigger: {

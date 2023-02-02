@@ -3,7 +3,7 @@ import { Heading } from './Heading';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Atoms/Heading',
+  title: 'Components/Heading',
   component: Heading,
   argTypes: {
     state: { control: { type: 'select' } },
