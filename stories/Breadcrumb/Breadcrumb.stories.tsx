@@ -3,7 +3,7 @@ import { Breadcrumb } from './Breadcrumb';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Molecules/Breadcrumb',
+  title: 'Components/Breadcrumb',
   component: Breadcrumb,
   argTypes: {
     separator: { control: { type: 'select' } },

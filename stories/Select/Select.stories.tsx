@@ -3,11 +3,11 @@ import { Select } from './Select';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Atoms/Select',
+  title: 'Components/Select',
   component: Select,
-  // argTypes: {
-  //   state: { control: { type: 'select' } },
-  // },
+  argTypes: {
+    state: { control: { type: 'select' } },
+  },
   decorators: [
     (Story) => (
       <div style={{ maxWidth: '350px' }}>
@@ -22,7 +22,7 @@ const Template: ComponentStory<typeof Select> = (arguments_) => <Select {...argu
 // Stories
 export const Default = Template.bind({});
 Default.args = {
-  status: 'default',
+  state: 'default',
   label: 'Select an option',
   children: (
     <>

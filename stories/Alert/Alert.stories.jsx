@@ -2,7 +2,7 @@ import React from "react";
 import { Alert } from "./Alert";
 
 export default {
-  title: "Molecules/Alert",
+  title: "Components/Alert",
   component: Alert,
   argTypes: {
     state: {control: { type: "select"}},
