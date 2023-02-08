@@ -5,7 +5,10 @@
     rel="stylesheet"
   />
 <style>
-    .sidebar-item:hover, .sidebar-item:focus {
+    .sidebar-header div a:hover {
+        background-color: transparent !important;
+    }
+    .sidebar-item:hover {
         background-color: rgba(185,167,218,0.15) !important;
     }
     .sidebar-item[data-selected="true"]:hover, .sidebar-item[data-selected="true"]:hover svg {
@@ -16,6 +19,9 @@
     }
     .sidebar-item[data-selected="true"] svg {
         color: white !important;
+    }
+    .sidebar-item + a {
+        display: none !important;
     }
     .docblock-argstable-head button {
         background-color: var(--color-primary-1)

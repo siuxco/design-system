@@ -4,7 +4,7 @@ import { IIconProperties } from '../Icon/Icon';
 const variants = {
   parent: {
     // Primary buttons
-    primary: 'background-primary-7 hover:background-primary-6 color-white',
+    primary: 'background-primary-7 hover:background-primary-5 focus:background-primary-8 color-white',
     'primary-light': 'background-primary-1 color-primary-7 hover:color-primary-8 hover:background-opacity-primary-4',
     'primary-link': 'background-transparent color-primary-7 hover:background-primary-1',
 
@@ -73,8 +73,8 @@ const Button = forwardRef<HTMLInputElement, IButtonProperties>(
       children,
       style,
       onClick,
-      disabled,
-      loading,
+      disabled = false,
+      loading = false,
       ...rest
     },
     ref,
@@ -86,7 +86,7 @@ const Button = forwardRef<HTMLInputElement, IButtonProperties>(
         ref={ref}
         type="button"
         onClick={onClick}
-        className={`border-radius-xs text-align-center transition-fast ${sizes.parent[size]} ${
+        className={`border-radius-xs text-align-center transition-all ${sizes.parent[size]} ${
           variants.parent[finalVariant]
         } ${!loading && !disabled && 'cursor-pointer'} ${loading && 'cursor-progress'} ${className}`}
         style={{ ...style }}
