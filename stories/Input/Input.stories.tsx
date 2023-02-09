@@ -7,29 +7,12 @@ export default {
   component: Input,
   argTypes: {
     status: { control: { type: 'select' } },
-    className: {
-      table: {
-        disable: true,
-      },
-    },
-    type: {
-      table: {
-        disable: true,
-      },
-    },
-    id: {
-      table: {
-        disable: true,
-      },
-    },
+    // id: {
+    //   table: {
+    //     disable: true,
+    //   },
+    // },
   },
-  decorators: [
-    (Story) => (
-      <div style={{ maxWidth: '350px' }}>
-        <Story />
-      </div>
-    ),
-  ],
 } as ComponentMeta<typeof Input>;
 
 const Template: ComponentStory<typeof Input> = (arguments_) => <Input {...arguments_} />;
@@ -38,6 +21,20 @@ const Template: ComponentStory<typeof Input> = (arguments_) => <Input {...argume
 export const Default = Template.bind({});
 Default.args = {
   status: 'default',
+  placeholder: 'Placeholder',
+};
+
+export const Error = Template.bind({});
+Error.args = {
+  status: 'error',
+  placeholder: 'Input with an error',
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  status: 'disabled',
+  placeholder: 'Input disabled',
+  disabled: true,
 };
 
 export const Prefix = Template.bind({});
@@ -46,15 +43,14 @@ Prefix.args = {
   placeholder: 'app.siux.studio',
 };
 
-// Fixear el componente para que levante los iconos agregando el icon-system antes
 export const WithIcon = Template.bind({});
 WithIcon.args = {
-  icon: 'home-line',
+  icon: 'icon-system-home-line',
   placeholder: 'I am an input with an icon',
 };
 
-export const Copy = Template.bind({});
-Copy.args = {
+export const WithCopy = Template.bind({});
+WithCopy.args = {
   copy: 'copy',
   placeholder: 'Text',
 };

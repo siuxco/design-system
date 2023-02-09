@@ -61,13 +61,11 @@ const Input = forwardRef<HTMLInputElement, IInputProperties>(
             id={id}
             disabled={disabled}
             type={type}
-            className={`transition-fast line-height-s padding-xs font-size-s color-black background-white border-radius-xs border-width-1 border-style-solid 
-          ${prefix && 'border-radius-left-none'} 
-          ${copy && 'border-radius-right-none'} 
-          ${icon ? 'padding-left-xl' : 'padding-left-s padding-right-s'}
-          ${disabled && 'cursor-not-allowed'}
-          ${getStatusClasses(statuses.parent)}
-        `}
+            className={`transition-fast padding-xs font-size-s color-black background-white border-radius-xs border-width-1 border-style-solid ${
+              prefix && 'border-radius-left-none'
+            } ${copy && 'border-radius-right-none'} ${icon ? 'padding-left-xl' : 'padding-left-s padding-right-s'} ${
+              disabled && 'cursor-not-allowed'
+            } ${getStatusClasses(statuses.parent)}`}
             {...rest}
           />
           {copy && (

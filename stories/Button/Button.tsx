@@ -40,25 +40,19 @@ const variants = {
 
 const sizes = {
   parent: {
-    'extra-small': 'font-size-xs padding-xxs',
     small: 'font-size-xs padding-xs',
     medium: 'padding-s',
     large: 'font-size-s padding-m',
-    'extra-large': 'font-size-m padding-m',
   },
   icon: {
-    'extra-small': 'font-size-xs',
     small: 'font-size-s',
     medium: 'font-size-s',
     large: 'font-size-m',
-    'extra-large': 'font-size-l',
   },
   child: {
-    'extra-small': 'padding-xs',
-    small: 'padding-xs',
-    medium: 'padding-xs',
-    large: 'padding-m',
-    'extra-large': 'padding-l',
+    small: 'padding-xxs',
+    medium: 'padding-xxs',
+    large: 'padding-xxs',
   },
 };
 
@@ -92,16 +86,18 @@ const Button = forwardRef<HTMLInputElement, IButtonProperties>(
         style={{ ...style }}
         {...rest}>
         <div
-          className={`display-flex align-items-center font-weight-500 padding-top-none padding-bottom-none pointer-events-none ${sizes.child[size]}`}>
+          className={`display-flex align-items-center font-weight-500 padding-top-none padding-bottom-none pointer-events-none ${
+            sizes.child[size]
+          } ${iconRight && 'padding-right-none'} ${iconLeft && 'padding-left-none'}`}>
           {loading ? (
             <i
-              className={`icon-system-loader-4-line opacity-7 button-loading margin-right-xxs animation-rotate ${sizes.icon[size]}`}
+              className={`icon-system-loader-4-line opacity-7 button-loading margin-right-xxs animation-animated animation-rotate-right animation-infinite ${sizes.icon[size]}`}
             />
           ) : (
             iconLeft && (
               <i
                 className={`line-height-xxs ${iconLeft} ${sizes.icon[size]} ${
-                  (children || iconRight) && 'margin-right-xxs'
+                  (children || iconRight) && 'margin-right-xs'
                 }`}
               />
             )
@@ -110,7 +106,7 @@ const Button = forwardRef<HTMLInputElement, IButtonProperties>(
           {!loading && iconRight && (
             <i
               className={`line-height-xxs ${iconRight} ${sizes.icon[size]} ${
-                (children || iconLeft) && 'margin-left-xxs'
+                (children || iconLeft) && 'margin-left-xs'
               }`}
             />
           )}
@@ -142,7 +138,7 @@ export interface IButtonProperties extends ComponentProps<'button'> {
   /**
    * The size of the component
    */
-  size?: 'extra-small' | 'small' | 'medium' | 'large' | 'extra-large';
+  size?: 'small' | 'medium' | 'large';
   /**
    * The content of the component
    */

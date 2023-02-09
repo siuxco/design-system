@@ -7,15 +7,6 @@ export default {
   component: Button,
   argTypes: {
     size: { control: { type: 'select' } },
-    // className: {
-    //   control: false,
-    // },
-    // style: {
-    //   control: false,
-    // },
-    // onClick: {
-    //   control: false,
-    // },
   },
 } as ComponentMeta<typeof Button>;
 
