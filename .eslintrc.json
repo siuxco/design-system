@@ -1,0 +1,81 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    },
+    "env": {
+      "browser": true,
+      "es6": true,
+      "node": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:unicorn/recommended",
+      "plugin:jsx-a11y/recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:prettier/recommended",
+      "prettier"
+    ],
+    "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 2022,
+      "sourceType": "module"
+    },
+    "plugins": ["react", "unicorn", "jsx-a11y", "@typescript-eslint", "prettier"],
+    "rules": {
+      "prettier/prettier": "error",
+      "linebreak-style": ["error", "unix"],
+      "quotes": ["error", "single"],
+      "semi": ["error", "always"],
+      // suppress errors for missing 'import React' in files
+      "react/react-in-jsx-scope": 2,
+      "react/prop-types": 0,
+      "jsx-a11y/no-autofocus": 0,
+      "jsx-a11y/anchor-is-valid": 0,
+      "unicorn/filename-case": 0,
+      "unicorn/no-array-reduce": 0,
+      "unicorn/consistent-function-scoping": [
+        "error",
+        {
+          "checkArrowFunctions": false
+        }
+      ],
+      "unicorn/no-null": 0,
+      "unicorn/prevent-abbreviations": [
+        "error",
+        {
+          "allowList": {
+            "props": true,
+            "getStaticProps": true,
+            "ref": true,
+            "params": true
+          }
+        }
+      ],
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          "argsIgnorePattern": "^_",
+          "varsIgnorePattern": "^_",
+          "caughtErrorsIgnorePattern": "^_"
+        }
+      ],
+      "no-empty-function": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-empty-function": ["error",
+        {
+          "allow": ["arrowFunctions"]
+        }
+      ]
+    }
+  }
