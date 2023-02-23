@@ -1,24 +1,27 @@
 import React, { MouseEventHandler, forwardRef, ComponentProps } from 'react';
 import { IIconProperties } from '../Icon/Icon';
+import { classNames } from '../../utils/utils';
 
 const variants = {
   parent: {
     // Primary buttons
-    primary: 'background-primary-7 hover:background-primary-5 focus:background-primary-8 color-white',
-    'primary-light': 'background-primary-1 color-primary-7 hover:color-primary-8 hover:background-opacity-primary-4',
-    'primary-link': 'background-transparent color-primary-7 hover:background-primary-1',
+    primary: 'background-primary-7 hover:background-primary-5 active:background-primary-8 color-white',
+    'primary-light':
+      'background-primary-1 color-primary-7 hover:background-opacity-primary-4 active:background-opacity-primary-5',
+    'primary-link': 'background-transparent color-primary-7 hover:background-primary-1 active:background-primary-2',
 
     // Secondary buttons
-    secondary: 'background-secondary-7 hover:background-secondary-6 color-white',
+    secondary: 'background-secondary-7 hover:background-secondary-6 active:background-secondary-8 color-white',
     'secondary-light':
-      'background-secondary-1 color-secondary-7 hover:color-secondary-8 hover:background-opacity-secondary-4',
-    'secondary-link': 'background-transparent color-secondary-7 hover:background-secondary-1',
+      'background-secondary-1 color-secondary-7 hover:color-secondary-8 hover:background-opacity-secondary-4 active:background-opacity-secondary-5',
+    'secondary-link':
+      'background-transparent color-secondary-7 hover:background-secondary-1 active:background-secondary-2',
 
     // Tertiary buttons
-    tertiary: 'background-tertiary-7 hover:background-tertiary-6 color-white',
+    tertiary: 'background-tertiary-7 hover:background-tertiary-6 active:background-tertiary-8 color-white',
     'tertiary-light':
-      'background-tertiary-1 color-tertiary-7 hover:color-tertiary-8 hover:background-opacity-tertiary-4',
-    'tertiary-link': 'background-transparent color-tertiary-7 hover:background-tertiary-1',
+      'background-tertiary-1 color-tertiary-7 hover:color-tertiary-8 hover:background-opacity-tertiary-4 active:background-opacity-tertiary-5',
+    'tertiary-link': 'background-transparent color-tertiary-7 hover:background-tertiary-1 active:background-tertiary-2',
 
     // Cancel buttons
     cancel: 'background-neutral-7 hover:background-neutral-6 color-white',
@@ -80,9 +83,16 @@ const Button = forwardRef<HTMLInputElement, IButtonProperties>(
         ref={ref}
         type="button"
         onClick={onClick}
-        className={`border-radius-xs text-align-center transition-all ${sizes.parent[size]} ${
-          variants.parent[finalVariant]
-        } ${!loading && !disabled && 'cursor-pointer'} ${loading && 'cursor-progress'} ${className}`}
+        className={classNames(
+          'border-radius-xs text-align-center transition-all',
+          sizes.parent[size],
+          variants.parent[finalVariant],
+          {
+            'cursor-pointer': !loading && !disabled,
+            'cursor-progress': loading,
+          },
+          className,
+        )}
         style={{ ...style }}
         {...rest}>
         <div

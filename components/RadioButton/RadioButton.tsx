@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, ComponentProps } from 'react';
 
 const states = {
   parent: {
@@ -13,12 +13,8 @@ const states = {
   },
 };
 
-export interface IRadioButtonProperties {
-  checked: boolean;
-  className?: string;
-  defaultChecked: boolean;
-  disabled: boolean;
-  id: string;
+export interface IRadioButtonProperties extends ComponentProps<'input'> {
+  checked?: boolean;
   label: string;
   name: string;
   state: 'default' | 'checked';
@@ -37,7 +33,7 @@ export const RadioButton: FC<IRadioButtonProperties> = ({
     if (disabled) {
       return object.disable;
     }
-    if (rest.checked) {
+    if (checked) {
       return object.checked;
     }
     return object[state] || object.default;

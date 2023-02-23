@@ -23,7 +23,7 @@ const positions = {
     bottomRight: 'position-bottom-right',
   },
 };
-const Tooltip: FC<ITooltipProperties> = ({
+export const TooltipFixed: FC<ITooltipFixedProperties> = ({
   type = 'light',
   size = 'md',
   position = 'topLeft',
@@ -50,7 +50,7 @@ const Tooltip: FC<ITooltipProperties> = ({
   );
 };
 
-export interface ITooltipProperties {
+export interface ITooltipFixedProperties {
   size: 'sm' | 'md' | 'lg';
   position: 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight';
   title?: string;
@@ -60,5 +60,3 @@ export interface ITooltipProperties {
   className?: string;
   children: React.ReactNode;
 }
-
-export { Tooltip };

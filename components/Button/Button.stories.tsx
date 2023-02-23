@@ -15,39 +15,39 @@ const Template: ComponentStory<typeof Button> = (arguments_) => <Button {...argu
 export const Primary = Template.bind({});
 Primary.args = {
   variant: 'primary',
-  children: 'Button primary',
+  children: 'Primary',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   variant: 'secondary',
-  children: 'Button secondary',
+  children: 'Secondary',
 };
 
 export const Tertiary = Template.bind({});
 Tertiary.args = {
   variant: 'tertiary',
-  children: 'Button tertiary',
+  children: 'Tertiary',
 };
 
 export const Cancel = Template.bind({});
 Cancel.args = {
-  variant: 'cancel',
-  children: 'Button cancel',
+  variant: 'cancel-link',
+  children: 'Cancel',
 };
 
 export const Delete = Template.bind({});
 Delete.args = {
-  variant: 'delete',
-  children: 'Button delete',
+  variant: 'delete-light',
+  children: 'Delete',
 };
 export const Black = Template.bind({});
 Black.args = {
   variant: 'black',
-  children: 'Button black',
+  children: 'Button',
 };
 export const White = Template.bind({});
 White.args = {
   variant: 'white',
-  children: 'Button white',
+  children: 'Button',
 };

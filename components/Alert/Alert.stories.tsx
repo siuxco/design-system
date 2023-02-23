@@ -1,11 +1,11 @@
-import React from "react";
-import { Alert } from "./Alert";
+import React from 'react';
+import { Alert } from './Alert';
 
 export default {
-  title: "Components/Alert",
+  title: 'Components/Alert',
   component: Alert,
   argTypes: {
-    state: {control: { type: "select"}},
+    state: { control: { type: 'select' } },
   },
   decorators: [
     (Story) => (
@@ -16,28 +16,28 @@ export default {
   ],
 };
 
-const Template = (args) => <Alert {...args} />;
+const Template = (_arguments) => <Alert {..._arguments} />;
 
 export const Info = Template.bind({});
 Info.args = {
-  state: "info",
-  children: "Alert",
+  state: 'info',
+  children: 'Alert',
 };
 
 export const Success = Template.bind({});
 Success.args = {
-  state: "success",
-  children: "Alert",
+  state: 'success',
+  children: 'Alert',
 };
 
 export const Warning = Template.bind({});
 Warning.args = {
-  state: "warning",
-  children: "Alert",
+  state: 'warning',
+  children: 'Alert',
 };
 
 export const Error = Template.bind({});
 Error.args = {
-  state: "error",
-  children: "Alert",
+  state: 'error',
+  children: 'Alert',
 };

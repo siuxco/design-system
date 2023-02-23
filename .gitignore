@@ -35,3 +35,10 @@ yarn-error.log*
 
 .next/
 storybook-static
+
+components/index.ts
+
+distribution/*
+!distribution/.npmignore
+!distribution/package.json
+!distribution/README.md

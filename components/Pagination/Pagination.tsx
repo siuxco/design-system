@@ -1,4 +1,4 @@
-import React, { FC, MouseEventHandler, ReactNode } from 'react';
+import React, { FC, MouseEventHandler, ReactNode, ComponentProps } from 'react';
 import { IIconProperties } from '../Icon/Icon';
 
 const types = {
@@ -24,8 +24,7 @@ const sizes = {
   },
 };
 
-export interface IPaginationProperties {
-  children: Array<ReactNode>;
+export interface IPaginationProperties extends ComponentProps<'div'> {
   className?: string;
   next?: boolean;
   previous?: boolean;
@@ -46,8 +45,8 @@ const Pagination: FC<IPaginationProperties> & {
         </div>
       )}
       <ul className="font-size-xs display-flex align-items-center">
-        {children.map((item, index) => {
-          return React.cloneElement(item, { key: `item-${index}`, size, type });
+        {React.Children.map(children, (item, index) => {
+          return React.cloneElement(<>{item}</>, { key: `item-${index}`, size, type });
         })}
       </ul>
       {next && (

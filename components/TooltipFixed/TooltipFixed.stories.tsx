@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { Tooltip } from './TooltipFixed';
+import { TooltipFixed } from './TooltipFixed';
 import { Icon } from '../Icon/Icon';
 
 export default {
   title: 'Components/Tooltip Fixed',
-  component: Tooltip,
+  component: TooltipFixed,
   argTypes: {
     trigger: {
       table: {
@@ -15,7 +15,7 @@ export default {
   },
 };
 
-const Template = (arguments_) => <Tooltip {...arguments_} />;
+const Template = (arguments_) => <TooltipFixed {...arguments_} />;
 
 export const Default = Template.bind({});
 

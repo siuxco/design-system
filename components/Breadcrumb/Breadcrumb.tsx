@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC, ReactNode, ComponentProps } from 'react';
 import { IIconProperties } from '../Icon/Icon';
 
 const types = {
@@ -16,10 +16,9 @@ const themes = {
   },
 };
 
-export interface IBreadcrumbProperties {
+export interface IBreadcrumbProperties extends ComponentProps<'div'> {
   separator: 'arrow' | 'slash' | 'dash';
   style?: React.CSSProperties;
-  children?: Array<ReactNode>;
   className?: string;
 }
 
@@ -33,7 +32,7 @@ const Breadcrumb: FC<IBreadcrumbProperties> & {
   );
   const cleanChildren = React.Children.toArray(children);
   const finalChildren = cleanChildren.flatMap((item, index) => [
-    React.cloneElement(item, { theme: cleanChildren.length - 1 !== index ? 'primary' : 'default' }),
+    React.cloneElement(<>{item}</>, { theme: cleanChildren.length - 1 !== index ? 'primary' : 'default' }),
     ...(cleanChildren.length - 1 === index ? [] : [Separator(index)]),
   ]);
 

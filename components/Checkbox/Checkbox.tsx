@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, ComponentProps } from 'react';
 import { IIconProperties } from '../Icon/Icon';
 
 const states = {
@@ -25,11 +25,8 @@ const sizes = {
   },
 };
 
-export interface ICheckboxProperties {
-  className?: string;
-  disabled?: boolean;
+export interface ICheckboxProperties extends Omit<ComponentProps<'input'>, 'size'> {
   icon?: IIconProperties['icon'];
-  id?: string;
   label?: string;
   size?: 'md' | 'lg';
   state?: 'default' | 'checked' | 'disable';
