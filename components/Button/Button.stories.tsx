@@ -15,19 +15,19 @@ const Template: ComponentStory<typeof Button> = (arguments_) => <Button {...argu
 export const Primary = Template.bind({});
 Primary.args = {
   variant: 'primary',
-  children: 'Primary',
+  children: 'Button',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   variant: 'secondary',
-  children: 'Secondary',
+  children: 'Button',
 };
 
 export const Tertiary = Template.bind({});
 Tertiary.args = {
   variant: 'tertiary',
-  children: 'Tertiary',
+  children: 'Button',
 };
 
 export const Cancel = Template.bind({});

@@ -24,17 +24,19 @@ const variants = {
     'tertiary-link': 'background-transparent color-tertiary-7 hover:background-tertiary-1 active:background-tertiary-2',
 
     // Cancel buttons
-    cancel: 'background-neutral-7 hover:background-neutral-6 color-white',
-    'cancel-light': 'background-neutral-1 color-neutral-7 hover:color-neutral-8 hover:background-opacity-neutral-4',
-    'cancel-link': 'background-transparent color-neutral-7 hover:background-neutral-1',
+    cancel: 'background-neutral-7 hover:background-neutral-6 color-white active:background-neutral-8',
+    'cancel-light':
+      'background-neutral-1 color-neutral-7 hover:color-neutral-8 hover:background-opacity-neutral-4 active:background-opacity-neutral-6',
+    'cancel-link': 'background-transparent color-neutral-7 hover:background-neutral-2 active:background-neutral-4',
 
     // Delete buttons
     delete: 'background-error-7 hover:background-error-6 color-white',
-    'delete-light': 'background-error-1 color-error-7 hover:color-error-8 hover:background-opacity-error-4',
+    'delete-light':
+      'background-error-1 color-error-7 hover:color-error-8 hover:background-opacity-error-4 active:background-opacity-error-6',
 
     // Black and white
-    black: 'background-black hover:background-opacity-black-8 color-white',
-    white: 'background-white hover:background-opacity-neutral-2 color-black',
+    black: 'background-black hover:background-opacity-black-8 color-white active:background-opacity-black-6',
+    white: 'background-white hover:background-opacity-neutral-2 color-black active:background-neutral-2',
 
     // Disabled
     disabled: 'background-neutral-1 color-neutral-5 cursor-not-allowed',
