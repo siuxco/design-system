@@ -21,23 +21,23 @@ const Template = (_arguments) => <Alert {..._arguments} />;
 export const Info = Template.bind({});
 Info.args = {
   state: 'info',
-  children: 'Alert',
+  children: 'Informational note',
 };
 
 export const Success = Template.bind({});
 Success.args = {
   state: 'success',
-  children: 'Alert',
+  children: 'Informational note',
 };
 
 export const Warning = Template.bind({});
 Warning.args = {
   state: 'warning',
-  children: 'Alert',
+  children: 'Informational note',
 };
 
 export const Error = Template.bind({});
 Error.args = {
   state: 'error',
-  children: 'Alert',
+  children: 'Informational note',
 };

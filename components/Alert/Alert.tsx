@@ -1,11 +1,12 @@
 import React, { FC, ComponentProps } from 'react';
+import { classNames } from '../../utils/utils';
 
 const states = {
   parent: {
-    info: 'border-info-7 background-info-1',
-    success: 'border-success-7 background-success-1',
-    warning: 'border-warning-7 background-warning-1',
-    error: 'border-error-7 background-error-1',
+    info: 'border-info-2 background-info-1',
+    success: 'border-success-2 background-success-1',
+    warning: 'border-warning-2 background-warning-1',
+    error: 'border-error-2 background-error-1',
   },
   icon: {
     info: 'color-info-7 icon-system-question-fill',
@@ -35,11 +36,15 @@ const Alert: FC<IAlertProperties> & { Link: typeof Link } = ({
 }) => {
   return (
     <div
-      className={`transition-fast position-relative border-radius-xxs overflow-hidden border-width-5 line-height-m border-style-solid border-top-none border-right-none border-bottom-none display-flex align-items-center justify-content-space-between padding-xs ${states.parent[state]} ${className}`}
+      className={classNames(
+        'transition-fast position-relative border-radius-xs overflow-hidden border-width-1 border-style-solid display-flex align-items-center justify-content-space-between padding-xs',
+        states.parent[state],
+        className,
+      )}
       style={style}>
       <div className="display-flex align-items-center">
         <i className={`${states.icon[state]} ${icon} font-size-l margin-right-xs`} />
-        <div className="color-neutral-9">{children}</div>
+        <div className="color-neutral-9 line-height-s width-full margin-right-xxs">{children}</div>
       </div>
       {closeIcon && (
         <i
