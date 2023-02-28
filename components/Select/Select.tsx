@@ -53,7 +53,7 @@ const Select: React.ForwardRefExoticComponent<React.PropsWithoutRef<ISelectPrope
               />
             )}
             <select
-              className={`transition-fast padding-xs font-size-s padding-right-xl border-radius-xs border-width-1 border-style-solid
+              className={`transition-fast padding-xs font-size-s padding-right-xl background-white border-radius-xs border-width-1 border-style-solid
             ${getStatusClasses(states.parent)} ${disabled ? 'cursor-not-allowed' : 'cursor-pointer'}
             ${icon ? 'padding-left-xl' : 'padding-left-s padding-right-s'}
           `}
