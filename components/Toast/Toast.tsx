@@ -40,13 +40,13 @@ const Toast: FC<IToastProperties> & {
         role="presentation"
         onClick={onCloseClick}
         className={
-          'icon-system-close-line font-size-m position-absolute position-top-right color-grey-5 hover:color-grey-8 cursor-pointer margin-right-xxs margin-top-xxs'
+          'icon-system-close-line font-size-m position-absolute position-top-right color-grey-5 hover:color-grey-8 cursor-pointer margin-right-xs margin-top-xs'
         }
       />
       <i className={classNames('font-size-l margin-right-xs', states.icon[state], icon)} />
       <div>
         <div className="font-size-s font-weight-500 color-grey-10 text-align-left">{title}</div>
-        {children && <div className="font-size-xs color-grey-5 margin-top-xs">{children}</div>}
+        {children && <div className="color-grey-5 margin-top-xxs">{children}</div>}
       </div>
     </div>
   );

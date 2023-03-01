@@ -51,8 +51,14 @@ Error.args = {
   state: 'error',
 };
 
-export const WithLink = Template.bind({});
-WithLink.args = {
+export const CustomDescription = Template.bind({});
+CustomDescription.args = {
+  children: [<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>],
+  title: 'With link alert',
+};
+
+export const CustomLink = Template.bind({});
+CustomLink.args = {
   children: [
     <Toast.Link href="#" target="_blank">
       Don't click me
