@@ -19,22 +19,21 @@ export interface IInputProperties {
   className?: string;
   disabled?: boolean;
   icon?: IIconProperties['icon'];
-  state?: string;
   id?: string;
   placeholder?: string;
-  status: 'default' | 'error' | 'disable';
+  state: 'default' | 'error' | 'disable';
   prefix?: any;
   copy?: any;
   label?: any;
 }
 
 const Input = forwardRef<HTMLInputElement, IInputProperties>(
-  ({ placeholder, prefix = '', copy = '', label = '', className, state, icon, status, id, disabled, ...rest }, ref) => {
+  ({ placeholder, prefix = '', copy = '', label = '', className, icon, state, id, disabled, ...rest }, ref) => {
     const getStatusClasses = (object: { [x: string]: any; default: any; error?: string; disable: any }) => {
       if (disabled) {
         return object.disable;
       }
-      return object[status] || object.default;
+      return object[state] || object.default;
     };
     return (
       <label className={classNames({ 'cursor-not-allowed': disabled }, className)}>

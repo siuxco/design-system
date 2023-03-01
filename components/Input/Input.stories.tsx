@@ -28,42 +28,42 @@ const Template: ComponentStory<typeof Input> = (arguments_) => <Input {...argume
 export const Default = Template.bind({});
 Default.args = {
   state: 'default',
+  label: 'Label',
   placeholder: 'Placeholder',
 };
 
 export const Error = Template.bind({});
 Error.args = {
   state: 'error',
-  placeholder: 'Input with an error',
+  label: 'Label',
+  placeholder: 'Placeholder',
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
   state: 'disabled',
-  placeholder: 'Input disabled',
+  label: 'Label',
+  placeholder: 'Placeholder',
   disabled: true,
 };
 
 export const Prefix = Template.bind({});
 Prefix.args = {
+  label: 'Label',
   prefix: 'https://',
   placeholder: 'app.siux.studio',
 };
 
-export const WithIcon = Template.bind({});
-WithIcon.args = {
+export const CustomIcon = Template.bind({});
+CustomIcon.args = {
+  label: 'Label',
   icon: 'icon-system-link',
-  placeholder: 'I am an input with an icon',
+  placeholder: 'Placeholder',
 };
 
 export const WithCopy = Template.bind({});
 WithCopy.args = {
+  label: 'Label',
   copy: 'copy',
-  placeholder: 'Text',
-};
-
-export const WithLabel = Template.bind({});
-WithLabel.args = {
-  label: 'Label text',
-  placeholder: 'input placeholder',
+  placeholder: 'Placeholder',
 };

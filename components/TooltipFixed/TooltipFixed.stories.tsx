@@ -4,7 +4,7 @@ import { TooltipFixed } from './TooltipFixed';
 import { Icon } from '../Icon/Icon';
 
 export default {
-  title: 'DataDisplay/Tooltip Fixed',
+  title: 'Data Display/Tooltip Fixed',
   component: TooltipFixed,
   argTypes: {
     trigger: {

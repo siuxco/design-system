@@ -23,6 +23,6 @@ const Template: ComponentStory<typeof Textarea> = (arguments_) => <Textarea {...
 // Stories
 export const Default = Template.bind({});
 Default.args = {
-  label: 'Tell me a story',
-  placeholder: 'once upon a time...',
+  label: 'Label',
+  placeholder: 'Placeholder...',
 };

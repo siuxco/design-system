@@ -23,7 +23,7 @@ const Template: ComponentStory<typeof Select> = (arguments_) => <Select {...argu
 export const Default = Template.bind({});
 Default.args = {
   state: 'default',
-  label: 'Select an option',
+  label: 'Label',
   children: (
     <>
       <Select.Option value="1">One</Select.Option>
@@ -36,7 +36,7 @@ Default.args = {
 export const Error = Template.bind({});
 Error.args = {
   state: 'error',
-  label: 'Select an option',
+  label: 'Label',
   children: (
     <>
       <Select.Option value="1">One</Select.Option>
@@ -50,7 +50,7 @@ export const Disabled = Template.bind({});
 Disabled.args = {
   state: 'disabled',
   disabled: true,
-  label: 'Select an option',
+  label: 'Label',
   children: (
     <>
       <Select.Option value="1">One</Select.Option>
