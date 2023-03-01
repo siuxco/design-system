@@ -30,6 +30,27 @@ Tertiary.args = {
   children: 'Button',
 };
 
+export const Loading = Template.bind({});
+Loading.args = {
+  variant: 'primary',
+  loading: true,
+  children: 'Button',
+};
+
+export const IconLeft = Template.bind({});
+IconLeft.args = {
+  variant: 'primary',
+  iconLeft: 'icon-system-download-line',
+  children: 'Button',
+};
+
+export const IconRight = Template.bind({});
+IconRight.args = {
+  variant: 'primary',
+  iconRight: 'icon-system-arrow-right-line',
+  children: 'Button',
+};
+
 export const Cancel = Template.bind({});
 Cancel.args = {
   variant: 'cancel-link',

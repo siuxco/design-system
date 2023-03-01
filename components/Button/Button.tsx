@@ -98,28 +98,36 @@ const Button = forwardRef<HTMLInputElement, IButtonProperties>(
         style={{ ...style }}
         {...rest}>
         <div
-          className={`display-flex align-items-center font-weight-500 padding-top-none padding-bottom-none pointer-events-none ${
-            sizes.child[size]
-          } ${iconRight && 'padding-right-none'} ${iconLeft && 'padding-left-none'}`}>
+          className={classNames(
+            'display-flex align-items-center font-weight-500 padding-top-none padding-bottom-none pointer-events-none',
+            sizes.child[size],
+            {
+              'padding-right-none': Boolean(iconRight),
+              'padding-left-none': Boolean(iconLeft),
+            },
+          )}>
           {loading ? (
             <i
-              className={`icon-system-loader-4-line opacity-7 button-loading margin-right-xxs animation-animated animation-rotate-right animation-infinite ${sizes.icon[size]}`}
+              className={classNames(
+                'icon-system-loader-4-line opacity-7 button-loading margin-right-xxs animation-animated animation-rotate-right animation-infinite',
+                sizes.icon[size],
+              )}
             />
           ) : (
             iconLeft && (
               <i
-                className={`line-height-xxs ${iconLeft} ${sizes.icon[size]} ${
-                  (children || iconRight) && 'margin-right-xs'
-                }`}
+                className={classNames('line-height-xxs', iconLeft, sizes.icon[size], {
+                  'margin-right-xs': children || iconRight,
+                })}
               />
             )
           )}
           {children}
           {!loading && iconRight && (
             <i
-              className={`line-height-xxs ${iconRight} ${sizes.icon[size]} ${
-                (children || iconLeft) && 'margin-left-xs'
-              }`}
+              className={classNames('line-height-xxs', iconRight, sizes.icon[size], {
+                'margin-left-xs': children || iconLeft,
+              })}
             />
           )}
         </div>

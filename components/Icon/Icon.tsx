@@ -2,7 +2,7 @@ import React, { FC, HTMLProps } from 'react';
 
 export interface IIconProperties extends HTMLProps<HTMLElement> {
   icon:
-    | 'icon-system-icon-system-home-line'
+    | 'icon-system-home-line'
     | 'icon-system-home-fill'
     | 'icon-system-home-2-line'
     | 'icon-system-home-2-fill'
