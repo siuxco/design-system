@@ -3,7 +3,7 @@ import { Message } from './Message';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Components/Message',
+  title: 'Feedback/Message',
   component: Message,
   argTypes: {
     state: { control: { type: 'select' } },

@@ -3,7 +3,7 @@ import { Toast } from './Toast';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Components/Toast',
+  title: 'Feedback/Toast',
   component: Toast,
   argTypes: {
     title: {
