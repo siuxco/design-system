@@ -1,5 +1,6 @@
 import React from 'react';
 import { Message } from './Message';
+import { Button } from '../Button/Button';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
@@ -41,4 +42,17 @@ export const Error = Template.bind({});
 Error.args = {
   state: 'error',
   children: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
+};
+
+export const CustomButton = Template.bind({});
+CustomButton.args = {
+  state: 'error',
+  children: [
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
+    [
+      <Button variant="cancel-light" size="small" className="margin-top-s margin-right-s">
+        Discard
+      </Button>,
+    ],
+  ],
 };

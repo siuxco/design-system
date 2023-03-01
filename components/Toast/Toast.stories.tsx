@@ -61,7 +61,7 @@ export const CustomLink = Template.bind({});
 CustomLink.args = {
   children: [
     <Toast.Link href="#" target="_blank">
-      Don't click me
+      Custom link
     </Toast.Link>,
   ],
   title: 'With link alert',
