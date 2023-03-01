@@ -45,7 +45,7 @@ Prefix.args = {
 
 export const WithIcon = Template.bind({});
 WithIcon.args = {
-  icon: 'icon-system-home-line',
+  icon: 'icon-system-link',
   placeholder: 'I am an input with an icon',
 };
 

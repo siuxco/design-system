@@ -1,5 +1,6 @@
 import React, { forwardRef } from 'react';
 import { IIconProperties } from '../Icon/Icon';
+import { classNames } from '../../utils/utils';
 
 const statuses = {
   parent: {
@@ -36,21 +37,25 @@ const Input = forwardRef<HTMLInputElement, IInputProperties>(
       return object[status] || object.default;
     };
     return (
-      <label className={`${className} ${disabled && 'cursor-not-allowed'}`}>
+      <label className={classNames({ 'cursor-not-allowed': disabled }, className)}>
         {label && <div className="color-neutral-7 font-weight-500 margin-bottom-xs">{label}</div>}
         <div className="display-flex align-items-center position-relative">
           {icon && (
             <i
-              className={`transition-fast position-absolute padding-left-s font-size-s pointer-events-none ${icon} ${getStatusClasses(
-                statuses.icon,
-              )}`}
+              className={classNames(
+                'transition-fast position-absolute padding-left-s font-size-s pointer-events-none',
+                icon,
+                getStatusClasses(statuses.icon),
+              )}
             />
           )}
           {prefix && (
             <div
-              className={`transition-fast line-height-s padding-xs padding-left-s padding-right-s font-size-s border-radius-xs border-radius-right-none border-right-none border-width-1 border-style-solid pointer-events-none 
-          ${getStatusClasses(statuses.icon)} 
-          ${getStatusClasses(statuses.parent)}`}>
+              className={classNames(
+                'transition-fast line-height-s padding-xs padding-left-s padding-right-s font-size-s border-radius-xs border-radius-right-none border-right-none border-width-1 border-style-solid pointer-events-none',
+                getStatusClasses(statuses.icon),
+                getStatusClasses(statuses.parent),
+              )}>
               {prefix}
             </div>
           )}
@@ -61,19 +66,27 @@ const Input = forwardRef<HTMLInputElement, IInputProperties>(
             id={id}
             disabled={disabled}
             type={type}
-            className={`transition-fast padding-xs font-size-s color-black background-white border-radius-xs border-width-1 border-style-solid ${
-              prefix && 'border-radius-left-none'
-            } ${copy && 'border-radius-right-none'} ${icon ? 'padding-left-xl' : 'padding-left-s padding-right-s'} ${
-              disabled && 'cursor-not-allowed'
-            } ${getStatusClasses(statuses.parent)}`}
+            className={classNames(
+              'transition-fast padding-xs font-size-s color-black background-white border-radius-xs border-width-1 border-style-solid',
+              getStatusClasses(statuses.parent),
+              {
+                'border-radius-left-none': prefix,
+                'cursor-not-allowed': disabled,
+                'border-radius-right-none': copy,
+                'padding-left-xl': !!icon,
+                'padding-left-s padding-right-s': !icon,
+              },
+            )}
             {...rest}
           />
           {copy && (
             <div
-              className={`transition-fast position-relative padding-left-m cursor-pointer line-height-s padding-xs padding-left-xl padding-right-s font-size-s border-radius-xs border-radius-left-none border-left-none border-width-1 border-style-solid
-          ${getStatusClasses(statuses.icon)} 
-          ${getStatusClasses(statuses.parent)}`}>
-              <i className={'icon-system-file-copy-line position-absolute'} style={{ marginLeft: '-22px' }} />
+              className={classNames(
+                'transition-fast position-relative padding-left-m cursor-pointer line-height-s padding-xs padding-left-xl padding-right-s font-size-s border-radius-xs border-radius-left-none border-left-none border-width-1 border-style-solid',
+                getStatusClasses(statuses.icon),
+                getStatusClasses(statuses.parent),
+              )}>
+              <i className="icon-system-file-copy-line position-absolute" style={{ marginLeft: '-22px' }} />
               {copy}
             </div>
           )}

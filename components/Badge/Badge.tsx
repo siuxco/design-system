@@ -1,5 +1,6 @@
 import React, { FC, MouseEventHandler } from 'react';
 import { IIconProperties } from '../Icon/Icon';
+import { classNames } from '../../utils/utils';
 
 const types = {
   parent: {
@@ -15,14 +16,14 @@ export interface IBadgeProperties {
   style?: React.CSSProperties;
   type?: 'default' | 'primary' | 'secondary' | 'tertiary';
   className?: string;
-  remove?: boolean;
+  closedIcon?: boolean;
   iconRight?: IIconProperties['icon'];
   iconLeft?: IIconProperties['icon'];
   onClickRemove?: MouseEventHandler<HTMLElement>;
 }
 
 export const Badge: FC<IBadgeProperties> = ({
-  remove,
+  closedIcon,
   children,
   style,
   iconRight,
@@ -33,19 +34,23 @@ export const Badge: FC<IBadgeProperties> = ({
 }) => {
   return (
     <div
-      className={`${types.parent[type]} ${iconLeft ? 'padding-left-xs' : 'padding-left-s'} ${
-        iconRight ? 'padding-right-xs' : 'padding-right-s'
-      } padding-top-xxs padding-bottom-xxs transition-fast border-radius-xxl cursor-pointer display-inline-flex align-items-center ${className}`}
+      className={classNames(
+        'padding-top-xxs padding-bottom-xxs transition-fast border-radius-xxl cursor-pointer display-inline-flex align-items-center',
+        types.parent[type],
+        {
+          'padding-left-xs': iconLeft,
+          'padding-left-s': !iconLeft,
+          'padding-right-xs': iconRight,
+          'padding-right-s': !iconRight,
+        },
+        className,
+      )}
       style={{ ...style }}>
-      {iconLeft && <i className={`icon-system-${iconLeft} line-height-m font-size-xs margin-right-xxs`} />}
-      <div className={'font-size-xs line-height-m font-weight-500'}>{children}</div>
-      {iconRight && <i className={`icon-system-${iconRight} line-height-m font-size-xs margin-left-xxs`} />}
-      {remove && (
-        <i
-          role="presentation"
-          className={'font-size-s icon-system-close-circle-fill margin-left-xs'}
-          onClick={onClickRemove}
-        />
+      {iconLeft && <i className={classNames(iconLeft, 'line-height-m font-size-s margin-right-xxs')} />}
+      <div className={'line-height-m font-weight-500'}>{children}</div>
+      {iconRight && <i className={classNames(iconRight, 'line-height-m font-size-s margin-left-xxs')} />}
+      {closedIcon && (
+        <i role="presentation" className="icon-system-close-line font-size-s margin-left-xxs" onClick={onClickRemove} />
       )}
     </div>
   );

@@ -19,23 +19,41 @@ Default.args = {
   children: 'Badge',
 };
 
+export const Primary = Template.bind({});
+Primary.args = {
+  type: 'primary',
+  children: 'Badge',
+};
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+  type: 'secondary',
+  children: 'Badge',
+};
+
+export const Tertiary = Template.bind({});
+Tertiary.args = {
+  type: 'tertiary',
+  children: 'Badge',
+};
+
 export const IconLeft = Template.bind({});
 IconLeft.args = {
   type: 'primary',
   children: 'Badge',
-  iconLeft: 'true',
+  iconLeft: 'icon-system-shield-user-fill',
 };
 
 export const IconRight = Template.bind({});
 IconRight.args = {
-  type: 'secondary',
+  type: 'primary',
   children: 'Badge',
-  iconRight: true,
+  iconRight: 'icon-system-medal-line',
 };
 
-export const remove = Template.bind({});
-remove.args = {
+export const closedIcon = Template.bind({});
+closedIcon.args = {
   type: 'tertiary',
   children: 'Badge',
-  remove: true,
+  closedIcon: true,
 };
