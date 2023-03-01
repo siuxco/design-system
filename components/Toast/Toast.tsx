@@ -1,5 +1,6 @@
 import React, { FC, MouseEventHandler } from 'react';
 import { IIconProperties } from '../Icon/Icon';
+import { classNames } from '../../utils/utils';
 
 const states = {
   parent: {
@@ -30,7 +31,11 @@ const Toast: FC<IToastProperties> & {
 } = ({ title, className, icon, state = 'info', children, onCloseClick }) => {
   return (
     <div
-      className={`transition-fast position-relative border-radius-xxs overflow-hidden background-white box-shadow-xs border-width-4 border-style-solid border-right-none border-top-none border-bottom-none display-flex align-items-center padding-m padding-right-xl ${states.parent[state]} ${className}`}>
+      className={classNames(
+        'transition-fast position-relative border-radius-xxs overflow-hidden background-white box-shadow-xs border-width-4 border-style-solid border-right-none border-top-none border-bottom-none display-flex align-items-center padding-m padding-left-s padding-right-xl',
+        states.parent[state],
+        className,
+      )}>
       <i
         role="presentation"
         onClick={onCloseClick}
@@ -38,7 +43,7 @@ const Toast: FC<IToastProperties> & {
           'icon-system-close-line font-size-m position-absolute position-top-right color-grey-5 hover:color-grey-8 cursor-pointer margin-right-xxs margin-top-xxs'
         }
       />
-      <i className={`${states.icon[state]} icon-system-${icon} font-size-xxl margin-right-xs`} />
+      <i className={classNames('font-size-l margin-right-xs', states.icon[state], icon)} />
       <div>
         <div className="font-size-s font-weight-500 color-grey-10 text-align-left">{title}</div>
         {children && <div className="font-size-xs color-grey-5 margin-top-xs">{children}</div>}
