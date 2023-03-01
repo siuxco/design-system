@@ -15,6 +15,13 @@ export default {
     },
     state: { control: { type: 'select' } },
   },
+  decorators: [
+    (Story) => (
+      <div style={{ width: '250px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 } as ComponentMeta<typeof Toast>;
 
 const Template: ComponentStory<typeof Toast> = (arguments_) => <Toast {...arguments_} />;

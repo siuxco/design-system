@@ -9,7 +9,7 @@ export default {
   },
   decorators: [
     (Story) => (
-      <div style={{ maxWidth: '350px' }}>
+      <div style={{ width: '250px' }}>
         <Story />
       </div>
     ),

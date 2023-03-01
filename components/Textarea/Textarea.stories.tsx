@@ -9,6 +9,13 @@ export default {
     className: { table: { disable: true } },
     onChange: { table: { disable: true } },
   },
+  decorators: [
+    (Story) => (
+      <div style={{ width: '250px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 } as ComponentMeta<typeof Textarea>;
 
 const Template: ComponentStory<typeof Textarea> = (arguments_) => <Textarea {...arguments_} />;

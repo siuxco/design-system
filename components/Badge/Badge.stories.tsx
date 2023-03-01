@@ -3,7 +3,7 @@ import { Badge } from './Badge';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Components/Badge',
+  title: 'DataDisplay/Badge',
   component: Badge,
   argTypes: {
     variant: { control: { type: 'select' } },

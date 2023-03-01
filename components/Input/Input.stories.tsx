@@ -13,6 +13,13 @@ export default {
     //   },
     // },
   },
+  decorators: [
+    (Story) => (
+      <div style={{ width: '250px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 } as ComponentMeta<typeof Input>;
 
 const Template: ComponentStory<typeof Input> = (arguments_) => <Input {...arguments_} />;

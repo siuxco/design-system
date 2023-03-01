@@ -3,7 +3,7 @@ import { Text } from './Text';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Components/Text',
+  title: 'General/Text',
   component: Text,
   argTypes: {
     size: { control: { type: 'select' } },

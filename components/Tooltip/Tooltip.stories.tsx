@@ -3,7 +3,7 @@ import { Tooltip } from './Tooltip';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Components/Tooltip',
+  title: 'DataDisplay/Tooltip',
   component: Tooltip,
 } as ComponentMeta<typeof Tooltip>;
 
