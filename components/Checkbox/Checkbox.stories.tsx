@@ -3,7 +3,7 @@ import { Checkbox } from './Checkbox';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Components/Checkbox',
+  title: 'Forms/Checkbox',
   component: Checkbox,
   argTypes: {
     state: { control: { type: 'select' } },

@@ -3,7 +3,7 @@ import { Input } from './Input';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Components/Input',
+  title: 'Forms/Input',
   component: Input,
   argTypes: {
     status: { control: { type: 'select' } },

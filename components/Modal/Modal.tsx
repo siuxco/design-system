@@ -49,17 +49,17 @@ const Modal: FC<IModalProperties> = ({
           onClick={(event) => {
             event.stopPropagation();
           }}
-          className={`modal-container ${sizes[size]} ${Components.borders.default} animation-faster position-relative padding-l border-radius-xs box-shadow-s background-white width-full margin-none height-full tablet:margin-m tablet:width-auto tablet:height-auto`}>
+          className={`container-mobile ${sizes[size]} ${Components.borders.default} animation-faster position-relative padding-l border-radius-s box-shadow-s background-white width-full margin-none height-full tablet:margin-m tablet:width-auto tablet:height-auto`}>
           {/* Modal title */}
           <div>
             <i
               role="presentation"
               onClick={toggleModal}
-              className="cursor-pointer background-white border-radius-xs z-index-9 icon-system-close-line font-size-xl position-absolute transition-fast color-neutral-7 hover:color-neutral-6 position-top-right padding-right-xs padding-top-xs padding-left-xxs padding-bottom-xxs cursor-pointer"
+              className="cursor-pointer background-white border-radius-s z-index-9 icon-system-close-line font-size-xl position-absolute transition-fast color-neutral-6 hover:color-neutral-8 position-top-right padding-right-xs padding-top-xs padding-left-xxs padding-bottom-xxs cursor-pointer"
             />
             {title && <div className="color-black font-size-m font-weight-600 margin-bottom-m">{title}</div>}
           </div>
-          <div>{children}</div>
+          <div className="line-height-m color-neutral-7">{children}</div>
           {actions && (
             <div
               className={`${types.parent[type]} padding-m padding-bottom-none display-flex justify-content-flex-end align-items-center`}>

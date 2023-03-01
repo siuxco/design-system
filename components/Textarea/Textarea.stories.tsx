@@ -3,7 +3,7 @@ import { Textarea } from './Textarea';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Components/Textarea',
+  title: 'Forms/Textarea',
   component: Textarea,
   argTypes: {
     className: { table: { disable: true } },
