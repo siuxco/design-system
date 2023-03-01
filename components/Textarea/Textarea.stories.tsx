@@ -6,6 +6,7 @@ export default {
   title: 'Forms/Textarea',
   component: Textarea,
   argTypes: {
+    state: { control: { type: 'select' } },
     className: { table: { disable: true } },
     onChange: { table: { disable: true } },
   },
@@ -24,5 +25,21 @@ const Template: ComponentStory<typeof Textarea> = (arguments_) => <Textarea {...
 export const Default = Template.bind({});
 Default.args = {
   label: 'Label',
+  state: 'default',
+  placeholder: 'Placeholder...',
+};
+
+export const Error = Template.bind({});
+Error.args = {
+  label: 'Label',
+  state: 'error',
+  placeholder: 'Placeholder...',
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  label: 'Label',
+  state: 'disabled',
+  disabled: true,
   placeholder: 'Placeholder...',
 };
