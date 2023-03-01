@@ -16,7 +16,7 @@ export const Arrow = Template.bind({});
 Arrow.args = {
   separator: 'arrow',
   children: [
-    <Breadcrumb.Item key="a" icon="home-line">
+    <Breadcrumb.Item key="a" icon="icon-system-home-2-fill">
       Lorem
     </Breadcrumb.Item>,
     <Breadcrumb.Item key="b">Ipsum</Breadcrumb.Item>,
@@ -30,7 +30,7 @@ export const Slash = Template.bind({});
 Slash.args = {
   separator: 'slash',
   children: [
-    <Breadcrumb.Item key="a" icon="home-line">
+    <Breadcrumb.Item key="a" icon="icon-system-home-2-fill">
       Lorem
     </Breadcrumb.Item>,
     <Breadcrumb.Item key="b">Ipsum</Breadcrumb.Item>,
@@ -44,7 +44,7 @@ export const Dash = Template.bind({});
 Dash.args = {
   separator: 'dash',
   children: [
-    <Breadcrumb.Item key="a" icon="home-line">
+    <Breadcrumb.Item key="a" icon="icon-system-home-2-fill">
       Lorem
     </Breadcrumb.Item>,
     <Breadcrumb.Item key="b">Ipsum</Breadcrumb.Item>,

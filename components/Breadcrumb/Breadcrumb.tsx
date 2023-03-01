@@ -1,5 +1,6 @@
-import React, { FC, ReactNode, ComponentProps } from 'react';
+import React, { FC, ComponentProps } from 'react';
 import { IIconProperties } from '../Icon/Icon';
+import { classNames } from '../../utils/utils';
 
 const types = {
   parent: {
@@ -26,7 +27,7 @@ const Breadcrumb: FC<IBreadcrumbProperties> & {
   Item: typeof Item;
 } = ({ separator = 'dash', className, style, children }) => {
   const Separator = (index) => (
-    <li key={index} className="padding-left-xs padding-right-xs display-flex color-neutral-2 cursor-default">
+    <li key={index} className="padding-left-xxs padding-right-xxs display-flex color-neutral-2 cursor-default">
       {types.parent[separator]}
     </li>
   );
@@ -37,7 +38,9 @@ const Breadcrumb: FC<IBreadcrumbProperties> & {
   ]);
 
   return (
-    <ul className={`display-flex align-items-center color-grey-10 cursor-pointer ${className}`} style={{ ...style }}>
+    <ul
+      className={classNames('display-flex align-items-center color-grey-10 cursor-pointer', className)}
+      style={{ ...style }}>
       {finalChildren}
     </ul>
   );
@@ -58,8 +61,12 @@ const Item: FC<IBreadcrumbItemProperties> = ({ theme, icon, href, target, classN
       <a
         href={href}
         target={target}
-        className={`${themes.parent[theme]} text-transform-lowercase display-flex align-items-center ${className}`}>
-        {icon && <i className={`icon-system-${icon} margin-right-xxs`} />}
+        className={classNames(
+          'hover:background-white active:background-neutral-4 padding-xs padding-top-xxs padding-bottom-xxs border-radius-xs display-flex align-items-center',
+          themes.parent[theme],
+          className,
+        )}>
+        {icon && <i className={classNames('margin-right-xs', icon)} />}
         {children}
       </a>
     </li>
