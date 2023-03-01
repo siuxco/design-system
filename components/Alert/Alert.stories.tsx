@@ -41,3 +41,17 @@ Error.args = {
   state: 'error',
   children: 'Informational note',
 };
+
+export const ClosedIcon = Template.bind({});
+ClosedIcon.args = {
+  state: 'info',
+  closeIcon: true,
+  children: 'Informational note',
+};
+
+export const CustomIcon = Template.bind({});
+CustomIcon.args = {
+  state: 'success',
+  icon: 'icon-system-mail-send-line',
+  children: 'Message sent successfully',
+};
