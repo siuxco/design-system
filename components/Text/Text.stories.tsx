@@ -37,13 +37,13 @@ Heading3.args = {
 
 export const Heading4 = Template.bind({});
 Heading4.args = {
-  size: 'h1',
+  size: 'h4',
   children: 'Text example',
 };
 
 export const Heading5 = Template.bind({});
 Heading5.args = {
-  size: 'h1',
+  size: 'h5',
   children: 'Text example',
 };
 
