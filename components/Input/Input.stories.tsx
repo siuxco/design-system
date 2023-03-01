@@ -6,7 +6,7 @@ export default {
   title: 'Forms/Input',
   component: Input,
   argTypes: {
-    status: { control: { type: 'select' } },
+    state: { control: { type: 'select' } },
     // id: {
     //   table: {
     //     disable: true,
@@ -20,19 +20,19 @@ const Template: ComponentStory<typeof Input> = (arguments_) => <Input {...argume
 // Stories
 export const Default = Template.bind({});
 Default.args = {
-  status: 'default',
+  state: 'default',
   placeholder: 'Placeholder',
 };
 
 export const Error = Template.bind({});
 Error.args = {
-  status: 'error',
+  state: 'error',
   placeholder: 'Input with an error',
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
-  status: 'disabled',
+  state: 'disabled',
   placeholder: 'Input disabled',
   disabled: true,
 };

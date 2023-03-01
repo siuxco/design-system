@@ -19,7 +19,7 @@ export interface IInputProperties {
   className?: string;
   disabled?: boolean;
   icon?: IIconProperties['icon'];
-  type?: string;
+  state?: string;
   id?: string;
   placeholder?: string;
   status: 'default' | 'error' | 'disable';
@@ -29,7 +29,7 @@ export interface IInputProperties {
 }
 
 const Input = forwardRef<HTMLInputElement, IInputProperties>(
-  ({ placeholder, prefix = '', copy = '', label = '', className, type, icon, status, id, disabled, ...rest }, ref) => {
+  ({ placeholder, prefix = '', copy = '', label = '', className, state, icon, status, id, disabled, ...rest }, ref) => {
     const getStatusClasses = (object: { [x: string]: any; default: any; error?: string; disable: any }) => {
       if (disabled) {
         return object.disable;
@@ -65,7 +65,7 @@ const Input = forwardRef<HTMLInputElement, IInputProperties>(
             ref={ref}
             id={id}
             disabled={disabled}
-            type={type}
+            type={state}
             className={classNames(
               'transition-fast padding-xs font-size-s color-black background-white border-radius-xs border-width-1 border-style-solid',
               getStatusClasses(statuses.parent),

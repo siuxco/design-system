@@ -17,7 +17,7 @@ export default {
   },
 } as ComponentMeta<typeof Toast>;
 
-const Template: ComponentStory<typeof Toast> = (args) => <Toast {...args} />;
+const Template: ComponentStory<typeof Toast> = (arguments_) => <Toast {...arguments_} />;
 
 // Stories
 export const Info = Template.bind({});

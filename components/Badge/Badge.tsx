@@ -2,7 +2,7 @@ import React, { FC, MouseEventHandler } from 'react';
 import { IIconProperties } from '../Icon/Icon';
 import { classNames } from '../../utils/utils';
 
-const types = {
+const variants = {
   parent: {
     default: 'background-neutral-1 hover:background-neutral-2 color-neutral-7',
     primary: 'background-primary-1 hover:background-primary-2 color-primary-7',
@@ -14,7 +14,7 @@ const types = {
 export interface IBadgeProperties {
   children?: React.ReactNode;
   style?: React.CSSProperties;
-  type?: 'default' | 'primary' | 'secondary' | 'tertiary';
+  variant?: 'default' | 'primary' | 'secondary' | 'tertiary';
   className?: string;
   closedIcon?: boolean;
   iconRight?: IIconProperties['icon'];
@@ -28,7 +28,7 @@ export const Badge: FC<IBadgeProperties> = ({
   style,
   iconRight,
   iconLeft,
-  type = 'default',
+  variant = 'default',
   className,
   onClickRemove,
 }) => {
@@ -36,7 +36,7 @@ export const Badge: FC<IBadgeProperties> = ({
     <div
       className={classNames(
         'padding-top-xxs padding-bottom-xxs transition-fast border-radius-xxl cursor-pointer display-inline-flex align-items-center',
-        types.parent[type],
+        variants.parent[variant],
         {
           'padding-left-xs': iconLeft,
           'padding-left-s': !iconLeft,
