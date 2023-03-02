@@ -23,7 +23,7 @@ export const Tooltip: FC<ITooltipProperties> = ({
           transition: 'transform 300ms ease-in-out',
           transform: `translate(${event?.offsetLeft}px, ${event?.offsetTop + (noOffset ? -30 : 45)}px)`,
         }}>
-        <div className="background-opacity-black-9 color-white padding-xs border-radius-xxs margin-bottom-xs box-shadow-s">
+        <div className="background-opacity-black-9 color-white padding-s border-radius-xs margin-bottom-xs box-shadow-m">
           {children}
         </div>
       </div>
