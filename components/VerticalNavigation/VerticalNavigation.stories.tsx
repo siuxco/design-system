@@ -5,9 +5,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 export default {
   title: 'Navigation/Vertical Navigation',
   component: VerticalNavigation,
-  argTypes: {
-    separator: { control: { type: 'select' } },
-  },
+  argTypes: {},
   decorators: [
     (Story) => (
       <div style={{ width: '200px' }}>
@@ -21,7 +19,6 @@ const Template: ComponentStory<typeof VerticalNavigation> = (arguments_) => <Ver
 
 export const Default = Template.bind({});
 Default.args = {
-  separator: 'arrow',
   children: [
     <VerticalNavigation.Item key="b" active>
       Dashboard
@@ -35,7 +32,6 @@ Default.args = {
 
 export const WithIcon = Template.bind({});
 WithIcon.args = {
-  separator: 'arrow',
   children: [
     <VerticalNavigation.Item key="b" icon="icon-system-dashboard-line" active>
       Dashboard
@@ -57,7 +53,6 @@ WithIcon.args = {
 
 export const WithLabel = Template.bind({});
 WithLabel.args = {
-  separator: 'arrow',
   children: [
     <VerticalNavigation.Item key="b" icon="icon-system-dashboard-line" label="360" active>
       Dashboard
