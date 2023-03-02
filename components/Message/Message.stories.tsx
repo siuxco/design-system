@@ -11,7 +11,7 @@ export default {
   },
   decorators: [
     (Story) => (
-      <div style={{ maxWidth: '350px' }}>
+      <div style={{ maxWidth: '380px' }}>
         <Story />
       </div>
     ),
@@ -44,15 +44,30 @@ Error.args = {
   children: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
 };
 
+export const CustomList = Template.bind({});
+CustomList.args = {
+  state: 'error',
+  children: [
+    [
+      <ul className="width-full">
+        <li>● Your password must be at least 8 characters</li>
+        <li>● Your password must include at least one number</li>
+      </ul>,
+    ],
+  ],
+};
+
 export const CustomButton = Template.bind({});
 CustomButton.args = {
   state: 'error',
   children: [
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
     [
-      <Button variant="cancel-light" size="small" className="margin-top-s margin-right-s">
-        Discard
-      </Button>,
+      <div className="width-full">
+        <Button variant="cancel-light" size="small" className="margin-top-s margin-right-s">
+          Discard
+        </Button>
+      </div>,
     ],
   ],
 };

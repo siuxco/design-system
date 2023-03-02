@@ -9,10 +9,10 @@ const states = {
     error: 'border-error-2 background-error-1',
   },
   icon: {
-    info: 'color-info-7 icon-system-question-fill',
-    success: 'color-success-7 icon-system-checkbox-circle-fill',
-    warning: 'color-warning-7 icon-system-error-warning-fill',
-    error: 'color-error-7 icon-system-close-circle-fill',
+    info: 'color-info-7 icon-system-question-line',
+    success: 'color-success-7 icon-system-checkbox-circle-line',
+    warning: 'color-warning-7 icon-system-error-warning-line',
+    error: 'color-error-7 icon-system-close-circle-line',
   },
 };
 

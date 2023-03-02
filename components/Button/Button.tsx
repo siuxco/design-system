@@ -55,9 +55,9 @@ const sizes = {
     large: 'font-size-m',
   },
   child: {
-    small: 'padding-xxs',
-    medium: 'padding-xxs',
-    large: 'padding-xxs',
+    small: 'padding-xs',
+    medium: 'padding-xs',
+    large: 'padding-xs',
   },
 };
 
@@ -103,7 +103,7 @@ const Button = forwardRef<HTMLInputElement, IButtonProperties>(
             sizes.child[size],
             {
               'padding-right-none': Boolean(iconRight),
-              'padding-left-none': Boolean(iconLeft),
+              'padding-left-xxs': Boolean(iconLeft),
             },
           )}>
           {loading ? (
