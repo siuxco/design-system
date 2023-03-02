@@ -2,12 +2,12 @@ import React, { FC, ComponentProps } from 'react';
 import { IIconProperties } from '../Icon/Icon';
 import { classNames } from '../../utils/utils';
 
-export interface IVerticalNavigationProperties extends ComponentProps<'div'> {
+export interface IListNavigationProperties extends ComponentProps<'div'> {
   style?: React.CSSProperties;
   className?: string;
 }
 
-const VerticalNavigation: FC<IVerticalNavigationProperties> & {
+const ListNavigation: FC<IListNavigationProperties> & {
   Item: typeof Item;
 } = ({ className, style, children }) => {
   const cleanChildren = React.Children.toArray(children);
@@ -22,7 +22,7 @@ const VerticalNavigation: FC<IVerticalNavigationProperties> & {
   );
 };
 
-export interface IVerticalNavigationItemProperties {
+export interface IListNavigationItemProperties {
   children?: string | React.ReactNode;
   active?: boolean;
   target?: string;
@@ -32,7 +32,7 @@ export interface IVerticalNavigationItemProperties {
   icon?: IIconProperties['icon'];
 }
 
-const Item: FC<IVerticalNavigationItemProperties> = ({ icon, href, target, label, className, children, active }) => {
+const Item: FC<IListNavigationItemProperties> = ({ icon, href, target, label, className, children, active }) => {
   return (
     <li>
       <a
@@ -63,5 +63,5 @@ const Item: FC<IVerticalNavigationItemProperties> = ({ icon, href, target, label
   );
 };
 
-VerticalNavigation.Item = Item;
-export { VerticalNavigation };
+ListNavigation.Item = Item;
+export { ListNavigation };
