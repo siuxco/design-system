@@ -32,10 +32,14 @@ const Toast: FC<IToastProperties> & {
   return (
     <div
       className={classNames(
-        'transition-fast position-relative border-radius-xxs overflow-hidden background-white box-shadow-xs border-width-4 border-style-solid border-right-none border-top-none border-bottom-none display-flex align-items-center padding-m padding-left-s padding-right-xl',
-        states.parent[state],
+        'transition-fast position-relative border-radius-xs overflow-hidden background-white box-shadow-s border-style-solid border-width-1 border-neutral-2 display-flex align-items-center padding-m padding-left-s padding-right-xl',
         className,
       )}>
+      <div
+        className={classNames(
+          'border-width-5 border-style-solid border-right-none border-top-none border-bottom-none height-full position-absolute position-left',
+          states.parent[state],
+        )}></div>
       <i
         role="presentation"
         onClick={onCloseClick}
