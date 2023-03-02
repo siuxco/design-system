@@ -1,6 +1,6 @@
 {
-  "name": "siux-studio-next-js",
-  "version": "0.1.0",
+  "name": "siux-studio-react-components",
+  "version": "1.0.0",
   "private": false,
   "scripts": {
     "dev": "next dev",
