@@ -15,27 +15,33 @@ const Template: ComponentStory<typeof Checkbox> = (arguments_) => <Checkbox {...
 // Stories
 export const Default = Template.bind({});
 Default.args = {
+  id: 'alpha',
   state: 'default',
-  checked: false,
+  defaultValue: false,
   label: 'Label',
 };
 
 export const Checked = Template.bind({});
 Checked.args = {
+  id: 'alpha',
   state: 'checked',
-  checked: true,
   label: 'Label',
+  defaultValue: true,
 };
 
 export const Error = Template.bind({});
 Error.args = {
+  id: 'alpha',
   state: 'error',
   label: 'Label',
+  defaultValue: false,
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
+  id: 'alpha',
   state: 'disable',
   disabled: true,
   label: 'Label',
+  defaultValue: false,
 };

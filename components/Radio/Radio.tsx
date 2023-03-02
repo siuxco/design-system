@@ -1,4 +1,4 @@
-import React, { FC, ComponentProps } from 'react';
+import React, { FC, ComponentProps, useState } from 'react';
 import { classNames } from '../../utils/utils';
 
 const states = {
@@ -25,17 +25,18 @@ export interface IRadioProperties extends ComponentProps<'input'> {
 export const Radio: FC<IRadioProperties> = ({
   className,
   state = 'default',
-  checked,
+  defaultValue,
   id,
   disabled,
   label,
   ...rest
 }) => {
+  const [isChecked, setIsChecked] = useState(defaultValue);
   const getStateClasses = (object) => {
     if (disabled) {
       return object.disable;
     }
-    if (checked) {
+    if (isChecked) {
       return object.checked;
     }
     return object[state] || object.default;
@@ -44,13 +45,21 @@ export const Radio: FC<IRadioProperties> = ({
   return (
     <div className={classNames('position-relative', className)}>
       <label htmlFor={id} className="display-flex align-items-center cursor-pointer">
-        <input className="display-none" id={id} type="radio" disabled={disabled} {...rest} />
+        <input
+          className="display-none"
+          id={id}
+          type="radio"
+          disabled={disabled}
+          onChange={() => setIsChecked((prev) => !prev)}
+          checked={Boolean(isChecked)}
+          {...rest}
+        />
         <i
           className={classNames(
             'width-l height-l font-size-xs transition-fast border-radius-full border-width-1 border-style-solid display-flex align-items-center justify-content-center',
             getStateClasses(states.parent),
             {
-              'icon-system-checkbox-blank-circle-fill': Boolean(checked),
+              'icon-system-checkbox-blank-circle-fill': Boolean(isChecked),
             },
           )}
         />
