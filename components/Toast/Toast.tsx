@@ -10,10 +10,10 @@ const states = {
     error: 'border-error-5',
   },
   icon: {
-    info: 'color-info-8 icon-system-question-fill',
-    success: 'color-success-5 icon-system-checkbox-circle-fill',
-    warning: 'color-warning-5 icon-system-error-warning-fill',
-    error: 'color-error-5 icon-system-close-circle-fill',
+    info: 'color-info-8 icon-system-question-line',
+    success: 'color-success-5 icon-system-checkbox-circle-line',
+    warning: 'color-warning-5 icon-system-error-warning-line',
+    error: 'color-error-5 icon-system-close-circle-line',
   },
 };
 

@@ -3,16 +3,16 @@ import { classNames } from '../../utils/utils';
 
 const states = {
   success: {
-    icon: 'icon-system-checkbox-circle-fill color-success-7',
+    icon: 'icon-system-checkbox-circle-line color-success-7',
   },
   info: {
-    icon: 'icon-system-information-fill color-info-7',
+    icon: 'icon-system-information-line color-info-7',
   },
   warning: {
-    icon: 'icon-system-alert-fill color-warning-7',
+    icon: 'icon-system-alert-line color-warning-7',
   },
   error: {
-    icon: 'icon-system-error-warning-fill color-error-7',
+    icon: 'icon-system-error-warning-line color-error-7',
   },
 };
 
@@ -42,9 +42,7 @@ export const Message: FC<IMessageProperties> = ({
         <i className={classNames('margin-right-xs font-size-l', states[state].icon)} />
         <span className="font-primary font-size-s font-weight-600">{title}</span>
       </div>
-      {children && (
-        <div className="padding-xxs padding-bottom-none color-neutral-7 line-height-m margin-top-xxs">{children}</div>
-      )}
+      {children && <div className="padding-xxs color-neutral-7 line-height-m margin-top-xxs">{children}</div>}
     </div>
   );
 };
