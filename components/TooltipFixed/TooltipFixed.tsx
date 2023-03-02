@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 const types = {
   parent: {
     dark: 'background-opacity-black-9 color-white',
-    light: 'background-white',
+    light: 'background-white color-black',
   },
 };
 
@@ -36,14 +36,14 @@ export const TooltipFixed: FC<ITooltipFixedProperties> = ({
   return (
     <div className={`position-relative ${className}`}>
       <div
-        className={`${types.parent[type]} ${positions.parent[position]} position-absolute padding-xs border-radius-xxs margin-bottom-xs box-shadow-s`}
+        className={`${types.parent[type]} ${positions.parent[position]} position-absolute padding-xs border-radius-xs box-shadow-m`}
         style={{
           ...style,
-          transform: `translateY(${position === 'topLeft' || position === 'topRight' ? '-' : ''}100%)`,
+          transform: `translateY(${position === 'topLeft' || position === 'topRight' ? '-' : ''}120%)`,
           width: sizes[size],
         }}>
         {title && <div className="font-size-s font-weight-600 margin-bottom-xs">{title}</div>}
-        <div className="font-size-xs">{children}</div>
+        <div className="color-neutral-7">{children}</div>
       </div>
       <span className="cursor-pointer">{trigger}</span>
     </div>

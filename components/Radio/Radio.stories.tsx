@@ -17,25 +17,25 @@ export const Default = Template.bind({});
 Default.args = {
   state: 'default',
   checked: false,
-  label: 'Radio',
+  label: 'Label',
 };
 
 export const Checked = Template.bind({});
 Checked.args = {
   state: 'checked',
   checked: true,
-  label: 'Radio',
+  label: 'Label',
 };
 
 export const Error = Template.bind({});
 Error.args = {
   state: 'error',
-  label: 'Radio',
+  label: 'Label',
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
   state: 'disable',
   disabled: true,
-  label: 'Radio',
+  label: 'Label',
 };

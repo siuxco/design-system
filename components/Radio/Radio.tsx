@@ -47,7 +47,7 @@ export const Radio: FC<IRadioProperties> = ({
         <input className="display-none" id={id} type="radio" disabled={disabled} {...rest} />
         <i
           className={classNames(
-            'width-l height-l font-size-xs transition-fast border-radius-full border-width-2 border-style-solid display-flex align-items-center justify-content-center',
+            'width-l height-l font-size-xs transition-fast border-radius-full border-width-1 border-style-solid display-flex align-items-center justify-content-center',
             getStateClasses(states.parent),
             {
               'icon-system-checkbox-blank-circle-fill': Boolean(checked),
