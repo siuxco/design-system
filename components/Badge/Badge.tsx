@@ -38,10 +38,10 @@ export const Badge: FC<IBadgeProperties> = ({
         'padding-top-xxs padding-bottom-xxs transition-fast border-radius-xxl cursor-pointer display-inline-flex align-items-center',
         variants.parent[variant],
         {
-          'padding-left-xs': iconLeft,
-          'padding-left-s': !iconLeft,
-          'padding-right-xs': iconRight,
-          'padding-right-s': !iconRight,
+          'padding-left-xs': Boolean(iconLeft),
+          'padding-left-s': Boolean(!iconLeft),
+          'padding-right-xs': Boolean(iconRight),
+          'padding-right-s': Boolean(!iconRight),
         },
         className,
       )}

@@ -32,6 +32,7 @@ const Textarea: FC<ITextareaProperties> = ({ placeholder, label, state, disabled
 
 export interface ITextareaProperties extends HTMLProps<HTMLTextAreaElement> {
   placeholder?: string;
+  state?: string;
   label?: string;
   error?: boolean;
   disabled?: boolean;
