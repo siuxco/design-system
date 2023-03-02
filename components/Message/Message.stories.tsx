@@ -49,7 +49,7 @@ CustomList.args = {
   state: 'error',
   children: [
     [
-      <ul>
+      <ul className="width-full">
         <li>● Your password must be at least 8 characters</li>
         <li>● Your password must include at least one number</li>
       </ul>,

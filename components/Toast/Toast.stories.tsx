@@ -60,7 +60,7 @@ CustomDescription.args = {
 export const CustomLink = Template.bind({});
 CustomLink.args = {
   children: [
-    <Toast.Link href="#" target="_blank">
+    <Toast.Link href="#" target="_self">
       Custom link
     </Toast.Link>,
   ],
