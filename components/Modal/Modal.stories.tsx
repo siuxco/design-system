@@ -4,7 +4,7 @@ import { Button } from '../Button/Button';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Components/Modal',
+  title: 'General/Modal',
   component: Modal,
   argTypes: {
     size: { control: { type: 'select' } },
@@ -29,10 +29,10 @@ WithActions.args = {
     'Aut, quae. Asperiores sed earum pariatur dolores reprehenderit aperiam porro tempora, molestias nemo tnam accusamus, facilis possimus voluptatem aspernatur in, vero animi. Aut, quae. Asperiores sed tearum pariatur dolores reprehenderit aperiam porro tempora, molestias nemo nam accusamus, facilis possimus voluptatem aspernatur in, vero animi.',
   actions: (
     <>
-      <Button type="delete-light" style={{ marginRight: '10px' }}>
-        Action secondary
+      <Button variant="cancel-light" className="margin-right-s">
+        Cancel
       </Button>
-      <Button>Action primary</Button>
+      <Button variant="primary">Apply changes</Button>
     </>
   ),
 };

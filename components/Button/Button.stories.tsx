@@ -3,7 +3,7 @@ import { Button } from './Button';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Components/Button',
+  title: 'General/Button',
   component: Button,
   argTypes: {
     size: { control: { type: 'select' } },
@@ -15,19 +15,40 @@ const Template: ComponentStory<typeof Button> = (arguments_) => <Button {...argu
 export const Primary = Template.bind({});
 Primary.args = {
   variant: 'primary',
-  children: 'Primary',
+  children: 'Button',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   variant: 'secondary',
-  children: 'Secondary',
+  children: 'Button',
 };
 
 export const Tertiary = Template.bind({});
 Tertiary.args = {
   variant: 'tertiary',
-  children: 'Tertiary',
+  children: 'Button',
+};
+
+export const Loading = Template.bind({});
+Loading.args = {
+  variant: 'primary',
+  loading: true,
+  children: 'Button',
+};
+
+export const IconLeft = Template.bind({});
+IconLeft.args = {
+  variant: 'primary',
+  iconLeft: 'icon-system-download-line',
+  children: 'Button',
+};
+
+export const IconRight = Template.bind({});
+IconRight.args = {
+  variant: 'primary',
+  iconRight: 'icon-system-arrow-right-line',
+  children: 'Button',
 };
 
 export const Cancel = Template.bind({});

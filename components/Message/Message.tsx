@@ -1,21 +1,18 @@
 import React, { FC, ReactNode } from 'react';
+import { classNames } from '../../utils/utils';
 
-const types = {
+const states = {
   success: {
-    icon: 'checkbox-circle-line',
-    container: 'background-opacity-success-7 border-success-5',
+    icon: 'icon-system-checkbox-circle-fill color-success-7',
   },
   info: {
-    icon: 'information-line',
-    container: 'background-opacity-info-7 border-info-5',
+    icon: 'icon-system-information-fill color-info-7',
   },
   warning: {
-    icon: 'alert-line',
-    container: 'background-opacity-warning-7 border-warning-5',
+    icon: 'icon-system-alert-fill color-warning-7',
   },
   error: {
-    icon: 'error-warning-line',
-    container: 'background-opacity-error-7 border-error-5',
+    icon: 'icon-system-error-warning-fill color-error-7',
   },
 };
 
@@ -24,7 +21,7 @@ export interface IMessageProperties {
   children?: Array<ReactNode>;
   className?: string;
   title: string;
-  type: 'info' | 'success' | 'warning' | 'error';
+  state: 'info' | 'success' | 'warning' | 'error';
 }
 
 export const Message: FC<IMessageProperties> = ({
@@ -32,15 +29,17 @@ export const Message: FC<IMessageProperties> = ({
   className,
   title = 'Message title',
   style,
-  type = 'info',
+  state = 'info',
 }) => {
   return (
-    <div className={`padding-s border-radius-xxs ${types[type].container} ${className} color-white`} style={style}>
+    <div className={classNames('padding-s background-white border-radius-xs box-shadow-s', className)} style={style}>
       <div className="display-flex align-items-center">
-        <i className={`icon-system-${types[type].icon} margin-right-xxs`} style={{ fontSize: '14px' }} />
-        <small className="font-primary font-weight-600">{title}</small>
+        <i className={classNames('margin-right-xs font-size-l', states[state].icon)} />
+        <span className="font-primary font-size-s font-weight-600">{title}</span>
       </div>
-      {children !== null && <div className="padding-xxs padding-bottom-none">{children}</div>}
+      {children && (
+        <div className="padding-xxs padding-bottom-none color-neutral-7 line-height-m margin-top-xxs">{children}</div>
+      )}
     </div>
   );
 };

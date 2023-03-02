@@ -1,5 +1,6 @@
-import React, { forwardRef, ReactNode, FC } from 'react';
+import React, { forwardRef, FC } from 'react';
 import { IIconProperties } from '../Icon/Icon';
+import { classNames } from '../../utils/utils';
 
 const states = {
   parent: {
@@ -19,7 +20,6 @@ export interface ISelectProperties {
   state?: 'default' | 'error' | 'disable';
   disabled?: boolean;
   icon?: IIconProperties['icon'];
-  placeholder?: string;
   id?: string;
   className?: string;
   children?: React.ReactNode;
@@ -31,18 +31,21 @@ interface Subcomponents {
 
 const Select: React.ForwardRefExoticComponent<React.PropsWithoutRef<ISelectProperties>> & Partial<Subcomponents> =
   forwardRef<HTMLSelectElement, ISelectProperties>(
-    ({ placeholder, className = '', state = 'default', icon, label, children, disabled, id, ...rest }, ref) => {
+    ({ className = '', state = 'default', icon, label, children, disabled, id, ...rest }, ref) => {
       const getStatusClasses = (object) => {
         if (disabled) {
           return object.disable;
         }
         return object[state] || object.default;
       };
+
+      console.log(getStatusClasses(states.parent));
       return (
         <label
-          className={`transition-fast position-relative ${className} ${
-            disabled ? 'cursor-not-allowed' : 'cursor-pointer'
-          }`}>
+          className={classNames('transition-fast position-relative', className, {
+            'cursor-not-allowed': disabled,
+            'cursor-pointer': !disabled,
+          })}>
           {label && <div className="color-neutral-7 font-weight-500 margin-bottom-xs">{label}</div>}
           <div className="display-flex align-items-center position-relative">
             {icon && (
@@ -53,12 +56,11 @@ const Select: React.ForwardRefExoticComponent<React.PropsWithoutRef<ISelectPrope
               />
             )}
             <select
-              className={`transition-fast padding-xs font-size-s padding-right-xl border-radius-xs border-width-1 border-style-solid
+              className={`transition-fast padding-xs font-size-s padding-right-xl background-white border-radius-xs border-width-1 border-style-solid
             ${getStatusClasses(states.parent)} ${disabled ? 'cursor-not-allowed' : 'cursor-pointer'}
             ${icon ? 'padding-left-xl' : 'padding-left-s padding-right-s'}
           `}
               disabled={disabled}
-              placeholder={placeholder}
               id={id}
               ref={ref}
               {...rest}>

@@ -15,14 +15,14 @@ const states = {
   },
 };
 
-export interface ICheckboxProperties extends Omit<ComponentProps<'input'>, 'size'> {
+export interface IRadioProperties extends ComponentProps<'input'> {
   checked?: boolean;
   label: string;
   name: string;
   state: 'default' | 'checked';
 }
 
-export const Checkbox: FC<ICheckboxProperties> = ({
+export const Radio: FC<IRadioProperties> = ({
   className,
   state = 'default',
   checked,
@@ -44,13 +44,13 @@ export const Checkbox: FC<ICheckboxProperties> = ({
   return (
     <div className={classNames('position-relative', className)}>
       <label htmlFor={id} className="display-flex align-items-center cursor-pointer">
-        <input className="display-none" id={id} type="checkbox" disabled={disabled} {...rest} />
+        <input className="display-none" id={id} type="radio" disabled={disabled} {...rest} />
         <i
           className={classNames(
-            'width-l height-l font-size-s transition-fast border-radius-xs border-width-1 border-style-solid display-flex align-items-center justify-content-center',
+            'width-l height-l font-size-xs transition-fast border-radius-full border-width-1 border-style-solid display-flex align-items-center justify-content-center',
             getStateClasses(states.parent),
             {
-              'icon-system-check-line': Boolean(checked),
+              'icon-system-checkbox-blank-circle-fill': Boolean(checked),
             },
           )}
         />

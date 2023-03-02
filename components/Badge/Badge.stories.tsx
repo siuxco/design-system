@@ -3,10 +3,10 @@ import { Badge } from './Badge';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Components/Badge',
+  title: 'Data Display/Badge',
   component: Badge,
   argTypes: {
-    type: { control: { type: 'select' } },
+    variant: { control: { type: 'select' } },
   },
 } as ComponentMeta<typeof Badge>;
 
@@ -15,27 +15,45 @@ const Template: ComponentStory<typeof Badge> = (arguments_) => <Badge {...argume
 // Stories
 export const Default = Template.bind({});
 Default.args = {
-  type: 'default',
+  variant: 'default',
+  children: 'Badge',
+};
+
+export const Primary = Template.bind({});
+Primary.args = {
+  variant: 'primary',
+  children: 'Badge',
+};
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+  variant: 'secondary',
+  children: 'Badge',
+};
+
+export const Tertiary = Template.bind({});
+Tertiary.args = {
+  variant: 'tertiary',
   children: 'Badge',
 };
 
 export const IconLeft = Template.bind({});
 IconLeft.args = {
-  type: 'primary',
+  variant: 'primary',
   children: 'Badge',
-  iconLeft: 'true',
+  iconLeft: 'icon-system-shield-user-fill',
 };
 
 export const IconRight = Template.bind({});
 IconRight.args = {
-  type: 'secondary',
+  variant: 'primary',
   children: 'Badge',
-  iconRight: true,
+  iconRight: 'icon-system-medal-line',
 };
 
-export const remove = Template.bind({});
-remove.args = {
-  type: 'tertiary',
+export const closedIcon = Template.bind({});
+closedIcon.args = {
+  variant: 'tertiary',
   children: 'Badge',
-  remove: true,
+  closedIcon: true,
 };

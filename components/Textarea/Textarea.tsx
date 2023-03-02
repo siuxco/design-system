@@ -8,15 +8,12 @@ const statuses = {
   },
 };
 
-const Textarea: FC<ITextareaProperties> = ({ placeholder, label, error, disabled, className, onChange, ...rest }) => {
-  const getStatusClasses = (object) => {
+const Textarea: FC<ITextareaProperties> = ({ placeholder, label, state, disabled, className, onChange, ...rest }) => {
+  const getStatusClasses = (object: { [x: string]: any; default: any; error?: string; disable: any }) => {
     if (disabled) {
       return object.disable;
     }
-    if (error) {
-      return object.error;
-    }
-    return object.default;
+    return object[state] || object.default;
   };
   return (
     <label className={`transition-fast ${className} ${disabled && 'cursor-not-allowed'}`}>

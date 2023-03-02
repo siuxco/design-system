@@ -3,16 +3,23 @@ import { Input } from './Input';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Components/Input',
+  title: 'Forms/Input',
   component: Input,
   argTypes: {
-    status: { control: { type: 'select' } },
+    state: { control: { type: 'select' } },
     // id: {
     //   table: {
     //     disable: true,
     //   },
     // },
   },
+  decorators: [
+    (Story) => (
+      <div style={{ width: '250px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 } as ComponentMeta<typeof Input>;
 
 const Template: ComponentStory<typeof Input> = (arguments_) => <Input {...arguments_} />;
@@ -20,43 +27,43 @@ const Template: ComponentStory<typeof Input> = (arguments_) => <Input {...argume
 // Stories
 export const Default = Template.bind({});
 Default.args = {
-  status: 'default',
+  state: 'default',
+  label: 'Label',
   placeholder: 'Placeholder',
 };
 
 export const Error = Template.bind({});
 Error.args = {
-  status: 'error',
-  placeholder: 'Input with an error',
+  state: 'error',
+  label: 'Label',
+  placeholder: 'Placeholder',
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
-  status: 'disabled',
-  placeholder: 'Input disabled',
+  state: 'disabled',
+  label: 'Label',
+  placeholder: 'Placeholder',
   disabled: true,
 };
 
 export const Prefix = Template.bind({});
 Prefix.args = {
+  label: 'Label',
   prefix: 'https://',
   placeholder: 'app.siux.studio',
 };
 
-export const WithIcon = Template.bind({});
-WithIcon.args = {
-  icon: 'icon-system-home-line',
-  placeholder: 'I am an input with an icon',
+export const CustomIcon = Template.bind({});
+CustomIcon.args = {
+  label: 'Label',
+  icon: 'icon-system-link',
+  placeholder: 'Placeholder',
 };
 
 export const WithCopy = Template.bind({});
 WithCopy.args = {
+  label: 'Label',
   copy: 'copy',
-  placeholder: 'Text',
-};
-
-export const WithLabel = Template.bind({});
-WithLabel.args = {
-  label: 'Label text',
-  placeholder: 'input placeholder',
+  placeholder: 'Placeholder',
 };

@@ -17,6 +17,15 @@ export const parameters = {
       order: ['Intro', 'Components'],
     },
   },
+  backgrounds: {
+    default: 'white',
+    values: [
+      {
+        name: 'white',
+        value: '#FFFFFF',
+      },
+    ],
+  },
   html: {
     prettier: {
       tabWidth: 4,

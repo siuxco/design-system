@@ -3,7 +3,7 @@ import { Toast } from './Toast';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Components/Toast',
+  title: 'Feedback/Toast',
   component: Toast,
   argTypes: {
     title: {
@@ -15,9 +15,16 @@ export default {
     },
     state: { control: { type: 'select' } },
   },
+  decorators: [
+    (Story) => (
+      <div style={{ width: '250px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 } as ComponentMeta<typeof Toast>;
 
-const Template: ComponentStory<typeof Toast> = (args) => <Toast {...args} />;
+const Template: ComponentStory<typeof Toast> = (arguments_) => <Toast {...arguments_} />;
 
 // Stories
 export const Info = Template.bind({});
@@ -44,11 +51,17 @@ Error.args = {
   state: 'error',
 };
 
-export const WithLink = Template.bind({});
-WithLink.args = {
+export const CustomDescription = Template.bind({});
+CustomDescription.args = {
+  children: [<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>],
+  title: 'With link alert',
+};
+
+export const CustomLink = Template.bind({});
+CustomLink.args = {
   children: [
     <Toast.Link href="#" target="_blank">
-      Don't click me
+      Custom link
     </Toast.Link>,
   ],
   title: 'With link alert',
