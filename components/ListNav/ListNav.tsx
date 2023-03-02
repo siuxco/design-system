@@ -2,12 +2,12 @@ import React, { FC, ComponentProps } from 'react';
 import { IIconProperties } from '../Icon/Icon';
 import { classNames } from '../../utils/utils';
 
-export interface IListNavigationProperties extends ComponentProps<'div'> {
+export interface IListNavProperties extends ComponentProps<'div'> {
   style?: React.CSSProperties;
   className?: string;
 }
 
-const ListNavigation: FC<IListNavigationProperties> & {
+const ListNav: FC<IListNavProperties> & {
   Item: typeof Item;
 } = ({ className, style, children }) => {
   const cleanChildren = React.Children.toArray(children);
@@ -22,7 +22,7 @@ const ListNavigation: FC<IListNavigationProperties> & {
   );
 };
 
-export interface IListNavigationItemProperties {
+export interface IListNavItemProperties {
   children?: string | React.ReactNode;
   active?: boolean;
   target?: string;
@@ -32,7 +32,7 @@ export interface IListNavigationItemProperties {
   icon?: IIconProperties['icon'];
 }
 
-const Item: FC<IListNavigationItemProperties> = ({ icon, href, target, label, className, children, active }) => {
+const Item: FC<IListNavItemProperties> = ({ icon, href, target, label, className, children, active }) => {
   return (
     <li>
       <a
@@ -63,5 +63,5 @@ const Item: FC<IListNavigationItemProperties> = ({ icon, href, target, label, cl
   );
 };
 
-ListNavigation.Item = Item;
-export { ListNavigation };
+ListNav.Item = Item;
+export { ListNav };
