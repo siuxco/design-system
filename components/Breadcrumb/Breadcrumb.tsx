@@ -62,7 +62,7 @@ const Item: FC<IBreadcrumbItemProperties> = ({ theme, icon, href, target, classN
         href={href}
         target={target}
         className={classNames(
-          'hover:background-neutral-1 active:background-neutral-4 padding-xs padding-top-xxs padding-bottom-xxs border-radius-xs display-flex align-items-center',
+          'hover:background-neutral-1 active:background-neutral-2 padding-xs padding-top-xxs padding-bottom-xxs border-radius-xs display-flex align-items-center',
           themes.parent[theme],
           className,
         )}>

@@ -19,7 +19,7 @@ const sizes = {
 export interface IHeadingProperties {
   className?: string;
   children?: Array<ReactNode>;
-  size?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'xxl' | 'xl' | 'l' | 'm' | 's' | 'xs' | 'xxs';
+  size?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'xxl' | 'xl' | 'l' | 'm' | 's' | 'xs' | 'xxs' | string;
 }
 
 export const Text: FC<IHeadingProperties> = ({ size, children, className }) => {
