@@ -44,6 +44,13 @@ IconLeft.args = {
   iconLeft: 'icon-system-shield-user-fill',
 };
 
+export const Number = Template.bind({});
+Number.args = {
+  variant: 'error',
+  children: '1',
+  border: true,
+};
+
 export const IconRight = Template.bind({});
 IconRight.args = {
   variant: 'primary',
