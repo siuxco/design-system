@@ -2,13 +2,13 @@ import React, { FC, ComponentProps } from 'react';
 import { IIconProperties } from '../Icon/Icon';
 import { classNames } from '../../utils/utils';
 
-export interface IListNavProperties extends ComponentProps<'div'> {
+export interface INavigationProperties extends ComponentProps<'div'> {
   orientation?: 'horizontal' | 'vertical';
   style?: React.CSSProperties;
   className?: string;
 }
 
-const ListNav: FC<IListNavProperties> & {
+const Navigation: FC<INavigationProperties> & {
   Item: typeof Item;
 } = ({ orientation = 'horizontal', className, style, children }) => {
   const cleanChildren = React.Children.toArray(children);
@@ -32,7 +32,7 @@ const ListNav: FC<IListNavProperties> & {
   );
 };
 
-export interface IListNavItemProperties extends IListNavProperties {
+export interface INavigationItemProperties extends INavigationProperties {
   children?: string | React.ReactNode;
   active?: boolean;
   target?: string;
@@ -42,7 +42,7 @@ export interface IListNavItemProperties extends IListNavProperties {
   icon?: IIconProperties['icon'];
 }
 
-const Item: FC<IListNavItemProperties> = ({ icon, href, target, label, className, children, active }) => {
+const Item: FC<INavigationItemProperties> = ({ icon, href, target, label, className, children, active }) => {
   return (
     <li className="margin-xxs">
       <a
@@ -73,5 +73,5 @@ const Item: FC<IListNavItemProperties> = ({ icon, href, target, label, className
   );
 };
 
-ListNav.Item = Item;
-export { ListNav };
+Navigation.Item = Item;
+export { Navigation };
