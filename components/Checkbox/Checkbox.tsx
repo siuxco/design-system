@@ -1,4 +1,4 @@
-import React, { FC, ComponentProps } from 'react';
+import React, { FC, ComponentProps, useState } from 'react';
 import { classNames } from '../../utils/utils';
 
 const states = {
@@ -16,26 +16,27 @@ const states = {
 };
 
 export interface ICheckboxProperties extends Omit<ComponentProps<'input'>, 'size'> {
-  checked?: boolean;
-  label: string;
+  label?: string;
   name: string;
-  state: 'default' | 'checked';
+  id: string;
+  state: 'default' | 'checked' | 'error' | 'disabled';
 }
 
 export const Checkbox: FC<ICheckboxProperties> = ({
   className,
   state = 'default',
-  checked,
+  defaultValue,
   id,
   disabled,
   label,
   ...rest
 }) => {
+  const [isChecked, setIsChecked] = useState(defaultValue);
   const getStateClasses = (object) => {
     if (disabled) {
       return object.disable;
     }
-    if (checked) {
+    if (isChecked) {
       return object.checked;
     }
     return object[state] || object.default;
@@ -44,17 +45,29 @@ export const Checkbox: FC<ICheckboxProperties> = ({
   return (
     <div className={classNames('position-relative', className)}>
       <label htmlFor={id} className="display-flex align-items-center cursor-pointer">
-        <input className="display-none" id={id} type="checkbox" disabled={disabled} {...rest} />
+        <input
+          className="display-none"
+          id={id}
+          type="checkbox"
+          disabled={disabled}
+          onChange={() => setIsChecked((prev) => !prev)}
+          checked={Boolean(isChecked)}
+          {...rest}
+        />
         <i
           className={classNames(
             'width-l height-l font-size-s transition-fast border-radius-xs border-width-1 border-style-solid display-flex align-items-center justify-content-center',
             getStateClasses(states.parent),
             {
-              'icon-system-check-line': Boolean(checked),
+              'icon-system-check-line': Boolean(isChecked),
             },
           )}
         />
-        <span className={classNames('margin-left-xs color-neutral-7 font-weight-500', getStateClasses(states.label))}>
+        <span
+          className={classNames(
+            'margin-left-xs color-neutral-7 font-weight-500 user-select-none',
+            getStateClasses(states.label),
+          )}>
           {label}
         </span>
       </label>

@@ -7,6 +7,7 @@ export default {
   title: 'Data Display/Tooltip Fixed',
   component: TooltipFixed,
   argTypes: {
+    position: { control: { type: 'select' } },
     trigger: {
       table: {
         disable: true,

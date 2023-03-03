@@ -15,27 +15,33 @@ const Template: ComponentStory<typeof Radio> = (arguments_) => <Radio {...argume
 // Stories
 export const Default = Template.bind({});
 Default.args = {
-  state: 'default',
-  checked: false,
+  id: 'alpha',
+  // state: 'default',
   label: 'Label',
+  defaultValue: false,
 };
 
 export const Checked = Template.bind({});
 Checked.args = {
-  state: 'checked',
-  checked: true,
+  id: 'alpha',
+  // state: 'checked',
   label: 'Label',
+  defaultValue: true,
 };
 
 export const Error = Template.bind({});
 Error.args = {
+  id: 'alpha',
   state: 'error',
   label: 'Label',
+  defaultValue: false,
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
+  id: 'alpha',
   state: 'disable',
-  disabled: true,
   label: 'Label',
+  disabled: true,
+  defaultValue: false,
 };
