@@ -1,7 +1,6 @@
 import React, { FC, ComponentProps } from 'react';
 import { IIconProperties } from '../Icon/Icon';
 import { classNames } from '../../utils/utils';
-import { Badge } from '../Badge/Badge';
 
 export interface INavigationProperties extends ComponentProps<'div'> {
   orientation?: 'horizontal' | 'vertical';
@@ -33,7 +32,6 @@ const Navigation: FC<INavigationProperties> & {
 };
 
 export interface INavigationItemProperties {
-  orientation?: 'horizontal' | 'vertical';
   children?: string | React.ReactNode;
   active?: boolean;
   target?: string;
@@ -43,17 +41,7 @@ export interface INavigationItemProperties {
   icon?: IIconProperties['icon'];
 }
 
-const Item: FC<INavigationItemProperties> = ({
-  orientation,
-  icon,
-  href,
-  target,
-  label,
-  className,
-  children,
-  active,
-}) => {
-  console.log('orientation', orientation);
+const Item: FC<INavigationItemProperties> = ({ icon, href, target, className, children, active }) => {
   return (
     <li className="margin-xxs">
       <a
@@ -68,11 +56,6 @@ const Item: FC<INavigationItemProperties> = ({
         )}>
         {icon && <i className={classNames('margin-right-xs font-size-m color-neutral-4', icon)} />}
         {children}
-        {label && (
-          <Badge variant="info" border={true} className="font-size-xs margin-left-xs">
-            {label}
-          </Badge>
-        )}
       </a>
     </li>
   );

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navigation } from './Navigation';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Badge } from '../Badge/Badge';
 
 export default {
   title: 'Navigation/Navigation',
@@ -59,14 +60,20 @@ export const HorizontalWithLabel = Template.bind({});
 HorizontalWithLabel.args = {
   orientation: 'horizontal',
   children: [
-    <Navigation.Item key="b" icon="icon-system-dashboard-line" label="360" active>
+    <Navigation.Item key="b" icon="icon-system-dashboard-line" active>
       Dashboard
+      <Badge variant="primary" border={false} className="font-size-xs margin-left-xs">
+        360
+      </Badge>
     </Navigation.Item>,
     <Navigation.Item key="c" icon="icon-system-group-line">
       Team
     </Navigation.Item>,
-    <Navigation.Item key="d" icon="icon-system-folder-line" label="12">
+    <Navigation.Item key="d" icon="icon-system-folder-line">
       Projects
+      <Badge variant="primary" border={false} className="font-size-xs margin-left-xs">
+        12
+      </Badge>
     </Navigation.Item>,
     <Navigation.Item key="e" icon="icon-system-calendar-line">
       Calendar
@@ -117,14 +124,20 @@ export const VerticalWithLabel = Template.bind({});
 VerticalWithLabel.args = {
   orientation: 'vertical',
   children: [
-    <Navigation.Item key="b" icon="icon-system-dashboard-line" label="360" active>
+    <Navigation.Item key="b" icon="icon-system-dashboard-line" active>
       Dashboard
+      <Badge variant="primary" border={false} className="font-size-xs margin-left-xs">
+        360
+      </Badge>
     </Navigation.Item>,
     <Navigation.Item key="c" icon="icon-system-group-line">
       Team
     </Navigation.Item>,
-    <Navigation.Item key="d" icon="icon-system-folder-line" label="12">
+    <Navigation.Item key="d" icon="icon-system-folder-line">
       Projects
+      <Badge variant="primary" border={false} className="font-size-xs margin-left-xs">
+        12
+      </Badge>
     </Navigation.Item>,
     <Navigation.Item key="e" icon="icon-system-calendar-line">
       Calendar
