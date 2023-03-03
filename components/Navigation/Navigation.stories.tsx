@@ -29,7 +29,7 @@ Horizontal.args = {
     <Navigation.Item key="c">Team</Navigation.Item>,
     <Navigation.Item key="d">Projects</Navigation.Item>,
     <Navigation.Item key="e">Calendar</Navigation.Item>,
-    <Navigation.Item key="e">Documents</Navigation.Item>,
+    <Navigation.Item key="f">Documents</Navigation.Item>,
   ],
 };
 
@@ -49,7 +49,7 @@ HorizontalWithIcon.args = {
     <Navigation.Item key="e" icon="icon-system-calendar-line">
       Calendar
     </Navigation.Item>,
-    <Navigation.Item key="e" icon="icon-system-hard-drive-2-line">
+    <Navigation.Item key="f" icon="icon-system-hard-drive-2-line">
       Documents
     </Navigation.Item>,
   ],
@@ -71,7 +71,7 @@ HorizontalWithLabel.args = {
     <Navigation.Item key="e" icon="icon-system-calendar-line">
       Calendar
     </Navigation.Item>,
-    <Navigation.Item key="e" icon="icon-system-hard-drive-2-line">
+    <Navigation.Item key="f" icon="icon-system-hard-drive-2-line">
       Documents
     </Navigation.Item>,
   ],
@@ -87,7 +87,7 @@ Vertical.args = {
     <Navigation.Item key="c">Team</Navigation.Item>,
     <Navigation.Item key="d">Projects</Navigation.Item>,
     <Navigation.Item key="e">Calendar</Navigation.Item>,
-    <Navigation.Item key="e">Documents</Navigation.Item>,
+    <Navigation.Item key="f">Documents</Navigation.Item>,
   ],
 };
 
@@ -107,7 +107,7 @@ VerticalWithIcon.args = {
     <Navigation.Item key="e" icon="icon-system-calendar-line">
       Calendar
     </Navigation.Item>,
-    <Navigation.Item key="e" icon="icon-system-hard-drive-2-line">
+    <Navigation.Item key="f" icon="icon-system-hard-drive-2-line">
       Documents
     </Navigation.Item>,
   ],
@@ -129,7 +129,7 @@ VerticalWithLabel.args = {
     <Navigation.Item key="e" icon="icon-system-calendar-line">
       Calendar
     </Navigation.Item>,
-    <Navigation.Item key="e" icon="icon-system-hard-drive-2-line">
+    <Navigation.Item key="f" icon="icon-system-hard-drive-2-line">
       Documents
     </Navigation.Item>,
   ],

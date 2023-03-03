@@ -12,16 +12,13 @@ const Navigation: FC<INavigationProperties> & {
   Item: typeof Item;
 } = ({ orientation = 'horizontal', className, style, children }) => {
   const cleanChildren = React.Children.toArray(children);
-  const finalChildren = cleanChildren.flatMap((item, index) => [
-    React.cloneElement(<>{item}</>, { theme: cleanChildren.length - 1 !== index ? 'primary' : 'default' }),
-  ]);
+  const finalChildren = cleanChildren.flatMap((item, index) => [React.cloneElement(<>{item}</>, { key: index })]);
 
   return (
     <ul
       className={classNames(
         'color-grey-10 cursor-pointer',
         {
-          '': orientation === 'vertical',
           'display-flex': orientation === 'horizontal',
         },
         className,
@@ -32,7 +29,7 @@ const Navigation: FC<INavigationProperties> & {
   );
 };
 
-export interface INavigationItemProperties extends INavigationProperties {
+export interface INavigationItemProperties {
   children?: string | React.ReactNode;
   active?: boolean;
   target?: string;
@@ -60,7 +57,7 @@ const Item: FC<INavigationItemProperties> = ({ icon, href, target, label, classN
         {label && (
           <div
             className={classNames(
-              'background-neutral-2 padding-xs padding-top-xxs padding-bottom-xxs font-size-xs border-radius-s margin-left-s',
+              'background-neutral-2 padding-xs padding-top-none padding-bottom-none font-size-xs border-radius-s margin-left-s',
               {
                 'background-white': Boolean(active),
               },
