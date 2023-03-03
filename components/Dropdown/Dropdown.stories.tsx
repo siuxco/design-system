@@ -60,7 +60,7 @@ WithNavigation.args = {
     </Button>,
   ],
   children: [
-    <div key="content">
+    <div key="content" className="padding-xxs">
       <Navigation orientation="vertical">
         <Navigation.Item key="a" icon="icon-system-dashboard-line">
           Dashboard

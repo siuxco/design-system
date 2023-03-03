@@ -29,7 +29,7 @@ const Dropdown: FC<IDropdownProperties> = ({ trigger = 'hover', className, space
           role="presentation"
           onClick={() => setDropdown(!dropdown)}
           className={classNames(
-            'border-width-1 border-style-solid border-neutral-2 animation-fade-in animation-faster border-radius-xs position-fixed overflow-hidden z-index-5 background-white border-width-1 border-neutral-2 padding-xxs box-shadow-m',
+            'border-width-1 border-style-solid border-neutral-2 animation-fade-in animation-faster border-radius-xs position-fixed overflow-hidden z-index-5 background-white border-width-1 border-neutral-2 box-shadow-m',
             className,
           )}
           style={{ ...style }}>
