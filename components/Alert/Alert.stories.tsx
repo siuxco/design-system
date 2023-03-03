@@ -42,8 +42,8 @@ Error.args = {
   children: 'Informational note',
 };
 
-export const ClosedIcon = Template.bind({});
-ClosedIcon.args = {
+export const CloseIcon = Template.bind({});
+CloseIcon.args = {
   state: 'info',
   closeIcon: true,
   children: 'Informational note',

@@ -4,14 +4,14 @@ import { classNames } from '../../utils/utils';
 
 const variants = {
   parent: {
-    default: 'background-neutral-1 color-neutral-7',
-    primary: 'background-primary-1 color-primary-7',
-    secondary: 'background-secondary-1 color-secondary-7',
-    tertiary: 'background-tertiary-1 color-tertiary-7',
-    success: 'background-success-1 color-success-7',
-    error: 'background-error-1 color-error-7',
-    warning: 'background-warning-1 color-warning-7',
-    info: 'background-info-1 color-info-7',
+    default: 'background-neutral-1 color-neutral-7 border-neutral-2',
+    primary: 'background-primary-1 color-primary-7 border-primary-2',
+    secondary: 'background-secondary-1 color-secondary-7 border-secondary-2',
+    tertiary: 'background-tertiary-1 color-tertiary-7 border-tertiary-2',
+    success: 'background-success-1 color-success-7 border-success-2',
+    error: 'background-error-1 color-error-7 border-error-2',
+    warning: 'background-warning-1 color-warning-7 border-warning-2',
+    info: 'background-info-1 color-info-7 border-info-2',
   },
 };
 
@@ -20,7 +20,7 @@ export interface IBadgeProperties {
   style?: React.CSSProperties;
   variant?: 'default' | 'primary' | 'secondary' | 'tertiary' | 'success' | 'error' | 'warning' | 'info';
   className?: string;
-  closedIcon?: boolean;
+  closeIcon?: boolean;
   border?: boolean;
   iconRight?: IIconProperties['icon'];
   iconLeft?: IIconProperties['icon'];
@@ -28,12 +28,12 @@ export interface IBadgeProperties {
 }
 
 export const Badge: FC<IBadgeProperties> = ({
-  closedIcon,
+  closeIcon,
   children,
   style,
   iconRight,
   iconLeft,
-  border,
+  border = true,
   variant = 'default',
   className,
   onClickRemove,
@@ -54,7 +54,7 @@ export const Badge: FC<IBadgeProperties> = ({
       {iconLeft && <i className={classNames(iconLeft, 'line-height-s font-size-s margin-right-xxs')} />}
       <div className={'line-height-xs'}>{children}</div>
       {iconRight && <i className={classNames(iconRight, 'line-height-s font-size-s margin-left-xxs')} />}
-      {closedIcon && (
+      {closeIcon && (
         <i
           role="presentation"
           className="icon-system-close-line cursor-pointer font-size-s margin-left-xxs"

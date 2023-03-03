@@ -37,18 +37,35 @@ Tertiary.args = {
   children: 'Badge',
 };
 
+export const Info = Template.bind({});
+Info.args = {
+  variant: 'info',
+  children: 'Badge',
+};
+
+export const Success = Template.bind({});
+Success.args = {
+  variant: 'success',
+  children: 'Badge',
+};
+
+export const Error = Template.bind({});
+Error.args = {
+  variant: 'error',
+  children: 'Badge',
+};
+
+export const Warning = Template.bind({});
+Warning.args = {
+  variant: 'warning',
+  children: 'Badge',
+};
+
 export const IconLeft = Template.bind({});
 IconLeft.args = {
   variant: 'primary',
   children: 'Badge',
   iconLeft: 'icon-system-shield-user-fill',
-};
-
-export const Number = Template.bind({});
-Number.args = {
-  variant: 'error',
-  children: '1',
-  border: true,
 };
 
 export const IconRight = Template.bind({});
@@ -58,11 +75,18 @@ IconRight.args = {
   iconRight: 'icon-system-medal-line',
 };
 
-export const closedIcon = Template.bind({});
-closedIcon.args = {
+export const Number = Template.bind({});
+Number.args = {
+  variant: 'error',
+  children: '1',
+  border: true,
+};
+
+export const closeIcon = Template.bind({});
+closeIcon.args = {
   variant: 'tertiary',
   children: 'Badge',
-  closedIcon: true,
+  closeIcon: true,
 };
 
 export const WithBorder = Template.bind({});
@@ -70,5 +94,5 @@ WithBorder.args = {
   variant: 'tertiary',
   children: 'Badge',
   border: true,
-  closedIcon: true,
+  closeIcon: true,
 };
