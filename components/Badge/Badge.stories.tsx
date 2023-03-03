@@ -99,8 +99,8 @@ WithoutBorder.args = {
 
 export const WithShadow = Template.bind({});
 WithShadow.args = {
-  variant: 'tertiary',
-  children: 'Badge',
+  variant: 'warning',
+  children: '33°',
   className: 'box-shadow-s',
-  closeIcon: true,
+  iconLeft: 'icon-system-sun-line',
 };
