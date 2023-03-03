@@ -17,6 +17,7 @@ export interface IBadgeProperties {
   variant?: 'default' | 'primary' | 'secondary' | 'tertiary';
   className?: string;
   closedIcon?: boolean;
+  border?: boolean;
   iconRight?: IIconProperties['icon'];
   iconLeft?: IIconProperties['icon'];
   onClickRemove?: MouseEventHandler<HTMLElement>;
@@ -28,6 +29,7 @@ export const Badge: FC<IBadgeProperties> = ({
   style,
   iconRight,
   iconLeft,
+  border,
   variant = 'default',
   className,
   onClickRemove,
@@ -38,6 +40,7 @@ export const Badge: FC<IBadgeProperties> = ({
         'padding-top-xxs padding-bottom-xxs transition-fast border-radius-xxl cursor-pointer display-inline-flex align-items-center',
         variants.parent[variant],
         {
+          'border-width-1 border-style-solid': Boolean(border),
           'padding-left-xs': Boolean(iconLeft),
           'padding-left-s': Boolean(!iconLeft),
           'padding-right-xs': Boolean(iconRight),
@@ -46,9 +49,9 @@ export const Badge: FC<IBadgeProperties> = ({
         className,
       )}
       style={{ ...style }}>
-      {iconLeft && <i className={classNames(iconLeft, 'line-height-m font-size-s margin-right-xxs')} />}
-      <div className={'line-height-m font-weight-500'}>{children}</div>
-      {iconRight && <i className={classNames(iconRight, 'line-height-m font-size-s margin-left-xxs')} />}
+      {iconLeft && <i className={classNames(iconLeft, 'line-height-s font-size-s margin-right-xxs')} />}
+      <div className={'line-height-s font-weight-500'}>{children}</div>
+      {iconRight && <i className={classNames(iconRight, 'line-height-s font-size-s margin-left-xxs')} />}
       {closedIcon && (
         <i role="presentation" className="icon-system-close-line font-size-s margin-left-xxs" onClick={onClickRemove} />
       )}

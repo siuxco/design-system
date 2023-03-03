@@ -57,3 +57,11 @@ closedIcon.args = {
   children: 'Badge',
   closedIcon: true,
 };
+
+export const WithBorder = Template.bind({});
+WithBorder.args = {
+  variant: 'tertiary',
+  children: 'Badge',
+  border: true,
+  closedIcon: true,
+};
