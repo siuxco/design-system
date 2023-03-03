@@ -16,7 +16,7 @@ const Template: ComponentStory<typeof Radio> = (arguments_) => <Radio {...argume
 export const Default = Template.bind({});
 Default.args = {
   id: 'alpha',
-  state: 'default',
+  // state: 'default',
   label: 'Label',
   defaultValue: false,
 };
@@ -24,7 +24,7 @@ Default.args = {
 export const Checked = Template.bind({});
 Checked.args = {
   id: 'alpha',
-  state: 'checked',
+  // state: 'checked',
   label: 'Label',
   defaultValue: true,
 };

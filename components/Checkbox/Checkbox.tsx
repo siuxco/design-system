@@ -16,10 +16,10 @@ const states = {
 };
 
 export interface ICheckboxProperties extends Omit<ComponentProps<'input'>, 'size'> {
-  checked?: boolean;
-  label: string;
+  label?: string;
   name: string;
-  state: 'default' | 'checked';
+  id: string;
+  state: 'default' | 'checked' | 'error' | 'disabled';
 }
 
 export const Checkbox: FC<ICheckboxProperties> = ({

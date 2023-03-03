@@ -5,10 +5,12 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 export default {
   title: 'Navigation/List Navigation',
   component: ListNav,
-  argTypes: {},
+  argTypes: {
+    orientation: { control: { type: 'select' } },
+  },
   decorators: [
     (Story) => (
-      <div style={{ width: '200px' }}>
+      <div>
         <Story />
       </div>
     ),
@@ -17,8 +19,9 @@ export default {
 
 const Template: ComponentStory<typeof ListNav> = (arguments_) => <ListNav {...arguments_} />;
 
-export const Default = Template.bind({});
-Default.args = {
+export const Horizontal = Template.bind({});
+Horizontal.args = {
+  orientation: 'horizontal',
   children: [
     <ListNav.Item key="b" active>
       Dashboard
@@ -30,8 +33,9 @@ Default.args = {
   ],
 };
 
-export const WithIcon = Template.bind({});
-WithIcon.args = {
+export const HorizontalWithIcon = Template.bind({});
+HorizontalWithIcon.args = {
+  orientation: 'horizontal',
   children: [
     <ListNav.Item key="b" icon="icon-system-dashboard-line" active>
       Dashboard
@@ -51,8 +55,67 @@ WithIcon.args = {
   ],
 };
 
-export const WithLabel = Template.bind({});
-WithLabel.args = {
+export const HorizontalWithLabel = Template.bind({});
+HorizontalWithLabel.args = {
+  orientation: 'horizontal',
+  children: [
+    <ListNav.Item key="b" icon="icon-system-dashboard-line" label="360" active>
+      Dashboard
+    </ListNav.Item>,
+    <ListNav.Item key="c" icon="icon-system-group-line">
+      Team
+    </ListNav.Item>,
+    <ListNav.Item key="d" icon="icon-system-folder-line" label="12">
+      Projects
+    </ListNav.Item>,
+    <ListNav.Item key="e" icon="icon-system-calendar-line">
+      Calendar
+    </ListNav.Item>,
+    <ListNav.Item key="e" icon="icon-system-hard-drive-2-line">
+      Documents
+    </ListNav.Item>,
+  ],
+};
+
+export const Vertical = Template.bind({});
+Vertical.args = {
+  orientation: 'vertical',
+  children: [
+    <ListNav.Item key="b" active>
+      Dashboard
+    </ListNav.Item>,
+    <ListNav.Item key="c">Team</ListNav.Item>,
+    <ListNav.Item key="d">Projects</ListNav.Item>,
+    <ListNav.Item key="e">Calendar</ListNav.Item>,
+    <ListNav.Item key="e">Documents</ListNav.Item>,
+  ],
+};
+
+export const VerticalWithIcon = Template.bind({});
+VerticalWithIcon.args = {
+  orientation: 'vertical',
+  children: [
+    <ListNav.Item key="b" icon="icon-system-dashboard-line" active>
+      Dashboard
+    </ListNav.Item>,
+    <ListNav.Item key="c" icon="icon-system-group-line">
+      Team
+    </ListNav.Item>,
+    <ListNav.Item key="d" icon="icon-system-folder-line">
+      Projects
+    </ListNav.Item>,
+    <ListNav.Item key="e" icon="icon-system-calendar-line">
+      Calendar
+    </ListNav.Item>,
+    <ListNav.Item key="e" icon="icon-system-hard-drive-2-line">
+      Documents
+    </ListNav.Item>,
+  ],
+};
+
+export const VerticalWithLabel = Template.bind({});
+VerticalWithLabel.args = {
+  orientation: 'vertical',
   children: [
     <ListNav.Item key="b" icon="icon-system-dashboard-line" label="360" active>
       Dashboard

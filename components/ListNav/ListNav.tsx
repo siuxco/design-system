@@ -3,26 +3,36 @@ import { IIconProperties } from '../Icon/Icon';
 import { classNames } from '../../utils/utils';
 
 export interface IListNavProperties extends ComponentProps<'div'> {
+  orientation?: 'horizontal' | 'vertical';
   style?: React.CSSProperties;
   className?: string;
 }
 
 const ListNav: FC<IListNavProperties> & {
   Item: typeof Item;
-} = ({ className, style, children }) => {
+} = ({ orientation = 'horizontal', className, style, children }) => {
   const cleanChildren = React.Children.toArray(children);
   const finalChildren = cleanChildren.flatMap((item, index) => [
     React.cloneElement(<>{item}</>, { theme: cleanChildren.length - 1 !== index ? 'primary' : 'default' }),
   ]);
 
   return (
-    <ul className={classNames('color-grey-10 cursor-pointer', className)} style={{ ...style }}>
+    <ul
+      className={classNames(
+        'color-grey-10 cursor-pointer',
+        {
+          '': orientation === 'vertical',
+          'display-flex': orientation === 'horizontal',
+        },
+        className,
+      )}
+      style={{ ...style }}>
       {finalChildren}
     </ul>
   );
 };
 
-export interface IListNavItemProperties {
+export interface IListNavItemProperties extends IListNavProperties {
   children?: string | React.ReactNode;
   active?: boolean;
   target?: string;
@@ -34,12 +44,12 @@ export interface IListNavItemProperties {
 
 const Item: FC<IListNavItemProperties> = ({ icon, href, target, label, className, children, active }) => {
   return (
-    <li>
+    <li className="margin-xxs">
       <a
         href={href}
         target={target}
         className={classNames(
-          'position-relative color-neutral-7 hover:color-neutral-10 cursor-pointer hover:background-neutral-1 active:background-neutral-2 color-neutral-7 padding-m padding-top-s padding-bottom-s border-radius-xs display-flex align-items-center margin-bottom-xxs',
+          'position-relative color-neutral-7 hover:color-neutral-10 cursor-pointer hover:background-neutral-1 active:background-neutral-2 color-neutral-7 padding-m padding-top-s padding-bottom-s border-radius-xs display-flex align-items-center',
           {
             'background-neutral-1 color-black hover:color-black': Boolean(active),
           },

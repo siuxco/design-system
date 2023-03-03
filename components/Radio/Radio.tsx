@@ -16,10 +16,10 @@ const states = {
 };
 
 export interface IRadioProperties extends ComponentProps<'input'> {
-  checked?: boolean;
-  label: string;
+  label?: string;
   name: string;
-  state: 'default' | 'checked';
+  id: string;
+  state: 'default' | 'checked' | 'error' | 'disabled';
 }
 
 export const Radio: FC<IRadioProperties> = ({
