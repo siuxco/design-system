@@ -8,7 +8,7 @@ export default {
   title: 'Navigation/Dropdown',
   component: Dropdown,
   argTypes: {
-    orientation: { control: { type: 'select' } },
+    trigger: { control: { type: 'select' } },
   },
   decorators: [
     (Story) => (

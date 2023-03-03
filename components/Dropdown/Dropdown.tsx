@@ -2,7 +2,7 @@ import React, { FC, ComponentProps, useState } from 'react';
 import { classNames } from '../../utils/utils';
 
 export interface IDropdownProperties extends ComponentProps<'div'> {
-  space: JSX.Element[] | JSX.Element; // ToDo check type
+  space: ComponentProps<'div'>['children'];
   trigger: 'hover' | 'click';
   style?: React.CSSProperties;
   className?: string;

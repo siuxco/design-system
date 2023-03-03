@@ -12,7 +12,9 @@ const Navigation: FC<INavigationProperties> & {
   Item: typeof Item;
 } = ({ orientation = 'horizontal', className, style, children }) => {
   const cleanChildren = React.Children.toArray(children);
-  const finalChildren = cleanChildren.flatMap((item, index) => [React.cloneElement(<>{item}</>, { key: index })]);
+  const finalChildren = cleanChildren.flatMap((item, index) => [
+    React.cloneElement(<>{item}</>, { key: index, orientation }),
+  ]);
 
   return (
     <ul
@@ -30,6 +32,7 @@ const Navigation: FC<INavigationProperties> & {
 };
 
 export interface INavigationItemProperties {
+  orientation?: 'horizontal' | 'vertical';
   children?: string | React.ReactNode;
   active?: boolean;
   target?: string;
@@ -39,7 +42,17 @@ export interface INavigationItemProperties {
   icon?: IIconProperties['icon'];
 }
 
-const Item: FC<INavigationItemProperties> = ({ icon, href, target, label, className, children, active }) => {
+const Item: FC<INavigationItemProperties> = ({
+  orientation,
+  icon,
+  href,
+  target,
+  label,
+  className,
+  children,
+  active,
+}) => {
+  console.log('orientation', orientation);
   return (
     <li className="margin-xxs">
       <a
