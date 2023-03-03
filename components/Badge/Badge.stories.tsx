@@ -89,10 +89,18 @@ closeIcon.args = {
   closeIcon: true,
 };
 
-export const WithBorder = Template.bind({});
-WithBorder.args = {
+export const WithoutBorder = Template.bind({});
+WithoutBorder.args = {
   variant: 'tertiary',
   children: 'Badge',
-  border: true,
+  border: false,
+  closeIcon: true,
+};
+
+export const WithShadow = Template.bind({});
+WithShadow.args = {
+  variant: 'tertiary',
+  children: 'Badge',
+  className: 'box-shadow-s',
   closeIcon: true,
 };
