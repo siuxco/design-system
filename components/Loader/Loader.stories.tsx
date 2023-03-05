@@ -19,25 +19,29 @@ const Template: ComponentStory<typeof Loader> = (arguments_) => <Loader {...argu
 // Stories
 export const Default = Template.bind({});
 Default.args = {
-  loader: 4,
-  velocity: 'fast',
+  loader: 1,
+  velocity: 'default',
+  variant: 'neutral',
   size: 'md',
+  shape: 'square',
 };
 
 export const Variant = Template.bind({});
 Variant.args = {
-  loader: 4,
-  velocity: 'fast',
+  loader: 1,
+  velocity: 'default',
   variant: 'primary',
   size: 'md',
+  shape: 'square',
 };
 
 export const Size = Template.bind({});
 Size.args = {
-  loader: 4,
-  velocity: 'fast',
-  variant: 'primary',
+  loader: 1,
+  velocity: 'default',
+  variant: 'neutral',
   size: 'lg',
+  shape: 'square',
 };
 
 export const ShapeRound = Template.bind({});
@@ -49,11 +53,10 @@ ShapeRound.args = {
   shape: 'round',
 };
 
-export const ShapeSquare = Template.bind({});
-ShapeSquare.args = {
+export const Simple = Template.bind({});
+Simple.args = {
   loader: 1,
   velocity: 'default',
   variant: 'neutral',
   size: 'md',
-  shape: 'square',
 };
