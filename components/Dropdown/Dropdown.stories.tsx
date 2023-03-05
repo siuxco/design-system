@@ -10,13 +10,6 @@ export default {
   argTypes: {
     trigger: { control: { type: 'select' } },
   },
-  decorators: [
-    (Story) => (
-      <div>
-        <Story />
-      </div>
-    ),
-  ],
 } as ComponentMeta<typeof Dropdown>;
 
 const Template: ComponentStory<typeof Dropdown> = (arguments_) => <Dropdown {...arguments_} />;
@@ -31,7 +24,7 @@ TriggerOnHover.args = {
   ],
   children: [
     <div key="content" className="padding-m">
-      <div>Custom content</div>
+      Custom content
     </div>,
   ],
 };
@@ -46,7 +39,7 @@ TriggerOnClick.args = {
   ],
   children: [
     <div key="content" className="padding-m">
-      <div>Custom content</div>
+      Custom content
     </div>,
   ],
 };
@@ -60,17 +53,27 @@ WithNavigation.args = {
     </Button>,
   ],
   children: [
-    <div key="content" className="padding-xxs">
+    <div key="content" className="padding-xs">
       <Navigation orientation="vertical">
-        <Navigation.Item key="a" icon="icon-system-dashboard-line">
+        <Button
+          key="a"
+          variant="cancel-light"
+          size="medium"
+          iconLeft="icon-system-dashboard-line"
+          className="margin-bottom-xxs">
           Dashboard
-        </Navigation.Item>
-        <Navigation.Item key="b" icon="icon-system-group-line">
+        </Button>
+        <Button
+          key="b"
+          variant="cancel-link"
+          size="medium"
+          iconLeft="icon-system-group-line"
+          className="margin-bottom-xxs">
           Team
-        </Navigation.Item>
-        <Navigation.Item key="c" icon="icon-system-folder-line">
+        </Button>
+        <Button key="c" variant="cancel-link" size="medium" iconLeft="icon-system-folder-line">
           Projects
-        </Navigation.Item>
+        </Button>
       </Navigation>
     </div>,
   ],
