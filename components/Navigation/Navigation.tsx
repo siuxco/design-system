@@ -9,9 +9,7 @@ export interface INavigationProperties extends ComponentProps<'div'> {
 
 const Navigation: FC<INavigationProperties> = ({ orientation = 'horizontal', className, style, children }) => {
   const cleanChildren = React.Children.toArray(children);
-  const finalChildren = cleanChildren.flatMap((item, index) => [
-    React.cloneElement(<>{item}</>, { key: index, orientation }),
-  ]);
+  const finalChildren = cleanChildren.flatMap((item, index) => [React.cloneElement(<>{item}</>, { key: index })]);
 
   return (
     <ul

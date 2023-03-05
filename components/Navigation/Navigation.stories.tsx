@@ -234,3 +234,51 @@ VerticalWithLabel.args = {
     </Button>,
   ],
 };
+
+export const CustomVariantActive = Template.bind({});
+CustomVariantActive.args = {
+  orientation: 'vertical',
+  children: [
+    <Button
+      key="a"
+      variant="primary-light"
+      size="medium"
+      iconLeft="icon-system-dashboard-line"
+      className="margin-bottom-xxs">
+      Dashboard
+      <Badge variant="primary" border={false} className="font-size-xs margin-left-xs">
+        360
+      </Badge>
+    </Button>,
+    <Button key="b" variant="cancel-link" size="medium" iconLeft="icon-system-group-line" className="margin-bottom-xxs">
+      Team
+    </Button>,
+    <Button
+      key="c"
+      variant="cancel-link"
+      size="medium"
+      iconLeft="icon-system-folder-line"
+      className="margin-bottom-xxs">
+      Projects
+      <Badge variant="primary" border={false} className="font-size-xs margin-left-xs">
+        12
+      </Badge>
+    </Button>,
+    <Button
+      key="d"
+      variant="cancel-link"
+      size="medium"
+      iconLeft="icon-system-calendar-line"
+      className="margin-bottom-xxs">
+      Calendar
+    </Button>,
+    <Button
+      key="e"
+      variant="cancel-link"
+      size="medium"
+      iconLeft="icon-system-hard-drive-2-line"
+      className="margin-bottom-xxs">
+      Documents
+    </Button>,
+  ],
+};
