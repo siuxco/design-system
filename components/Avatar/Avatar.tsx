@@ -52,7 +52,7 @@ export const Avatar: FC<IAvatarProperties> = ({
       }}
       title={title}
       className={classNames(
-        'display-flex align-items-center justify-content-center font-weight-600 text-transform-uppercase background-size-cover background-position-center-center',
+        'position-relative display-flex align-items-center justify-content-center font-weight-600 text-transform-uppercase background-size-cover background-position-center-center',
         {
           'border-radius-m': shape === 'square',
           'border-radius-full': shape === 'round',

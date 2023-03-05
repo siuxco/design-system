@@ -62,13 +62,30 @@ Delete.args = {
   variant: 'delete-light',
   children: 'Delete',
 };
+
 export const Black = Template.bind({});
 Black.args = {
   variant: 'black',
   children: 'Button',
 };
+
 export const White = Template.bind({});
 White.args = {
   variant: 'white',
   children: 'Button',
+};
+
+export const Ghost = Template.bind({});
+Ghost.args = {
+  variant: 'white',
+  children: 'Button',
+  className: 'border-style-solid border-width-1 border-neutral-2 hover:border-neutral-3',
+};
+
+export const Shadow = Template.bind({});
+Shadow.args = {
+  variant: 'white',
+  children: 'Login with Google',
+  iconLeft: 'icon-system-google-fill',
+  className: 'border-style-solid border-width-1 border-neutral-2 hover:border-neutral-3 box-shadow-s',
 };
