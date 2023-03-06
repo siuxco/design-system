@@ -30,7 +30,7 @@ export interface IKbdProperties {
 
 export const Kbd: FC<IKbdProperties> = ({ children, size = 'md', style, className }) => {
   return (
-    <div
+    <kbd
       className={classNames(
         'background-white box-shadow-xs box-shadow-s padding-xxs border-width-1 border-style-solid border-neutral-2',
         'display-flex align-items-center justify-content-center color-neutral-7 font-weight-600 text-transform-uppercase',
@@ -43,6 +43,6 @@ export const Kbd: FC<IKbdProperties> = ({ children, size = 'md', style, classNam
         borderBottom: '2px solid var(--color-neutral-3)',
       }}>
       <div>{children}</div>
-    </div>
+    </kbd>
   );
 };
