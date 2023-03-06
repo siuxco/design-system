@@ -1,4 +1,4 @@
-import React, { FC, HTMLProps, ChangeEventHandler } from 'react';
+import React, { FC, HTMLProps, ComponentProps } from 'react';
 import { classNames, getStatusClasses } from '../../utils/utils';
 import { IIconProperties } from '../Icon/Icon';
 
@@ -9,7 +9,7 @@ export interface IUploadProperties extends HTMLProps<HTMLElement> {
   accept?: string;
   acceptTypes?: string;
   disabled?: boolean;
-  event?: ChangeEventHandler;
+  onChange?: ComponentProps<'input'>['onChange'];
   style?: React.CSSProperties;
 }
 
@@ -31,7 +31,7 @@ export const Upload: FC<IUploadProperties> = ({
   accept = 'image/png, image/jpg',
   acceptTypes = 'PNG, JPG, GIF up to 5MB',
   children,
-  event,
+  onChange,
   className,
   style,
   state,
@@ -56,7 +56,7 @@ export const Upload: FC<IUploadProperties> = ({
             icon,
           )}
         />
-        <input type="file" accept={accept} onChange={event} className="display-none" disabled={disabled} />
+        <input type="file" accept={accept} onChange={onChange} className="display-none" disabled={disabled} />
         <div className="color-black text-align-center font-size-s">{children}</div>
         {acceptTypes && (
           <div className="color-neutral-7 text-align-center font-size-xs margin-top-xxs">{acceptTypes}</div>
