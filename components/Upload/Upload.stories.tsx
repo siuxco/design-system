@@ -11,17 +11,17 @@ const Template: ComponentStory<typeof Upload> = (arguments_) => <Upload {...argu
 
 export const Default = Template.bind({});
 Default.args = {
-  children: 'Upload a file or drag and drop',
+  children: 'Upload a file',
 };
 
 export const Error = Template.bind({});
 Error.args = {
-  children: 'Upload a file or drag and drop',
+  children: 'Upload a file',
   state: 'error',
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
-  children: 'Upload a file or drag and drop',
+  children: 'Upload a file',
   disabled: true,
 };
