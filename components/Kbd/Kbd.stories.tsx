@@ -3,7 +3,7 @@ import { Kbd } from './Kbd';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Feedback/Kbd',
+  title: 'Data Display/Kbd',
   component: Kbd,
   argTypes: {
     size: { control: { type: 'select' } },
