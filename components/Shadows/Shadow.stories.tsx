@@ -11,52 +11,52 @@ export default {
   },
 } as ComponentMeta<typeof Siux>;
 
-const Template: ComponentStory<typeof Siux> = (arguments_) => <Siux {...arguments_} />;
+const Template: ComponentStory<typeof Siux> = (arguments_) => <div {...arguments_} />;
 const TemplateAll: ComponentStory<typeof Siux> = () => (
   <>
     <div className="margin-s font-size-s font-weight-600 text-align-center">Shadow</div>
     <div className="display-flex">
       <div>
-        <Siux className="box-shadow-xs padding-xxl border-radius-m margin-s" />
+        <div className="box-shadow-xs padding-xxl border-radius-m margin-s" />
         <div className="text-align-center color-neutral-7">xs</div>
       </div>
       <div>
-        <Siux className="box-shadow-s padding-xxl border-radius-m margin-s" />
+        <div className="box-shadow-s padding-xxl border-radius-m margin-s" />
         <div className="text-align-center color-neutral-7">s</div>
       </div>
       <div>
-        <Siux className="box-shadow-m padding-xxl border-radius-m margin-s" />
+        <div className="box-shadow-m padding-xxl border-radius-m margin-s" />
         <div className="text-align-center color-neutral-7">m</div>
       </div>
       <div>
-        <Siux className="box-shadow-l padding-xxl border-radius-m margin-s" />
+        <div className="box-shadow-l padding-xxl border-radius-m margin-s" />
         <div className="text-align-center color-neutral-7">l</div>
       </div>
       <div>
-        <Siux className="box-shadow-xl padding-xxl border-radius-m margin-s" />
+        <div className="box-shadow-xl padding-xxl border-radius-m margin-s" />
         <div className="text-align-center color-neutral-7">xl</div>
       </div>
     </div>
     <div className="margin-s margin-top-xxl font-size-s font-weight-600 text-align-center">Shadow hover</div>
     <div className="display-flex">
       <div>
-        <Siux className="hover:box-shadow-xs padding-xxl border-radius-m margin-s" />
+        <div className="hover:box-shadow-xs padding-xxl border-radius-m margin-s" />
         <div className="text-align-center color-neutral-7">xs</div>
       </div>
       <div>
-        <Siux className="box-shadow-xs hover:box-shadow-s padding-xxl border-radius-m margin-s" />
+        <div className="box-shadow-xs hover:box-shadow-s padding-xxl border-radius-m margin-s" />
         <div className="text-align-center color-neutral-7">s</div>
       </div>
       <div>
-        <Siux className="box-shadow-s hover:box-shadow-m padding-xxl border-radius-m margin-s" />
+        <div className="box-shadow-s hover:box-shadow-m padding-xxl border-radius-m margin-s" />
         <div className="text-align-center color-neutral-7">m</div>
       </div>
       <div>
-        <Siux className="box-shadow-m hover:box-shadow-l padding-xxl border-radius-m margin-s" />
+        <div className="box-shadow-m hover:box-shadow-l padding-xxl border-radius-m margin-s" />
         <div className="text-align-center color-neutral-7">l</div>
       </div>
       <div>
-        <Siux className="box-shadow-l hover:box-shadow-xl padding-xxl border-radius-m margin-s" />
+        <div className="box-shadow-l hover:box-shadow-xl padding-xxl border-radius-m margin-s" />
         <div className="text-align-center color-neutral-7">xl</div>
       </div>
     </div>

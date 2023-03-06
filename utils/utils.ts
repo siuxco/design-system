@@ -25,3 +25,14 @@ export const classNames = (...classes: ClassNamesArgument[]) => {
     ),
   ].join(' ');
 };
+
+export const getStatusClasses = (
+  object: { [x: string]: any; default: any; error?: string; disable: any },
+  state,
+  disabled,
+) => {
+  if (disabled) {
+    return object.disable;
+  }
+  return object[state] || object.default;
+};
