@@ -59,3 +59,17 @@ Disabled.args = {
     </>
   ),
 };
+
+export const CustomIcon = Template.bind({});
+CustomIcon.args = {
+  state: 'default',
+  label: 'Select country',
+  icon: 'icon-system-global-line',
+  children: (
+    <>
+      <Select.Option value="1">Argentine</Select.Option>
+      <Select.Option value="2">Uruguay</Select.Option>
+      <Select.Option value="3">Chile</Select.Option>
+    </>
+  ),
+};
