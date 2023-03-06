@@ -37,7 +37,9 @@ Basic.args = {
         Organizations are the interface between your team, products and brands. Manage access and roles according to
         each brand to ensure proper privacy.
       </div>
-      <Button iconRight="icon-system-arrow-right-line">Learn more</Button>
+      <Button variant="primary" iconRight="icon-system-arrow-right-line">
+        Learn more
+      </Button>
     </div>,
   ],
 };
