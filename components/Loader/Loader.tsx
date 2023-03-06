@@ -10,9 +10,9 @@ const loaders = {
     5: 'icon-system-loader-5-line',
   },
   sizes: {
-    sm: 'font-size-m',
+    sm: 'font-size-s',
     md: 'font-size-l',
-    lg: 'font-size-xl',
+    lg: 'font-size-xxl',
   },
   animation: {
     slower: 'animation-slower',
@@ -27,7 +27,7 @@ export interface ILoaderProperties {
   style?: React.CSSProperties;
   velocity: 'slower' | 'slow' | 'default' | 'fast' | 'faster';
   variant: 'neutral' | 'primary' | 'secondary' | 'tertiary';
-  size: 'xs' | 'sm' | 'md';
+  size: 'sm' | 'md' | 'lg';
   shape: 'square' | 'round';
   loader: 1 | 2 | 3 | 4 | 5;
   className?: string;
@@ -51,7 +51,7 @@ export const Loader: FC<ILoaderProperties> = ({
       })}>
       <div
         className={classNames(
-          'animation-rotate-right animation-infinite position-relative display-flex align-items-center justify-content-center font-weight-600 text-transform-uppercase background-size-cover background-position-center-center',
+          'animation-rotate-right animation-infinite',
           `color-${variant}-7`,
           loaders.animation[velocity],
           loaders.type[loader],

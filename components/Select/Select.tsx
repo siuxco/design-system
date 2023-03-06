@@ -38,8 +38,6 @@ const Select: React.ForwardRefExoticComponent<React.PropsWithoutRef<ISelectPrope
         }
         return object[state] || object.default;
       };
-
-      console.log(getStatusClasses(states.parent));
       return (
         <label
           className={classNames('transition-fast position-relative', className, {

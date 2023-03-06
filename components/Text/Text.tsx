@@ -16,12 +16,12 @@ const sizes = {
   xxs: 'font-size-xxs',
 };
 
-export interface IHeadingProperties {
+export interface ITextProperties {
   className?: string;
   children?: Array<ReactNode>;
   size?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'xxl' | 'xl' | 'l' | 'm' | 's' | 'xs' | 'xxs' | string;
 }
 
-export const Text: FC<IHeadingProperties> = ({ size, children, className }) => {
+export const Text: FC<ITextProperties> = ({ size, children, className }) => {
   return <div className={classNames(sizes[size], className)}>{children}</div>;
 };
