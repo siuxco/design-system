@@ -16,17 +16,17 @@ const Template: ComponentStory<typeof Kbd> = (arguments_) => <Kbd {...arguments_
 export const Small = Template.bind({});
 Small.args = {
   size: 'sm',
-  children: ['⌘'],
+  value: '⌘',
 };
 
 export const Medium = Template.bind({});
 Medium.args = {
   size: 'md',
-  children: ['⌘'],
+  value: '⌘',
 };
 
 export const Large = Template.bind({});
 Large.args = {
   size: 'lg',
-  children: ['⌘'],
+  value: '⌘',
 };
