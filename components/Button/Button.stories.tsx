@@ -87,5 +87,5 @@ Shadow.args = {
   variant: 'white',
   children: 'Login with Google',
   iconLeft: 'icon-system-google-fill',
-  className: 'border-style-solid border-width-1 border-neutral-2 hover:border-neutral-3 box-shadow-s',
+  className: 'border-style-solid border-width-1 border-neutral-2 hover:border-neutral-3 box-shadow-s hover:box-shadow-m',
 };
