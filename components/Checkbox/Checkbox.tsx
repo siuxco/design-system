@@ -50,7 +50,7 @@ export const Checkbox: FC<ICheckboxProperties> = ({
           id={id}
           type="checkbox"
           disabled={disabled}
-          onChange={() => setIsChecked((prev) => !prev)}
+          onChange={() => setIsChecked((previous) => !previous)}
           checked={Boolean(isChecked)}
           {...rest}
         />
