@@ -17,7 +17,7 @@ const editors = {
   },
 };
 
-export const TextEditor: FC<ITextEditorProperties> = ({ variant = 'default', children, className }) => {
+export const TextEditor: FC<ITextEditorProperties> = ({ variant = 'default', className }) => {
   return (
     <div className={classNames(editors.variants[variant], className)}>
       <div className="color-neutral-4">Font size</div>
@@ -106,7 +106,6 @@ export const TextEditor: FC<ITextEditorProperties> = ({ variant = 'default', chi
         <div className="width-l height-l background-tertiary-9 cursor-pointer" />
         <div className="width-l height-l background-tertiary-10 cursor-pointer" />
       </div>
-      {/* {children} */}
     </div>
   );
 };

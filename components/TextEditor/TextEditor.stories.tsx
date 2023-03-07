@@ -19,9 +19,7 @@ export default {
 
 const Template: ComponentStory<typeof TextEditor> = (arguments_) => <TextEditor {...arguments_} />;
 
-export const Basic = Template.bind({});
-
-export const Default = Template.bind({});
-Default.args = {
+export const Popover = Template.bind({});
+Popover.args = {
   children: 'TextEditor',
 };
