@@ -1,11 +1,11 @@
 {
-    "name": "@siuxco/react-components",
-    "version": "1.1.0-test-3.0",
-    "description": "SIUX Studio React components library",
-    "homepage": "https://github.com/siuxco/react-components",
+    "name": "@siuxco/design-system",
+    "version": "1.0.0-test-1.0",
+    "description": "SIUX — Design System",
+    "homepage": "https://github.com/siuxco/design-system",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/siuxco/react-components.git"
+        "url": "git+https://github.com/siuxco/design-system.git"
     },
     "publishConfig": {
         "access": "public"
