@@ -57,7 +57,7 @@ export const CustomStyle = Template.bind({});
 CustomStyle.args = {
   direction: 'top',
   variant: 'white',
-  className: '',
+  className: 'border-width-1 border-neutral-2 border-style-solid',
   tooltipContent: [
     <div key="alpha">
       <div className="font-size-s color-primary-7 font-weight-600">Message</div>

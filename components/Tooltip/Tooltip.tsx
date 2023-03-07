@@ -5,6 +5,7 @@ export interface ITooltipProperties extends HTMLProps<HTMLElement> {
   variant: 'black' | 'white';
   direction: 'top' | 'bottom' | 'left' | 'right';
   tooltipContent: ComponentProps<'div'>['children'];
+  className: string;
   delay: number;
 }
 
@@ -12,6 +13,7 @@ export const Tooltip: FC<ITooltipProperties> = ({
   variant = 'black',
   direction = 'top',
   children,
+  className,
   tooltipContent,
   delay = 0,
 }) => {
@@ -71,6 +73,7 @@ export const Tooltip: FC<ITooltipProperties> = ({
           className={classNames(
             'backdrop-filter-blur-m position-absolute animation-animated animation-fade-in width-fit-content padding-xs padding-right-s padding-left-s border-radius-m box-shadow-m white-space-no-wrap',
             tooltip.variant[variant],
+            className,
           )}
           style={{
             transform: 'translateX(-50%)',
