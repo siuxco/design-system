@@ -50,7 +50,7 @@ export const Radio: FC<IRadioProperties> = ({
           id={id}
           type="radio"
           disabled={disabled}
-          onChange={() => setIsChecked((prev) => !prev)}
+          onChange={() => setIsChecked((previous) => !previous)}
           checked={Boolean(isChecked)}
           {...rest}
         />

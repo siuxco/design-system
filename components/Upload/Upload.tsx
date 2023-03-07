@@ -2,7 +2,7 @@ import React, { FC, HTMLProps, ComponentProps } from 'react';
 import { classNames, getStatusClasses } from '../../utils/utils';
 import { IIconProperties } from '../Icon/Icon';
 
-export interface IUploadProperties extends HTMLProps<HTMLElement> {
+export interface IUploadProperties extends HTMLProps<HTMLInputElement> {
   icon: IIconProperties['icon'];
   className?: string;
   state?: string;
@@ -36,6 +36,7 @@ export const Upload: FC<IUploadProperties> = ({
   style,
   state,
   disabled,
+  ...rest
 }) => {
   return (
     <label>
@@ -56,7 +57,7 @@ export const Upload: FC<IUploadProperties> = ({
             icon,
           )}
         />
-        <input type="file" accept={accept} onChange={onChange} className="display-none" disabled={disabled} />
+        <input type="file" accept={accept} onChange={onChange} className="display-none" disabled={disabled} {...rest} />
         <div className="color-black text-align-center font-size-s">{children}</div>
         {acceptTypes && (
           <div className="color-neutral-7 text-align-center font-size-xs margin-top-xxs">{acceptTypes}</div>
