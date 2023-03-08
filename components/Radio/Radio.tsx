@@ -4,7 +4,7 @@ import { classNames } from '../../utils/utils';
 const states = {
   parent: {
     default: 'background-white border-neutral-2 hover:border-neutral-6 focus:border-primary-7 box-shadow-xs',
-    checked: 'border-primary-8 background-white color-primary-8 hover:border-primary-6 hover:color-primary-6',
+    checked: 'border-primary-8 background-white color-primary-8 hover:border-primary-6 hover:color-primary-6 box-shadow-xs',
     error: 'border-error-6 background-white color-error-6 hover:border-error-4 hover:color-error-4',
     disable: 'border-neutral-2 cursor-not-allowed color-neutral-3 background-neutral-1',
   },
