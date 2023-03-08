@@ -28,7 +28,7 @@ export const parameters = {
   },
   html: {
     prettier: {
-      tabWidth: 4,
+      tabWidth: 2,
       useTabs: false,
       htmlWhitespaceSensitivity: 'strict',
       highlighter: {

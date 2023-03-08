@@ -5,7 +5,7 @@ import { Badge } from '../Badge/Badge';
 import { Button } from '../Button/Button';
 
 export default {
-  title: 'Cards/Card',
+  title: 'Data display/Card',
   component: Card,
   argTypes: {
     variant: { control: { type: 'select' } },
