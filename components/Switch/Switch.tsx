@@ -3,10 +3,10 @@ import { classNames } from '../../utils/utils';
 
 const states = {
   parent: {
-    default: 'background-white border-neutral-2 hover:border-neutral-6 focus:border-primary-7 box-shadow-xs',
-    checked: 'border-primary-8 background-white color-primary-8 hover:border-primary-6 hover:color-primary-6 box-shadow-xs',
-    error: 'border-error-6 background-white color-error-6 hover:border-error-4 hover:color-error-4',
-    disable: 'border-neutral-2 cursor-not-allowed color-neutral-3 background-neutral-1',
+    default: 'background-neutral-2 border-neutral-3 hover:border-neutral-6 focus:border-primary-7 box-shadow-xs',
+    checked: 'border-success-5 background-success-5 box-shadow-xs',
+    error: 'background-error-3 border-error-5',
+    disable: 'border-neutral-2 cursor-not-allowed background-neutral-1',
   },
   label: {
     default: '',
@@ -15,14 +15,14 @@ const states = {
   },
 };
 
-export interface ICheckboxProperties extends Omit<ComponentProps<'input'>, 'size'> {
+export interface ISwitchProperties extends Omit<ComponentProps<'input'>, 'size'> {
   label?: string;
   name: string;
   id: string;
   state: 'default' | 'checked' | 'error' | 'disabled';
 }
 
-export const Checkbox: FC<ICheckboxProperties> = ({
+export const Switch: FC<ISwitchProperties> = ({
   className,
   state = 'default',
   defaultValue,
@@ -54,18 +54,25 @@ export const Checkbox: FC<ICheckboxProperties> = ({
           checked={Boolean(isChecked)}
           {...rest}
         />
-        <i
+        <div
           className={classNames(
-            'width-l height-l font-size-s transition-fast border-radius-xs border-width-1 border-style-solid display-flex align-items-center justify-content-center',
+            'transition-all transition-duration-400 width-xxl height-l font-size-s transition-fast border-radius-m border-width-1 border-style-solid display-flex align-items-center',
             getStateClasses(states.parent),
-            {
-              'icon-system-check-line': Boolean(isChecked),
-            },
-          )}
-        />
+          )}>
+          <div
+            className={classNames(
+              'transition-transform transition-duration-400 width-m height-m background-white border-radius-full margin-xxs',
+            )}
+            style={{
+              transform: `${isChecked ? 'translateX(1.4em)' : ''}`,
+            }}></div>
+        </div>
         <span
           className={classNames(
             'margin-left-xs color-neutral-7 font-weight-500 user-select-none',
+            {
+              'cursor-not-allowed': Boolean(disabled),
+            },
             getStateClasses(states.label),
           )}>
           {label}
