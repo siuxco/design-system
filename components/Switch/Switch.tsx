@@ -4,8 +4,8 @@ import { classNames } from '../../utils/utils';
 const states = {
   parent: {
     default: 'background-neutral-2 border-neutral-3 hover:border-neutral-6 focus:border-primary-7 box-shadow-xs',
-    checked: 'border-success-5 background-success-5 box-shadow-xs',
-    error: 'background-error-3 border-error-5',
+    checked: 'border-primary-5 background-primary-5 box-shadow-xs',
+    error: 'background-error-3 border-error-6',
     disable: 'border-neutral-2 cursor-not-allowed background-neutral-1',
   },
   label: {
