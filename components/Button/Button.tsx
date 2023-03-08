@@ -35,8 +35,8 @@ const variants = {
       'background-error-1 color-error-7 hover:color-error-8 hover:background-opacity-error-4 active:background-opacity-error-6',
 
     // Black and white
-    black: 'background-black hover:background-opacity-black-8 color-white active:background-opacity-black-6',
-    white: 'background-white hover:background-opacity-neutral-1 color-black active:background-neutral-2',
+    black: 'background-black hover:background-opacity-black-7 color-white active:background-opacity-black-8',
+    white: 'background-white hover:background-opacity-neutral-2 color-black active:background-neutral-2',
 
     // Disabled
     disabled: 'background-neutral-1 color-neutral-5 cursor-not-allowed',
