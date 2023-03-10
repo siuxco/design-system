@@ -31,8 +31,8 @@ export default create({
   inputTextColor: 'black',
   inputBorderRadius: 4,
 
-  brandTitle: 'Siux Studio React Components',
-  brandUrl: 'https://app.siux.studio',
-  brandImage: '/images/siux-studio.svg',
-  brandTarget: '_blank',
+  brandTitle: 'SIUX — Design System',
+  brandUrl: '/',
+  brandImage: 'images/siux-studio.svg',
+  brandTarget: '_self',
 });
