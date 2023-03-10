@@ -1,0 +1,19 @@
+name: Design Siux Studio Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    name: Deploy design.siux.studio
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploying design.siux.studio through ssh execution script
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: sudo /opt/builds/design.siux.studio/cicd-action.sh

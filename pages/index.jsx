@@ -20,7 +20,7 @@ export default function Home() {
         {/* SIUX Studio + Next.js */}
         <h1 className={styles.title}>
           <a href="https://siux.studio" target="_blank">
-            <Image src="/images/siux-studio.svg" alt="Vercel Logo" width={80} height={80} />
+            <Image src="/images/siux-studio.svg" alt="Siux Studio Logo" width={80} height={80} />
           </a>
           <div className="margin-left-m margin-right-m margin-bottom-xs">+</div>
           <a href="https://nextjs.org" target="_blank">
