@@ -1,7 +1,3 @@
-import Image from 'next/image'
-import { Card } from '../components/Card.jsx'
-import { IndexContent } from '../utils/links.js'
-
 const styles = {
   container: 'padding-left-s padding-right-s container-desktop',
   grid: 'display-flex flex-wrap',
@@ -14,50 +10,6 @@ const styles = {
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
-
-        {/* SIUX Studio + Next.js */}
-        <h1 className={styles.title}>
-          <a href="https://siux.studio" target="_blank">
-            <Image src="/images/siux-studio.svg" alt="Vercel Logo" width={80} height={80} />
-          </a>
-          <div className="margin-left-m margin-right-m margin-bottom-xs">+</div>
-          <a href="https://nextjs.org" target="_blank">
-            <Image src="/images/next-js.svg" alt="Vercel Logo" width={120} height={40} />
-          </a>
-        </h1>
-
-        {/* Getting started */}
-        <div className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/_app.js</code>
-          {' '}and{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </div>
-
-        <div>
-          {/* SIUX Studio links */}
-          <h3 className={styles.subtitle}>Studio</h3>
-          <div className={styles.grid}>
-            {
-              IndexContent.siuxStudioLinks.map((link, i) => {
-                return (<Card key={i} link={link} />)
-              })
-            }
-          </div>
-
-          {/* Next links */}
-          <h3 className={styles.subtitle}>Next.js</h3>
-          <div className={styles.grid}>
-            {
-              IndexContent.nextLinks.map((link, i) => {
-                return (<Card key={i} link={link} />)
-              })
-            }
-          </div>
-        </div>
-      </main>
-    </div>
+    <div className={styles.container}></div>
   )
 }
