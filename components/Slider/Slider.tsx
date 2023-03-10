@@ -44,6 +44,7 @@ export const Slider: FC<ISliderProperties> = ({
 
   return (
     <div className={classNames('position-relative', className)}>
+      {/* Inject once and verify */}
       <style>
         {`input[type='range'] {
             -webkit-appearance: none;
@@ -107,14 +108,15 @@ export const Slider: FC<ISliderProperties> = ({
         }`}
       </style>
       <label htmlFor={id} className="cursor-pointer">
-        <div
-          className={classNames(
-            'margin-bottom-xxs margin-left-xxs color-neutral-7 font-weight-500 user-select-none',
-            getStateClasses(states.label),
-          )}>
-          {label}
-          {value}
-        </div>
+        {label && (
+          <div
+            className={classNames(
+              'margin-bottom-xxs margin-left-xxs color-neutral-7 font-weight-500 user-select-none',
+              getStateClasses(states.label),
+            )}>
+            {label}
+          </div>
+        )}
         <input
           id={id}
           onChange={(event_) => {
