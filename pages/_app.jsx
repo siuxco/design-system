@@ -9,8 +9,8 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>SIUX Studio + Next.js Integration</title>
-        <meta name="description" content="SIUX Studio + Next.js Integration" />
+        <title>SIUX — Design System</title>
+        <meta name="description" content="SIUX — Design System" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Component {...pageProps} />
