@@ -30,9 +30,9 @@ export default create({
   inputBorder: '#c6d0d5',
   inputTextColor: 'black',
   inputBorderRadius: 4,
-
+  
   brandTitle: 'SIUX — Design System',
-  brandUrl: 'https://design.siux.studio/',
-  brandImage: '/images/siux-design.svg',
+  brandUrl: '/',
+  brandImage: 'images/siux-design.svg',
   brandTarget: '_self',
 });
