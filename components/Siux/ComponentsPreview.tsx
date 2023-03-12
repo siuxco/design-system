@@ -62,7 +62,9 @@ export const ComponentsPreview: FC<IComponentsPreviewProperties> = ({ className 
     { category: 'editor', name: 'text-editor', image: texteditor },
   ];
   return (
-    <div className={classNames('display-flex flex-wrap', className)}>
+    <div
+      className={classNames('display-flex flex-wrap', className)}
+      style={{ marginLeft: '-16px', marginRight: '-16px' }}>
       {ComponentsList.map((component, index) => {
         return (
           <a
@@ -74,6 +76,11 @@ export const ComponentsPreview: FC<IComponentsPreviewProperties> = ({ className 
               <div className="margin-left-s margin-top-xs font-size-s color-neutral-7 font-weight-600 text-transform-capitalize">
                 {component.name.replace('-', ' ')}
               </div>
+              {/* <iframe
+                title={component.name}
+                className="width-full"
+                src={`/iframe.html?args=&id=${component.category}-${component.name}&viewMode=story`}
+              /> */}
               <img src={component.image} alt={component.name} className="width-full" />
             </div>
           </a>
