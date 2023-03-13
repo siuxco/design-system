@@ -3,7 +3,7 @@ import { TextEditor } from './TextEditor';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Editor/Text Editor',
+  title: 'Components/Text Editor',
   component: TextEditor,
   argTypes: {
     variant: { control: { type: 'select' } },

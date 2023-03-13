@@ -2,7 +2,7 @@ import React from 'react';
 import { Alert } from './Alert';
 
 export default {
-  title: 'Feedback/Alert',
+  title: 'Components/Alert',
   component: Alert,
   argTypes: {
     state: { control: { type: 'select' } },

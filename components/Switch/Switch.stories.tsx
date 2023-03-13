@@ -3,7 +3,7 @@ import { Switch } from './Switch';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Forms/Switch',
+  title: 'Components/Switch',
   component: Switch,
   argTypes: {
     state: { control: { type: 'select' } },

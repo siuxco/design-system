@@ -4,7 +4,7 @@ import { Button } from '../Button/Button';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Feedback/Message',
+  title: 'Components/Message',
   component: Message,
   argTypes: {
     state: { control: { type: 'select' } },

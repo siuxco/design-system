@@ -3,7 +3,7 @@ import { Button } from './Button';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'General/Button',
+  title: 'Components/Button',
   component: Button,
   argTypes: {
     size: { control: { type: 'select' } },

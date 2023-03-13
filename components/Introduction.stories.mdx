@@ -1,26 +1,22 @@
 import { Meta } from '@storybook/addon-docs';
 import SIUXDS from './assets/siux-design-system.png';
-import { Badge } from './Badge/Badge.tsx';
 import { Message } from './Message/Message.tsx';
 import { Button } from './Button/Button.tsx';
 import { ComponentsPreview } from './Siux/ComponentsPreview.tsx';
 
-<Meta title="Intro" />
+<Meta title="SIUX Design System" />
 
 <img src={SIUXDS} alt="SIUX Design System" />
-<h1 className="font-weight-700 color-black">SIUX Design System</h1>
-<Badge variant="primary" border={false}>
-  v1.0.0
-</Badge>
-<div className="font-size-s line-height-m color-neutral-7 padding-top-l padding-bottom-l">
+<h1 className="font-weight-800 color-black">SIUX Design System</h1>
+<h2 className="font-size-m line-height-m color-neutral-7 margin-top-m margin-bottom-l">
   Our goal is to provide a comprehensive set of design components, guidelines, and best practices for creating beautiful
   and intuitive user experiences. We prioritize simplicity and ease of use, making it easy for designers and developers
   to create consistent and cohesive interfaces across all their projects.
-</div>
+</h2>
 
-<ComponentsPreview />
+<div className="font-size-l font-weight-600 color-black margin-top-xxl">Components</div>
+<ComponentsPreview className="margin-bottom-xl margin-top-s" />
 
-<div className="padding-m" />
 <Message title="Feedback">
   Our system is constantly evolving and improving, driven by community contributions and feedback. Whether you're a
   seasoned designer or just getting started, we believe our design system can help you create great experiences faster
