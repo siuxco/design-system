@@ -3,7 +3,7 @@ import { Tooltip } from './Tooltip';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Data Display/Tooltip',
+  title: 'Components/Tooltip',
   component: Tooltip,
   argTypes: {
     variant: { control: { type: 'select' } },

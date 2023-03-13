@@ -3,7 +3,7 @@ import { Select } from './Select';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Forms/Select',
+  title: 'Components/Select',
   component: Select,
   argTypes: {
     state: { control: { type: 'select' } },

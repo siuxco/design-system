@@ -33,7 +33,7 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: ['Intro', 'Components'],
+      order: ['SIUX Design System', 'Getting Started', 'Components'],
     },
   },
   backgrounds: {

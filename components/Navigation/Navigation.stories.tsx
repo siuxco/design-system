@@ -5,7 +5,7 @@ import { Badge } from '../Badge/Badge';
 import { Button } from '../Button/Button';
 
 export default {
-  title: 'Navigation/Navigation',
+  title: 'Components/Navigation',
   component: Navigation,
   argTypes: {
     orientation: { control: { type: 'select' } },

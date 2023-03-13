@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import UserAvatar from '../assets/avatar-marcos-sanchez.jpg';
 
 export default {
-  title: 'Data Display/Avatar',
+  title: 'Components/Avatar',
   component: Avatar,
   argTypes: {
     size: { control: { type: 'select' } },

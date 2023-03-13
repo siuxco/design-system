@@ -3,7 +3,7 @@ import { Upload } from './Upload';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Forms/Upload',
+  title: 'Components/Upload',
   component: Upload,
 } as ComponentMeta<typeof Upload>;
 

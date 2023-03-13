@@ -4,7 +4,7 @@ import { Button } from '../Button/Button';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Feedback/Empty State',
+  title: 'Components/Empty State',
   component: EmptyState,
   argTypes: {
     state: { control: { type: 'select' } },

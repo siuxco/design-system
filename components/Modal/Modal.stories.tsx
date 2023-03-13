@@ -4,7 +4,7 @@ import { Button } from '../Button/Button';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'General/Modal',
+  title: 'Components/Modal',
   component: Modal,
   argTypes: {
     size: { control: { type: 'select' } },

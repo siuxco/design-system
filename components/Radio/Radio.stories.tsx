@@ -3,7 +3,7 @@ import { Radio } from './Radio';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Forms/Radio',
+  title: 'Components/Radio',
   component: Radio,
   argTypes: {
     state: { control: { type: 'select' } },

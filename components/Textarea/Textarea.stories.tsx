@@ -3,7 +3,7 @@ import { Textarea } from './Textarea';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Forms/Textarea',
+  title: 'Components/Textarea',
   component: Textarea,
   argTypes: {
     state: { control: { type: 'select' } },

@@ -5,7 +5,7 @@ import { Button } from '../Button/Button';
 import { Navigation } from '../Navigation/Navigation';
 
 export default {
-  title: 'Navigation/Dropdown',
+  title: 'Components/Dropdown',
   component: Dropdown,
   argTypes: {
     trigger: { control: { type: 'select' } },

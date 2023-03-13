@@ -3,7 +3,7 @@ import { Loader } from './Loader';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Feedback/Loader',
+  title: 'Components/Loader',
   component: Loader,
   argTypes: {
     variant: { control: { type: 'select' } },
