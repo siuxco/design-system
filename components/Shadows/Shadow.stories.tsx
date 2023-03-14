@@ -3,7 +3,7 @@ import { Siux } from '../Siux/Siux';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Utilities/Shadow',
+  title: 'Design Tokens/Shadow',
   component: Siux,
   argTypes: {
     size: { control: { type: 'select' } },
@@ -12,7 +12,7 @@ export default {
 } as ComponentMeta<typeof Siux>;
 
 const Template: ComponentStory<typeof Siux> = (arguments_) => <div {...arguments_} />;
-const TemplateAll: ComponentStory<typeof Siux> = () => (
+const TemplateGeneral: ComponentStory<typeof Siux> = () => (
   <>
     <div className="margin-s font-size-s font-weight-600 text-align-left">Shadow</div>
     <div className="display-flex flex-wrap">
@@ -64,7 +64,7 @@ const TemplateAll: ComponentStory<typeof Siux> = () => (
 );
 
 // Stories
-export const General = TemplateAll.bind({});
+export const General = TemplateGeneral.bind({});
 
 export const ExtraSmall = Template.bind({});
 ExtraSmall.args = {
