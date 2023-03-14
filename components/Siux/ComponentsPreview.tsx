@@ -73,7 +73,7 @@ export const ComponentsPreview: FC<IComponentsPreviewProperties> = ({ className 
             className="display-flex width-full flex-grow-1 border-style-solid border-neutral-2 border-width-1 border-radius-s overflow-hidden cursor-pointer box-shadow-s hover:box-shadow-l hover:border-primary-7 transition-all margin-m"
             style={{ flexBasis: '200px' }}>
             <div>
-              <div className="margin-left-s margin-top-xs font-size-s color-neutral-7 font-weight-600 text-transform-capitalize">
+              <div className="margin-left-s margin-top-xs font-size-s color-neutral-10 font-weight-500 text-transform-capitalize">
                 {component.name.replace('-', ' ')}
               </div>
               {/* <iframe
