@@ -1,16 +1,15 @@
-import React, { FC, ComponentProps, useState } from 'react';
+import React, { FC, ComponentProps, useState, useRef } from 'react';
+import { useOutsideListener } from '../../hooks/useOutsideListener';
 import { classNames } from '../../utils/utils';
 
-export interface IDropdownProperties extends ComponentProps<'div'> {
+export interface IDropdownProperties extends Pick<ComponentProps<'div'>, 'children' | 'className'> {
   space: ComponentProps<'div'>['children'];
   trigger: 'hover' | 'click';
-  style?: React.CSSProperties;
-  className?: string;
 }
 
-const Dropdown: FC<IDropdownProperties> = ({ trigger = 'hover', className, space, style, children }) => {
+const Dropdown: FC<IDropdownProperties> = ({ trigger = 'hover', className, space, children }) => {
   const [dropdown, setDropdown] = useState(false);
-
+  const wrapper = useRef(null);
   const triggerProperties =
     trigger === 'hover'
       ? {
@@ -21,8 +20,10 @@ const Dropdown: FC<IDropdownProperties> = ({ trigger = 'hover', className, space
           onClick: () => setDropdown(!dropdown),
         };
 
+  useOutsideListener(wrapper, () => setDropdown(false));
+
   return (
-    <div {...triggerProperties} className="position-relative">
+    <div ref={wrapper} {...triggerProperties} className="position-relative">
       <div className="padding-bottom-xs">{space}</div>
       {dropdown && (
         <div
@@ -31,8 +32,7 @@ const Dropdown: FC<IDropdownProperties> = ({ trigger = 'hover', className, space
           className={classNames(
             'position-absolute border-width-1 border-style-solid border-neutral-2 animation-fade-in animation-faster border-radius-xs overflow-hidden z-index-5 background-white border-width-1 border-neutral-2 box-shadow-m',
             className,
-          )}
-          style={{ ...style }}>
+          )}>
           {children}
         </div>
       )}
