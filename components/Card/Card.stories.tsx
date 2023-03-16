@@ -48,11 +48,3 @@ export const Default = Template.bind({});
 Default.args = {
   children: 'Card',
 };
-
-export const Custom = Template.bind({});
-Custom.args = {
-  children: 'Card',
-  variant: 'custom',
-  className:
-    'padding-xl cursor-pointer background-white box-shadow-l hover:box-shadow-xl border-width-1 border-style-solid border-neutral-2 border-radius-m padding-l',
-};
