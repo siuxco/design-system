@@ -118,7 +118,7 @@ const Button = forwardRef<HTMLButtonElement, IButtonProperties>(
         {...rest}>
         <div
           className={classNames(
-            'display-flex align-items-center font-weight-500 padding-top-none padding-bottom-none pointer-events-none',
+            'display-flex align-items-center line-height-s font-weight-500 padding-top-none padding-bottom-none pointer-events-none',
             sizes.child[size],
             {
               'padding-right-none': Boolean(iconRight),

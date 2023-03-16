@@ -2272,7 +2272,8 @@ export interface IIconProperties extends HTMLProps<HTMLElement> {
     | 'icon-system-door-open-line'
     | 'icon-system-door-open-fill'
     | 'icon-system-door-closed-line'
-    | 'icon-system-door-closed-fill';
+    | 'icon-system-door-closed-fill'
+    | string;
   className?: string;
 }
 
