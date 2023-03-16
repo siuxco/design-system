@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, forwardRef, ComponentProps } from 'react';
+import React, { forwardRef, ComponentProps } from 'react';
 import { IIconProperties } from '../Icon/Icon';
 import { classNames } from '../../utils/utils';
 
@@ -61,17 +61,39 @@ const sizes = {
   },
 };
 
-const Button = forwardRef<HTMLInputElement, IButtonProperties>(
+export interface IButtonProperties extends ComponentProps<'button'> {
+  iconLeft?: IIconProperties['icon'];
+  iconRight?: IIconProperties['icon'];
+  loading?: boolean;
+  size?: 'small' | 'medium' | 'large';
+  variant?:
+    | 'primary'
+    | 'primary-light'
+    | 'primary-link'
+    | 'secondary'
+    | 'secondary-light'
+    | 'secondary-link'
+    | 'tertiary'
+    | 'tertiary-light'
+    | 'tertiary-link'
+    | 'cancel'
+    | 'cancel-light'
+    | 'cancel-link'
+    | 'delete'
+    | 'delete-light'
+    | 'black'
+    | 'white';
+}
+
+const Button = forwardRef<HTMLButtonElement, IButtonProperties>(
   (
     {
       size = 'medium',
       variant = 'primary',
-      className = '',
+      className,
       iconLeft,
       iconRight,
       children,
-      style,
-      onClick,
       disabled = false,
       loading = false,
       ...rest
@@ -81,10 +103,8 @@ const Button = forwardRef<HTMLInputElement, IButtonProperties>(
     const finalVariant = disabled ? 'disabled' : variant;
     return (
       <button
-        disabled={disabled || loading}
         ref={ref}
-        type="button"
-        onClick={onClick}
+        disabled={disabled || loading}
         className={classNames(
           'border-radius-xs text-align-center transition-all',
           sizes.parent[size],
@@ -95,7 +115,6 @@ const Button = forwardRef<HTMLInputElement, IButtonProperties>(
           },
           className,
         )}
-        style={{ ...style }}
         {...rest}>
         <div
           className={classNames(
@@ -114,22 +133,10 @@ const Button = forwardRef<HTMLInputElement, IButtonProperties>(
               )}
             />
           ) : (
-            iconLeft && (
-              <i
-                className={classNames('line-height-xxs', iconLeft, sizes.icon[size], {
-                  'margin-right-xs': children || iconRight,
-                })}
-              />
-            )
+            iconLeft && <i className={classNames('margin-right-xs', iconLeft, sizes.icon[size])} />
           )}
-          {children}
-          {!loading && iconRight && (
-            <i
-              className={classNames('line-height-xxs', iconRight, sizes.icon[size], {
-                'margin-left-xs': children || iconLeft,
-              })}
-            />
-          )}
+          <span>{children}</span>
+          {!loading && iconRight && <i className={classNames('margin-left-xs', iconRight, sizes.icon[size])} />}
         </div>
       </button>
     );
@@ -137,65 +144,5 @@ const Button = forwardRef<HTMLInputElement, IButtonProperties>(
 );
 
 Button.displayName = 'Button';
-
-export interface IButtonProperties extends ComponentProps<'button'> {
-  /**
-   * Add inline styles to the component
-   */
-  style?: React.CSSProperties;
-  /**
-   * Icon placed before button text
-   */
-  iconLeft?: IIconProperties['icon'];
-  /**
-   * Icon placed after button text
-   */
-  iconRight?: IIconProperties['icon'];
-  /**
-   * If 'true' loading icon will appear before button text
-   */
-  loading?: boolean;
-  /**
-   * The size of the component
-   */
-  size?: 'small' | 'medium' | 'large';
-  /**
-   * The content of the component
-   */
-  children?: any;
-  /**
-   * The variant of the component
-   */
-  variant?:
-    | 'primary'
-    | 'primary-light'
-    | 'primary-link'
-    | 'secondary'
-    | 'secondary-light'
-    | 'secondary-link'
-    | 'tertiary'
-    | 'tertiary-light'
-    | 'tertiary-link'
-    | 'cancel'
-    | 'cancel-light'
-    | 'cancel-link'
-    | 'delete'
-    | 'delete-light'
-    | 'black'
-    | 'white';
-  /**
-   * If 'true' the component is disabled
-   */
-  disabled?: boolean;
-  /**
-   * Callback fired when the button is clicked.
-   * You can pull out the new value by accessing event.target.value (string).
-   */
-  onClick?: MouseEventHandler;
-  /**
-   * Add classes to the component
-   */
-  className?: string;
-}
 
 export { Button };
