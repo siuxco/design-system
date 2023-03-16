@@ -18,14 +18,14 @@ const states = {
 
 export interface IAlertProperties extends Pick<ComponentProps<'div'>, 'children' | 'className'> {
   icon: string;
-  closeIcon: boolean;
-  onClose: () => void;
+  closeIcon?: boolean;
+  onClose?: () => void;
   state: 'info' | 'success' | 'warning' | 'error';
 }
 
 const Alert: FC<IAlertProperties> & { Link: typeof Link } = ({
   icon,
-  state,
+  state = 'info',
   onClose,
   children,
   closeIcon,
