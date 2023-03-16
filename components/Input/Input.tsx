@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, ComponentProps } from 'react';
 import { IIconProperties } from '../Icon/Icon';
 import { classNames } from '../../utils/utils';
 
@@ -15,12 +15,8 @@ const statuses = {
   },
 };
 
-export interface IInputProperties {
-  className?: string;
-  disabled?: boolean;
+export interface IInputProperties extends ComponentProps<'input'> {
   icon?: IIconProperties['icon'];
-  id?: string;
-  placeholder?: string;
   state: 'default' | 'error' | 'disable';
   prefix?: any;
   copy?: any;
@@ -28,7 +24,7 @@ export interface IInputProperties {
 }
 
 const Input = forwardRef<HTMLInputElement, IInputProperties>(
-  ({ placeholder, prefix = '', copy = '', label = '', className, icon, state, id, disabled, ...rest }, ref) => {
+  ({ placeholder, prefix, copy, label, className, icon, state, disabled, ...rest }, ref) => {
     const getStatusClasses = (object: { [x: string]: any; default: any; error?: string; disable: any }) => {
       if (disabled) {
         return object.disable;
@@ -59,12 +55,9 @@ const Input = forwardRef<HTMLInputElement, IInputProperties>(
             </div>
           )}
           <input
-            name={id}
-            placeholder={placeholder}
             ref={ref}
-            id={id}
+            placeholder={placeholder}
             disabled={disabled}
-            type={state}
             className={classNames(
               'transition-fast padding-xs font-size-s color-black background-white border-radius-xs border-width-1 border-style-solid',
               getStatusClasses(statuses.parent),
@@ -85,7 +78,7 @@ const Input = forwardRef<HTMLInputElement, IInputProperties>(
                 getStatusClasses(statuses.icon),
                 getStatusClasses(statuses.parent),
               )}>
-              <i className="icon-system-file-copy-line position-absolute" style={{ marginLeft: '-22px' }} />
+              <i className="icon-system-file-copy-line position-absolute margin-left-xs" style={{ left: '0px' }} />
               {copy}
             </div>
           )}
