@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC, ComponentProps } from 'react';
 import { classNames } from '../../utils/utils';
 
 const variants = {
@@ -21,9 +21,7 @@ const variants = {
   'caption-2': 'font-size-xxs font-weight-600',
 };
 
-export interface ITextProperties {
-  className?: string;
-  children?: string;
+export interface ITextProperties extends Pick<ComponentProps<'div'>, 'className' | 'children'> {
   variant?:
     | 'display-1'
     | 'display-2'
