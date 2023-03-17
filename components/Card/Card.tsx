@@ -1,17 +1,14 @@
-import React, { FC, ReactNode } from 'react';
+import React, { ComponentProps, FC } from 'react';
 import { classNames } from '../../utils/utils';
 
-export interface ICardProperties {
-  className?: string;
+export interface ICardProperties extends Pick<ComponentProps<'div'>, 'children' | 'className'> {
   variant?: 'default' | 'custom';
-  children?: Array<ReactNode>;
 }
 
 const cards = {
   variants: {
     default:
       'background-white box-shadow-m border-width-1 border-style-solid border-neutral-2 border-radius-s padding-l',
-    custom: '',
   },
 };
 

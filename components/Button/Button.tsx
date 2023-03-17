@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, forwardRef, ComponentProps } from 'react';
+import React, { forwardRef, ComponentProps } from 'react';
 import { IIconProperties } from '../Icon/Icon';
 import { classNames } from '../../utils/utils';
 
@@ -61,111 +61,11 @@ const sizes = {
   },
 };
 
-const Button = forwardRef<HTMLInputElement, IButtonProperties>(
-  (
-    {
-      size = 'medium',
-      variant = 'primary',
-      className = '',
-      iconLeft,
-      iconRight,
-      children,
-      style,
-      onClick,
-      disabled = false,
-      loading = false,
-      ...rest
-    },
-    ref,
-  ) => {
-    const finalVariant = disabled ? 'disabled' : variant;
-    return (
-      <button
-        disabled={disabled || loading}
-        ref={ref}
-        type="button"
-        onClick={onClick}
-        className={classNames(
-          'border-radius-xs text-align-center transition-all',
-          sizes.parent[size],
-          variants.parent[finalVariant],
-          {
-            'cursor-pointer': !loading && !disabled,
-            'cursor-progress': loading,
-          },
-          className,
-        )}
-        style={{ ...style }}
-        {...rest}>
-        <div
-          className={classNames(
-            'display-flex align-items-center font-weight-500 padding-top-none padding-bottom-none pointer-events-none',
-            sizes.child[size],
-            {
-              'padding-right-none': Boolean(iconRight),
-              'padding-left-xxs': Boolean(iconLeft),
-            },
-          )}>
-          {loading ? (
-            <i
-              className={classNames(
-                'icon-system-loader-4-line opacity-7 button-loading margin-right-xxs animation-animated animation-rotate-right animation-infinite',
-                sizes.icon[size],
-              )}
-            />
-          ) : (
-            iconLeft && (
-              <i
-                className={classNames('line-height-xxs', iconLeft, sizes.icon[size], {
-                  'margin-right-xs': children || iconRight,
-                })}
-              />
-            )
-          )}
-          {children}
-          {!loading && iconRight && (
-            <i
-              className={classNames('line-height-xxs', iconRight, sizes.icon[size], {
-                'margin-left-xs': children || iconLeft,
-              })}
-            />
-          )}
-        </div>
-      </button>
-    );
-  },
-);
-
-Button.displayName = 'Button';
-
 export interface IButtonProperties extends ComponentProps<'button'> {
-  /**
-   * Add inline styles to the component
-   */
-  style?: React.CSSProperties;
-  /**
-   * Icon placed before button text
-   */
   iconLeft?: IIconProperties['icon'];
-  /**
-   * Icon placed after button text
-   */
   iconRight?: IIconProperties['icon'];
-  /**
-   * If 'true' loading icon will appear before button text
-   */
   loading?: boolean;
-  /**
-   * The size of the component
-   */
   size?: 'small' | 'medium' | 'large';
-  /**
-   * The content of the component
-   */
-  children?: any;
-  /**
-   * The variant of the component
-   */
   variant?:
     | 'primary'
     | 'primary-light'
@@ -183,19 +83,66 @@ export interface IButtonProperties extends ComponentProps<'button'> {
     | 'delete-light'
     | 'black'
     | 'white';
-  /**
-   * If 'true' the component is disabled
-   */
-  disabled?: boolean;
-  /**
-   * Callback fired when the button is clicked.
-   * You can pull out the new value by accessing event.target.value (string).
-   */
-  onClick?: MouseEventHandler;
-  /**
-   * Add classes to the component
-   */
-  className?: string;
 }
+
+const Button = forwardRef<HTMLButtonElement, IButtonProperties>(
+  (
+    {
+      size = 'medium',
+      variant = 'primary',
+      className,
+      iconLeft,
+      iconRight,
+      children,
+      disabled = false,
+      loading = false,
+      ...rest
+    },
+    ref,
+  ) => {
+    const finalVariant = disabled ? 'disabled' : variant;
+    return (
+      <button
+        ref={ref}
+        disabled={disabled || loading}
+        className={classNames(
+          'border-radius-xs text-align-center transition-all',
+          sizes.parent[size],
+          variants.parent[finalVariant],
+          {
+            'cursor-pointer': !loading && !disabled,
+            'cursor-progress': loading,
+          },
+          className,
+        )}
+        {...rest}>
+        <div
+          className={classNames(
+            'display-flex align-items-center line-height-s font-weight-500 padding-top-none padding-bottom-none pointer-events-none',
+            sizes.child[size],
+            {
+              'padding-right-none': Boolean(iconRight),
+              'padding-left-xxs': Boolean(iconLeft),
+            },
+          )}>
+          {loading ? (
+            <i
+              className={classNames(
+                'icon-system-loader-4-line opacity-7 button-loading margin-right-xxs animation-animated animation-rotate-right animation-infinite',
+                sizes.icon[size],
+              )}
+            />
+          ) : (
+            iconLeft && <i className={classNames('margin-right-xs', iconLeft, sizes.icon[size])} />
+          )}
+          <span>{children}</span>
+          {!loading && iconRight && <i className={classNames('margin-left-xs', iconRight, sizes.icon[size])} />}
+        </div>
+      </button>
+    );
+  },
+);
+
+Button.displayName = 'Button';
 
 export { Button };

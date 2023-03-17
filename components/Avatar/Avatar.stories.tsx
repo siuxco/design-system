@@ -24,6 +24,15 @@ Text.args = {
   title: 'Marcos Sanchez',
 };
 
+export const Square = Template.bind({});
+Square.args = {
+  variant: 'primary',
+  size: 'sm',
+  text: 'MS',
+  shape: 'square',
+  title: 'Marcos Sanchez',
+};
+
 export const Image = Template.bind({});
 Image.args = {
   variant: 'neutral',
