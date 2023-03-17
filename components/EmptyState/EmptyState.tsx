@@ -1,5 +1,5 @@
-import React, { FC, ReactNode } from 'react';
-import { IIconProperties } from '../Icon/Icon';
+import React, { FC, ComponentProps } from 'react';
+import { Icon, IIconProperties } from '../Icon/Icon';
 import { classNames } from '../../utils/utils';
 
 const states = {
@@ -12,26 +12,22 @@ const states = {
   },
 };
 
-export interface IEmptyStateProperties {
-  style?: React.CSSProperties;
-  children?: Array<ReactNode>;
-  className?: string;
+export interface IEmptyStateProperties extends Pick<ComponentProps<'div'>, 'children' | 'className'> {
   icon: IIconProperties['icon'];
   title: string;
-  state: 'default' | 'border';
+  state?: 'default' | 'border';
 }
 
 export const EmptyState: FC<IEmptyStateProperties> = ({
-  children,
-  className,
   title = 'No projects',
-  style,
   icon = 'icon-system-folder-add-line',
   state = 'default',
+  children,
+  className,
 }) => {
   return (
-    <div className={classNames('text-align-center', states[state].className, className)} style={style}>
-      <i className={classNames('font-size-h4 font-weight-100 color-neutral-5', icon)} />
+    <div className={classNames('text-align-center', states[state].className, className)}>
+      <Icon icon={icon} className={classNames('font-size-h4 font-weight-100 color-neutral-5')} />
       <div className="font-primary font-size-s font-weight-600 margin-top-s">{title}</div>
       {children && <div className="color-neutral-7 line-height-m margin-top-xxs">{children}</div>}
     </div>

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, ComponentProps } from 'react';
 import { classNames } from '../../utils/utils';
 
 const sizes = {
@@ -19,23 +19,20 @@ const sizes = {
   },
 };
 
-export interface IAvatarProperties {
-  style?: React.CSSProperties;
-  variant: 'neutral' | 'primary' | 'secondary' | 'tertiary';
+export interface IAvatarProperties extends Pick<ComponentProps<'div'>, 'className'> {
+  variant?: 'neutral' | 'primary' | 'secondary' | 'tertiary';
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
-  image: string;
-  title: string;
-  text: string;
-  shape: 'square' | 'round';
-  className?: string;
+  shape?: 'square' | 'circle';
+  image?: string;
+  text?: string;
+  title?: string;
 }
 
 export const Avatar: FC<IAvatarProperties> = ({
   variant = 'neutral',
-  shape = 'round',
+  shape = 'circle',
   size = 'md',
   title,
-  style,
   image,
   text,
   className,
@@ -48,14 +45,13 @@ export const Avatar: FC<IAvatarProperties> = ({
         minHeight: sizes.container[size],
         width: sizes.container[size],
         height: sizes.container[size],
-        ...style,
       }}
       title={title}
       className={classNames(
         'position-relative display-flex align-items-center justify-content-center font-weight-600 text-transform-uppercase background-size-cover background-position-center-center',
         {
           'border-radius-m': shape === 'square',
-          'border-radius-full': shape === 'round',
+          'border-radius-full': shape === 'circle',
         },
         `background-${variant}-1 color-${variant}-7`,
         sizes.font[size],

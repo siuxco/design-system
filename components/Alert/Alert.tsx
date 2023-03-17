@@ -1,4 +1,4 @@
-import React, { FC, ComponentProps } from 'react';
+import React, { ComponentProps, FC } from 'react';
 import { classNames } from '../../utils/utils';
 
 const states = {
@@ -16,23 +16,20 @@ const states = {
   },
 };
 
-export interface IAlertProperties extends ComponentProps<'div'> {
-  children: any;
-  className: string;
-  closeIcon: boolean;
+export interface IAlertProperties extends Pick<ComponentProps<'div'>, 'children' | 'className'> {
   icon: string;
-  onCloseClick: () => void;
+  closeIcon?: boolean;
+  onClose?: () => void;
   state: 'info' | 'success' | 'warning' | 'error';
 }
 
 const Alert: FC<IAlertProperties> & { Link: typeof Link } = ({
-  className,
   icon,
-  state,
+  state = 'info',
+  onClose,
   children,
-  onCloseClick,
   closeIcon,
-  style,
+  className,
 }) => {
   return (
     <div
@@ -40,8 +37,7 @@ const Alert: FC<IAlertProperties> & { Link: typeof Link } = ({
         'transition-fast position-relative border-radius-xs overflow-hidden border-width-1 border-style-solid display-flex align-items-center justify-content-space-between padding-xs',
         states.parent[state],
         className,
-      )}
-      style={style}>
+      )}>
       <div className="display-flex align-items-center">
         <i className={`${states.icon[state]} ${icon} font-size-l margin-right-xs`} />
         <div className="color-neutral-9 line-height-s width-full margin-right-xxs">{children}</div>
@@ -50,21 +46,10 @@ const Alert: FC<IAlertProperties> & { Link: typeof Link } = ({
         <i
           role="presentation"
           className={'icon-system-close-line font-size-s color-neutral-7 hover:color-grey-8 cursor-pointer'}
-          onClick={onCloseClick}
+          onClick={onClose}
         />
       )}
     </div>
-  );
-};
-
-const Link: FC<ILinkProperties> = ({ children, href, target, className }) => {
-  return (
-    <a
-      className={`color-info-7 hover:color-info-9 display-inline-flex align-items-center cursor-pointer ${className}`}
-      href={href}
-      target={target}>
-      {children}
-    </a>
   );
 };
 
@@ -75,15 +60,15 @@ export interface ILinkProperties {
   className: string;
 }
 
-Link.defaultProps = {
-  target: '',
-  className: '',
-  children: (
-    <>
-      Learn more
-      <i className="icon-system-arrow-right-line margin-left-xxs" />
-    </>
-  ),
+const Link: FC<ILinkProperties> = ({ children, href, target, className }) => {
+  return (
+    <a
+      className={`color-info-7 hover:color-info-9 display-inline-flex align-items-center cursor-pointer ${className}`}
+      href={href}
+      target={target}>
+      {children}
+    </a>
+  );
 };
 
 Alert.Link = Link;

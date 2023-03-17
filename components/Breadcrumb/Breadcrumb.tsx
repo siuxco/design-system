@@ -1,4 +1,4 @@
-import React, { FC, ComponentProps } from 'react';
+import React, { FC, ComponentProps, ReactElement } from 'react';
 import { IIconProperties } from '../Icon/Icon';
 import { classNames } from '../../utils/utils';
 
@@ -10,22 +10,21 @@ const types = {
   },
 };
 
-const themes = {
+const variants = {
   parent: {
     default: 'color-neutral-7 hover:color-neutral-7 cursor-default',
     primary: 'color-black font-weight-600 hover:color-black cursor-pointer',
   },
 };
 
-export interface IBreadcrumbProperties extends ComponentProps<'div'> {
-  separator: 'arrow' | 'slash' | 'dash';
-  style?: React.CSSProperties;
-  className?: string;
+export interface IBreadcrumbProperties extends Pick<ComponentProps<'div'>, 'className'> {
+  separator?: 'arrow' | 'slash' | 'dash';
+  children: ReactElement<IBreadcrumbProperties> | ReactElement<IBreadcrumbProperties>[];
 }
 
 const Breadcrumb: FC<IBreadcrumbProperties> & {
   Item: typeof Item;
-} = ({ separator = 'dash', className, style, children }) => {
+} = ({ separator = 'dash', className, children }) => {
   const Separator = (index) => (
     <li key={index} className="padding-left-xxs padding-right-xxs display-flex color-neutral-2 cursor-default">
       {types.parent[separator]}
@@ -38,19 +37,14 @@ const Breadcrumb: FC<IBreadcrumbProperties> & {
   ]);
 
   return (
-    <ul
-      className={classNames('display-flex align-items-center color-grey-10 cursor-pointer', className)}
-      style={{ ...style }}>
+    <ul className={classNames('display-flex align-items-center color-grey-10 cursor-pointer', className)}>
       {finalChildren}
     </ul>
   );
 };
 
-export interface IBreadcrumbItemProperties {
-  children?: string | React.ReactNode;
-  target?: string;
-  href?: string;
-  className?: string;
+export interface IBreadcrumbItemProperties
+  extends Pick<ComponentProps<'a'>, 'className' | 'children' | 'target' | 'href'> {
   icon?: IIconProperties['icon'];
   theme?: 'default' | 'primary';
 }
@@ -63,7 +57,7 @@ const Item: FC<IBreadcrumbItemProperties> = ({ theme, icon, href, target, classN
         target={target}
         className={classNames(
           'hover:background-neutral-1 active:background-neutral-2 padding-xs padding-top-xxs padding-bottom-xxs border-radius-xs display-flex align-items-center',
-          themes.parent[theme],
+          variants.parent[theme],
           className,
         )}>
         {icon && <i className={classNames('margin-right-xs', icon)} />}
