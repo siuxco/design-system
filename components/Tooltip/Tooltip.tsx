@@ -23,6 +23,7 @@ export const Tooltip: FC<ITooltipProperties> = ({
   const [tooltipInfo, setTooltipInfo] = useState({ height: 0, width: 0 });
 
   useEffect(() => {
+    // @ts-expect-error not rendered yet
     setTooltipInfo(refTooltip?.current?.getBoundingClientRect());
   }, [active]);
 

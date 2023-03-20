@@ -16,10 +16,11 @@ const states = {
   },
 };
 
-export interface IRadioProperties extends ComponentProps<'input'> {
+export interface IRadioProperties extends Omit<ComponentProps<'input'>, 'defaultValue'> {
   label?: string;
   name: string;
   id: string;
+  defaultValue: boolean;
   state: 'default' | 'checked' | 'error' | 'disabled';
 }
 
