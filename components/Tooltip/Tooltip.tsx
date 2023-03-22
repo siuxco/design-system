@@ -1,30 +1,30 @@
-import React, { FC, ComponentProps, HTMLProps, useState, useRef, useEffect } from 'react';
+import React, { FC, ComponentProps, useState, useRef, useEffect } from 'react';
 import { classNames } from '../../utils/utils';
 
-export interface ITooltipProperties extends HTMLProps<HTMLElement> {
-  variant: 'black' | 'white';
-  direction: 'top' | 'bottom' | 'left' | 'right';
-  tooltipContent: ComponentProps<'div'>['children'];
-  className: string;
-  delay: number;
+export interface ITooltipProperties extends Pick<ComponentProps<'div'>, 'children' | 'className'> {
+  variant?: 'black' | 'white';
+  direction?: 'top' | 'bottom' | 'left' | 'right';
+  tooltipContent?: ComponentProps<'div'>['children'];
+  delay?: number;
 }
 
 export const Tooltip: FC<ITooltipProperties> = ({
   variant = 'black',
   direction = 'top',
+  tooltipContent,
   children,
   className,
-  tooltipContent,
   delay = 0,
 }) => {
   let timeout;
-  const refTooltip = useRef();
+  const refTooltip = useRef<HTMLDivElement>();
   const [active, setActive] = useState(false);
   const [tooltipInfo, setTooltipInfo] = useState({ height: 0, width: 0 });
 
   useEffect(() => {
-    // @ts-expect-error not rendered yet
-    setTooltipInfo(refTooltip?.current?.getBoundingClientRect());
+    if (refTooltip?.current) {
+      setTooltipInfo(refTooltip?.current?.getBoundingClientRect());
+    }
   }, [active]);
 
   const tooltip = {
