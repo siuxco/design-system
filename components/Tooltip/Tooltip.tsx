@@ -1,17 +1,18 @@
-import React, { FC, ComponentProps, useState, useRef, useEffect } from 'react';
+import React, { FC, ComponentProps, useState, useRef, useEffect, JSXElementConstructor } from 'react';
 import { classNames } from '../../utils/utils';
 
-export interface ITooltipProperties extends Pick<ComponentProps<'div'>, 'children' | 'className'> {
+export interface ITooltipProperties extends Pick<ComponentProps<'div'>, 'className'> {
   variant?: 'black' | 'white';
   direction?: 'top' | 'bottom' | 'left' | 'right';
-  tooltipContent?: ComponentProps<'div'>['children'];
+  children?:
+    | [React.ReactElement<ITriggerProperties>, React.ReactElement<IContentProperties>]
+    | [React.ReactElement<IContentProperties>, React.ReactElement<ITriggerProperties>];
   delay?: number;
 }
 
-export const Tooltip: FC<ITooltipProperties> = ({
+export const Tooltip: FC<ITooltipProperties> & { Trigger: typeof Trigger; Content: typeof Content } = ({
   variant = 'black',
   direction = 'top',
-  tooltipContent,
   children,
   className,
   delay = 0,
@@ -65,9 +66,17 @@ export const Tooltip: FC<ITooltipProperties> = ({
     setActive(false);
   };
 
+  const Trigger = React.Children.toArray(children).find((child: React.ReactElement) => {
+    return (child.type as JSXElementConstructor<any>).name === 'Trigger';
+  });
+
+  const Content = React.Children.toArray(children).find((child: React.ReactElement) => {
+    return (child.type as JSXElementConstructor<any>).name === 'Content';
+  });
+
   return (
     <div className="display-inline-block position-relative" onMouseEnter={showTip} onMouseLeave={hideTip}>
-      {children}
+      {Trigger}
       {active && (
         <div
           ref={refTooltip}
@@ -81,9 +90,23 @@ export const Tooltip: FC<ITooltipProperties> = ({
             left: '50%',
             ...tooltip.styleDirection[direction],
           }}>
-          {tooltipContent}
+          {Content}
         </div>
       )}
     </div>
   );
 };
+
+export interface ITriggerProperties extends ComponentProps<'div'> {}
+export interface IContentProperties extends ComponentProps<'div'> {}
+
+const Trigger: FC<ITriggerProperties> = ({ ...rest }) => {
+  return <div {...rest} />;
+};
+
+const Content: FC<IContentProperties> = ({ ...rest }) => {
+  return <div {...rest} />;
+};
+
+Tooltip.Trigger = Trigger;
+Tooltip.Content = Content;
