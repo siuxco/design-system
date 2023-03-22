@@ -22,13 +22,12 @@ const Kbds = {
 };
 
 export interface IKbdProperties {
-  style?: React.CSSProperties;
-  size: 'sm' | 'md' | 'lg';
+  size?: 'sm' | 'md' | 'lg';
   value: string | number;
   className?: string;
 }
 
-export const Kbd: FC<IKbdProperties> = ({ value, size = 'md', style, className }) => {
+export const Kbd: FC<IKbdProperties> = ({ value, size = 'md', className }) => {
   return (
     <kbd
       className={classNames(
@@ -39,7 +38,6 @@ export const Kbd: FC<IKbdProperties> = ({ value, size = 'md', style, className }
         className,
       )}
       style={{
-        ...style,
         borderBottom: '2px solid var(--color-neutral-2)',
       }}>
       {value}

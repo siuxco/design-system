@@ -44,12 +44,19 @@ Error.args = {
   children: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
 };
 
+export const WithCloseIcon = Template.bind({});
+WithCloseIcon.args = {
+  state: 'error',
+  close: true,
+  children: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
+};
+
 export const CustomList = Template.bind({});
 CustomList.args = {
   state: 'error',
   children: [
     [
-      <ul className="width-full">
+      <ul key="alpha" className="width-full">
         <li>● Your password must be at least 8 characters</li>
         <li>● Your password must include at least one number</li>
       </ul>,
@@ -63,7 +70,7 @@ CustomButton.args = {
   children: [
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
     [
-      <div className="width-full">
+      <div key="alpha" className="width-full">
         <Button variant="cancel-light" size="small" className="margin-top-s margin-right-s">
           Discard
         </Button>
