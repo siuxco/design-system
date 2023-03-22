@@ -18,7 +18,7 @@ const states = {
 
 export interface IAlertProperties extends Pick<ComponentProps<'div'>, 'children' | 'className'> {
   icon: string;
-  closeIcon?: boolean;
+  close?: boolean;
   onClose?: () => void;
   state: 'info' | 'success' | 'warning' | 'error';
 }
@@ -28,7 +28,7 @@ const Alert: FC<IAlertProperties> & { Link: typeof Link } = ({
   state = 'info',
   onClose,
   children,
-  closeIcon,
+  close,
   className,
 }) => {
   return (
@@ -42,7 +42,7 @@ const Alert: FC<IAlertProperties> & { Link: typeof Link } = ({
         <i className={`${states.icon[state]} ${icon} font-size-l margin-right-xs`} />
         <div className="color-neutral-9 line-height-s width-full margin-right-xxs">{children}</div>
       </div>
-      {closeIcon && (
+      {close && (
         <i
           role="presentation"
           className={'icon-system-close-line font-size-s color-neutral-7 hover:color-grey-8 cursor-pointer'}

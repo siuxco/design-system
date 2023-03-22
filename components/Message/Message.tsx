@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC, ComponentProps } from 'react';
 import { classNames } from '../../utils/utils';
 
 const states = {
@@ -16,31 +16,43 @@ const states = {
   },
 };
 
-export interface IMessageProperties {
-  style?: React.CSSProperties;
-  children?: Array<ReactNode>;
-  className?: string;
-  title: string;
-  state: 'info' | 'success' | 'warning' | 'error';
+export interface IMessageProperties extends Pick<ComponentProps<'div'>, 'className' | 'children'> {
+  state?: 'info' | 'success' | 'warning' | 'error';
+  onClose?: ComponentProps<'button'>['onClick'];
+  close?: boolean;
+  title?: string;
 }
 
 export const Message: FC<IMessageProperties> = ({
-  children,
-  className,
   title = 'Message title',
-  style,
   state = 'info',
+  className,
+  children,
+  onClose,
+  close,
 }) => {
   return (
     <div
       className={classNames(
         'padding-s background-white border-radius-xs box-shadow-s border-style-solid border-width-1 border-neutral-2',
         className,
-      )}
-      style={style}>
-      <div className="display-flex align-items-center">
-        <i className={classNames('margin-right-xs font-size-l', states[state].icon)} />
-        <span className="font-primary font-size-s font-weight-600">{title}</span>
+      )}>
+      <div
+        className={classNames('display-flex align-items-center', {
+          'justify-content-space-between': close,
+          'justify-content-flex-start': !close,
+        })}>
+        <div className="display-flex align-items-center">
+          <i className={classNames('margin-right-xs font-size-l', states[state].icon)} />
+          <span className="font-primary font-size-s font-weight-600">{title}</span>
+        </div>
+        {close && (
+          <i
+            role="presentation"
+            onClick={onClose}
+            className="icon-system-close-line font-size-m color-grey-5 hover:color-grey-8 cursor-pointer"
+          />
+        )}
       </div>
       {children && <div className="padding-xxs color-neutral-7 line-height-m margin-top-xxs">{children}</div>}
     </div>

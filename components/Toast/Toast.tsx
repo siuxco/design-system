@@ -1,4 +1,4 @@
-import React, { FC, MouseEventHandler } from 'react';
+import React, { FC, MouseEventHandler, ComponentProps } from 'react';
 import { IIconProperties } from '../Icon/Icon';
 import { classNames } from '../../utils/utils';
 
@@ -17,18 +17,16 @@ const states = {
   },
 };
 
-export interface IToastProperties {
-  state: 'info' | 'success' | 'warning' | 'error';
-  title: string | React.ReactNode;
+export interface IToastProperties extends Pick<ComponentProps<'div'>, 'className' | 'children'> {
+  state?: 'info' | 'success' | 'warning' | 'error';
+  title?: string | React.ReactNode;
   icon?: IIconProperties['icon'];
-  onCloseClick?: MouseEventHandler<HTMLElement>;
-  children?: string | React.ReactNode;
-  className?: string;
+  onClose?: MouseEventHandler<HTMLElement>;
 }
 
 const Toast: FC<IToastProperties> & {
   Link: typeof Link;
-} = ({ title, className, icon, state = 'info', children, onCloseClick }) => {
+} = ({ title, className, icon, state = 'info', children, onClose }) => {
   return (
     <div
       className={classNames(
@@ -42,7 +40,7 @@ const Toast: FC<IToastProperties> & {
         )}></div>
       <i
         role="presentation"
-        onClick={onCloseClick}
+        onClick={onClose}
         className={
           'icon-system-close-line font-size-m position-absolute position-top-right color-grey-5 hover:color-grey-8 cursor-pointer margin-right-xs margin-top-xs'
         }
@@ -56,18 +54,16 @@ const Toast: FC<IToastProperties> & {
   );
 };
 
-export interface IToastLinkProperties {
-  children?: any;
-  href: string;
-  target?: string;
-}
+export interface IToastLinkProperties extends ComponentProps<'a'> {}
 
-const Link: FC<IToastLinkProperties> = ({ href, target, children }) => {
+const Link: FC<IToastLinkProperties> = ({ className, children, ...rest }) => {
   return (
     <a
-      href={href}
-      target={target}
-      className="color-primary-8 hover:color-primary-10 display-inline-flex align-items-center cursor-pointer">
+      className={classNames(
+        'color-primary-8 hover:color-primary-10 display-inline-flex align-items-center cursor-pointer',
+        className,
+      )}
+      {...rest}>
       {children}
     </a>
   );

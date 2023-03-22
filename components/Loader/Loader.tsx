@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, ComponentProps } from 'react';
 import { classNames } from '../../utils/utils';
 
 const loaders = {
@@ -23,14 +23,12 @@ const loaders = {
   },
 };
 
-export interface ILoaderProperties {
-  style?: React.CSSProperties;
-  velocity: 'slower' | 'slow' | 'default' | 'fast' | 'faster';
-  variant: 'neutral' | 'primary' | 'secondary' | 'tertiary';
-  size: 'sm' | 'md' | 'lg';
-  shape: 'square' | 'round';
-  loader: 1 | 2 | 3 | 4 | 5;
-  className?: string;
+export interface ILoaderProperties extends Pick<ComponentProps<'div'>, 'className'> {
+  velocity?: 'slower' | 'slow' | 'default' | 'fast' | 'faster';
+  variant?: 'neutral' | 'primary' | 'secondary' | 'tertiary';
+  size?: 'sm' | 'md' | 'lg';
+  shape?: 'square' | 'circle';
+  loader?: 1 | 2 | 3 | 4 | 5;
 }
 
 export const Loader: FC<ILoaderProperties> = ({
@@ -38,7 +36,6 @@ export const Loader: FC<ILoaderProperties> = ({
   velocity = 'default',
   variant = 'neutral',
   size = 'md',
-  style,
   shape,
   className,
 }) => {
@@ -47,7 +44,7 @@ export const Loader: FC<ILoaderProperties> = ({
       className={classNames({
         'background-white box-shadow-s padding-xs border-width-1 border-style-solid border-neutral-2': Boolean(shape),
         'border-radius-s': shape === 'square',
-        'border-radius-full': shape === 'round',
+        'border-radius-full': shape === 'circle',
       })}>
       <div
         className={classNames(
@@ -58,9 +55,6 @@ export const Loader: FC<ILoaderProperties> = ({
           loaders.sizes[size],
           className,
         )}
-        style={{
-          ...style,
-        }}
       />
     </div>
   );

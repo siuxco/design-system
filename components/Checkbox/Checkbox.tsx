@@ -16,10 +16,11 @@ const states = {
   },
 };
 
-export interface ICheckboxProperties extends Omit<ComponentProps<'input'>, 'size'> {
+export interface ICheckboxProperties extends Omit<ComponentProps<'input'>, 'size' | 'defaultValue'> {
   label?: string;
   name: string;
   id: string;
+  defaultValue: boolean;
   state: 'default' | 'checked' | 'error' | 'disabled';
 }
 
