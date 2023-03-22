@@ -1,6 +1,5 @@
 import React, { FC, ComponentProps, useState, useRef } from 'react';
-import { useOutsideListener } from '../../hooks/useOutsideListener';
-import { classNames } from '../../utils/utils';
+import { classNames, useOutsideListener } from '../../utils/utils';
 
 export interface IDropdownProperties extends Pick<ComponentProps<'div'>, 'children' | 'className'> {
   space: ComponentProps<'div'>['children'];

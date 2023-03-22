@@ -2,13 +2,59 @@ import React from 'react';
 import { Navigation } from './Navigation';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Badge } from '../Badge/Badge';
-import { Button } from '../Button/Button';
 
 export default {
   title: 'Components/Navigation',
   component: Navigation,
   argTypes: {
-    orientation: { control: { type: 'select' } },
+    orientation: { control: { type: 'select', options: ['horizontal', 'vertical'] } },
+    size: { control: { type: 'select', options: ['small', 'medium', 'large'] } },
+    variant: {
+      control: {
+        type: 'select',
+        options: [
+          'primary',
+          'primary-light',
+          'primary-link',
+          'secondary',
+          'secondary-light',
+          'secondary-link',
+          'tertiary',
+          'tertiary-light',
+          'tertiary-link',
+          'cancel',
+          'cancel-light',
+          'cancel-link',
+          'delete',
+          'delete-light',
+          'black',
+          'white',
+        ],
+      },
+    },
+    activeVariant: {
+      control: {
+        type: 'select',
+        options: [
+          'primary',
+          'primary-light',
+          'primary-link',
+          'secondary',
+          'secondary-light',
+          'secondary-link',
+          'tertiary',
+          'tertiary-light',
+          'tertiary-link',
+          'cancel',
+          'cancel-light',
+          'cancel-link',
+          'delete',
+          'delete-light',
+          'black',
+          'white',
+        ],
+      },
+    },
   },
   decorators: [
     (Story) => (
@@ -24,261 +70,172 @@ const Template: ComponentStory<typeof Navigation> = (arguments_) => <Navigation 
 export const Horizontal = Template.bind({});
 Horizontal.args = {
   orientation: 'horizontal',
+  size: 'medium',
   children: [
-    <Button key="a" variant="cancel-light" size="medium" className="margin-right-xxs">
-      Dashboard
-    </Button>,
-    <Button key="b" variant="cancel-link" size="medium" className="margin-right-xxs">
-      Team
-    </Button>,
-    <Button key="c" variant="cancel-link" size="medium" className="margin-right-xxs">
-      Projects
-    </Button>,
-    <Button key="d" variant="cancel-link" size="medium" className="margin-right-xxs">
-      Calendar
-    </Button>,
-    <Button key="e" variant="cancel-link" size="medium" className="margin-right-xxs">
-      Documents
-    </Button>,
+    <Navigation.Item key="a">Dashboard</Navigation.Item>,
+    <Navigation.Item key="b">Team</Navigation.Item>,
+    <Navigation.Item key="c">Projects</Navigation.Item>,
+    <Navigation.Item key="d">Calendar</Navigation.Item>,
+    <Navigation.Item key="e">Documents</Navigation.Item>,
   ],
 };
 
 export const HorizontalWithIcon = Template.bind({});
 HorizontalWithIcon.args = {
   orientation: 'horizontal',
+  size: 'medium',
   children: [
-    <Button
-      key="a"
-      variant="cancel-light"
-      size="medium"
-      iconLeft="icon-system-dashboard-line"
-      className="margin-right-xxs">
+    <Navigation.Item key="a" iconLeft="icon-system-dashboard-line">
       Dashboard
-    </Button>,
-    <Button key="b" variant="cancel-link" size="medium" iconLeft="icon-system-group-line" className="margin-right-xxs">
+    </Navigation.Item>,
+    <Navigation.Item key="b" iconLeft="icon-system-group-line">
       Team
-    </Button>,
-    <Button key="c" variant="cancel-link" size="medium" iconLeft="icon-system-folder-line" className="margin-right-xxs">
+    </Navigation.Item>,
+    <Navigation.Item key="c" iconLeft="icon-system-folder-line">
       Projects
-    </Button>,
-    <Button
-      key="d"
-      variant="cancel-link"
-      size="medium"
-      iconLeft="icon-system-calendar-line"
-      className="margin-right-xxs">
+    </Navigation.Item>,
+    <Navigation.Item key="d" iconLeft="icon-system-calendar-line">
       Calendar
-    </Button>,
-    <Button
-      key="e"
-      variant="cancel-link"
-      size="medium"
-      iconLeft="icon-system-hard-drive-2-line"
-      className="margin-right-xxs">
+    </Navigation.Item>,
+    <Navigation.Item key="e" iconLeft="icon-system-hard-drive-2-line">
       Documents
-    </Button>,
+    </Navigation.Item>,
   ],
 };
 
 export const HorizontalWithLabel = Template.bind({});
 HorizontalWithLabel.args = {
   orientation: 'horizontal',
+  size: 'medium',
   children: [
-    <Button
-      key="a"
-      variant="cancel-light"
-      size="medium"
-      iconLeft="icon-system-dashboard-line"
-      className="margin-right-xxs">
+    <Navigation.Item key="a" iconLeft="icon-system-dashboard-line">
       Dashboard
-      <Badge variant="primary" border={false} className="font-size-xs margin-left-xs">
+      <Badge border={false} className="margin-left-xs">
         360
       </Badge>
-    </Button>,
-    <Button key="b" variant="cancel-link" size="medium" iconLeft="icon-system-group-line" className="margin-right-xxs">
+    </Navigation.Item>,
+    <Navigation.Item key="b" iconLeft="icon-system-group-line">
       Team
-    </Button>,
-    <Button key="c" variant="cancel-link" size="medium" iconLeft="icon-system-folder-line" className="margin-right-xxs">
+    </Navigation.Item>,
+    <Navigation.Item key="c" iconLeft="icon-system-folder-line">
       Projects
-      <Badge variant="primary" border={false} className="font-size-xs margin-left-xs">
-        12
-      </Badge>
-    </Button>,
-    <Button
-      key="d"
-      variant="cancel-link"
-      size="medium"
-      iconLeft="icon-system-calendar-line"
-      className="margin-right-xxs">
+      <Badge border={false}>12</Badge>
+    </Navigation.Item>,
+    <Navigation.Item key="d" iconLeft="icon-system-calendar-line">
       Calendar
-    </Button>,
-    <Button
-      key="e"
-      variant="cancel-link"
-      size="medium"
-      iconLeft="icon-system-hard-drive-2-line"
-      className="margin-right-xxs">
+    </Navigation.Item>,
+    <Navigation.Item key="e" iconLeft="icon-system-hard-drive-2-line">
       Documents
-    </Button>,
+    </Navigation.Item>,
   ],
 };
 
 export const Vertical = Template.bind({});
 Vertical.args = {
   orientation: 'vertical',
+  size: 'medium',
   children: [
-    <Button key="a" variant="cancel-light" size="medium" className="margin-bottom-xxs">
-      Dashboard
-    </Button>,
-    <Button key="b" variant="cancel-link" size="medium" className="margin-bottom-xxs">
-      Team
-    </Button>,
-    <Button key="c" variant="cancel-link" size="medium" className="margin-bottom-xxs">
+    <Navigation.Item key="a">Dashboard</Navigation.Item>,
+    <Navigation.Item key="b">Team</Navigation.Item>,
+    <Navigation.Item key="c">Projects</Navigation.Item>,
+    <Navigation.Item key="d">Calendar</Navigation.Item>,
+    <Navigation.Item key="e">Documents</Navigation.Item>,
+  ],
+};
+
+export const VerticalCustomActive = Template.bind({});
+VerticalCustomActive.args = {
+  orientation: 'vertical',
+  size: 'medium',
+  active: -1,
+  children: [
+    <Navigation.Item key="a">Dashboard</Navigation.Item>,
+    <Navigation.Item key="b">Team</Navigation.Item>,
+    <Navigation.Item key="c" active>
       Projects
-    </Button>,
-    <Button key="d" variant="cancel-link" size="medium" className="margin-bottom-xxs">
-      Calendar
-    </Button>,
-    <Button key="e" variant="cancel-link" size="medium" className="margin-bottom-xxs">
-      Documents
-    </Button>,
+    </Navigation.Item>,
+    <Navigation.Item key="d">Calendar</Navigation.Item>,
+    <Navigation.Item key="e">Documents</Navigation.Item>,
   ],
 };
 
 export const VerticalWithIcon = Template.bind({});
 VerticalWithIcon.args = {
   orientation: 'vertical',
+  size: 'medium',
   children: [
-    <Button
-      key="a"
-      variant="cancel-light"
-      size="medium"
-      iconLeft="icon-system-dashboard-line"
-      className="margin-bottom-xxs">
+    <Navigation.Item key="a" iconLeft="icon-system-dashboard-line">
       Dashboard
-    </Button>,
-    <Button key="b" variant="cancel-link" size="medium" iconLeft="icon-system-group-line" className="margin-bottom-xxs">
+    </Navigation.Item>,
+    <Navigation.Item key="b" iconLeft="icon-system-group-line">
       Team
-    </Button>,
-    <Button
-      key="c"
-      variant="cancel-link"
-      size="medium"
-      iconLeft="icon-system-folder-line"
-      className="margin-bottom-xxs">
+    </Navigation.Item>,
+    <Navigation.Item key="c" iconLeft="icon-system-folder-line">
       Projects
-    </Button>,
-    <Button
-      key="d"
-      variant="cancel-link"
-      size="medium"
-      iconLeft="icon-system-calendar-line"
-      className="margin-bottom-xxs">
+    </Navigation.Item>,
+    <Navigation.Item key="d" iconLeft="icon-system-calendar-line">
       Calendar
-    </Button>,
-    <Button
-      key="e"
-      variant="cancel-link"
-      size="medium"
-      iconLeft="icon-system-hard-drive-2-line"
-      className="margin-bottom-xxs">
+    </Navigation.Item>,
+    <Navigation.Item key="e" iconLeft="icon-system-hard-drive-2-line">
       Documents
-    </Button>,
+    </Navigation.Item>,
   ],
 };
 
 export const VerticalWithLabel = Template.bind({});
 VerticalWithLabel.args = {
   orientation: 'vertical',
+  size: 'medium',
   children: [
-    <Button
-      key="a"
-      variant="cancel-light"
-      size="medium"
-      iconLeft="icon-system-dashboard-line"
-      className="margin-bottom-xxs">
+    <Navigation.Item key="a" iconLeft="icon-system-dashboard-line">
       Dashboard
-      <Badge variant="primary" border={false} className="font-size-xs margin-left-xs">
+      <Badge border={false} className="margin-left-xs">
         360
       </Badge>
-    </Button>,
-    <Button key="b" variant="cancel-link" size="medium" iconLeft="icon-system-group-line" className="margin-bottom-xxs">
+    </Navigation.Item>,
+    <Navigation.Item key="b" iconLeft="icon-system-group-line">
       Team
-    </Button>,
-    <Button
-      key="c"
-      variant="cancel-link"
-      size="medium"
-      iconLeft="icon-system-folder-line"
-      className="margin-bottom-xxs">
+    </Navigation.Item>,
+    <Navigation.Item key="c" iconLeft="icon-system-folder-line">
       Projects
-      <Badge variant="primary" border={false} className="font-size-xs margin-left-xs">
+      <Badge border={false} className="margin-left-xs">
         12
       </Badge>
-    </Button>,
-    <Button
-      key="d"
-      variant="cancel-link"
-      size="medium"
-      iconLeft="icon-system-calendar-line"
-      className="margin-bottom-xxs">
+    </Navigation.Item>,
+    <Navigation.Item key="d" iconLeft="icon-system-calendar-line">
       Calendar
-    </Button>,
-    <Button
-      key="e"
-      variant="cancel-link"
-      size="medium"
-      iconLeft="icon-system-hard-drive-2-line"
-      className="margin-bottom-xxs">
+    </Navigation.Item>,
+    <Navigation.Item key="e" iconLeft="icon-system-hard-drive-2-line">
       Documents
-    </Button>,
+    </Navigation.Item>,
   ],
 };
 
 export const CustomVariantActive = Template.bind({});
 CustomVariantActive.args = {
   orientation: 'vertical',
+  size: 'medium',
   children: [
-    <Button
-      key="a"
-      variant="primary-light"
-      size="medium"
-      iconLeft="icon-system-dashboard-line"
-      className="margin-bottom-xxs">
+    <Navigation.Item key="a" iconLeft="icon-system-dashboard-line">
       Dashboard
-      <Badge variant="primary" border={false} className="font-size-xs margin-left-xs">
+      <Badge border={false} className="margin-left-xs">
         360
       </Badge>
-    </Button>,
-    <Button key="b" variant="cancel-link" size="medium" iconLeft="icon-system-group-line" className="margin-bottom-xxs">
+    </Navigation.Item>,
+    <Navigation.Item key="b" iconLeft="icon-system-group-line">
       Team
-    </Button>,
-    <Button
-      key="c"
-      variant="cancel-link"
-      size="medium"
-      iconLeft="icon-system-folder-line"
-      className="margin-bottom-xxs">
+    </Navigation.Item>,
+    <Navigation.Item key="c" iconLeft="icon-system-folder-line">
       Projects
-      <Badge variant="primary" border={false} className="font-size-xs margin-left-xs">
+      <Badge border={false} className="margin-left-xs">
         12
       </Badge>
-    </Button>,
-    <Button
-      key="d"
-      variant="cancel-link"
-      size="medium"
-      iconLeft="icon-system-calendar-line"
-      className="margin-bottom-xxs">
+    </Navigation.Item>,
+    <Navigation.Item key="d" iconLeft="icon-system-calendar-line">
       Calendar
-    </Button>,
-    <Button
-      key="e"
-      variant="cancel-link"
-      size="medium"
-      iconLeft="icon-system-hard-drive-2-line"
-      className="margin-bottom-xxs">
+    </Navigation.Item>,
+    <Navigation.Item key="e" iconLeft="icon-system-hard-drive-2-line">
       Documents
-    </Button>,
+    </Navigation.Item>,
   ],
 };

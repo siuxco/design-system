@@ -45,7 +45,7 @@ Error.args = {
 export const CloseIcon = Template.bind({});
 CloseIcon.args = {
   state: 'info',
-  closeIcon: true,
+  close: true,
   children: 'Informational note',
 };
 

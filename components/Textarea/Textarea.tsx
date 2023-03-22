@@ -1,4 +1,4 @@
-import React, { HTMLProps, FC, ChangeEventHandler } from 'react';
+import React, { ComponentProps, FC } from 'react';
 
 const statuses = {
   parent: {
@@ -8,7 +8,13 @@ const statuses = {
   },
 };
 
-const Textarea: FC<ITextareaProperties> = ({ placeholder, label, state, disabled, className, onChange, ...rest }) => {
+export interface ITextareaProperties extends ComponentProps<'textarea'> {
+  state?: string;
+  label?: string;
+  error?: boolean;
+}
+
+const Textarea: FC<ITextareaProperties> = ({ label, state, disabled, className, ...rest }) => {
   const getStatusClasses = (object: { [x: string]: any; default: any; error?: string; disable: any }) => {
     if (disabled) {
       return object.disable;
@@ -19,9 +25,7 @@ const Textarea: FC<ITextareaProperties> = ({ placeholder, label, state, disabled
     <label className={`transition-fast ${className} ${disabled && 'cursor-not-allowed'}`}>
       {label && <div className="color-neutral-7 font-weight-500 margin-bottom-xs">{label}</div>}
       <textarea
-        placeholder={placeholder}
         disabled={disabled}
-        onChange={onChange}
         className={`transition-fast resize-vertical padding-s background-white border-radius-xs border-width-1 border-style-solid
         ${getStatusClasses(statuses.parent)}`}
         {...rest}
@@ -29,15 +33,5 @@ const Textarea: FC<ITextareaProperties> = ({ placeholder, label, state, disabled
     </label>
   );
 };
-
-export interface ITextareaProperties extends HTMLProps<HTMLTextAreaElement> {
-  placeholder?: string;
-  state?: string;
-  label?: string;
-  error?: boolean;
-  disabled?: boolean;
-  onChange?: ChangeEventHandler<HTMLTextAreaElement>;
-  className?: string;
-}
 
 export { Textarea };

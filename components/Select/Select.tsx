@@ -1,4 +1,4 @@
-import React, { forwardRef, FC } from 'react';
+import React, { ComponentProps, forwardRef, FC } from 'react';
 import { IIconProperties } from '../Icon/Icon';
 import { classNames } from '../../utils/utils';
 
@@ -15,17 +15,14 @@ const states = {
   },
 };
 
-export interface ISelectProperties {
+export interface ISelectProperties extends ComponentProps<'select'> {
   label?: string;
   state?: 'default' | 'error' | 'disable';
-  disabled?: boolean;
   icon?: IIconProperties['icon'];
-  id?: string;
-  className?: string;
-  children?: React.ReactNode;
+  children?: React.ReactElement<IOptionProperties> | React.ReactElement<IOptionProperties>[];
 }
 
-interface Subcomponents {
+export interface Subcomponents {
   Option: typeof Option;
 }
 
@@ -75,14 +72,14 @@ const Select: React.ForwardRefExoticComponent<React.PropsWithoutRef<ISelectPrope
     },
   );
 
-export interface ISelectOptionProperties {
+export interface IOptionProperties extends ComponentProps<'option'> {
   value: string;
   selected?: boolean;
   disabled?: boolean;
   children?: any;
 }
 
-const Option: FC<ISelectOptionProperties> = ({ children, value = children, disabled, selected, ...rest }) => {
+const Option: FC<IOptionProperties> = ({ children, value = children, disabled, selected, ...rest }) => {
   return (
     <option value={value} disabled={disabled} selected={selected} {...rest}>
       {children}

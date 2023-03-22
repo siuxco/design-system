@@ -81,6 +81,7 @@ export const ComponentsPreview: FC<IComponentsPreviewProperties> = ({ className 
                 className="width-full"
                 src={`/iframe.html?args=&id=${component.category}-${component.name}&viewMode=story`}
               /> */}
+              {/* @ts-expect-error : IDK */}
               <img src={component.image} alt={component.name} className="width-full" />
             </div>
           </a>

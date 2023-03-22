@@ -44,13 +44,13 @@ Size.args = {
   shape: 'square',
 };
 
-export const ShapeRound = Template.bind({});
-ShapeRound.args = {
+export const ShapeCircle = Template.bind({});
+ShapeCircle.args = {
   loader: 1,
   velocity: 'default',
   variant: 'neutral',
   size: 'md',
-  shape: 'round',
+  shape: 'circle',
 };
 
 export const Simple = Template.bind({});
