@@ -45,19 +45,19 @@ const variants = {
 
 const sizes = {
   parent: {
-    small: 'font-size-xs padding-xs',
-    medium: 'padding-s',
-    large: 'font-size-s padding-m',
+    sm: 'font-size-xs padding-xs',
+    md: 'padding-s',
+    lg: 'font-size-s padding-m',
   },
   icon: {
-    small: 'font-size-s',
-    medium: 'font-size-s',
-    large: 'font-size-m',
+    sm: 'font-size-s',
+    md: 'font-size-s',
+    lg: 'font-size-m',
   },
   child: {
-    small: 'padding-xs',
-    medium: 'padding-xs',
-    large: 'padding-xs',
+    sm: 'padding-xs',
+    md: 'padding-xs',
+    lg: 'padding-xs',
   },
 };
 
@@ -65,7 +65,7 @@ export interface IButtonProperties extends ComponentProps<'button'> {
   iconLeft?: IIconProperties['icon'];
   iconRight?: IIconProperties['icon'];
   loading?: boolean;
-  size?: 'small' | 'medium' | 'large';
+  size?: 'sm' | 'md' | 'lg';
   variant?:
     | 'primary'
     | 'primary-light'
@@ -88,7 +88,7 @@ export interface IButtonProperties extends ComponentProps<'button'> {
 const Button = forwardRef<HTMLButtonElement, IButtonProperties>(
   (
     {
-      size = 'medium',
+      size = 'md',
       variant = 'primary',
       className,
       iconLeft,
