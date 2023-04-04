@@ -8,7 +8,7 @@ export default {
   component: Navigation,
   argTypes: {
     orientation: { control: { type: 'select', options: ['horizontal', 'vertical'] } },
-    size: { control: { type: 'select', options: ['small', 'medium', 'large'] } },
+    size: { control: { type: 'select', options: ['sm', 'md', 'lg'] } },
     variant: {
       control: {
         type: 'select',
@@ -70,7 +70,7 @@ const Template: ComponentStory<typeof Navigation> = (arguments_) => <Navigation 
 export const Horizontal = Template.bind({});
 Horizontal.args = {
   orientation: 'horizontal',
-  size: 'medium',
+  size: 'md',
   children: [
     <Navigation.Item key="a">Dashboard</Navigation.Item>,
     <Navigation.Item key="b">Team</Navigation.Item>,
@@ -83,7 +83,7 @@ Horizontal.args = {
 export const HorizontalWithIcon = Template.bind({});
 HorizontalWithIcon.args = {
   orientation: 'horizontal',
-  size: 'medium',
+  size: 'md',
   children: [
     <Navigation.Item key="a" iconLeft="icon-system-dashboard-line">
       Dashboard
@@ -106,7 +106,7 @@ HorizontalWithIcon.args = {
 export const HorizontalWithLabel = Template.bind({});
 HorizontalWithLabel.args = {
   orientation: 'horizontal',
-  size: 'medium',
+  size: 'md',
   children: [
     <Navigation.Item key="a" iconLeft="icon-system-dashboard-line">
       Dashboard
@@ -133,7 +133,7 @@ HorizontalWithLabel.args = {
 export const Vertical = Template.bind({});
 Vertical.args = {
   orientation: 'vertical',
-  size: 'medium',
+  size: 'md',
   children: [
     <Navigation.Item key="a">Dashboard</Navigation.Item>,
     <Navigation.Item key="b">Team</Navigation.Item>,
@@ -146,7 +146,7 @@ Vertical.args = {
 export const VerticalCustomActive = Template.bind({});
 VerticalCustomActive.args = {
   orientation: 'vertical',
-  size: 'medium',
+  size: 'md',
   active: -1,
   children: [
     <Navigation.Item key="a">Dashboard</Navigation.Item>,
@@ -162,7 +162,7 @@ VerticalCustomActive.args = {
 export const VerticalWithIcon = Template.bind({});
 VerticalWithIcon.args = {
   orientation: 'vertical',
-  size: 'medium',
+  size: 'md',
   children: [
     <Navigation.Item key="a" iconLeft="icon-system-dashboard-line">
       Dashboard
@@ -185,7 +185,7 @@ VerticalWithIcon.args = {
 export const VerticalWithLabel = Template.bind({});
 VerticalWithLabel.args = {
   orientation: 'vertical',
-  size: 'medium',
+  size: 'md',
   children: [
     <Navigation.Item key="a" iconLeft="icon-system-dashboard-line">
       Dashboard
@@ -214,7 +214,7 @@ VerticalWithLabel.args = {
 export const CustomVariantActive = Template.bind({});
 CustomVariantActive.args = {
   orientation: 'vertical',
-  size: 'medium',
+  size: 'md',
   children: [
     <Navigation.Item key="a" iconLeft="icon-system-dashboard-line">
       Dashboard
