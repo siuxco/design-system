@@ -25,8 +25,8 @@ Default.args = {
   state: 'default',
   children: [
     'Get started by creating a new project.',
-    <div className="width-full">
-      <Button variant="primary" size="medium" iconLeft="icon-system-add-line" className="margin-top-l">
+    <div key="alpha" className="width-full">
+      <Button variant="primary" size="md" iconLeft="icon-system-add-line" className="margin-top-l">
         New Project
       </Button>
     </div>,

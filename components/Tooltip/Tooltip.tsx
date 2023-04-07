@@ -67,11 +67,11 @@ export const Tooltip: FC<ITooltipProperties> & { Trigger: typeof Trigger; Conten
   };
 
   const Trigger = React.Children.toArray(children).find((child: React.ReactElement) => {
-    return (child.type as JSXElementConstructor<any>).name === 'Trigger';
+    return (child.type as JSXElementConstructor<any> & { displayName?: string }).displayName === 'Trigger';
   });
 
   const Content = React.Children.toArray(children).find((child: React.ReactElement) => {
-    return (child.type as JSXElementConstructor<any>).name === 'Content';
+    return (child.type as JSXElementConstructor<any> & { displayName?: string }).displayName === 'Content';
   });
 
   return (
@@ -97,8 +97,8 @@ export const Tooltip: FC<ITooltipProperties> & { Trigger: typeof Trigger; Conten
   );
 };
 
-export interface ITriggerProperties extends ComponentProps<'div'> {}
-export interface IContentProperties extends ComponentProps<'div'> {}
+export type ITriggerProperties = ComponentProps<'div'>;
+export type IContentProperties = ComponentProps<'div'>;
 
 const Trigger: FC<ITriggerProperties> = ({ ...rest }) => {
   return <div {...rest} />;
@@ -107,6 +107,9 @@ const Trigger: FC<ITriggerProperties> = ({ ...rest }) => {
 const Content: FC<IContentProperties> = ({ ...rest }) => {
   return <div {...rest} />;
 };
+
+Trigger.displayName = 'Trigger';
+Content.displayName = 'Content';
 
 Tooltip.Trigger = Trigger;
 Tooltip.Content = Content;

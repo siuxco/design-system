@@ -71,7 +71,7 @@ CustomButton.args = {
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
     [
       <div key="alpha" className="width-full">
-        <Button variant="cancel-light" size="small" className="margin-top-s margin-right-s">
+        <Button variant="cancel-light" size="sm" className="margin-top-s margin-right-s">
           Discard
         </Button>
       </div>,
