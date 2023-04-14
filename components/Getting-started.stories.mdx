@@ -6,45 +6,50 @@ import { ComponentsPreview } from './Siux/ComponentsPreview.tsx';
 
 <Meta title="Getting started" />
 
-<h1 className="font-weight-800 color-black">Getting started</h1>
-<h2 className="font-size-m line-height-m color-neutral-7 margin-top-m margin-bottom-l">
-  SIUX offers web components that can be reused by frontend developers and engineers to construct websites and user
-  interfaces using React and HTML. Implementing the SIUX design system ensures that developers can use uniform markup,
-  styles, and behavior in both prototype and production work.
-</h2>
+<div className="sb-unstyled">
 
-<div className="font-size-l font-weight-600 color-black margin-top-xl margin-bottom-s">Installation</div>
-<p>Install the component library in your project with npm or yarn:</p>
-<Source language="bash" light format={false} code={`npm install @siuxco/design-system`} />
+  <h1 className="font-weight-800 font-size-h6 color-black">Getting started</h1>
+  <h2 className="font-size-m line-height-m color-neutral-7 margin-top-m margin-bottom-l">
+    SIUX offers web components that can be reused by frontend developers and engineers to construct websites and user
+    interfaces using React and HTML. Implementing the SIUX design system ensures that developers can use uniform markup,
+    styles, and behavior in both prototype and production work.
+  </h2>
 
-<div className="font-size-l font-weight-600 color-black margin-top-xl margin-bottom-s">Setup CSS</div>
-<p>Includes basic CSS styles:</p>
+  <div className="font-size-l font-weight-600 color-black margin-top-xl margin-bottom-s">Installation</div>
+  <p>Install the component library in your project with npm or yarn:</p>
+  <Source language="bash" dark format={false} code={`npm install @siuxco/design-system`} />
 
-<Source
-  language="bash"
-  format={false}
-  light
-  code={`
-<link href="https://cdn.siux.studio/static/brand/632213d5a467b1178b31dde0/latest/siux.main.css" type="text/css" rel="stylesheet" />
+  <div className="font-size-l font-weight-600 color-black margin-top-xl margin-bottom-s">Setup CSS</div>
+  <p>Includes basic CSS styles:</p>
+
+  <div style={{ fontFamily: 'Roboto-mono !important'}}>
+    <Source
+      language="bash"
+      format={false}
+      dark
+      code={`
+  <link href="https://cdn.siux.studio/static/brand/632213d5a467b1178b31dde0/latest/siux.main.css" type="text/css" rel="stylesheet" />
 <link href="https://cdn.siux.studio/static/brand/632213d5a467b1178b31dde0/latest/siux.main.responsive.css" type="text/css" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/css?family=Inter:100,200,300,500,600,700,800,900|Overpass+Mono:300,500,600,700" type="text/css" rel="stylesheet" />
-  `}
-/>
-
-<Message title="Feedback" className="margin-top-xl">
-  Our system is constantly evolving and improving, driven by community contributions and feedback. Whether you're a
-  seasoned designer or just getting started, we believe our design system can help you create great experiences faster
-  and more efficiently.
-  <div className="padding-top-m">
-    <a href="https://github.com/siuxco/design-system" target="_blank">
-      <Button iconLeft="icon-system-github-fill" variant="primary-light">
-        Github
-      </Button>
-    </a>
-    <a href="https://discord.com/invite/5McR42jUup" target="_blank">
-      <Button iconLeft="icon-system-discord-fill" variant="primary-light" className="margin-left-m">
-        Discord
-      </Button>
-    </a>
+    `}
+    />
   </div>
-</Message>
+
+  <Message title="Feedback" className="margin-top-xl">
+    Our system is constantly evolving and improving, driven by community contributions and feedback. Whether you're a
+    seasoned designer or just getting started, we believe our design system can help you create great experiences faster
+    and more efficiently.
+    <div className="padding-top-m">
+      <a href="https://github.com/siuxco/design-system" target="_blank">
+        <Button iconLeft="icon-system-github-fill" variant="primary-light">
+          Github
+        </Button>
+      </a>
+      <a href="https://discord.com/invite/5McR42jUup" target="_blank">
+        <Button iconLeft="icon-system-discord-fill" variant="primary-light" className="margin-left-m">
+          Discord
+        </Button>
+      </a>
+    </div>
+  </Message>
+</div>

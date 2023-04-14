@@ -6,31 +6,34 @@ import { ComponentsPreview } from './Siux/ComponentsPreview.tsx';
 
 <Meta title="SIUX Design System" />
 
-<img src={SIUXDS} alt="SIUX Design System" />
-<h1 className="font-weight-800 color-black">SIUX Design System</h1>
-<h2 className="font-size-m line-height-m color-neutral-7 margin-top-m margin-bottom-l">
-  Our goal is to provide a comprehensive set of design components, guidelines, and best practices for creating beautiful
-  and intuitive user experiences. We prioritize simplicity and ease of use, making it easy for designers and developers
-  to create consistent and cohesive interfaces across all their projects.
-</h2>
+<div className="sb-unstyled">
+  <img src="/images/siux-design-system.png" alt="SIUX Design System" className="width-full" />
+  <h1 className="font-weight-800 font-size-h6 color-black">SIUX Design System</h1>
+  <h2 className="font-size-m line-height-m color-neutral-7 margin-top-m margin-bottom-l sb-unstyled">
+    Our goal is to provide a comprehensive set of design components, guidelines, and best practices for creating beautiful
+    and intuitive user experiences. We prioritize simplicity and ease of use, making it easy for designers and developers
+    to create consistent and cohesive interfaces across all their projects.
+  </h2>
 
-<div className="font-size-l font-weight-600 color-black margin-top-xxl">Components</div>
-<ComponentsPreview className="margin-bottom-xl margin-top-s" />
+  <div className="font-size-l font-weight-600 color-black margin-top-xxl">Components</div>
+  <ComponentsPreview className="margin-bottom-xl margin-top-s" />
 
-<Message title="Feedback">
-  Our system is constantly evolving and improving, driven by community contributions and feedback. Whether you're a
-  seasoned designer or just getting started, we believe our design system can help you create great experiences faster
-  and more efficiently.
-  <div className="padding-top-m">
-    <a href="https://github.com/siuxco/design-system" target="_blank">
-      <Button iconLeft="icon-system-github-fill" variant="primary-light">
-        Github
-      </Button>
-    </a>
-    <a href="https://discord.com/invite/5McR42jUup" target="_blank">
-      <Button iconLeft="icon-system-discord-fill" variant="primary-light" className="margin-left-m">
-        Discord
-      </Button>
-    </a>
-  </div>
-</Message>
+  <Message title="Feedback">
+    Our system is constantly evolving and improving, driven by community contributions and feedback. Whether you're a
+    seasoned designer or just getting started, we believe our design system can help you create great experiences faster
+    and more efficiently.
+    <div className="padding-top-m">
+      <a href="https://github.com/siuxco/design-system" target="_blank">
+        <Button iconLeft="icon-system-github-fill" variant="primary-light">
+          Github
+        </Button>
+      </a>
+      <a href="https://discord.com/invite/5McR42jUup" target="_blank">
+        <Button iconLeft="icon-system-discord-fill" variant="primary-light" className="margin-left-m">
+          Discord
+        </Button>
+      </a>
+    </div>
+  </Message>
+
+</div>

@@ -6,7 +6,6 @@ const divEmpty = styled.div(({ theme }) => ({
 }));
 const pEmpty = styled.p(({ theme }) => ({
   color: "var(--color-neutral-7)",
-  fontSize: "16px"
 }));
 const h2Empty = styled.p(({ theme }) => ({
 }));
@@ -54,6 +53,21 @@ export const parameters = {
       htmlWhitespaceSensitivity: 'strict',
       highlighter: {
         showLineNumbers: true, // default: false
+      },
+    },
+  },
+  globalTypes: {
+    theme: {
+      name: 'Theme',
+      description: 'Global theme for components',
+      defaultValue: 'light',
+      toolbar: {
+        // Array of plain string values or MenuItem shape (see below)
+        items: ['light', 'dark'],
+        // Property that specifies if the name of the item will be displayed
+        showName: true,
+        // Change title based on selected value
+        dynamicTitle: true,
       },
     },
   },

@@ -7,10 +7,11 @@ export default {
   argTypes: {
     state: { control: { type: 'select' } },
   },
+  tags: ['autodocs'],
   decorators: [
     (Story) => (
       <div style={{ width: '250px' }}>
-        <Story />
+        <Story light dark={false} />
       </div>
     ),
   ],
