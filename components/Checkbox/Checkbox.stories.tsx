@@ -7,6 +7,9 @@ export default {
   component: Checkbox,
   argTypes: {
     state: { control: { type: 'select' } },
+    disabled: { control: { type: 'boolean' } },
+    checked: { control: { type: 'boolean' } },
+    defaultChecked: { control: { type: 'boolean' } },
   },
 } as ComponentMeta<typeof Checkbox>;
 
@@ -17,16 +20,14 @@ export const Default = Template.bind({});
 Default.args = {
   id: 'alpha',
   state: 'default',
-  defaultValue: false,
   label: 'Label',
 };
 
 export const Checked = Template.bind({});
 Checked.args = {
   id: 'alpha',
-  state: 'checked',
   label: 'Label',
-  defaultValue: true,
+  checked: true,
 };
 
 export const Error = Template.bind({});
@@ -34,14 +35,11 @@ Error.args = {
   id: 'alpha',
   state: 'error',
   label: 'Label',
-  defaultValue: false,
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
   id: 'alpha',
-  state: 'disable',
   disabled: true,
   label: 'Label',
-  defaultValue: false,
 };
