@@ -81,7 +81,7 @@ export const Tooltip: FC<ITooltipProperties> & { Trigger: typeof Trigger; Conten
         <div
           ref={refTooltip}
           className={classNames(
-            'backdrop-filter-blur-m position-absolute animation-animated animation-fade-in width-fit-content padding-xs padding-right-s padding-left-s border-radius-m box-shadow-m white-space-no-wrap',
+            'backdrop-filter-blur-m position-absolute animation-animated animation-fade-in width-fit-content padding-xs padding-right-s padding-left-s border-radius-xs box-shadow-m white-space-no-wrap',
             tooltip.variant[variant],
             className,
           )}

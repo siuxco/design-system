@@ -34,32 +34,52 @@ export interface IComponentsPreviewProperties {
 
 export const ComponentsPreview: FC<IComponentsPreviewProperties> = ({ className }) => {
   const ComponentsList = [
-    { category: 'components', name: 'alert', image: alert },
-    { category: 'components', name: 'empty-state', image: emptystate },
-    { category: 'components', name: 'loader', image: loader },
-    { category: 'components', name: 'message', image: message },
-    { category: 'components', name: 'toast', image: toast },
-    { category: 'components', name: 'avatar', image: avatar },
-    { category: 'components', name: 'badge', image: badge },
-    { category: 'components', name: 'kbd', image: kbd },
-    { category: 'components', name: 'tooltip', image: tooltip },
-    { category: 'components', name: 'breadcrumb', image: breadcrumb },
-    { category: 'components', name: 'dropdown', image: dropdown },
-    { category: 'components', name: 'navigation', image: navigation },
-    { category: 'components', name: 'button', image: button },
-    { category: 'components', name: 'icon', image: icon },
-    { category: 'components', name: 'modal', image: modal },
-    { category: 'components', name: 'text', image: text },
-    { category: 'components', name: 'card', image: card },
-    { category: 'components', name: 'checkbox', image: checkbox },
-    { category: 'components', name: 'input', image: input },
-    { category: 'components', name: 'radio', image: radio },
-    { category: 'components', name: 'select', image: select },
-    { category: 'components', name: 'switch', image: switchx },
-    { category: 'components', name: 'textarea', image: textarea },
-    { category: 'components', name: 'upload', image: upload },
-    { category: 'utilities', name: 'shadow', image: shadow },
-    { category: 'components', name: 'text-editor', image: texteditor },
+    { category: 'components', name: 'alert', imageUrl: '/images/component-preview/alert.png', image: alert },
+    {
+      category: 'components',
+      name: 'empty-state',
+      imageUrl: '/images/component-preview/empty-state.png',
+      image: emptystate,
+    },
+    { category: 'components', name: 'loader', imageUrl: '/images/component-preview/loader.png', image: loader },
+    { category: 'components', name: 'message', imageUrl: '/images/component-preview/message.png', image: message },
+    { category: 'components', name: 'toast', imageUrl: '/images/component-preview/toast.png', image: toast },
+    { category: 'components', name: 'avatar', imageUrl: '/images/component-preview/avatar.png', image: avatar },
+    { category: 'components', name: 'badge', imageUrl: '/images/component-preview/badge.png', image: badge },
+    { category: 'components', name: 'kbd', imageUrl: '/images/component-preview/kbd.png', image: kbd },
+    { category: 'components', name: 'tooltip', imageUrl: '/images/component-preview/tooltip.png', image: tooltip },
+    {
+      category: 'components',
+      name: 'breadcrumb',
+      imageUrl: '/images/component-preview/breadcrumb.png',
+      image: breadcrumb,
+    },
+    { category: 'components', name: 'dropdown', imageUrl: '/images/component-preview/dropdown.png', image: dropdown },
+    {
+      category: 'components',
+      name: 'navigation',
+      imageUrl: '/images/component-preview/navigation.png',
+      image: navigation,
+    },
+    { category: 'components', name: 'button', imageUrl: '/images/component-preview/button.png', image: button },
+    { category: 'components', name: 'icon', imageUrl: '/images/component-preview/icon.png', image: icon },
+    { category: 'components', name: 'modal', imageUrl: '/images/component-preview/modal.png', image: modal },
+    { category: 'components', name: 'text', imageUrl: '/images/component-preview/text.png', image: text },
+    { category: 'components', name: 'card', imageUrl: '/images/component-preview/card.png', image: card },
+    { category: 'components', name: 'checkbox', imageUrl: '/images/component-preview/checkbox.png', image: checkbox },
+    { category: 'components', name: 'input', imageUrl: '/images/component-preview/input.png', image: input },
+    { category: 'components', name: 'radio', imageUrl: '/images/component-preview/radio.png', image: radio },
+    { category: 'components', name: 'select', imageUrl: '/images/component-preview/select.png', image: select },
+    { category: 'components', name: 'switch', imageUrl: '/images/component-preview/switch.png', image: switchx },
+    { category: 'components', name: 'textarea', imageUrl: '/images/component-preview/textarea.png', image: textarea },
+    { category: 'components', name: 'upload', imageUrl: '/images/component-preview/upload.png', image: upload },
+    { category: 'utilities', name: 'shadow', imageUrl: '/images/component-preview/shadow.png', image: shadow },
+    {
+      category: 'components',
+      name: 'text-editor',
+      imageUrl: '/images/component-preview/text-editor.png',
+      image: texteditor,
+    },
   ];
   return (
     <div
@@ -81,8 +101,7 @@ export const ComponentsPreview: FC<IComponentsPreviewProperties> = ({ className 
                 className="width-full"
                 src={`/iframe.html?args=&id=${component.category}-${component.name}&viewMode=story`}
               /> */}
-              {/* @ts-expect-error : IDK */}
-              <img src={component.image} alt={component.name} className="width-full" />
+              <img src={component.imageUrl} alt={component.name} className="width-full" />
             </div>
           </a>
         );
