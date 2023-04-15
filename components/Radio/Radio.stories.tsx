@@ -56,5 +56,4 @@ export const ThreeRadios = Template2.bind({});
 ThreeRadios.args = {
   label: 'Label',
   name: 'radio',
-  disabled: true,
 };
