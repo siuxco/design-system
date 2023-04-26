@@ -74,12 +74,6 @@ export const ComponentsPreview: FC<IComponentsPreviewProperties> = ({ className 
     { category: 'components', name: 'textarea', imageUrl: '/images/component-preview/textarea.png', image: textarea },
     { category: 'components', name: 'upload', imageUrl: '/images/component-preview/upload.png', image: upload },
     { category: 'utilities', name: 'shadow', imageUrl: '/images/component-preview/shadow.png', image: shadow },
-    {
-      category: 'components',
-      name: 'text-editor',
-      imageUrl: '/images/component-preview/text-editor.png',
-      image: texteditor,
-    },
   ];
   return (
     <div
