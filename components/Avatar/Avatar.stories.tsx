@@ -1,6 +1,6 @@
 import React from 'react';
 import { Avatar } from './Avatar';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 import UserAvatar from '../assets/avatar-marcos-sanchez.jpg';
 
 export default {
@@ -11,9 +11,9 @@ export default {
     shape: { control: { type: 'select' } },
     variant: { control: { type: 'select' } },
   },
-} as ComponentMeta<typeof Avatar>;
+} as Meta<typeof Avatar>;
 
-const Template: ComponentStory<typeof Avatar> = (arguments_) => <Avatar {...arguments_} />;
+const Template: StoryFn<typeof Avatar> = (arguments_) => <Avatar {...arguments_} />;
 
 // Stories
 export const Text = Template.bind({});

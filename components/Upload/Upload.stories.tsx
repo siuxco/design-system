@@ -1,13 +1,13 @@
 import React from 'react';
 import { Upload } from './Upload';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 
 export default {
   title: 'Components/Upload',
   component: Upload,
-} as ComponentMeta<typeof Upload>;
+} as Meta<typeof Upload>;
 
-const Template: ComponentStory<typeof Upload> = (arguments_) => <Upload {...arguments_} />;
+const Template: StoryFn<typeof Upload> = (arguments_) => <Upload {...arguments_} />;
 
 export const Default = Template.bind({});
 Default.args = {

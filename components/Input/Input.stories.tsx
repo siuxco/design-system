@@ -1,6 +1,6 @@
 import React from 'react';
 import { Input } from './Input';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 
 export default {
   title: 'Components/Input',
@@ -20,9 +20,9 @@ export default {
       </div>
     ),
   ],
-} as ComponentMeta<typeof Input>;
+} as Meta<typeof Input>;
 
-const Template: ComponentStory<typeof Input> = (arguments_) => <Input {...arguments_} />;
+const Template: StoryFn<typeof Input> = (arguments_) => <Input {...arguments_} />;
 
 // Stories
 export const Default = Template.bind({});

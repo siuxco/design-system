@@ -1,6 +1,6 @@
 import React from 'react';
 import { Textarea } from './Textarea';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 
 export default {
   title: 'Components/Textarea',
@@ -17,9 +17,9 @@ export default {
       </div>
     ),
   ],
-} as ComponentMeta<typeof Textarea>;
+} as Meta<typeof Textarea>;
 
-const Template: ComponentStory<typeof Textarea> = (arguments_) => <Textarea {...arguments_} />;
+const Template: StoryFn<typeof Textarea> = (arguments_) => <Textarea {...arguments_} />;
 
 // Stories
 export const Default = Template.bind({});

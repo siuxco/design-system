@@ -1,7 +1,7 @@
 import React from 'react';
 import { Modal } from './Modal';
 import { Button } from '../Button/Button';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 
 export default {
   title: 'Components/Modal',
@@ -9,9 +9,9 @@ export default {
   argTypes: {
     size: { control: { type: 'select' } },
   },
-} as ComponentMeta<typeof Modal>;
+} as Meta<typeof Modal>;
 
-const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
+const Template: StoryFn<typeof Modal> = (args) => <Modal {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

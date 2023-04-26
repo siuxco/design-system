@@ -1,6 +1,6 @@
 import React from 'react';
 import { Siux } from '../Siux/Siux';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 
 export default {
   title: 'Design Tokens/Font size',
@@ -13,7 +13,7 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof Siux>;
+} as Meta<typeof Siux>;
 
 const fontSizes = [
   'font-size-h1',
@@ -31,8 +31,8 @@ const fontSizes = [
   'font-size-xxs',
 ];
 
-const Template: ComponentStory<typeof Siux> = (arguments_) => <Siux {...arguments_} />;
-const TemplateGeneral: ComponentStory<typeof Siux> = () => (
+const Template: StoryFn<typeof Siux> = (arguments_) => <Siux {...arguments_} />;
+const TemplateGeneral: StoryFn<typeof Siux> = () => (
   <div>
     {fontSizes.map((font, i) => {
       return (

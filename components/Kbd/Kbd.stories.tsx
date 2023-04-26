@@ -1,6 +1,6 @@
 import React from 'react';
 import { Kbd } from './Kbd';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 
 export default {
   title: 'Components/Kbd',
@@ -8,9 +8,9 @@ export default {
   argTypes: {
     size: { control: { type: 'select' } },
   },
-} as ComponentMeta<typeof Kbd>;
+} as Meta<typeof Kbd>;
 
-const Template: ComponentStory<typeof Kbd> = (arguments_) => <Kbd {...arguments_} />;
+const Template: StoryFn<typeof Kbd> = (arguments_) => <Kbd {...arguments_} />;
 
 // Stories
 export const Small = Template.bind({});

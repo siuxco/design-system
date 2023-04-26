@@ -1,6 +1,6 @@
 import React from 'react';
 import { Breadcrumb } from './Breadcrumb';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 
 export default {
   title: 'Components/Breadcrumb',
@@ -8,9 +8,9 @@ export default {
   argTypes: {
     separator: { control: { type: 'select' } },
   },
-} as ComponentMeta<typeof Breadcrumb>;
+} as Meta<typeof Breadcrumb>;
 
-const Template: ComponentStory<typeof Breadcrumb> = (arguments_) => <Breadcrumb {...arguments_} />;
+const Template: StoryFn<typeof Breadcrumb> = (arguments_) => <Breadcrumb {...arguments_} />;
 
 export const Arrow = Template.bind({});
 Arrow.args = {

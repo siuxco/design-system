@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch } from './Switch';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 
 export default {
   title: 'Components/Switch',
@@ -11,7 +11,7 @@ export default {
     checked: { control: { type: 'boolean' } },
     defaultChecked: { control: { type: 'boolean' } },
   },
-} as ComponentMeta<typeof Switch>;
+} as Meta<typeof Switch>;
 
 const css = `
      .sibling:checked ~ .parent .sibling-checked\\:transitionX140 {
@@ -19,7 +19,7 @@ const css = `
     }
 `;
 
-const Template: ComponentStory<typeof Switch> = (arguments_) => (
+const Template: StoryFn<typeof Switch> = (arguments_) => (
   <>
     <style>{css}</style>
     <Switch {...arguments_} />

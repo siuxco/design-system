@@ -11,6 +11,8 @@ const variants = {
   'title-1': 'font-size-l tablet:font-size-xl desktop:font-size-xxl font-weight-900',
   'title-2': 'font-size-m tablet:font-size-l desktop:font-size-xl font-weight-800',
   'title-3': 'font-size-m tablet:font-size-m desktop:font-size-l font-weight-700',
+  'title-4': 'font-size-s tablet:font-size-s desktop:font-size-m font-weight-600',
+  'title-5': 'font-size-s tablet:font-size-s desktop:font-size-s font-weight-600',
   'body-strong-1': 'font-size-s font-weight-700',
   'body-strong-2': 'font-weight-700',
   'body-medium-1': 'font-size-s font-weight-500',
@@ -21,7 +23,12 @@ const variants = {
   'caption-2': 'font-size-xxs font-weight-600',
 };
 
-export interface ITextProperties extends Pick<ComponentProps<'div'>, 'className' | 'children'> {
+export interface ITextProperties
+  extends Pick<
+    ComponentProps<'div' | 'p' | 'span' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'>,
+    'className' | 'children'
+  > {
+  tag?: string;
   variant?:
     | 'display-1'
     | 'display-2'
@@ -32,6 +39,8 @@ export interface ITextProperties extends Pick<ComponentProps<'div'>, 'className'
     | 'title-1'
     | 'title-2'
     | 'title-3'
+    | 'title-4'
+    | 'title-5'
     | 'body-strong-1'
     | 'body-strong-2'
     | 'body-medium-1'
@@ -43,6 +52,8 @@ export interface ITextProperties extends Pick<ComponentProps<'div'>, 'className'
     | string;
 }
 
-export const Text: FC<ITextProperties> = ({ variant, children, className }) => {
-  return <div className={classNames(variants[variant], className)}>{children}</div>;
+export const Text: FC<ITextProperties> = ({ tag = 'div', variant, children, className }) => {
+  const getTag = ['div', 'p', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(tag) ? tag : 'div';
+  const CustomTag = getTag;
+  return <CustomTag className={classNames(variants[variant], className)}>{children}</CustomTag>;
 };

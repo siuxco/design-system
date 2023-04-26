@@ -1,6 +1,6 @@
 import React from 'react';
 import { Toast } from './Toast';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 
 export default {
   title: 'Components/Toast',
@@ -22,9 +22,9 @@ export default {
       </div>
     ),
   ],
-} as ComponentMeta<typeof Toast>;
+} as Meta<typeof Toast>;
 
-const Template: ComponentStory<typeof Toast> = (arguments_) => <Toast {...arguments_} />;
+const Template: StoryFn<typeof Toast> = (arguments_) => <Toast {...arguments_} />;
 
 // Stories
 export const Info = Template.bind({});

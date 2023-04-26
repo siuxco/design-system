@@ -1,7 +1,7 @@
 import React from 'react';
 import { EmptyState } from './EmptyState';
 import { Button } from '../Button/Button';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 
 export default {
   title: 'Components/Empty State',
@@ -16,9 +16,9 @@ export default {
       </div>
     ),
   ],
-} as ComponentMeta<typeof EmptyState>;
+} as Meta<typeof EmptyState>;
 
-const Template: ComponentStory<typeof EmptyState> = (arguments_) => <EmptyState {...arguments_} />;
+const Template: StoryFn<typeof EmptyState> = (arguments_) => <EmptyState {...arguments_} />;
 
 export const Default = Template.bind({});
 Default.args = {

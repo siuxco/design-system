@@ -5,7 +5,6 @@ import siuxTheme from './SiuxTheme';
 const divEmpty = styled.div(({ theme }) => ({
 }));
 const pEmpty = styled.p(({ theme }) => ({
-  color: "var(--color-neutral-7)",
 }));
 const h2Empty = styled.p(({ theme }) => ({
 }));
