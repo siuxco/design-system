@@ -6,7 +6,9 @@
 
 <h1 align="center">SIUX Design System</h1>
 
-Our goal is to provide a comprehensive set of design components, guidelines, and best practices for creating beautiful and intuitive user experiences. We prioritize simplicity and ease of use, making it easy for designers and developers to create consistent and cohesive interfaces across all their projects.
+Comprehensive set of design components, guidelines, and best practices for creating beautiful and intuitive user experiences.
+
+[https://design.siux.studio](https://design.siux.studio)
 
 ## ✨ Features
 
