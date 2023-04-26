@@ -1,8 +1,6 @@
 <p align="center">
   <a href="https://design.siux.studio">
-    <picture>
-      <img src="https://design.siux.studio/images/siux-design-system.png" width="100%" style="border-radius: 12px">
-    </picture>
+    <img src="https://design.siux.studio/images/siux-design-system.png" width="100%" style="border-radius: 12px">
   </a>
 </p>
 
