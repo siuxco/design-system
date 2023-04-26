@@ -28,7 +28,7 @@ export interface ITextProperties
     ComponentProps<'div' | 'p' | 'span' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'>,
     'className' | 'children'
   > {
-  tag?: string;
+  tag?: 'div' | 'p' | 'span' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   variant?:
     | 'display-1'
     | 'display-2'
@@ -53,7 +53,6 @@ export interface ITextProperties
 }
 
 export const Text: FC<ITextProperties> = ({ tag = 'div', variant, children, className }) => {
-  const getTag = ['div', 'p', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(tag) ? tag : 'div';
-  const CustomTag = getTag;
+  const CustomTag = ['div', 'p', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(tag) ? tag : 'div';
   return <CustomTag className={classNames(variants[variant], className)}>{children}</CustomTag>;
 };
