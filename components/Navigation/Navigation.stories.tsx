@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navigation } from './Navigation';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 import { Badge } from '../Badge/Badge';
 
 export default {
@@ -63,9 +63,9 @@ export default {
       </div>
     ),
   ],
-} as ComponentMeta<typeof Navigation>;
+} as Meta<typeof Navigation>;
 
-const Template: ComponentStory<typeof Navigation> = (arguments_) => <Navigation {...arguments_} />;
+const Template: StoryFn<typeof Navigation> = (arguments_) => <Navigation {...arguments_} />;
 
 export const Horizontal = Template.bind({});
 Horizontal.args = {

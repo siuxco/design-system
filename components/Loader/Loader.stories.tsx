@@ -1,6 +1,6 @@
 import React from 'react';
 import { Loader } from './Loader';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 
 export default {
   title: 'Components/Loader',
@@ -12,9 +12,9 @@ export default {
     loader: { control: { type: 'select' } },
     size: { control: { type: 'select' } },
   },
-} as ComponentMeta<typeof Loader>;
+} as Meta<typeof Loader>;
 
-const Template: ComponentStory<typeof Loader> = (arguments_) => <Loader {...arguments_} />;
+const Template: StoryFn<typeof Loader> = (arguments_) => <Loader {...arguments_} />;
 
 // Stories
 export const Default = Template.bind({});

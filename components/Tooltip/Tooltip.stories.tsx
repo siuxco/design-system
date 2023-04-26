@@ -1,6 +1,6 @@
 import React from 'react';
 import { Tooltip } from './Tooltip';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 
 export default {
   title: 'Components/Tooltip',
@@ -9,9 +9,9 @@ export default {
     variant: { control: { type: 'select' } },
     direction: { control: { type: 'select' } },
   },
-} as ComponentMeta<typeof Tooltip>;
+} as Meta<typeof Tooltip>;
 
-const Template: ComponentStory<typeof Tooltip> = (arguments_) => <Tooltip {...arguments_} />;
+const Template: StoryFn<typeof Tooltip> = (arguments_) => <Tooltip {...arguments_} />;
 const TriggerTemplate = (
   <span className="display-flex align-content-center">
     <i className="icon-system-information-line color-primary-7 font-size-m margin-right-xxs" />

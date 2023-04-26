@@ -1,11 +1,12 @@
 import React from 'react';
 import { Text } from './Text';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 
 export default {
   title: 'Components/Text',
   component: Text,
   argTypes: {
+    tag: { control: { type: 'select' } },
     size: { control: { type: 'select' } },
     className: {
       table: {
@@ -13,32 +14,9 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof Text>;
+} as Meta<typeof Text>;
 
-const Template: ComponentStory<typeof Text> = (arguments_) => <Text {...arguments_} />;
-const TemplateGeneral: ComponentStory<typeof Text> = () => (
-  <div className="line-height-m">
-    <Text variant="display-1">Display 1</Text>
-    <Text variant="display-2">Display 2</Text>
-    <Text variant="display-3">Display 3</Text>
-    <Text variant="featured-1">Featured 1</Text>
-    <Text variant="featured-2">Featured 2</Text>
-    <Text variant="featured-3">Featured 3</Text>
-    <Text variant="title-1">Title 1</Text>
-    <Text variant="title-2">Title 2</Text>
-    <Text variant="title-3">Title 3</Text>
-    <Text variant="body-strong-1">Body strong 1</Text>
-    <Text variant="body-strong-2">Body strong 2</Text>
-    <Text variant="body-medium-1">Body medium 1</Text>
-    <Text variant="body-medium-2">Body medium 2</Text>
-    <Text variant="body-1">Body 1</Text>
-    <Text variant="body-2">Body 2</Text>
-    <Text variant="caption-1">Caption 1</Text>
-    <Text variant="caption-2">Caption 2</Text>
-  </div>
-);
-
-export const General = TemplateGeneral.bind({});
+const Template: StoryFn<typeof Text> = (arguments_) => <Text {...arguments_} />;
 
 export const Display1 = Template.bind({});
 Display1.args = {
@@ -94,6 +72,18 @@ Title3.args = {
   children: 'Title 3',
 };
 
+export const Title4 = Template.bind({});
+Title4.args = {
+  variant: 'title-4',
+  children: 'Title 4',
+};
+
+export const Title5 = Template.bind({});
+Title5.args = {
+  variant: 'title-5',
+  children: 'Title 5',
+};
+
 export const BodyStrong1 = Template.bind({});
 BodyStrong1.args = {
   variant: 'body-strong-1',
@@ -134,4 +124,11 @@ export const Caption2 = Template.bind({});
 Caption2.args = {
   variant: 'caption-2',
   children: 'Caption 2',
+};
+
+export const CustomTag = Template.bind({});
+CustomTag.args = {
+  tag: 'h1',
+  variant: 'display-1',
+  children: 'Custom tag H1',
 };

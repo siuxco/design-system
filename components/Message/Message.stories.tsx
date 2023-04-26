@@ -1,7 +1,7 @@
 import React from 'react';
 import { Message } from './Message';
 import { Button } from '../Button/Button';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 
 export default {
   title: 'Components/Message',
@@ -16,9 +16,9 @@ export default {
       </div>
     ),
   ],
-} as ComponentMeta<typeof Message>;
+} as Meta<typeof Message>;
 
-const Template: ComponentStory<typeof Message> = (arguments_) => <Message {...arguments_} />;
+const Template: StoryFn<typeof Message> = (arguments_) => <Message {...arguments_} />;
 
 export const Info = Template.bind({});
 Info.args = {

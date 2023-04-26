@@ -1,6 +1,6 @@
 import React from 'react';
 import { Siux } from '../Siux/Siux';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 
 export default {
   title: 'Design Tokens/Shadow',
@@ -9,10 +9,10 @@ export default {
     size: { control: { type: 'select' } },
     hover: { control: { type: 'select' } },
   },
-} as ComponentMeta<typeof Siux>;
+} as Meta<typeof Siux>;
 
-const Template: ComponentStory<typeof Siux> = (arguments_) => <div {...arguments_} />;
-const TemplateGeneral: ComponentStory<typeof Siux> = () => (
+const Template: StoryFn<typeof Siux> = (arguments_) => <div {...arguments_} />;
+const TemplateGeneral: StoryFn<typeof Siux> = () => (
   <>
     <div className="margin-s font-size-s font-weight-600 text-align-left">Shadow</div>
     <div className="display-flex flex-wrap">

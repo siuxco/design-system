@@ -1,6 +1,6 @@
 import React from 'react';
 import { Checkbox } from './Checkbox';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 
 export default {
   title: 'Components/Checkbox',
@@ -11,9 +11,9 @@ export default {
     checked: { control: { type: 'boolean' } },
     defaultChecked: { control: { type: 'boolean' } },
   },
-} as ComponentMeta<typeof Checkbox>;
+} as Meta<typeof Checkbox>;
 
-const Template: ComponentStory<typeof Checkbox> = (arguments_) => <Checkbox {...arguments_} />;
+const Template: StoryFn<typeof Checkbox> = (arguments_) => <Checkbox {...arguments_} />;
 
 // Stories
 export const Default = Template.bind({});

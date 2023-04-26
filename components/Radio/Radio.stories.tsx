@@ -1,6 +1,6 @@
 import React from 'react';
 import { Radio } from './Radio';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 
 export default {
   title: 'Components/Radio',
@@ -11,10 +11,10 @@ export default {
     checked: { control: { type: 'boolean' } },
     defaultChecked: { control: { type: 'boolean' } },
   },
-} as ComponentMeta<typeof Radio>;
+} as Meta<typeof Radio>;
 
-const Template: ComponentStory<typeof Radio> = (arguments_) => <Radio {...arguments_} />;
-const Template2: ComponentStory<typeof Radio> = (arguments_) => (
+const Template: StoryFn<typeof Radio> = (arguments_) => <Radio {...arguments_} />;
+const Template2: StoryFn<typeof Radio> = (arguments_) => (
   <>
     <Radio name={arguments_.name || 'radio'} {...arguments_} label="option 1" className="margin-bottom-m" />
     <Radio name={arguments_.name || 'radio'} {...arguments_} label="option 2" className="margin-bottom-m" />

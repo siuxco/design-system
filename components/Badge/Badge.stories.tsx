@@ -1,6 +1,6 @@
 import React from 'react';
 import { Badge } from './Badge';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 
 export default {
   title: 'Components/Badge',
@@ -8,9 +8,9 @@ export default {
   argTypes: {
     variant: { control: { type: 'select' } },
   },
-} as ComponentMeta<typeof Badge>;
+} as Meta<typeof Badge>;
 
-const Template: ComponentStory<typeof Badge> = (arguments_) => <Badge {...arguments_} />;
+const Template: StoryFn<typeof Badge> = (arguments_) => <Badge {...arguments_} />;
 
 // Stories
 export const Default = Template.bind({});

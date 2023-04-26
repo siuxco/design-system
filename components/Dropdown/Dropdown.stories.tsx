@@ -1,6 +1,6 @@
 import React from 'react';
 import { Dropdown } from './Dropdown';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 import { Button } from '../Button/Button';
 import { Navigation } from '../Navigation/Navigation';
 
@@ -10,9 +10,9 @@ export default {
   argTypes: {
     trigger: { control: { type: 'select' } },
   },
-} as ComponentMeta<typeof Dropdown>;
+} as Meta<typeof Dropdown>;
 
-const Template: ComponentStory<typeof Dropdown> = (arguments_) => <Dropdown {...arguments_} />;
+const Template: StoryFn<typeof Dropdown> = (arguments_) => <Dropdown {...arguments_} />;
 
 export const TriggerOnHover = Template.bind({});
 TriggerOnHover.args = {

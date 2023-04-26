@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card } from './Card';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 import { Badge } from '../Badge/Badge';
 import { Button } from '../Button/Button';
 
@@ -17,9 +17,9 @@ export default {
       </div>
     ),
   ],
-} as ComponentMeta<typeof Card>;
+} as Meta<typeof Card>;
 
-const Template: ComponentStory<typeof Card> = (arguments_) => <Card {...arguments_} />;
+const Template: StoryFn<typeof Card> = (arguments_) => <Card {...arguments_} />;
 
 export const Basic = Template.bind({});
 Basic.args = {
