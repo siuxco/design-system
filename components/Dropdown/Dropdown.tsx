@@ -25,14 +25,16 @@ const Dropdown: FC<IDropdownProperties> = ({ trigger = 'hover', className, space
     <div ref={wrapper} {...triggerProperties} className="position-relative">
       <div>{space}</div>
       {dropdown && (
-        <div
-          role="presentation"
-          onClick={() => setDropdown(!dropdown)}
-          className={classNames(
-            'position-absolute border-width-1 border-style-solid border-neutral-2 animation-fade-in animation-faster border-radius-xs overflow-hidden z-index-5 background-white border-width-1 border-neutral-2 box-shadow-m',
-            className,
-          )}>
-          {children}
+        <div className="position-absolute padding-top-xs">
+          <div
+            role="presentation"
+            onClick={() => setDropdown(!dropdown)}
+            className={classNames(
+              'border-width-1 border-style-solid border-neutral-2 animation-fade-in animation-faster border-radius-xs overflow-hidden z-index-5 background-white border-width-1 border-neutral-2 box-shadow-m',
+              className,
+            )}>
+            {children}
+          </div>
         </div>
       )}
     </div>
