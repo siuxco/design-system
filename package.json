@@ -1,6 +1,6 @@
 {
   "name": "@siuxco/design-system",
-  "version": "1.0.2-“beta-2”.0",
+  "version": "1.0.2-beta-2.0",
   "private": false,
   "scripts": {
     "dev": "next dev",
