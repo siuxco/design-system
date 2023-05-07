@@ -25,7 +25,7 @@ const Dropdown: FC<IDropdownProperties> = ({ trigger = 'hover', className, space
     <div ref={wrapper} {...triggerProperties} className="position-relative">
       <div>{space}</div>
       {dropdown && (
-        <div className="position-absolute padding-top-xs">
+        <div className="position-absolute padding-top-xs z-index-1">
           <div
             role="presentation"
             onClick={() => setDropdown(!dropdown)}
