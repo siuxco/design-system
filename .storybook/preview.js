@@ -70,5 +70,5 @@ export const parameters = {
       },
     },
   },
-  layout: 'centered',
+  layout: 'centered'
 }
