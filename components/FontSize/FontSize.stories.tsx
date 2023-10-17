@@ -36,7 +36,7 @@ const TemplateGeneral: StoryFn<typeof Siux> = () => (
   <div>
     {fontSizes.map((font, i) => {
       return (
-        <div key={i} className="margin-bottom-m">
+        <div key={font} className="margin-bottom-m">
           <div className={font}>Font size</div>
           <div className="color-neutral-7 font-family-secondary font-size-xs">{font}</div>
         </div>
