@@ -27,19 +27,23 @@ const TemplateGeneral: StoryFn<typeof Siux> = () => (
   </>
 );
 
-// Stories
-export const General = TemplateGeneral.bind({});
+export const General = {
+  render: TemplateGeneral,
+};
 
-export const MainLogo = Template.bind({});
-MainLogo.args = {
-  className: 'logo-main-logo z-index-1 box-shadow-xxs padding-xxl border-radius-m',
-  children: (
-    <>
-      <div
-        className="logo-main-logo box-shadow-xxs padding-xxl border-radius-m margin-l overflow-y-hidden background-position-center background-size-cover"
-        style={{ backgroundImage: "url('https://siux.studio/images/siux-studio.svg')" }}
-      />
-      <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">logo-main-logo</div>
-    </>
-  ),
+export const MainLogo = {
+  render: Template,
+
+  args: {
+    className: 'logo-main-logo z-index-1 box-shadow-xxs padding-xxl border-radius-m',
+    children: (
+      <>
+        <div
+          className="logo-main-logo box-shadow-xxs padding-xxl border-radius-m margin-l overflow-y-hidden background-position-center background-size-cover"
+          style={{ backgroundImage: "url('https://siux.studio/images/siux-studio.svg')" }}
+        />
+        <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">logo-main-logo</div>
+      </>
+    ),
+  },
 };

@@ -31,7 +31,6 @@ const fontSizes = [
   'font-size-xxs',
 ];
 
-const Template: StoryFn<typeof Siux> = (arguments_) => <Siux {...arguments_} />;
 const TemplateGeneral: StoryFn<typeof Siux> = () => (
   <div>
     {fontSizes.map((font, i) => {
@@ -45,76 +44,90 @@ const TemplateGeneral: StoryFn<typeof Siux> = () => (
   </div>
 );
 
-export const General = TemplateGeneral.bind({});
-
-export const Heading1 = Template.bind({});
-Heading1.args = {
-  className: 'font-size-h1',
-  children: 'Text example',
+export const General = {
+  render: TemplateGeneral,
 };
 
-export const Heading2 = Template.bind({});
-Heading2.args = {
-  className: 'font-size-h2',
-  children: 'Text example',
+export const Heading1 = {
+  args: {
+    className: 'font-size-h1',
+    children: 'Text example',
+  },
 };
 
-export const Heading3 = Template.bind({});
-Heading3.args = {
-  className: 'font-size-h3',
-  children: 'Text example',
+export const Heading2 = {
+  args: {
+    className: 'font-size-h2',
+    children: 'Text example',
+  },
 };
 
-export const Heading4 = Template.bind({});
-Heading4.args = {
-  className: 'font-size-h4',
-  children: 'Text example',
+export const Heading3 = {
+  args: {
+    className: 'font-size-h3',
+    children: 'Text example',
+  },
 };
 
-export const Heading5 = Template.bind({});
-Heading5.args = {
-  className: 'font-size-h5',
-  children: 'Text example',
+export const Heading4 = {
+  args: {
+    className: 'font-size-h4',
+    children: 'Text example',
+  },
 };
 
-export const SizeXXL = Template.bind({});
-SizeXXL.args = {
-  className: 'font-size-xxl',
-  children: 'Text example',
+export const Heading5 = {
+  args: {
+    className: 'font-size-h5',
+    children: 'Text example',
+  },
 };
 
-export const SizeXL = Template.bind({});
-SizeXL.args = {
-  className: 'font-size-xl',
-  children: 'Text example',
+export const SizeXXL = {
+  args: {
+    className: 'font-size-xxl',
+    children: 'Text example',
+  },
 };
 
-export const SizeL = Template.bind({});
-SizeL.args = {
-  className: 'font-size-l',
-  children: 'Text example',
+export const SizeXL = {
+  args: {
+    className: 'font-size-xl',
+    children: 'Text example',
+  },
 };
 
-export const SizeM = Template.bind({});
-SizeM.args = {
-  className: 'font-size-m',
-  children: 'Text example',
+export const SizeL = {
+  args: {
+    className: 'font-size-l',
+    children: 'Text example',
+  },
 };
 
-export const SizeS = Template.bind({});
-SizeS.args = {
-  className: 'font-size-s',
-  children: 'Text example',
+export const SizeM = {
+  args: {
+    className: 'font-size-m',
+    children: 'Text example',
+  },
 };
 
-export const SizeXS = Template.bind({});
-SizeXS.args = {
-  className: 'font-size-xs',
-  children: 'Text example',
+export const SizeS = {
+  args: {
+    className: 'font-size-s',
+    children: 'Text example',
+  },
 };
 
-export const SizeXXS = Template.bind({});
-SizeXXS.args = {
-  className: 'font-size-xxs',
-  children: 'Text example',
+export const SizeXS = {
+  args: {
+    className: 'font-size-xs',
+    children: 'Text example',
+  },
+};
+
+export const SizeXXS = {
+  args: {
+    className: 'font-size-xxs',
+    children: 'Text example',
+  },
 };

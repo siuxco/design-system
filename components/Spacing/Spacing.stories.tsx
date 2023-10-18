@@ -65,7 +65,7 @@ const TemplateGeneral: StoryFn<typeof Siux> = () => (
     <div className="display-flex flex-wrap">
       <div className="margin-m">
         <div
-          className="padding-xxl transition-all background-secondary-1 border-radius-xs border-width-1 border-secondary-2 border-style-dashed display-flex align-items-center justify-content-center position-relative"
+          className="transition-all background-secondary-1 border-radius-xs border-width-1 border-secondary-2 border-style-dashed display-flex align-items-center justify-content-center position-relative"
           style={{
             backgroundColor: 'rgb(246, 242, 255)',
             opacity: 0.8,
@@ -74,13 +74,13 @@ const TemplateGeneral: StoryFn<typeof Siux> = () => (
             backgroundSize: '15px 15px',
             backgroundPosition: '0px 0px, 7.5px 7.5px',
           }}>
-          <div className="margin-xxl background-secondary-7 border-radius-xxs height-s width-s position-absolute position-center"></div>
+          <div className="margin-xxl background-secondary-7 border-radius-xxs height-s width-s"></div>
         </div>
         <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">margin-xxl</div>
       </div>
       <div className="margin-m">
         <div
-          className="padding-xxl transition-all background-secondary-1 border-radius-xs border-width-1 border-secondary-2 border-style-dashed display-flex align-items-center justify-content-center position-relative"
+          className="transition-all background-secondary-1 border-radius-xs border-width-1 border-secondary-2 border-style-dashed display-flex align-items-center justify-content-center position-relative"
           style={{
             backgroundColor: 'rgb(246, 242, 255)',
             opacity: 0.8,
@@ -89,13 +89,13 @@ const TemplateGeneral: StoryFn<typeof Siux> = () => (
             backgroundSize: '15px 15px',
             backgroundPosition: '0px 0px, 7.5px 7.5px',
           }}>
-          <div className="margin-xl background-secondary-7 border-radius-xxs  height-s width-s position-absolute position-center"></div>
+          <div className="margin-xl background-secondary-7 border-radius-xxs  height-s width-s"></div>
         </div>
         <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">margin-xl</div>
       </div>
       <div className="margin-m">
         <div
-          className="padding-xxl transition-all background-secondary-1 border-radius-xs border-width-1 border-secondary-2 border-style-dashed display-flex align-items-center justify-content-center position-relative"
+          className="transition-all background-secondary-1 border-radius-xs border-width-1 border-secondary-2 border-style-dashed display-flex align-items-center justify-content-center position-relative"
           style={{
             backgroundColor: 'rgb(246, 242, 255)',
             opacity: 0.8,
@@ -104,7 +104,7 @@ const TemplateGeneral: StoryFn<typeof Siux> = () => (
             backgroundSize: '15px 15px',
             backgroundPosition: '0px 0px, 7.5px 7.5px',
           }}>
-          <div className="margin-l background-secondary-7 border-radius-xxs height-s width-s position-absolute position-center"></div>
+          <div className="margin-l background-secondary-7 border-radius-xxs height-s width-s"></div>
         </div>
         <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">margin-l</div>
       </div>
@@ -172,135 +172,174 @@ const TemplateGeneral: StoryFn<typeof Siux> = () => (
   </>
 );
 
-// Stories
-export const General = TemplateGeneral.bind({});
-
-// Padding
-
-export const PaddingExtraExtraSmall = Template.bind({});
-PaddingExtraExtraSmall.args = {
-  className:
-    'padding-xs width-xxl height-xxl transition-all background-primary-1 border-radius-xs border-width-1 border-primary-2 border-style-dashed display-flex align-items-center justify-content-center',
-  children: (
-    <div className="background-primary-7 border-radius-xxs width-s height-s position-absolute position-center"></div>
-  ),
+export const General = {
+  render: TemplateGeneral,
 };
 
-export const PaddingExtraSmall = Template.bind({});
-PaddingExtraSmall.args = {
-  className:
-    'padding-xs width-xxl height-xxl transition-all background-primary-1 border-radius-xs border-width-1 border-primary-2 border-style-dashed display-flex align-items-center justify-content-center',
-  children: (
-    <div className="background-primary-7 border-radius-xxs width-s height-s position-absolute position-center"></div>
-  ),
+export const PaddingExtraExtraSmall = {
+  render: Template,
+
+  args: {
+    className:
+      'padding-xs width-xxl height-xxl transition-all background-primary-1 border-radius-xs border-width-1 border-primary-2 border-style-dashed display-flex align-items-center justify-content-center',
+    children: (
+      <div className="background-primary-7 border-radius-xxs width-s height-s position-absolute position-center"></div>
+    ),
+  },
 };
 
-export const PaddingSmall = Template.bind({});
-PaddingSmall.args = {
-  className:
-    'padding-s width-xxl height-xxl transition-all background-primary-1 border-radius-xs border-width-1 border-primary-2 border-style-dashed display-flex align-items-center justify-content-center',
-  children: (
-    <div className="background-primary-7 border-radius-xxs width-s height-s position-absolute position-center"></div>
-  ),
+export const PaddingExtraSmall = {
+  render: Template,
+
+  args: {
+    className:
+      'padding-xs width-xxl height-xxl transition-all background-primary-1 border-radius-xs border-width-1 border-primary-2 border-style-dashed display-flex align-items-center justify-content-center',
+    children: (
+      <div className="background-primary-7 border-radius-xxs width-s height-s position-absolute position-center"></div>
+    ),
+  },
 };
 
-export const PaddingMedium = Template.bind({});
-PaddingMedium.args = {
-  className:
-    'padding-m width-xxl height-xxl transition-all background-primary-1 border-radius-xs border-width-1 border-primary-2 border-style-dashed display-flex align-items-center justify-content-center',
-  children: (
-    <div className="background-primary-7 border-radius-xxs width-s height-s position-absolute position-center"></div>
-  ),
+export const PaddingSmall = {
+  render: Template,
+
+  args: {
+    className:
+      'padding-s width-xxl height-xxl transition-all background-primary-1 border-radius-xs border-width-1 border-primary-2 border-style-dashed display-flex align-items-center justify-content-center',
+    children: (
+      <div className="background-primary-7 border-radius-xxs width-s height-s position-absolute position-center"></div>
+    ),
+  },
 };
 
-export const PaddingLarge = Template.bind({});
-PaddingLarge.args = {
-  className:
-    'padding-l width-xxl height-xxl transition-all background-primary-1 border-radius-xs border-width-1 border-primary-2 border-style-dashed display-flex align-items-center justify-content-center',
-  children: (
-    <div className="background-primary-7 border-radius-xxs width-s height-s position-absolute position-center"></div>
-  ),
+export const PaddingMedium = {
+  render: Template,
+
+  args: {
+    className:
+      'padding-m width-xxl height-xxl transition-all background-primary-1 border-radius-xs border-width-1 border-primary-2 border-style-dashed display-flex align-items-center justify-content-center',
+    children: (
+      <div className="background-primary-7 border-radius-xxs width-s height-s position-absolute position-center"></div>
+    ),
+  },
 };
 
-export const PaddingExtraLarge = Template.bind({});
-PaddingExtraLarge.args = {
-  className:
-    'padding-xl width-xxl height-xxl transition-all background-primary-1 border-radius-xs border-width-1 border-primary-2 border-style-dashed display-flex align-items-center justify-content-center',
-  children: (
-    <div className="background-primary-7 border-radius-xxs width-s height-s position-absolute position-center"></div>
-  ),
+export const PaddingLarge = {
+  render: Template,
+
+  args: {
+    className:
+      'padding-l width-xxl height-xxl transition-all background-primary-1 border-radius-xs border-width-1 border-primary-2 border-style-dashed display-flex align-items-center justify-content-center',
+    children: (
+      <div className="background-primary-7 border-radius-xxs width-s height-s position-absolute position-center"></div>
+    ),
+  },
 };
 
-export const PaddingExtraExtraLarge = Template.bind({});
-PaddingExtraExtraLarge.args = {
-  className:
-    'padding-xxl width-xxl height-xxl transition-all background-primary-1 border-radius-xs border-width-1 border-primary-2 border-style-dashed display-flex align-items-center justify-content-center',
-  children: (
-    <div className="background-primary-7 border-radius-xxs width-s height-s position-absolute position-center"></div>
-  ),
+export const PaddingExtraLarge = {
+  render: Template,
+
+  args: {
+    className:
+      'padding-xl width-xxl height-xxl transition-all background-primary-1 border-radius-xs border-width-1 border-primary-2 border-style-dashed display-flex align-items-center justify-content-center',
+    children: (
+      <div className="background-primary-7 border-radius-xxs width-s height-s position-absolute position-center"></div>
+    ),
+  },
 };
 
-//Margin
+export const PaddingExtraExtraLarge = {
+  render: Template,
 
-export const MarginExtraExtraSmall = Template.bind({});
-MarginExtraExtraSmall.args = {
-  className:
-    'padding-xxl transition-all background-secondary-1 border-radius-xs border-width-1 border-secondary-2 border-style-dashed display-flex align-items-center justify-content-center position-relative',
-  children: (
-    <div className="margin-xxs background-secondary-7 border-radius-xxs height-s width-s position-absolute position-center"></div>
-  ),
+  args: {
+    className:
+      'padding-xxl width-xxl height-xxl transition-all background-primary-1 border-radius-xs border-width-1 border-primary-2 border-style-dashed display-flex align-items-center justify-content-center',
+    children: (
+      <div className="background-primary-7 border-radius-xxs width-s height-s position-absolute position-center"></div>
+    ),
+  },
 };
 
-export const MarginExtraSmall = Template.bind({});
-MarginExtraSmall.args = {
-  className:
-    'padding-xxl transition-all background-secondary-1 border-radius-xs border-width-1 border-secondary-2 border-style-dashed display-flex align-items-center justify-content-center position-relative',
-  children: (
-    <div className="margin-xs background-secondary-7 border-radius-xxs height-s width-s position-absolute position-center"></div>
-  ),
+export const MarginExtraExtraSmall = {
+  render: Template,
+
+  args: {
+    className:
+      'padding-xxl transition-all background-secondary-1 border-radius-xs border-width-1 border-secondary-2 border-style-dashed display-flex align-items-center justify-content-center position-relative',
+    children: (
+      <div className="margin-xxs background-secondary-7 border-radius-xxs height-s width-s position-absolute position-center"></div>
+    ),
+  },
 };
 
-export const MarginSmall = Template.bind({});
-MarginSmall.args = {
-  className:
-    'padding-xxl transition-all background-secondary-1 border-radius-xs border-width-1 border-secondary-2 border-style-dashed display-flex align-items-center justify-content-center position-relative',
-  children: (
-    <div className="margin-s background-secondary-7 border-radius-xxs height-s width-s position-absolute position-center"></div>
-  ),
+export const MarginExtraSmall = {
+  render: Template,
+
+  args: {
+    className:
+      'padding-xxl transition-all background-secondary-1 border-radius-xs border-width-1 border-secondary-2 border-style-dashed display-flex align-items-center justify-content-center position-relative',
+    children: (
+      <div className="margin-xs background-secondary-7 border-radius-xxs height-s width-s position-absolute position-center"></div>
+    ),
+  },
 };
 
-export const MarginMedium = Template.bind({});
-MarginMedium.args = {
-  className:
-    'padding-xxl transition-all background-secondary-1 border-radius-xs border-width-1 border-secondary-2 border-style-dashed display-flex align-items-center justify-content-center position-relative',
-  children: (
-    <div className="margin-m background-secondary-7 border-radius-xxs height-s width-s position-absolute position-center"></div>
-  ),
+export const MarginSmall = {
+  render: Template,
+
+  args: {
+    className:
+      'padding-xxl transition-all background-secondary-1 border-radius-xs border-width-1 border-secondary-2 border-style-dashed display-flex align-items-center justify-content-center position-relative',
+    children: (
+      <div className="margin-s background-secondary-7 border-radius-xxs height-s width-s position-absolute position-center"></div>
+    ),
+  },
 };
 
-export const MarginLarge = Template.bind({});
-MarginLarge.args = {
-  className:
-    'padding-xxl transition-all background-secondary-1 border-radius-xs border-width-1 border-secondary-2 border-style-dashed display-flex align-items-center justify-content-center position-relative',
-  children: (
-    <div className="margin-l background-secondary-7 border-radius-xxs height-s width-s position-absolute position-center"></div>
-  ),
+export const MarginMedium = {
+  render: Template,
+
+  args: {
+    className:
+      'padding-xxl transition-all background-secondary-1 border-radius-xs border-width-1 border-secondary-2 border-style-dashed display-flex align-items-center justify-content-center position-relative',
+    children: (
+      <div className="margin-m background-secondary-7 border-radius-xxs height-s width-s position-absolute position-center"></div>
+    ),
+  },
 };
 
-export const MarginExtraLarge = Template.bind({});
-MarginExtraLarge.args = {
-  className:
-    'padding-xxl transition-all background-secondary-1 border-radius-xs border-width-1 border-secondary-2 border-style-dashed display-flex align-items-center justify-content-center position-relative',
-  children: (
-    <div className="margin-xl background-secondary-7 border-radius-xxs height-s width-s position-absolute position-center"></div>
-  ),
+export const MarginLarge = {
+  render: Template,
+
+  args: {
+    className:
+      'padding-xxl transition-all background-secondary-1 border-radius-xs border-width-1 border-secondary-2 border-style-dashed display-flex align-items-center justify-content-center position-relative',
+    children: (
+      <div className="margin-l background-secondary-7 border-radius-xxs height-s width-s position-absolute position-center"></div>
+    ),
+  },
 };
 
-export const MarginExtraExtraLarge = Template.bind({});
-MarginExtraExtraLarge.args = {
-  className:
-    'padding-xxl transition-all background-secondary-1 border-radius-xs border-width-1 border-secondary-2 border-style-dashed display-flex align-items-center justify-content-center position-relative',
-  children: (
-    <div className="margin-xxl background-secondary-7 border-radius-xxs height-s width-s position-absolute position-center"></div>
-  ),
+export const MarginExtraLarge = {
+  render: Template,
+
+  args: {
+    className:
+      'padding-xxl transition-all background-secondary-1 border-radius-xs border-width-1 border-secondary-2 border-style-dashed display-flex align-items-center justify-content-center position-relative',
+    children: (
+      <div className="margin-xl background-secondary-7 border-radius-xxs height-s width-s position-absolute position-center"></div>
+    ),
+  },
+};
+
+export const MarginExtraExtraLarge = {
+  render: Template,
+
+  args: {
+    className:
+      'padding-xxl transition-all background-secondary-1 border-radius-xs border-width-1 border-secondary-2 border-style-dashed display-flex align-items-center justify-content-center position-relative',
+    children: (
+      <div className="margin-xxl background-secondary-7 border-radius-xxs height-s width-s position-absolute position-center"></div>
+    ),
+  },
 };

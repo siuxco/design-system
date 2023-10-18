@@ -26,30 +26,41 @@ const Template: StoryFn<typeof Switch> = (arguments_) => (
   </>
 );
 
-// Stories
-export const Default = Template.bind({});
-Default.args = {
-  id: 'alpha',
-  state: 'default',
-  label: 'Label',
+export const Default = {
+  render: Template,
+
+  args: {
+    id: 'alpha',
+    state: 'default',
+    label: 'Label',
+  },
 };
 
-export const Checked = Template.bind({});
-Checked.args = {
-  id: 'alpha',
-  label: 'Label',
+export const Checked = {
+  render: Template,
+
+  args: {
+    id: 'alpha',
+    label: 'Label',
+  },
 };
 
-export const Error = Template.bind({});
-Error.args = {
-  id: 'alpha',
-  state: 'error',
-  label: 'Label',
+export const Error = {
+  render: Template,
+
+  args: {
+    id: 'alpha',
+    state: 'error',
+    label: 'Label',
+  },
 };
 
-export const Disabled = Template.bind({});
-Disabled.args = {
-  id: 'alpha',
-  disabled: true,
-  label: 'Label',
+export const Disabled = {
+  render: Template,
+
+  args: {
+    id: 'alpha',
+    disabled: true,
+    label: 'Label',
+  },
 };

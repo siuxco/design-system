@@ -19,27 +19,27 @@ export default {
   ],
 } as Meta<typeof Textarea>;
 
-const Template: StoryFn<typeof Textarea> = (arguments_) => <Textarea {...arguments_} />;
-
-// Stories
-export const Default = Template.bind({});
-Default.args = {
-  label: 'Label',
-  state: 'default',
-  placeholder: 'Placeholder...',
+export const Default = {
+  args: {
+    label: 'Label',
+    state: 'default',
+    placeholder: 'Placeholder...',
+  },
 };
 
-export const Error = Template.bind({});
-Error.args = {
-  label: 'Label',
-  state: 'error',
-  placeholder: 'Placeholder...',
+export const Error = {
+  args: {
+    label: 'Label',
+    state: 'error',
+    placeholder: 'Placeholder...',
+  },
 };
 
-export const Disabled = Template.bind({});
-Disabled.args = {
-  label: 'Label',
-  state: 'disabled',
-  disabled: true,
-  placeholder: 'Placeholder...',
+export const Disabled = {
+  args: {
+    label: 'Label',
+    state: 'disabled',
+    disabled: true,
+    placeholder: 'Placeholder...',
+  },
 };

@@ -13,7 +13,6 @@ export default {
   },
 } as Meta<typeof Radio>;
 
-const Template: StoryFn<typeof Radio> = (arguments_) => <Radio {...arguments_} />;
 const Template2: StoryFn<typeof Radio> = (arguments_) => (
   <>
     <Radio name={arguments_.name || 'radio'} {...arguments_} label="option 1" className="margin-bottom-m" />
@@ -22,38 +21,44 @@ const Template2: StoryFn<typeof Radio> = (arguments_) => (
   </>
 );
 
-// Stories
-export const Default = Template.bind({});
-Default.args = {
-  id: 'alpha',
-  // state: 'default',
-  label: 'Label',
+export const Default = {
+  args: {
+    id: 'alpha',
+    // state: 'default',
+    label: 'Label',
+  },
 };
 
-export const Checked = Template.bind({});
-Checked.args = {
-  id: 'alpha',
-  // state: 'checked',
-  label: 'Label',
-  checked: true,
+export const Checked = {
+  args: {
+    id: 'alpha',
+    // state: 'checked',
+    label: 'Label',
+    checked: true,
+  },
 };
 
-export const Error = Template.bind({});
-Error.args = {
-  id: 'alpha',
-  state: 'error',
-  label: 'Label',
+export const Error = {
+  args: {
+    id: 'alpha',
+    state: 'error',
+    label: 'Label',
+  },
 };
 
-export const Disabled = Template.bind({});
-Disabled.args = {
-  id: 'alpha',
-  label: 'Label',
-  disabled: true,
+export const Disabled = {
+  args: {
+    id: 'alpha',
+    label: 'Label',
+    disabled: true,
+  },
 };
 
-export const ThreeRadios = Template2.bind({});
-ThreeRadios.args = {
-  label: 'Label',
-  name: 'radio',
+export const ThreeRadios = {
+  render: Template2,
+
+  args: {
+    label: 'Label',
+    name: 'radio',
+  },
 };

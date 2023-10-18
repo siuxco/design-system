@@ -13,30 +13,30 @@ export default {
   },
 } as Meta<typeof Avatar>;
 
-const Template: StoryFn<typeof Avatar> = (arguments_) => <Avatar {...arguments_} />;
-
-// Stories
-export const Text = Template.bind({});
-Text.args = {
-  variant: 'primary',
-  size: 'sm',
-  text: 'MS',
-  title: 'Marcos Sanchez',
+export const Text = {
+  args: {
+    variant: 'primary',
+    size: 'sm',
+    text: 'MS',
+    title: 'Marcos Sanchez',
+  },
 };
 
-export const Square = Template.bind({});
-Square.args = {
-  variant: 'primary',
-  size: 'sm',
-  text: 'MS',
-  shape: 'square',
-  title: 'Marcos Sanchez',
+export const Square = {
+  args: {
+    variant: 'primary',
+    size: 'sm',
+    text: 'MS',
+    shape: 'square',
+    title: 'Marcos Sanchez',
+  },
 };
 
-export const Image = Template.bind({});
-Image.args = {
-  variant: 'neutral',
-  size: 'sm',
-  image: UserAvatar,
-  title: 'Marcos Sanchez',
+export const Image = {
+  args: {
+    variant: 'neutral',
+    size: 'sm',
+    image: UserAvatar,
+    title: 'Marcos Sanchez',
+  },
 };

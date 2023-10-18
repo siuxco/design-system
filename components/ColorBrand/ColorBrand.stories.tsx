@@ -206,155 +206,246 @@ const TemplateGeneral: StoryFn<typeof Siux> = () => (
   </>
 );
 
-// Stories
-export const General = TemplateGeneral.bind({});
-
-export const Primary1 = Template.bind({});
-Primary1.args = {
-  className: 'background-primary-1 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+export const General = {
+  render: TemplateGeneral,
 };
 
-export const Primary2 = Template.bind({});
-Primary2.args = {
-  className: 'background-primary-2 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+export const Primary1 = {
+  render: Template,
+
+  args: {
+    className: 'background-primary-1 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+  },
 };
 
-export const Primary3 = Template.bind({});
-Primary3.args = {
-  className: 'background-primary-3 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+export const Primary2 = {
+  render: Template,
+
+  args: {
+    className: 'background-primary-2 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+  },
 };
 
-export const Primary4 = Template.bind({});
-Primary4.args = {
-  className: 'background-primary-4 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+export const Primary3 = {
+  render: Template,
+
+  args: {
+    className: 'background-primary-3 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+  },
 };
 
-export const Primary5 = Template.bind({});
-Primary5.args = {
-  className: 'background-primary-5 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+export const Primary4 = {
+  render: Template,
+
+  args: {
+    className: 'background-primary-4 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+  },
 };
 
-export const Primary6 = Template.bind({});
-Primary6.args = {
-  className: 'background-primary-6 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+export const Primary5 = {
+  render: Template,
+
+  args: {
+    className: 'background-primary-5 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+  },
 };
 
-export const Primary7 = Template.bind({});
-Primary7.args = {
-  className: 'background-primary-7 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+export const Primary6 = {
+  render: Template,
+
+  args: {
+    className: 'background-primary-6 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+  },
 };
 
-export const Primary8 = Template.bind({});
-Primary8.args = {
-  className: 'background-primary-8 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+export const Primary7 = {
+  render: Template,
+
+  args: {
+    className: 'background-primary-7 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+  },
 };
 
-export const Primary9 = Template.bind({});
-Primary9.args = {
-  className: 'background-primary-9 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+export const Primary8 = {
+  render: Template,
+
+  args: {
+    className: 'background-primary-8 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+  },
 };
 
-export const Primary10 = Template.bind({});
-Primary10.args = {
-  className: 'background-primary-10 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+export const Primary9 = {
+  render: Template,
+
+  args: {
+    className: 'background-primary-9 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+  },
 };
 
-export const Secondary1 = Template.bind({});
-Secondary1.args = {
-  className: 'background-secondary-1 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+export const Primary10 = {
+  render: Template,
+
+  args: {
+    className: 'background-primary-10 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+  },
 };
 
-export const Secondary2 = Template.bind({});
-Secondary2.args = {
-  className: 'background-secondary-2 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+export const Secondary1 = {
+  render: Template,
+
+  args: {
+    className: 'background-secondary-1 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+  },
 };
 
-export const Secondary3 = Template.bind({});
-Secondary3.args = {
-  className: 'background-secondary-3 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+export const Secondary2 = {
+  render: Template,
+
+  args: {
+    className: 'background-secondary-2 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+  },
 };
 
-export const Secondary4 = Template.bind({});
-Secondary4.args = {
-  className: 'background-secondary-4 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+export const Secondary3 = {
+  render: Template,
+
+  args: {
+    className: 'background-secondary-3 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+  },
 };
 
-export const Secondary5 = Template.bind({});
-Secondary5.args = {
-  className: 'background-secondary-5 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+export const Secondary4 = {
+  render: Template,
+
+  args: {
+    className: 'background-secondary-4 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+  },
 };
 
-export const Secondary6 = Template.bind({});
-Secondary6.args = {
-  className: 'background-secondary-6 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+export const Secondary5 = {
+  render: Template,
+
+  args: {
+    className: 'background-secondary-5 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+  },
 };
 
-export const Secondary7 = Template.bind({});
-Secondary7.args = {
-  className: 'background-secondary-7 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+export const Secondary6 = {
+  render: Template,
+
+  args: {
+    className: 'background-secondary-6 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+  },
 };
 
-export const Secondary8 = Template.bind({});
-Secondary8.args = {
-  className: 'background-secondary-8 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+export const Secondary7 = {
+  render: Template,
+
+  args: {
+    className: 'background-secondary-7 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+  },
 };
 
-export const Secondary9 = Template.bind({});
-Secondary9.args = {
-  className: 'background-secondary-9 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+export const Secondary8 = {
+  render: Template,
+
+  args: {
+    className: 'background-secondary-8 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+  },
 };
 
-export const Secondary10 = Template.bind({});
-Secondary10.args = {
-  className: 'background-secondary-10 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+export const Secondary9 = {
+  render: Template,
+
+  args: {
+    className: 'background-secondary-9 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+  },
 };
 
-export const Tertiary1 = Template.bind({});
-Tertiary1.args = {
-  className: 'background-tertiary-10 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+export const Secondary10 = {
+  render: Template,
+
+  args: {
+    className: 'background-secondary-10 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+  },
 };
 
-export const Tertiary2 = Template.bind({});
-Tertiary2.args = {
-  className: 'background-tertiary-2 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+export const Tertiary1 = {
+  render: Template,
+
+  args: {
+    className: 'background-tertiary-10 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+  },
 };
 
-export const Tertiary3 = Template.bind({});
-Tertiary3.args = {
-  className: 'background-tertiary-3 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+export const Tertiary2 = {
+  render: Template,
+
+  args: {
+    className: 'background-tertiary-2 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+  },
 };
 
-export const Tertiary4 = Template.bind({});
-Tertiary4.args = {
-  className: 'background-tertiary-4 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+export const Tertiary3 = {
+  render: Template,
+
+  args: {
+    className: 'background-tertiary-3 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+  },
 };
 
-export const Tertiary5 = Template.bind({});
-Tertiary5.args = {
-  className: 'background-tertiary-5 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+export const Tertiary4 = {
+  render: Template,
+
+  args: {
+    className: 'background-tertiary-4 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+  },
 };
 
-export const Tertiary6 = Template.bind({});
-Tertiary6.args = {
-  className: 'background-tertiary-7 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+export const Tertiary5 = {
+  render: Template,
+
+  args: {
+    className: 'background-tertiary-5 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+  },
 };
 
-export const Tertiary7 = Template.bind({});
-Tertiary7.args = {
-  className: 'background-tertiary-7 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+export const Tertiary6 = {
+  render: Template,
+
+  args: {
+    className: 'background-tertiary-7 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+  },
 };
 
-export const Tertiary8 = Template.bind({});
-Tertiary8.args = {
-  className: 'background-tertiary-8 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+export const Tertiary7 = {
+  render: Template,
+
+  args: {
+    className: 'background-tertiary-7 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+  },
 };
 
-export const Tertiary9 = Template.bind({});
-Tertiary9.args = {
-  className: 'background-tertiary-9 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+export const Tertiary8 = {
+  render: Template,
+
+  args: {
+    className: 'background-tertiary-8 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+  },
 };
 
-export const Tertiary10 = Template.bind({});
-Tertiary10.args = {
-  className: 'background-tertiary-10 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+export const Tertiary9 = {
+  render: Template,
+
+  args: {
+    className: 'background-tertiary-9 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+  },
+};
+
+export const Tertiary10 = {
+  render: Template,
+
+  args: {
+    className: 'background-tertiary-10 box-shadow-xs padding-xxl border-radius-m width-m height-m',
+  },
 };

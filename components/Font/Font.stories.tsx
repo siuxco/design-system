@@ -35,7 +35,6 @@ const fontVariations = [
   { name: 'Overpass Mono', value: 'font-family-secondary' },
 ];
 
-const Template: StoryFn<typeof Siux> = (arguments_) => <Siux {...arguments_} />;
 const TemplateGeneral: StoryFn<typeof Siux> = () => (
   <div>
     {/* {fontStyles.map((font, i) => {
@@ -56,26 +55,30 @@ const TemplateGeneral: StoryFn<typeof Siux> = () => (
     })} */}
     {fontVariations.map((font, index) => {
       return (
-        <div key={font.name} className="margin-bottom-m">
+        // poner nombre fonts
+        (<div key={font.name} className="margin-bottom-m">
           <div className={font.value}>{font.name}</div>
           <div className="color-neutral-7 font-family-primary font-size-xs">{font.value}</div>
-        </div>
-        // poner nombre fonts
+        </div>)
       );
     })}
   </div>
 );
 
-export const General = TemplateGeneral.bind({});
-
-export const VariationPrimary = Template.bind({});
-VariationPrimary.args = {
-  className: 'font-family-primary',
-  children: 'Text example',
+export const General = {
+  render: TemplateGeneral,
 };
 
-export const VariationSecondary = Template.bind({});
-VariationSecondary.args = {
-  className: 'font-family-secondary',
-  children: 'Text example',
+export const VariationPrimary = {
+  args: {
+    className: 'font-family-primary',
+    children: 'Text example',
+  },
+};
+
+export const VariationSecondary = {
+  args: {
+    className: 'font-family-secondary',
+    children: 'Text example',
+  },
 };

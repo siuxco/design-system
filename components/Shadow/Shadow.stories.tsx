@@ -63,35 +63,54 @@ const TemplateGeneral: StoryFn<typeof Siux> = () => (
   </>
 );
 
-// Stories
-export const General = TemplateGeneral.bind({});
-
-export const ExtraSmall = Template.bind({});
-ExtraSmall.args = {
-  className: 'box-shadow-xs padding-xxl border-radius-m',
+export const General = {
+  render: TemplateGeneral,
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  className: 'box-shadow-s padding-xxl border-radius-m',
+export const ExtraSmall = {
+  render: Template,
+
+  args: {
+    className: 'box-shadow-xs padding-xxl border-radius-m',
+  },
 };
 
-export const Medium = Template.bind({});
-Medium.args = {
-  className: 'box-shadow-m padding-xxl border-radius-m',
+export const Small = {
+  render: Template,
+
+  args: {
+    className: 'box-shadow-s padding-xxl border-radius-m',
+  },
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  className: 'box-shadow-l padding-xxl border-radius-m',
+export const Medium = {
+  render: Template,
+
+  args: {
+    className: 'box-shadow-m padding-xxl border-radius-m',
+  },
 };
 
-export const ExtraLarge = Template.bind({});
-ExtraLarge.args = {
-  className: 'box-shadow-xl padding-xxl border-radius-m',
+export const Large = {
+  render: Template,
+
+  args: {
+    className: 'box-shadow-l padding-xxl border-radius-m',
+  },
 };
 
-export const HoverShadow = Template.bind({});
-HoverShadow.args = {
-  className: 'box-shadow-m hover:box-shadow-xl padding-xxl border-radius-m',
+export const ExtraLarge = {
+  render: Template,
+
+  args: {
+    className: 'box-shadow-xl padding-xxl border-radius-m',
+  },
+};
+
+export const HoverShadow = {
+  render: Template,
+
+  args: {
+    className: 'box-shadow-m hover:box-shadow-xl padding-xxl border-radius-m',
+  },
 };

@@ -62,89 +62,111 @@ const TemplateGeneral: StoryFn<typeof Siux> = () => (
   </>
 );
 
-// Stories
-export const General = TemplateGeneral.bind({});
-
-export const LineHeightXXL = Template.bind({});
-LineHeightXXL.args = {
-  className:
-    'line-height-xxl display-flex transition-all font-size-xs align-items-center position-relative padding-left-xs margin-top-xs',
-  children: (
-    <>
-      <div className="background-primary-7 border-radius-xxs width-xxs position-absolute position-left"></div>
-      <div className="margin-left-xxs">XXL</div>
-    </>
-  ),
+export const General = {
+  render: TemplateGeneral,
 };
 
-export const LineHeightXL = Template.bind({});
-LineHeightXL.args = {
-  className:
-    'line-height-xl display-flex transition-all font-size-xs align-items-center position-relative padding-left-xs margin-top-xs',
-  children: (
-    <>
-      <div className="background-primary-7 border-radius-xxs width-xxs position-absolute position-left"></div>
-      <div className="margin-left-xxs">XL</div>
-    </>
-  ),
+export const LineHeightXXL = {
+  render: Template,
+
+  args: {
+    className:
+      'line-height-xxl display-flex transition-all font-size-xs align-items-center position-relative padding-left-xs margin-top-xs',
+    children: (
+      <>
+        <div className="background-primary-7 border-radius-xxs width-xxs position-absolute position-left"></div>
+        <div className="margin-left-xxs">XXL</div>
+      </>
+    ),
+  },
 };
 
-export const LineHeightL = Template.bind({});
-LineHeightL.args = {
-  className:
-    'line-height-l display-flex transition-all font-size-xs align-items-center position-relative padding-left-xs margin-top-xs',
-  children: (
-    <>
-      <div className="background-primary-7 border-radius-xxs width-xxs position-absolute position-left"></div>
-      <div className="margin-left-xxs">L</div>
-    </>
-  ),
+export const LineHeightXL = {
+  render: Template,
+
+  args: {
+    className:
+      'line-height-xl display-flex transition-all font-size-xs align-items-center position-relative padding-left-xs margin-top-xs',
+    children: (
+      <>
+        <div className="background-primary-7 border-radius-xxs width-xxs position-absolute position-left"></div>
+        <div className="margin-left-xxs">XL</div>
+      </>
+    ),
+  },
 };
 
-export const LineHeightM = Template.bind({});
-LineHeightM.args = {
-  className:
-    'line-height-m display-flex transition-all font-size-xs align-items-center position-relative padding-left-xs margin-top-xs',
-  children: (
-    <>
-      <div className="background-primary-7 border-radius-xxs width-xxs position-absolute position-left"></div>
-      <div className="margin-left-xxs">M</div>
-    </>
-  ),
+export const LineHeightL = {
+  render: Template,
+
+  args: {
+    className:
+      'line-height-l display-flex transition-all font-size-xs align-items-center position-relative padding-left-xs margin-top-xs',
+    children: (
+      <>
+        <div className="background-primary-7 border-radius-xxs width-xxs position-absolute position-left"></div>
+        <div className="margin-left-xxs">L</div>
+      </>
+    ),
+  },
 };
 
-export const LineHeightS = Template.bind({});
-LineHeightS.args = {
-  className:
-    'line-height-s display-flex transition-all font-size-xs align-items-center position-relative padding-left-xs margin-top-xs',
-  children: (
-    <>
-      <div className="background-primary-7 border-radius-xxs width-xxs position-absolute position-left"></div>
-      <div className="margin-left-xxs">S</div>
-    </>
-  ),
+export const LineHeightM = {
+  render: Template,
+
+  args: {
+    className:
+      'line-height-m display-flex transition-all font-size-xs align-items-center position-relative padding-left-xs margin-top-xs',
+    children: (
+      <>
+        <div className="background-primary-7 border-radius-xxs width-xxs position-absolute position-left"></div>
+        <div className="margin-left-xxs">M</div>
+      </>
+    ),
+  },
 };
 
-export const LineHeightXS = Template.bind({});
-LineHeightXS.args = {
-  className:
-    'line-height-xs display-flex transition-all font-size-xs align-items-center position-relative padding-left-xs margin-top-xs',
-  children: (
-    <>
-      <div className="background-primary-7 border-radius-xxs width-xxs position-absolute position-left"></div>
-      <div className="margin-left-xxs">XS</div>
-    </>
-  ),
+export const LineHeightS = {
+  render: Template,
+
+  args: {
+    className:
+      'line-height-s display-flex transition-all font-size-xs align-items-center position-relative padding-left-xs margin-top-xs',
+    children: (
+      <>
+        <div className="background-primary-7 border-radius-xxs width-xxs position-absolute position-left"></div>
+        <div className="margin-left-xxs">S</div>
+      </>
+    ),
+  },
 };
 
-export const LineHeightXXS = Template.bind({});
-LineHeightXXS.args = {
-  className:
-    'line-height-xxs display-flex transition-all font-size-xs align-items-center position-relative padding-left-xs margin-top-xs',
-  children: (
-    <>
-      <div className="background-primary-7 border-radius-xxs width-xxs position-absolute position-left"></div>
-      <div className="margin-left-xxs">XXS</div>
-    </>
-  ),
+export const LineHeightXS = {
+  render: Template,
+
+  args: {
+    className:
+      'line-height-xs display-flex transition-all font-size-xs align-items-center position-relative padding-left-xs margin-top-xs',
+    children: (
+      <>
+        <div className="background-primary-7 border-radius-xxs width-xxs position-absolute position-left"></div>
+        <div className="margin-left-xxs">XS</div>
+      </>
+    ),
+  },
+};
+
+export const LineHeightXXS = {
+  render: Template,
+
+  args: {
+    className:
+      'line-height-xxs display-flex transition-all font-size-xs align-items-center position-relative padding-left-xs margin-top-xs',
+    children: (
+      <>
+        <div className="background-primary-7 border-radius-xxs width-xxs position-absolute position-left"></div>
+        <div className="margin-left-xxs">XXS</div>
+      </>
+    ),
+  },
 };

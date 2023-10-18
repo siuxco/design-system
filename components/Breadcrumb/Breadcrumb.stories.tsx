@@ -10,46 +10,47 @@ export default {
   },
 } as Meta<typeof Breadcrumb>;
 
-const Template: StoryFn<typeof Breadcrumb> = (arguments_) => <Breadcrumb {...arguments_} />;
-
-export const Arrow = Template.bind({});
-Arrow.args = {
-  separator: 'arrow',
-  children: [
-    <Breadcrumb.Item key="a" icon="icon-system-home-2-fill">
-      Lorem
-    </Breadcrumb.Item>,
-    <Breadcrumb.Item key="b">Ipsum</Breadcrumb.Item>,
-    <Breadcrumb.Item key="c">Dolor</Breadcrumb.Item>,
-    <Breadcrumb.Item key="d">Sit</Breadcrumb.Item>,
-    <Breadcrumb.Item key="e">Amet</Breadcrumb.Item>,
-  ],
+export const Arrow = {
+  args: {
+    separator: 'arrow',
+    children: [
+      <Breadcrumb.Item key="a" icon="icon-system-home-2-fill">
+        Lorem
+      </Breadcrumb.Item>,
+      <Breadcrumb.Item key="b">Ipsum</Breadcrumb.Item>,
+      <Breadcrumb.Item key="c">Dolor</Breadcrumb.Item>,
+      <Breadcrumb.Item key="d">Sit</Breadcrumb.Item>,
+      <Breadcrumb.Item key="e">Amet</Breadcrumb.Item>,
+    ],
+  },
 };
 
-export const Slash = Template.bind({});
-Slash.args = {
-  separator: 'slash',
-  children: [
-    <Breadcrumb.Item key="a" icon="icon-system-home-2-fill">
-      Lorem
-    </Breadcrumb.Item>,
-    <Breadcrumb.Item key="b">Ipsum</Breadcrumb.Item>,
-    <Breadcrumb.Item key="c">Dolor</Breadcrumb.Item>,
-    <Breadcrumb.Item key="d">Sit</Breadcrumb.Item>,
-    <Breadcrumb.Item key="e">Amet</Breadcrumb.Item>,
-  ],
+export const Slash = {
+  args: {
+    separator: 'slash',
+    children: [
+      <Breadcrumb.Item key="a" icon="icon-system-home-2-fill">
+        Lorem
+      </Breadcrumb.Item>,
+      <Breadcrumb.Item key="b">Ipsum</Breadcrumb.Item>,
+      <Breadcrumb.Item key="c">Dolor</Breadcrumb.Item>,
+      <Breadcrumb.Item key="d">Sit</Breadcrumb.Item>,
+      <Breadcrumb.Item key="e">Amet</Breadcrumb.Item>,
+    ],
+  },
 };
 
-export const Dash = Template.bind({});
-Dash.args = {
-  separator: 'dash',
-  children: [
-    <Breadcrumb.Item key="a" icon="icon-system-home-2-fill">
-      Lorem
-    </Breadcrumb.Item>,
-    <Breadcrumb.Item key="b">Ipsum</Breadcrumb.Item>,
-    <Breadcrumb.Item key="c">Dolor</Breadcrumb.Item>,
-    <Breadcrumb.Item key="d">Sit</Breadcrumb.Item>,
-    <Breadcrumb.Item key="e">Amet</Breadcrumb.Item>,
-  ],
+export const Dash = {
+  args: {
+    separator: 'dash',
+    children: [
+      <Breadcrumb.Item key="a" icon="icon-system-home-2-fill">
+        Lorem
+      </Breadcrumb.Item>,
+      <Breadcrumb.Item key="b">Ipsum</Breadcrumb.Item>,
+      <Breadcrumb.Item key="c">Dolor</Breadcrumb.Item>,
+      <Breadcrumb.Item key="d">Sit</Breadcrumb.Item>,
+      <Breadcrumb.Item key="e">Amet</Breadcrumb.Item>,
+    ],
+  },
 };

@@ -10,23 +10,23 @@ export default {
   },
 } as Meta<typeof Kbd>;
 
-const Template: StoryFn<typeof Kbd> = (arguments_) => <Kbd {...arguments_} />;
-
-// Stories
-export const Small = Template.bind({});
-Small.args = {
-  size: 'sm',
-  value: '⌘',
+export const Small = {
+  args: {
+    size: 'sm',
+    value: '⌘',
+  },
 };
 
-export const Medium = Template.bind({});
-Medium.args = {
-  size: 'md',
-  value: '⌘',
+export const Medium = {
+  args: {
+    size: 'md',
+    value: '⌘',
+  },
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  size: 'lg',
-  value: '⌘',
+export const Large = {
+  args: {
+    size: 'lg',
+    value: '⌘',
+  },
 };

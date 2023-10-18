@@ -55,40 +55,62 @@ const TemplateGeneral: StoryFn<typeof Siux> = () => (
   </>
 );
 
-// Stories
-export const General = TemplateGeneral.bind({});
-
-export const SizeXXL = Template.bind({});
-SizeXXL.args = {
-  className: 'width-xxl height-xxl margin-l transition-all border-style-solid border-primary-7 border-width-3',
+export const General = {
+  render: TemplateGeneral,
 };
 
-export const SizeXL = Template.bind({});
-SizeXL.args = {
-  className: 'width-xl height-xl margin-l transition-all border-style-solid border-primary-7 border-width-3',
+export const SizeXXL = {
+  render: Template,
+
+  args: {
+    className: 'width-xxl height-xxl margin-l transition-all border-style-solid border-primary-7 border-width-3',
+  },
 };
 
-export const SizeL = Template.bind({});
-SizeL.args = {
-  className: 'width-l height-l margin-l transition-all border-style-solid border-primary-7 border-width-3',
+export const SizeXL = {
+  render: Template,
+
+  args: {
+    className: 'width-xl height-xl margin-l transition-all border-style-solid border-primary-7 border-width-3',
+  },
 };
 
-export const SizeM = Template.bind({});
-SizeM.args = {
-  className: 'width-m height-m margin-l transition-all border-style-solid border-primary-7 border-width-3',
+export const SizeL = {
+  render: Template,
+
+  args: {
+    className: 'width-l height-l margin-l transition-all border-style-solid border-primary-7 border-width-3',
+  },
 };
 
-export const SizeS = Template.bind({});
-SizeS.args = {
-  className: 'width-s height-s margin-l transition-all border-style-solid border-primary-7 border-width-3',
+export const SizeM = {
+  render: Template,
+
+  args: {
+    className: 'width-m height-m margin-l transition-all border-style-solid border-primary-7 border-width-3',
+  },
 };
 
-export const SizeXS = Template.bind({});
-SizeXS.args = {
-  className: 'width-xs height-xs margin-l transition-all border-style-solid border-primary-7 border-width-3',
+export const SizeS = {
+  render: Template,
+
+  args: {
+    className: 'width-s height-s margin-l transition-all border-style-solid border-primary-7 border-width-3',
+  },
 };
 
-export const SizeXXS = Template.bind({});
-SizeXXS.args = {
-  className: 'width-xxs height-xxs margin-l transition-all border-style-solid border-primary-7 border-width-3',
+export const SizeXS = {
+  render: Template,
+
+  args: {
+    className: 'width-xs height-xs margin-l transition-all border-style-solid border-primary-7 border-width-3',
+  },
+};
+
+export const SizeXXS = {
+  render: Template,
+
+  args: {
+    className: 'width-xxs height-xxs margin-l transition-all border-style-solid border-primary-7 border-width-3',
+  },
 };

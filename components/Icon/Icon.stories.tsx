@@ -13,7 +13,10 @@ const Template: StoryFn<typeof Icon> = (arguments_) => (
   </div>
 );
 
-export const iconViewer = Template.bind({});
-iconViewer.args = {
-  icon: 'icon-system-home-line',
+export const iconViewer = {
+  render: Template,
+
+  args: {
+    icon: 'icon-system-home-line',
+  },
 };

@@ -1,8 +1,6 @@
 import { addons } from '@storybook/manager-api';
-import siuxTheme from './SiuxTheme';
+import { themes } from '@storybook/theming';
 
 addons.setConfig({
-  theme: siuxTheme,
-  showPanel: true,
-  panelPosition: 'right',
+  theme: themes.light,
 });
