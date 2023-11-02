@@ -6,12 +6,30 @@ export default {
   title: 'Design Tokens/Border Radius',
   component: Siux,
   argTypes: {
-    size: { control: { type: 'select' } },
-    hover: { control: { type: 'select' } },
+    'border-radius': {
+      options: [
+        'border-radius-xxs',
+        'border-radius-xs',
+        'border-radius-s',
+        'border-radius-m',
+        'border-radius-l',
+        'border-radius-xl',
+        'border-radius-xxl',
+      ],
+      control: { type: 'select' },
+    },
   },
 } as Meta<typeof Siux>;
 
-const Template: StoryFn<typeof Siux> = (arguments_) => <div {...arguments_} />;
+const Template: StoryFn<typeof Siux> = ({ ...arguments_ }) => {
+  console.log(arguments_);
+  return (
+    <div
+      className={`${arguments_['border-radius']} border-width-3 padding-m margin-m transition-all width-xxl height-xxl border-style-solid border-primary-7`}
+    />
+  );
+};
+
 const TemplateGeneral: StoryFn<typeof Siux> = () => (
   <>
     <div className="margin-xl font-size-s font-weight-600 text-align-left">Border Radius</div>
@@ -87,131 +105,57 @@ export const General = {
   render: TemplateGeneral,
 };
 
-export const ExtraExtraSmall = {
+export const XXS = {
   render: Template,
-
   args: {
-    className: 'display-flex flex-direction-column',
-    children: (
-      <>
-        <div className="justify-content-center items-align-center">
-          <div
-            className="transition-all width-xxl height-xxl border-style-solid border-primary-7 border-width-3 border-right-none border-bottom-none"
-            style={{ borderTopLeftRadius: 4 }}
-          />
-          <div className="margin-top-l text-align-center color-neutral-7 font-family-secondary font-size-xs">
-            border-radius-xxs
-          </div>
-        </div>
-      </>
-    ),
+    'border-radius': 'border-radius-xxs',
   },
 };
 
-export const ExtraSmall = {
+export const XS = {
   render: Template,
 
   args: {
-    children: (
-      <>
-        <div
-          className="transition-all width-xxl height-xxl border-style-solid border-primary-7 border-width-3 border-right-none border-bottom-none"
-          style={{ borderTopLeftRadius: 8 }}
-        />
-        <div className="margin-top-l text-align-center color-neutral-7 font-family-secondary font-size-xs">
-          border-radius-xs
-        </div>
-      </>
-    ),
+    'border-radius': 'border-radius-xs',
   },
 };
 
-export const Small = {
+export const S = {
   render: Template,
 
   args: {
-    children: (
-      <>
-        <div
-          className="transition-all width-xxl height-xxl border-style-solid border-primary-7 border-width-3 border-right-none border-bottom-none"
-          style={{ borderTopLeftRadius: 12 }}
-        />
-        <div className="margin-top-l text-align-center color-neutral-7 font-family-secondary font-size-xs">
-          border-radius-s
-        </div>
-      </>
-    ),
+    'border-radius': 'border-radius-s',
   },
 };
 
-export const Medium = {
+export const M = {
   render: Template,
 
   args: {
-    children: (
-      <>
-        <div
-          className="transition-all width-xxl height-xxl border-style-solid border-primary-7 border-width-3 border-right-none border-bottom-none"
-          style={{ borderTopLeftRadius: 16 }}
-        />
-        <div className="margin-top-l text-align-center color-neutral-7 font-family-secondary font-size-xs">
-          border-radius-m
-        </div>
-      </>
-    ),
+    'border-radius': 'border-radius-m',
   },
 };
 
-export const Large = {
+export const L = {
   render: Template,
 
   args: {
-    children: (
-      <>
-        <div
-          className="transition-all width-xxl height-xxl border-style-solid border-primary-7 border-width-3 border-right-none border-bottom-none"
-          style={{ borderTopLeftRadius: 20 }}
-        />
-        <div className="margin-top-l text-align-center color-neutral-7 font-family-secondary font-size-xs">
-          border-radius-l
-        </div>
-      </>
-    ),
+    'border-radius': 'border-radius-l',
   },
 };
 
-export const ExtraLarge = {
+export const XL = {
   render: Template,
 
   args: {
-    children: (
-      <>
-        <div
-          className="transition-all width-xxl height-xxl border-style-solid border-primary-7 border-width-3 border-right-none border-bottom-none"
-          style={{ borderTopLeftRadius: 24 }}
-        />
-        <div className="margin-top-l text-align-center color-neutral-7 font-family-secondary font-size-xs">
-          border-radius-xl
-        </div>
-      </>
-    ),
+    'border-radius': 'border-radius-xl',
   },
 };
 
-export const ExtraExtraLarge = {
+export const XXL = {
   render: Template,
 
   args: {
-    children: (
-      <>
-        <div
-          className="transition-all width-xxl height-xxl border-style-solid border-primary-7 border-width-3 border-right-none border-bottom-none"
-          style={{ borderTopLeftRadius: 28 }}
-        />
-        <div className="margin-top-l text-align-center color-neutral-7 font-family-secondary font-size-xs">
-          border-radius-xxl
-        </div>
-      </>
-    ),
+    'border-radius': 'border-radius-xxl',
   },
 };

@@ -6,60 +6,31 @@ export default {
   title: 'Design Tokens/Font',
   component: Siux,
   argTypes: {
-    size: { control: { type: 'select' } },
-    className: {
-      table: {
-        disable: true,
-      },
+    font: {
+      options: ['font-family-primary', 'font-family-secondary'],
+      control: { type: 'select' },
     },
   },
 } as Meta<typeof Siux>;
-
-// const fontStyles = ['font-style-normal', 'font-style-italic'];
-
-// const fontWeights = [
-//   'font-weight-bold',
-//   'font-weight-100',
-//   'font-weight-200',
-//   'font-weight-300',
-//   'font-weight-400',
-//   'font-weight-500',
-//   'font-weight-600',
-//   'font-weight-700',
-//   'font-weight-800',
-//   'font-weight-900',
-// ];
 
 const fontVariations = [
   { name: 'Inter', value: 'font-family-primary' },
   { name: 'Overpass Mono', value: 'font-family-secondary' },
 ];
 
+const Template: StoryFn<typeof Siux> = ({ ...arguments_ }) => {
+  return <div className={`${arguments_['font']}`}>Text example</div>;
+};
+
 const TemplateGeneral: StoryFn<typeof Siux> = () => (
   <div>
-    {/* {fontStyles.map((font, i) => {
-      return (
-        <div key={i} className="margin-bottom-m">
-          <div className={font}>Font Styles</div>
-          <div className="color-neutral-7 font-family-secondary font-size-xs">{font}</div>
-        </div>
-      );
-    })}s
-    {fontWeights.map((font, i) => {
-      return (
-        <div key={i} className="margin-bottom-m">
-          <div className={font}>Font weight</div>
-          <div className="color-neutral-7 font-family-secondary font-size-xs">{font}</div>
-        </div>
-      );
-    })} */}
     {fontVariations.map((font, index) => {
       return (
         // poner nombre fonts
-        (<div key={font.name} className="margin-bottom-m">
+        <div key={font.name} className="margin-bottom-m">
           <div className={font.value}>{font.name}</div>
           <div className="color-neutral-7 font-family-primary font-size-xs">{font.value}</div>
-        </div>)
+        </div>
       );
     })}
   </div>
@@ -70,15 +41,15 @@ export const General = {
 };
 
 export const VariationPrimary = {
+  render: Template,
   args: {
-    className: 'font-family-primary',
-    children: 'Text example',
+    font: 'font-family-primary',
   },
 };
 
 export const VariationSecondary = {
+  render: Template,
   args: {
-    className: 'font-family-secondary',
-    children: 'Text example',
+    font: 'font-family-secondary',
   },
 };

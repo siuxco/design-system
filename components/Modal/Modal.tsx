@@ -32,7 +32,8 @@ const Modal: FC<IModalProperties> = ({
     <div
       role="presentation"
       onClick={(event) => !disableBackdropClose && onClose(event)}
-      className="display-flex align-items-center justify-content-center overflow-y-scroll">
+      className="display-flex align-items-center justify-content-center overflow-y-scroll"
+    >
       <div
         role="presentation"
         onClick={onClose}
@@ -43,7 +44,8 @@ const Modal: FC<IModalProperties> = ({
             'opacity-full': open,
             'opacity-none': !open,
           },
-        )}>
+        )}
+      >
         <div
           role="presentation"
           onClick={(event) => {
@@ -53,7 +55,8 @@ const Modal: FC<IModalProperties> = ({
             'animation-faster position-relative padding-m tablet:padding-l border-radius-s box-shadow-s background-white width-full margin-none height-full tablet:margin-m tablet:width-auto tablet:height-auto',
             variants.parent[variant],
           )}
-          style={{ width: `${width}px` }}>
+          style={{ width: `${width}px` }}
+        >
           <div>
             {title && <div className="color-black font-size-m font-weight-600 margin-bottom-m">{title}</div>}
             <i

@@ -6,12 +6,31 @@ export default {
   title: 'Design Tokens/Z Index',
   component: Siux,
   argTypes: {
-    size: { control: { type: 'select' } },
-    hover: { control: { type: 'select' } },
+    zIndex: {
+      options: [
+        'z-index-1',
+        'z-index-2',
+        'z-index-3',
+        'z-index-4',
+        'z-index-5',
+        'z-index-6',
+        'z-index-7',
+        'z-index-8',
+        'z-index-9',
+        'z-index-10',
+      ],
+      control: { type: 'select' },
+    },
   },
 } as Meta<typeof Siux>;
 
-const Template: StoryFn<typeof Siux> = (arguments_) => <div {...arguments_} />;
+const Template: StoryFn<typeof Siux> = ({ ...arguments_ }) => {
+  return (
+    <div
+      className={`${arguments_['zIndex']} box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 `}
+    />
+  );
+};
 const TemplateGeneral: StoryFn<typeof Siux> = () => (
   <>
     <div className="margin-s font-size-s font-weight-600 text-align-left">Z Index</div>
@@ -116,92 +135,80 @@ export const General = {
   render: TemplateGeneral,
 };
 
-export const ZIndex1 = {
+export const z1 = {
   render: Template,
 
   args: {
-    className:
-      'z-index-1 box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-1',
+    zIndex: 'z-index-1 background-neutral-1 ',
   },
 };
 
-export const ZIndex2 = {
+export const z2 = {
   render: Template,
 
   args: {
-    className:
-      'z-index-2 box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-2',
+    zIndex: 'z-index-2 background-neutral-2 ',
   },
 };
 
-export const ZIndex3 = {
+export const z3 = {
   render: Template,
 
   args: {
-    className:
-      'z-index-3 box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-3',
+    zIndex: 'z-index-3  background-neutral-3 ',
   },
 };
 
-export const ZIndex4 = {
+export const z4 = {
   render: Template,
 
   args: {
-    className:
-      'z-index-4 box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-4',
+    zIndex: 'z-index-4 background-neutral-4 ',
+  },
+};
+export const z5 = {
+  render: Template,
+
+  args: {
+    zIndex: 'z-index-5 background-neutral-5',
+  },
+};
+export const z6 = {
+  render: Template,
+
+  args: {
+    zIndex: 'z-index-6 background-neutral-6',
   },
 };
 
-export const Zindex5 = {
+export const z7 = {
   render: Template,
 
   args: {
-    className:
-      'z-index-5 box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-5',
+    zIndex: 'z-index-7 background-neutral-7',
   },
 };
 
-export const Zindex6 = {
+export const z8 = {
   render: Template,
 
   args: {
-    className:
-      'z-index-6 box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-6',
+    zIndex: 'z-index-8 background-neutral-8',
   },
 };
 
-export const Zindex7 = {
+export const z9 = {
   render: Template,
 
   args: {
-    className:
-      'z-index-7 box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-7',
+    zIndex: 'z-index-9 background-neutral-9 ',
   },
 };
 
-export const Zindex8 = {
+export const z10 = {
   render: Template,
 
   args: {
-    className:
-      'z-index-8 box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-8',
-  },
-};
-
-export const Zindex9 = {
-  render: Template,
-
-  args: {
-    className:
-      'z-index-9 box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-9',
-  },
-};
-
-export const Zindex10 = {
-  render: Template,
-
-  args: {
-    className:
-      'z-index-10 box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-10',
+    zIndex: 'z-index-10 background-neutral-10 ',
   },
 };

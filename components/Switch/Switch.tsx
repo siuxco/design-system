@@ -35,11 +35,13 @@ export const Switch: FC<ISwitchProperties> = ({ className, state = 'default', la
             'transition-all parent position-relative transition-duration-400 width-xxl height-l font-size-s transition-fast border-radius-m border-width-1 border-style-solid display-flex align-items-center',
             getStateClasses(states.parent),
             'sibling-checked:background-primary transition-all color-transparent sibling-checked:color-white',
-          )}>
+          )}
+        >
           <div
             className={classNames(
               'transition-all sibling-checked:transitionX140 transition-duration-400 width-m height-m background-white border-radius-full margin-xxs',
-            )}></div>
+            )}
+          ></div>
         </div>
         <span
           className={classNames(
@@ -48,7 +50,8 @@ export const Switch: FC<ISwitchProperties> = ({ className, state = 'default', la
               'cursor-not-allowed': Boolean(rest.disabled),
             },
             getStateClasses(states.label),
-          )}>
+          )}
+        >
           {label}
         </span>
       </label>

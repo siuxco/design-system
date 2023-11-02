@@ -118,7 +118,8 @@ const Button = forwardRef<HTMLButtonElement, IButtonProperties>(
           },
           className,
         )}
-        {...rest}>
+        {...rest}
+      >
         <div
           className={classNames(
             'display-flex align-items-center line-height-s font-weight-500 padding-top-none padding-bottom-none pointer-events-none',
@@ -127,7 +128,8 @@ const Button = forwardRef<HTMLButtonElement, IButtonProperties>(
               'padding-right-none': Boolean(iconRight),
               'padding-left-xxs': Boolean(iconLeft),
             },
-          )}>
+          )}
+        >
           {loading ? (
             <i
               className={classNames(

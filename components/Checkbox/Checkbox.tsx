@@ -41,7 +41,8 @@ export const Checkbox: FC<ICheckboxProperties> = ({ className, state = 'default'
           className={classNames(
             'margin-left-xs color-neutral-7 font-weight-500 user-select-none',
             getStateClasses(states.label),
-          )}>
+          )}
+        >
           {label}
         </span>
       </label>

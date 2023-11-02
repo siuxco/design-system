@@ -59,7 +59,8 @@ const Item: FC<IBreadcrumbItemProperties> = ({ theme, icon, href, target, classN
           'hover:background-neutral-1 active:background-neutral-2 padding-xs padding-top-xxs padding-bottom-xxs border-radius-xs display-flex align-items-center',
           variants.parent[theme],
           className,
-        )}>
+        )}
+      >
         {icon && <i className={classNames('margin-right-xs', icon)} />}
         {children}
       </a>

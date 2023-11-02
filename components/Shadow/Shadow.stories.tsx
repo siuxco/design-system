@@ -6,12 +6,28 @@ export default {
   title: 'Design Tokens/Shadow',
   component: Siux,
   argTypes: {
-    size: { control: { type: 'select' } },
-    hover: { control: { type: 'select' } },
+    shadow: {
+      options: [
+        'box-shadow-xs',
+        'box-shadow-s',
+        'box-shadow-m',
+        'box-shadow-l',
+        'box-shadow-xl',
+        'hover:box-shadow-xs',
+        'hover:box-shadow-s',
+        'hover:box-shadow-m',
+        'hover:box-shadow-l',
+        'hover:box-shadow-xl',
+        'width-xxl height-xxl',
+      ],
+      control: { type: 'select' },
+    },
   },
 } as Meta<typeof Siux>;
 
-const Template: StoryFn<typeof Siux> = (arguments_) => <div {...arguments_} />;
+const Template: StoryFn<typeof Siux> = ({ ...arguments_ }) => {
+  return <div className={`${arguments_['shadow']} padding-xxl border-radius-m margin-l`} />;
+};
 const TemplateGeneral: StoryFn<typeof Siux> = () => (
   <>
     <div className="margin-s font-size-s font-weight-600 text-align-left">Shadow</div>
@@ -71,7 +87,7 @@ export const ExtraSmall = {
   render: Template,
 
   args: {
-    className: 'box-shadow-xs padding-xxl border-radius-m',
+    shadow: 'box-shadow-xs',
   },
 };
 
@@ -79,7 +95,7 @@ export const Small = {
   render: Template,
 
   args: {
-    className: 'box-shadow-s padding-xxl border-radius-m',
+    shadow: 'box-shadow-s',
   },
 };
 
@@ -87,7 +103,7 @@ export const Medium = {
   render: Template,
 
   args: {
-    className: 'box-shadow-m padding-xxl border-radius-m',
+    shadow: 'box-shadow-m',
   },
 };
 
@@ -95,7 +111,7 @@ export const Large = {
   render: Template,
 
   args: {
-    className: 'box-shadow-l padding-xxl border-radius-m',
+    shadow: 'box-shadow-l',
   },
 };
 
@@ -103,7 +119,7 @@ export const ExtraLarge = {
   render: Template,
 
   args: {
-    className: 'box-shadow-xl padding-xxl border-radius-m',
+    shadow: 'box-shadow-xl ',
   },
 };
 
@@ -111,6 +127,6 @@ export const HoverShadow = {
   render: Template,
 
   args: {
-    className: 'box-shadow-m hover:box-shadow-xl padding-xxl border-radius-m',
+    shadow: 'box-shadow-m hover:box-shadow-xl',
   },
 };

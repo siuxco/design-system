@@ -6,12 +6,29 @@ export default {
   title: 'Design Tokens/Line Height',
   component: Siux,
   argTypes: {
-    size: { control: { type: 'select' } },
-    hover: { control: { type: 'select' } },
+    lineHeight: {
+      options: [
+        'line-height-xxl',
+        'line-height-xl',
+        'line-height-l',
+        'line-height-m',
+        'line-height-s',
+        'line-height-xs',
+        'line-height-xxs',
+      ],
+      control: { type: 'select' },
+    },
   },
 } as Meta<typeof Siux>;
 
-const Template: StoryFn<typeof Siux> = (arguments_) => <div {...arguments_} />;
+const Template: StoryFn<typeof Siux> = ({ ...arguments_ }) => {
+  return (
+    <div
+      className={`${arguments_['lineHeight']} display-flex transition-all font-size-xs align-items-center position-relative padding-left-xs margin-top-xs`}>
+      {arguments_['children']}
+    </div>
+  );
+};
 const TemplateGeneral: StoryFn<typeof Siux> = () => (
   <>
     <div className="margin-s font-size-s font-weight-600 text-align-left">Line Height</div>
@@ -66,106 +83,98 @@ export const General = {
   render: TemplateGeneral,
 };
 
-export const LineHeightXXL = {
+export const XXL = {
   render: Template,
-
   args: {
-    className:
-      'line-height-xxl display-flex transition-all font-size-xs align-items-center position-relative padding-left-xs margin-top-xs',
+    lineHeight: 'line-height-xxl',
     children: (
       <>
         <div className="background-primary-7 border-radius-xxs width-xxs position-absolute position-left"></div>
-        <div className="margin-left-xxs">XXL</div>
+        <div className="margin-left-xxs">Line Height</div>
       </>
     ),
   },
 };
 
-export const LineHeightXL = {
+export const XL = {
   render: Template,
 
   args: {
-    className:
-      'line-height-xl display-flex transition-all font-size-xs align-items-center position-relative padding-left-xs margin-top-xs',
+    lineHeight: 'line-height-xl',
     children: (
       <>
         <div className="background-primary-7 border-radius-xxs width-xxs position-absolute position-left"></div>
-        <div className="margin-left-xxs">XL</div>
+        <div className="margin-left-xxs">Line Height</div>
       </>
     ),
   },
 };
 
-export const LineHeightL = {
+export const L = {
   render: Template,
 
   args: {
-    className:
-      'line-height-l display-flex transition-all font-size-xs align-items-center position-relative padding-left-xs margin-top-xs',
+    lineHeight: 'line-height-l',
     children: (
       <>
         <div className="background-primary-7 border-radius-xxs width-xxs position-absolute position-left"></div>
-        <div className="margin-left-xxs">L</div>
+        <div className="margin-left-xxs">Line Height</div>
       </>
     ),
   },
 };
 
-export const LineHeightM = {
+export const M = {
   render: Template,
 
   args: {
-    className:
-      'line-height-m display-flex transition-all font-size-xs align-items-center position-relative padding-left-xs margin-top-xs',
+    lineHeight: 'line-height-m',
     children: (
       <>
         <div className="background-primary-7 border-radius-xxs width-xxs position-absolute position-left"></div>
-        <div className="margin-left-xxs">M</div>
+        <div className="margin-left-xxs">Line Height</div>
       </>
     ),
   },
 };
 
-export const LineHeightS = {
+export const S = {
   render: Template,
 
   args: {
-    className:
-      'line-height-s display-flex transition-all font-size-xs align-items-center position-relative padding-left-xs margin-top-xs',
+    lineHeight: 'line-height-s',
     children: (
       <>
         <div className="background-primary-7 border-radius-xxs width-xxs position-absolute position-left"></div>
-        <div className="margin-left-xxs">S</div>
+        <div className="margin-left-xxs">Line Height</div>
       </>
     ),
   },
 };
 
-export const LineHeightXS = {
+export const XS = {
   render: Template,
 
   args: {
-    className:
-      'line-height-xs display-flex transition-all font-size-xs align-items-center position-relative padding-left-xs margin-top-xs',
+    lineHeight: 'line-height-xs',
     children: (
       <>
         <div className="background-primary-7 border-radius-xxs width-xxs position-absolute position-left"></div>
-        <div className="margin-left-xxs">XS</div>
+        <div className="margin-left-xxs">Line Height</div>
       </>
     ),
   },
 };
 
-export const LineHeightXXS = {
+export const XXS = {
   render: Template,
 
   args: {
-    className:
-      'line-height-xxs display-flex transition-all font-size-xs align-items-center position-relative padding-left-xs margin-top-xs',
+    lineHeight: 'line-height-xxs',
     children: (
       <>
         <div className="background-primary-7 border-radius-xxs width-xxs position-absolute position-left"></div>
-        <div className="margin-left-xxs">XXS</div>
+        <div className="margin-left-xxs">Line Height</div>
       </>
     ),
   },

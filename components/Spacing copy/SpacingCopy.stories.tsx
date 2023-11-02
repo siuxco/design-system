@@ -3,7 +3,7 @@ import { Siux } from '../Siux/Siux';
 import { StoryFn, Meta } from '@storybook/react';
 
 export default {
-  title: 'Design Tokens/Spacing',
+  title: 'Design Tokens/Spacing copy',
   component: Siux,
   argTypes: {
     size: { control: { type: 'select' } },
@@ -18,44 +18,44 @@ const TemplateGeneral: StoryFn<typeof Siux> = () => (
     <div className="display-flex flex-wrap">
       <div className="margin-m align-items-center justify-content-center display-flex flex-direction-column">
         <div className="padding-xxl width-xxl height-xxl transition-all background-primary-1 border-radius-xs border-width-1 border-primary-2 border-style-solid display-flex align-items-center justify-content-center">
-          <div className="background-primary-7 border-radius-xxs width-s height-s position-absolute position-center"></div>
+          <span className="background-primary-7 border-radius-xxs width-s height-s position-absolute position-center" />
         </div>
         <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">padding-xxl</div>
       </div>
       <div className="margin-m align-items-center justify-content-center display-flex flex-direction-column">
         <div className="padding-xl width-xxl height-xxl transition-all background-primary-1 border-radius-xs border-width-1 border-primary-2 border-style-solid display-flex align-items-center justify-content-center">
-          <div className="background-primary-7 border-radius-xxs width-s height-s position-absolute position-center"></div>
+          <span className="background-primary-7 border-radius-xxs width-s height-s position-absolute position-center" />
         </div>
         <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">padding-xl</div>
       </div>
       <div className="margin-m align-items-center justify-content-center display-flex flex-direction-column">
         <div className="padding-l width-xxl height-xxl transition-all background-primary-1 border-radius-xs border-width-1 border-primary-2 border-style-solid display-flex align-items-center justify-content-center">
-          <div className="background-primary-7 border-radius-xxs width-s height-s position-absolute position-center"></div>
+          <span className="background-primary-7 border-radius-xxs width-s height-s position-absolute position-center" />
         </div>
         <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">padding-l</div>
       </div>
       <div className="margin-m align-items-center justify-content-center display-flex flex-direction-column">
         <div className="padding-m width-xxl height-xxl transition-all background-primary-1 border-radius-xs border-width-1 border-primary-2 border-style-solid display-flex align-items-center justify-content-center">
-          <div className="background-primary-7 border-radius-xxs width-s height-s position-absolute position-center"></div>
+          <span className="background-primary-7 border-radius-xxs width-s height-s position-absolute position-center" />
         </div>
         <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">padding-m</div>
       </div>
       <div className="margin-m align-items-center justify-content-center display-flex flex-direction-column">
         <div className="padding-s width-xxl height-xxl transition-all background-primary-1 border-radius-xs border-width-1 border-primary-2 border-style-solid display-flex align-items-center justify-content-center">
-          <div className="background-primary-7 border-radius-xxs width-s height-s position-absolute position-center"></div>
+          <span className="background-primary-7 border-radius-xxs width-s height-s position-absolute position-center" />
         </div>
         <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">padding-s</div>
       </div>
       <div className="margin-m align-items-center justify-content-center display-flex flex-direction-column">
         <div className="padding-xs width-xxl height-xxl transition-all background-primary-1 border-radius-xs border-width-1 border-primary-2 border-style-solid display-flex align-items-center justify-content-center">
-          <div className="background-primary-7 border-radius-xxs width-s height-s position-absolute position-center"></div>
+          <span className="background-primary-7 border-radius-xxs width-s height-s position-absolute position-center" />
         </div>
         <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">padding-xs</div>
       </div>
       <div className="margin-m align-items-center justify-content-center display-flex flex-direction-columncl  ">
         <div>
           <div className="padding-xs width-xxl height-xxl transition-all background-primary-1 border-radius-xs border-width-1 border-primary-2 border-style-solid display-flex align-items-center justify-content-center">
-            <div className="background-primary-7 border-radius-xxs width-s height-s position-absolute position-center"></div>
+            <span className="background-primary-7 border-radius-xxs position-absolute position-center" />
           </div>
           <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">padding-xxs</div>
         </div>

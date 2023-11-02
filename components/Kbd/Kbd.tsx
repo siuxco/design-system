@@ -39,7 +39,8 @@ export const Kbd: FC<IKbdProperties> = ({ value, size = 'md', className }) => {
       )}
       style={{
         borderBottom: '2px solid var(--color-neutral-2)',
-      }}>
+      }}
+    >
       {value}
     </kbd>
   );

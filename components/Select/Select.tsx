@@ -40,7 +40,8 @@ const Select: React.ForwardRefExoticComponent<React.PropsWithoutRef<ISelectPrope
           className={classNames('transition-fast position-relative', className, {
             'cursor-not-allowed': disabled,
             'cursor-pointer': !disabled,
-          })}>
+          })}
+        >
           {label && <div className="color-neutral-7 font-weight-500 margin-bottom-xs">{label}</div>}
           <div className="display-flex align-items-center position-relative">
             {icon && (
@@ -58,7 +59,8 @@ const Select: React.ForwardRefExoticComponent<React.PropsWithoutRef<ISelectPrope
               disabled={disabled}
               id={id}
               ref={ref}
-              {...rest}>
+              {...rest}
+            >
               {children}
             </select>
             <i

@@ -78,14 +78,16 @@ export const ComponentsPreview: FC<IComponentsPreviewProperties> = ({ className 
   return (
     <div
       className={classNames('display-flex flex-wrap', className)}
-      style={{ marginLeft: '-16px', marginRight: '-16px' }}>
+      style={{ marginLeft: '-16px', marginRight: '-16px' }}
+    >
       {ComponentsList.map((component, index) => {
         return (
           <a
             key={index}
             href={`/?path=/story/${component.category}-${component.name}`}
             className="display-flex width-full flex-grow-1 border-style-solid border-neutral-2 border-width-1 border-radius-s overflow-hidden cursor-pointer box-shadow-s hover:box-shadow-l hover:border-primary-7 transition-all margin-m"
-            style={{ flexBasis: '200px' }}>
+            style={{ flexBasis: '200px' }}
+          >
             <div>
               <div className="margin-left-s margin-top-xs font-size-s color-neutral-10 font-weight-500 text-transform-capitalize">
                 {component.name.replace('-', ' ')}

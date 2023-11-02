@@ -60,7 +60,8 @@ export const WithNavigation = {
             variant="cancel-light"
             size="medium"
             iconLeft="icon-system-dashboard-line"
-            className="margin-bottom-xxs">
+            className="margin-bottom-xxs"
+          >
             Dashboard
           </Button>
           <Button
@@ -68,7 +69,8 @@ export const WithNavigation = {
             variant="cancel-link"
             size="medium"
             iconLeft="icon-system-group-line"
-            className="margin-bottom-xxs">
+            className="margin-bottom-xxs"
+          >
             Team
           </Button>
           <Button key="c" variant="cancel-link" size="medium" iconLeft="icon-system-folder-line">

@@ -6,7 +6,7 @@ import { classNames } from '../../utils/utils';
 interface IVariantProperties {
   className?: string;
   children?: Array<ReactNode>;
-  variant: 'DESKTOP' | 'TABLET' | 'MOBILE'
+  variant: 'DESKTOP' | 'TABLET' | 'MOBILE';
 }
 
 const Viewport: FC<IVariantProperties> = ({ children, className }) => {
@@ -17,8 +17,10 @@ export default {
   title: 'Design Tokens/Viewport',
   component: Siux,
   argTypes: {
-    size: { control: { type: 'select' } },
-    hover: { control: { type: 'select' } },
+    viewPort: {
+      options: ['viewport-desktop', 'viewport-tablet', 'viewport-mobile'],
+    },
+    control: { type: 'select' },
   },
 } as Meta<typeof Viewport>;
 
@@ -30,7 +32,11 @@ const Template: StoryFn<typeof Viewport> = (arguments_) => {
   };
   return (
     <div>
-      <div {...arguments_} style={{ padding: `0 ${paddingSize[arguments_.variant] || '300'}px` }} />
+      <div
+        {...arguments_}
+        className={`${arguments_['viewPort']} transition-all color-white height-xl width-full border-radius-xs font-size-xs display-flex align-items-center justify-content-center background-primary-7 margin-top-xs text-align-center width-full margin-left-auto margin-right-auto margin-bottom-l`}
+        style={{ padding: `0 ${paddingSize[arguments_.variant] || '300'}px` }}
+      />
     </div>
   );
 };
@@ -82,8 +88,7 @@ export const General = {
 export const Desktop = {
   render: Template,
   args: {
-    className:
-      'viewport-desktop transition-all color-white height-xl width-full border-radius-xs font-size-xs display-flex align-items-center justify-content-center background-primary-7 margin-top-xs text-align-center width-full margin-left-auto margin-right-auto margin-bottom-l',
+    viewPort: 'viewport-desktop',
     children: 'DESKTOP',
     variant: 'DESKTOP',
   },
@@ -93,8 +98,7 @@ export const Tablet = {
   render: Template,
 
   args: {
-    className:
-      'viewport-tablet transition-all color-white height-xl width-full border-radius-xs font-size-xs display-flex align-items-center justify-content-center background-primary-7 margin-top-xs text-align-center width-full margin-left-auto margin-right-auto margin-bottom-l',
+    viewPort: 'viewport-tablet',
     children: 'TABLET',
     variant: 'TABLET',
   },
@@ -104,8 +108,7 @@ export const Mobile = {
   render: Template,
 
   args: {
-    className:
-      'viewport-mobile transition-all color-white height-xl width-full border-radius-xs font-size-xs display-flex align-items-center justify-content-center background-primary-7 margin-top-xs text-align-center width-full margin-left-auto margin-right-auto margin-bottom-l',
+    viewPort: 'viewport-mobile ',
     children: 'MOBILE',
     variant: 'MOBILE',
   },

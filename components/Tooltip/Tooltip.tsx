@@ -89,7 +89,8 @@ export const Tooltip: FC<ITooltipProperties> & { Trigger: typeof Trigger; Conten
             transform: 'translateX(-50%)',
             left: '50%',
             ...tooltip.styleDirection[direction],
-          }}>
+          }}
+        >
           {Content}
         </div>
       )}

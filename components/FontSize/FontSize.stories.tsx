@@ -6,11 +6,23 @@ export default {
   title: 'Design Tokens/Font size',
   component: Siux,
   argTypes: {
-    size: { control: { type: 'select' } },
-    className: {
-      table: {
-        disable: true,
-      },
+    fontSize: {
+      options: [
+        'font-size-h1',
+        'font-size-h2',
+        'font-size-h3',
+        'font-size-h4',
+        'font-size-h5',
+        'font-size-h6',
+        'font-size-xxl',
+        'font-size-xl',
+        'font-size-l',
+        'font-size-m',
+        'font-size-s',
+        'font-size-xs',
+        'font-size-xxs',
+      ],
+      control: { type: 'select' },
     },
   },
 } as Meta<typeof Siux>;
@@ -31,6 +43,10 @@ const fontSizes = [
   'font-size-xxs',
 ];
 
+const Template: StoryFn<typeof Siux> = ({ ...arguments_ }) => {
+  return <div className={`${arguments_['fontSize']}`}>Text example</div>;
+};
+
 const TemplateGeneral: StoryFn<typeof Siux> = () => (
   <div>
     {fontSizes.map((font, i) => {
@@ -49,85 +65,85 @@ export const General = {
 };
 
 export const Heading1 = {
+  render: Template,
   args: {
-    className: 'font-size-h1',
-    children: 'Text example',
+    fontSize: 'font-size-h1',
   },
 };
 
 export const Heading2 = {
+  render: Template,
   args: {
-    className: 'font-size-h2',
-    children: 'Text example',
+    fontSize: 'font-size-h2',
   },
 };
 
 export const Heading3 = {
+  render: Template,
   args: {
-    className: 'font-size-h3',
-    children: 'Text example',
+    fontSize: 'font-size-h3',
   },
 };
 
 export const Heading4 = {
+  render: Template,
   args: {
-    className: 'font-size-h4',
-    children: 'Text example',
+    fontSize: 'font-size-h4',
   },
 };
 
 export const Heading5 = {
+  render: Template,
   args: {
-    className: 'font-size-h5',
-    children: 'Text example',
+    fontSize: 'font-size-h5',
   },
 };
 
 export const SizeXXL = {
+  render: Template,
   args: {
-    className: 'font-size-xxl',
-    children: 'Text example',
+    fontSize: 'font-size-xxl',
   },
 };
 
 export const SizeXL = {
+  render: Template,
   args: {
-    className: 'font-size-xl',
-    children: 'Text example',
+    fontSize: 'font-size-xl',
   },
 };
 
 export const SizeL = {
+  render: Template,
   args: {
-    className: 'font-size-l',
-    children: 'Text example',
+    fontSize: 'font-size-l',
   },
 };
 
 export const SizeM = {
+  render: Template,
   args: {
-    className: 'font-size-m',
-    children: 'Text example',
+    fontSize: 'font-size-m',
   },
 };
 
 export const SizeS = {
+  render: Template,
   args: {
-    className: 'font-size-s',
-    children: 'Text example',
+    fontSize: 'font-size-s',
   },
 };
 
 export const SizeXS = {
+  render: Template,
   args: {
-    className: 'font-size-xs',
-    children: 'Text example',
+    fontSize: 'font-size-xs',
   },
 };
 
 export const SizeXXS = {
+  render: Template,
   args: {
-    className: 'font-size-xxs',
-    children: 'Text example',
+    fontSize: 'font-size-xxs',
   },
 };

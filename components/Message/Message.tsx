@@ -36,12 +36,14 @@ export const Message: FC<IMessageProperties> = ({
       className={classNames(
         'padding-s background-white border-radius-xs box-shadow-s border-style-solid border-width-1 border-neutral-2',
         className,
-      )}>
+      )}
+    >
       <div
         className={classNames('display-flex align-items-center', {
           'justify-content-space-between': close,
           'justify-content-flex-start': !close,
-        })}>
+        })}
+      >
         <div className="display-flex align-items-center">
           <i className={classNames('margin-right-xs font-size-l', states[state].icon)} />
           <span className="font-primary font-size-s font-weight-600">{title}</span>

@@ -45,7 +45,8 @@ export const Loader: FC<ILoaderProperties> = ({
         'background-white box-shadow-s padding-xs border-width-1 border-style-solid border-neutral-2': Boolean(shape),
         'border-radius-s': shape === 'square',
         'border-radius-full': shape === 'circle',
-      })}>
+      })}
+    >
       <div
         className={classNames(
           'animation-rotate-right animation-infinite',

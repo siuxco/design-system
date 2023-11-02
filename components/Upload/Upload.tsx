@@ -50,7 +50,8 @@ export const Upload: FC<IUploadProperties> = ({
           },
           className,
         )}
-        style={{ ...style }}>
+        style={{ ...style }}
+      >
         <i
           className={classNames(
             'width-full font-size-xl color-primary-7 margin-bottom-s display-flex justify-content-center',

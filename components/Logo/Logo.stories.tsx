@@ -6,8 +6,10 @@ export default {
   title: 'Design Tokens/Logo',
   component: Siux,
   argTypes: {
-    size: { control: { type: 'select' } },
-    hover: { control: { type: 'select' } },
+    logo: {
+      options: ['logo-main-logo'],
+      control: { type: 'select' },
+    },
   },
 } as Meta<typeof Siux>;
 
@@ -35,7 +37,7 @@ export const MainLogo = {
   render: Template,
 
   args: {
-    className: 'logo-main-logo z-index-1 box-shadow-xxs padding-xxl border-radius-m',
+    logo: 'logo-main-logo z-index-1 box-shadow-xxs padding-xxl border-radius-m',
     children: (
       <>
         <div

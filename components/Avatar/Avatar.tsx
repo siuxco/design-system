@@ -56,7 +56,8 @@ export const Avatar: FC<IAvatarProperties> = ({
         `background-${variant}-1 color-${variant}-7`,
         sizes.font[size],
         className,
-      )}>
+      )}
+    >
       {!image && <>{text}</>}
     </div>
   );

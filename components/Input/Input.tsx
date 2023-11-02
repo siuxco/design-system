@@ -50,7 +50,8 @@ const Input = forwardRef<HTMLInputElement, IInputProperties>(
                 'transition-fast line-height-s padding-xs padding-left-s padding-right-s font-size-s border-radius-xs border-radius-right-none border-right-none border-width-1 border-style-solid pointer-events-none',
                 getStatusClasses(statuses.icon),
                 getStatusClasses(statuses.parent),
-              )}>
+              )}
+            >
               {prefix}
             </div>
           )}
@@ -77,7 +78,8 @@ const Input = forwardRef<HTMLInputElement, IInputProperties>(
                 'transition-fast position-relative padding-left-m cursor-pointer line-height-s padding-xs padding-left-xl padding-right-s font-size-s border-radius-xs border-radius-left-none border-left-none border-width-1 border-style-solid',
                 getStatusClasses(statuses.icon),
                 getStatusClasses(statuses.parent),
-              )}>
+              )}
+            >
               <i className="icon-system-file-copy-line position-absolute margin-left-xs" style={{ left: '0px' }} />
               {copy}
             </div>

@@ -50,7 +50,8 @@ export const Badge: FC<IBadgeProperties> = ({
         },
         className,
       )}
-      style={{ ...style }}>
+      style={{ ...style }}
+    >
       {iconLeft && <i className={classNames(iconLeft, 'line-height-s font-size-s margin-right-xxs')} />}
       <div className={'line-height-xs'}>{children}</div>
       {iconRight && <i className={classNames(iconRight, 'line-height-s font-size-s margin-left-xxs')} />}

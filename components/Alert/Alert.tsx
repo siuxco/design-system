@@ -37,7 +37,8 @@ const Alert: FC<IAlertProperties> & { Link: typeof Link } = ({
         'transition-fast position-relative border-radius-xs overflow-hidden border-width-1 border-style-solid display-flex align-items-center justify-content-space-between padding-xs',
         states.parent[state],
         className,
-      )}>
+      )}
+    >
       <div className="display-flex align-items-center">
         <i className={`${states.icon[state]} ${icon} font-size-l margin-right-xs`} />
         <div className="color-neutral-9 line-height-s width-full margin-right-xxs">{children}</div>
@@ -65,7 +66,8 @@ const Link: FC<ILinkProperties> = ({ children, href, target, className }) => {
     <a
       className={`color-info-7 hover:color-info-9 display-inline-flex align-items-center cursor-pointer ${className}`}
       href={href}
-      target={target}>
+      target={target}
+    >
       {children}
     </a>
   );

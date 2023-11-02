@@ -37,7 +37,8 @@ const Navigation: FC<INavigationProperties> & { Item: typeof Item } = ({
           'flex-direction-column': orientation === 'vertical',
         },
         className,
-      )}>
+      )}
+    >
       {React.Children.toArray(children).map((child: React.ReactElement, index) => {
         return React.cloneElement(child, {
           className: child.props.className + ' ' + orientationVariants[orientation].child,

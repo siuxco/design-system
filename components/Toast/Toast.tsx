@@ -32,12 +32,14 @@ const Toast: FC<IToastProperties> & {
       className={classNames(
         'transition-fast position-relative border-radius-xs overflow-hidden background-white box-shadow-s border-style-solid border-width-1 border-neutral-2 display-flex align-items-center padding-m padding-left-s padding-right-xl',
         className,
-      )}>
+      )}
+    >
       <div
         className={classNames(
           'border-width-5 border-style-solid border-right-none border-top-none border-bottom-none height-full position-absolute position-left',
           states.parent[state],
-        )}></div>
+        )}
+      ></div>
       <i
         role="presentation"
         onClick={onClose}
@@ -63,7 +65,8 @@ const Link: FC<IToastLinkProperties> = ({ className, children, ...rest }) => {
         'color-primary-8 hover:color-primary-10 display-inline-flex align-items-center cursor-pointer',
         className,
       )}
-      {...rest}>
+      {...rest}
+    >
       {children}
     </a>
   );
