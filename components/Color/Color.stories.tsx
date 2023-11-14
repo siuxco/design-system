@@ -75,7 +75,7 @@ export default {
 } as Meta<typeof Siux>;
 
 const Template: StoryFn<typeof Siux> = ({ ...arguments_ }) => {
-  return <div className={`${arguments_['background']} box-shadow-xs padding-xxl border-radius-3 width-m height-m`} />;
+  return <div className={`${arguments_['background']} transition-all box-shadow-xs padding-xxl border-radius-m width-m height-m`} />;
 };
 const TemplateGeneral: StoryFn<typeof Siux> = () => (
   <>

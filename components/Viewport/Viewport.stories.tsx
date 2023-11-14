@@ -6,43 +6,45 @@ import { classNames } from '../../utils/utils';
 interface IVariantProperties {
   className?: string;
   children?: Array<ReactNode>;
-  variant: 'DESKTOP' | 'TABLET' | 'MOBILE';
+  viewport: 'desktop' | 'tablet' | 'mobile';
 }
 
-const Viewport: FC<IVariantProperties> = ({ children, className }) => {
+const viewport: FC<IVariantProperties> = ({ children, className }) => {
   return <div className={classNames(className)}>{children}</div>;
 };
 
-export default {
-  title: 'Design Tokens/Viewport',
-  component: Siux,
-  argTypes: {
-    viewPort: {
-      options: ['viewport-desktop', 'viewport-tablet', 'viewport-mobile'],
-    },
-    control: { type: 'select' },
-  },
-} as Meta<typeof Viewport>;
-
-const Template: StoryFn<typeof Viewport> = (arguments_) => {
+const Template: StoryFn<typeof viewport> = (arguments_) => {
   const paddingSize = {
-    DESKTOP: '400',
-    TABLET: '300',
-    MOBILE: '150',
+    desktop: '400',
+    tablet: '300',
+    mobile: '150',
   };
   return (
     <div>
       <div
         {...arguments_}
-        className={`${arguments_['viewPort']} transition-all color-white height-xl width-full border-radius-xs font-size-xs display-flex align-items-center justify-content-center background-primary-7 margin-top-xs text-align-center width-full margin-left-auto margin-right-auto margin-bottom-l`}
-        style={{ padding: `0 ${paddingSize[arguments_.variant] || '300'}px` }}
-      />
+        className={`${arguments_['viewport']} transition-all color-white height-xl width-full border-radius-xs font-size-xs display-flex align-items-center justify-content-center background-primary-7 margin-top-xs text-align-center width-full margin-left-auto margin-right-auto margin-bottom-l`}
+        style={{ padding: `0 ${paddingSize[arguments_.viewport] || '300'}px` }}>
+        {arguments_['viewport'].toUpperCase()}
+      </div>
     </div>
   );
 };
+
+export default {
+  title: 'Design Tokens/viewport',
+  component: Template,
+  argTypes: {
+    viewport: {
+      options: ['desktop', 'tablet', 'mobile'],
+      control: { type: 'select' },
+    },
+  },
+} as Meta<typeof viewport>;
+
 const TemplateGeneral: StoryFn<typeof Siux> = () => (
   <>
-    <div className="margin-s font-size-s font-weight-600 text-align-left">Viewport</div>
+    <div className="margin-s font-size-s font-weight-600 text-align-left">viewport</div>
     <div className="display-flex flex-direction-column align-items-center">
       <div style={{ width: '900px' }}>
         <div className="text-transform-uppercase color-neutral-3 display-flex align-items-center justify-content-center ">
@@ -86,30 +88,19 @@ export const General = {
 };
 
 export const Desktop = {
-  render: Template,
   args: {
-    viewPort: 'viewport-desktop',
-    children: 'DESKTOP',
-    variant: 'DESKTOP',
+    viewport: 'desktop',
   },
 };
 
 export const Tablet = {
-  render: Template,
-
   args: {
-    viewPort: 'viewport-tablet',
-    children: 'TABLET',
-    variant: 'TABLET',
+    viewport: 'tablet',
   },
 };
 
 export const Mobile = {
-  render: Template,
-
   args: {
-    viewPort: 'viewport-mobile ',
-    children: 'MOBILE',
-    variant: 'MOBILE',
+    viewport: 'mobile',
   },
 };

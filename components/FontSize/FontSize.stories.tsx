@@ -2,9 +2,13 @@ import React from 'react';
 import { Siux } from '../Siux/Siux';
 import { StoryFn, Meta } from '@storybook/react';
 
+const Template: StoryFn<typeof Siux> = ({ ...arguments_ }) => {
+  return <div className={`${arguments_['fontSize']}`}>Text example</div>;
+};
+
 export default {
   title: 'Design Tokens/Font size',
-  component: Siux,
+  component: Template,
   argTypes: {
     fontSize: {
       options: [
@@ -43,10 +47,6 @@ const fontSizes = [
   'font-size-xxs',
 ];
 
-const Template: StoryFn<typeof Siux> = ({ ...arguments_ }) => {
-  return <div className={`${arguments_['fontSize']}`}>Text example</div>;
-};
-
 const TemplateGeneral: StoryFn<typeof Siux> = () => (
   <div>
     {fontSizes.map((font, i) => {
@@ -65,84 +65,82 @@ export const General = {
 };
 
 export const Heading1 = {
-  render: Template,
+  
   args: {
     fontSize: 'font-size-h1',
   },
 };
 
 export const Heading2 = {
-  render: Template,
+  
   args: {
     fontSize: 'font-size-h2',
   },
 };
 
 export const Heading3 = {
-  render: Template,
+  
   args: {
     fontSize: 'font-size-h3',
   },
 };
 
 export const Heading4 = {
-  render: Template,
+  
   args: {
     fontSize: 'font-size-h4',
   },
 };
 
 export const Heading5 = {
-  render: Template,
   args: {
     fontSize: 'font-size-h5',
   },
 };
 
 export const SizeXXL = {
-  render: Template,
   args: {
     fontSize: 'font-size-xxl',
   },
 };
 
 export const SizeXL = {
-  render: Template,
+  
   args: {
     fontSize: 'font-size-xl',
   },
 };
 
 export const SizeL = {
-  render: Template,
+  
   args: {
     fontSize: 'font-size-l',
   },
 };
 
 export const SizeM = {
-  render: Template,
+  
   args: {
     fontSize: 'font-size-m',
   },
 };
 
 export const SizeS = {
-  render: Template,
+  
   args: {
     fontSize: 'font-size-s',
   },
 };
 
 export const SizeXS = {
-  render: Template,
+  
   args: {
     fontSize: 'font-size-xs',
   },
 };
 
 export const SizeXXS = {
-  render: Template,
+  
   args: {
     fontSize: 'font-size-xxs',
   },

@@ -2,9 +2,31 @@ import React from 'react';
 import { Siux } from '../Siux/Siux';
 import { StoryFn, Meta } from '@storybook/react';
 
+interface IZIndexProperties {
+  className?: string;
+  zIndex: 'z-index-1'|
+  'z-index-2'|
+  'z-index-3'|
+  'z-index-4'|
+  'z-index-5'|
+  'z-index-6'|
+  'z-index-7'|
+  'z-index-8'|
+  'z-index-9'|
+  'z-index-10';
+}
+
+const Template: StoryFn<IZIndexProperties> = ({ ...arguments_ }) => {
+  return (
+    <div
+      className={`${arguments_['zIndex']} transition-all  background-neutral-${arguments_.zIndex.split('-').pop()} box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 `}
+    />
+  );
+};
+
 export default {
   title: 'Design Tokens/Z Index',
-  component: Siux,
+  component: Template,
   argTypes: {
     zIndex: {
       options: [
@@ -24,13 +46,6 @@ export default {
   },
 } as Meta<typeof Siux>;
 
-const Template: StoryFn<typeof Siux> = ({ ...arguments_ }) => {
-  return (
-    <div
-      className={`${arguments_['zIndex']} box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 `}
-    />
-  );
-};
 const TemplateGeneral: StoryFn<typeof Siux> = () => (
   <>
     <div className="margin-s font-size-s font-weight-600 text-align-left">Z Index</div>
@@ -201,7 +216,7 @@ export const z9 = {
   render: Template,
 
   args: {
-    zIndex: 'z-index-9 background-neutral-9 ',
+    zIndex: 'z-index-9 background-neutral-9',
   },
 };
 
@@ -209,6 +224,6 @@ export const z10 = {
   render: Template,
 
   args: {
-    zIndex: 'z-index-10 background-neutral-10 ',
+    zIndex: 'z-index-10',
   },
 };

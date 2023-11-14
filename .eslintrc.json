@@ -16,9 +16,9 @@
       "plugin:unicorn/recommended",
       "plugin:jsx-a11y/recommended",
       "plugin:@typescript-eslint/eslint-recommended",
-      "plugin:@typescript-eslint/recommended",
-      "plugin:prettier/recommended",
-      "prettier"
+      "plugin:@typescript-eslint/recommended"
+      // "plugin:prettier/recommended",
+      // "prettier"
     ],
     "globals": {
       "Atomics": "readonly",
@@ -33,7 +33,6 @@
     },
     "plugins": ["react", "unicorn", "jsx-a11y", "@typescript-eslint", "prettier"],
     "rules": {
-      "prettier/prettier": "error",
       "linebreak-style": ["error", "unix"],
       "quotes": ["error", "single"],
       "semi": ["error", "always"],
