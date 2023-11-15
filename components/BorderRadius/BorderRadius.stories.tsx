@@ -22,11 +22,11 @@ export default {
         'border-radius-m',
         'border-radius-l',
         'border-radius-xl',
-        'border-radius-xxl'
+        'border-radius-xxl',
       ],
-      control: { type: 'select' }
-    }
-  }
+      control: { type: 'select' },
+    },
+  },
 } as Meta<typeof Siux>;
 
 export const General = {
@@ -35,7 +35,6 @@ export const General = {
       source: {
         code: `
         <>
-      <div className="margin-xl font-size-s font-weight-600 text-align-left">Border Radius</div>
       <div className="display-flex flex-wrap justify-content-center items-align-center">
         <div className="margin-xxs display-flex flex-direction-column justify-content-center align-items-center">
           <div
@@ -96,10 +95,10 @@ export const General = {
       </div>
     </>
     `,
-      }
-    }
+      },
+    },
   },
-  render: () =>
+  render: () => (
     <>
       <div className="margin-xl font-size-s font-weight-600 text-align-left">Border Radius</div>
       <div className="display-flex flex-wrap justify-content-center items-align-center">
@@ -167,47 +166,48 @@ export const General = {
           </div>
         </div>
       </div>
-    </>,
+    </>
+  ),
 };
 
 export const XXS = {
   args: {
-    'border-radius': 'border-radius-xxs'
-  }
+    'border-radius': 'border-radius-xxs',
+  },
 };
 
 export const XS = {
   args: {
-    'border-radius': 'border-radius-xs'
-  }
+    'border-radius': 'border-radius-xs',
+  },
 };
 
 export const S = {
   args: {
-    'border-radius': 'border-radius-s'
-  }
+    'border-radius': 'border-radius-s',
+  },
 };
 
 export const M = {
   args: {
-    'border-radius': 'border-radius-m'
-  }
+    'border-radius': 'border-radius-m',
+  },
 };
 
 export const L = {
   args: {
-    'border-radius': 'border-radius-l'
-  }
+    'border-radius': 'border-radius-l',
+  },
 };
 
 export const XL = {
   args: {
-    'border-radius': 'border-radius-xl'
-  }
+    'border-radius': 'border-radius-xl',
+  },
 };
 
 export const XXL = {
   args: {
-    'border-radius': 'border-radius-xxl'
-  }
+    'border-radius': 'border-radius-xxl',
+  },
 };

@@ -26,7 +26,6 @@ const TemplateGeneral: StoryFn<typeof Siux> = () => (
   <div>
     {fontVariations.map((font, index) => {
       return (
-        // poner nombre fonts
         <div key={font.name} className="margin-bottom-m">
           <div className={font.value}>{font.name}</div>
           <div className="color-neutral-7 font-family-primary font-size-xs">{font.value}</div>
@@ -37,7 +36,36 @@ const TemplateGeneral: StoryFn<typeof Siux> = () => (
 );
 
 export const General = {
-  render: TemplateGeneral,
+  parameters: {
+    docs: {
+      source: {
+        code: ` <div>
+        {fontVariations.map((font, index) => {
+          return (
+            <div key={font.name} className="margin-bottom-m">
+              <div className={font.value}>{font.name}</div>
+              <div className="color-neutral-7 font-family-primary font-size-xs">{font.value}</div>
+            </div>
+          );
+        })}
+      </div>`,
+      },
+    },
+  },
+  render: () => (
+    <>
+      <div>
+        {fontVariations.map((font, index) => {
+          return (
+            <div key={font.name} className="margin-bottom-m">
+              <div className={font.value}>{font.name}</div>
+              <div className="color-neutral-7 font-family-primary font-size-xs">{font.value}</div>
+            </div>
+          );
+        })}
+      </div>
+    </>
+  ),
 };
 
 export const VariationPrimary = {

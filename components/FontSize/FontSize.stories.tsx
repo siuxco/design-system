@@ -47,8 +47,13 @@ const fontSizes = [
   'font-size-xxs',
 ];
 
-const TemplateGeneral: StoryFn<typeof Siux> = () => (
-  <div>
+export const General = {
+  parameters: {
+    docs: {
+      source: {
+        code: `
+        <>
+        <div>
     {fontSizes.map((font, i) => {
       return (
         <div key={font} className="margin-bottom-m">
@@ -58,35 +63,46 @@ const TemplateGeneral: StoryFn<typeof Siux> = () => (
       );
     })}
   </div>
-);
-
-export const General = {
-  render: TemplateGeneral,
+        </>
+        `,
+      },
+    },
+  },
+  render: () => (
+    <>
+      <div>
+        {fontSizes.map((font, i) => {
+          return (
+            <div key={font} className="margin-bottom-m">
+              <div className={font}>Font size</div>
+              <div className="color-neutral-7 font-family-secondary font-size-xs">{font}</div>
+            </div>
+          );
+        })}
+      </div>
+    </>
+  ),
 };
 
 export const Heading1 = {
-  
   args: {
     fontSize: 'font-size-h1',
   },
 };
 
 export const Heading2 = {
-  
   args: {
     fontSize: 'font-size-h2',
   },
 };
 
 export const Heading3 = {
-  
   args: {
     fontSize: 'font-size-h3',
   },
 };
 
 export const Heading4 = {
-  
   args: {
     fontSize: 'font-size-h4',
   },
@@ -105,42 +121,36 @@ export const SizeXXL = {
 };
 
 export const SizeXL = {
-  
   args: {
     fontSize: 'font-size-xl',
   },
 };
 
 export const SizeL = {
-  
   args: {
     fontSize: 'font-size-l',
   },
 };
 
 export const SizeM = {
-  
   args: {
     fontSize: 'font-size-m',
   },
 };
 
 export const SizeS = {
-  
   args: {
     fontSize: 'font-size-s',
   },
 };
 
 export const SizeXS = {
-  
   args: {
     fontSize: 'font-size-xs',
   },
 };
 
 export const SizeXXS = {
-  
   args: {
     fontSize: 'font-size-xxs',
   },

@@ -47,12 +47,14 @@ export default {
 const Template: StoryFn<typeof Siux> = ({ ...arguments_ }) => {
   return <div className={`${arguments_['background']} box-shadow-xs padding-xxl border-radius-m width-m height-m`} />;
 };
-const TemplateGeneral: StoryFn<typeof Siux> = () => (
-  <>
-    <div className="margin-s font-size-s font-weight-600 text-align-left">Primary</div>
-    <div
-      className="display-flex flex-wrap margin-l justify-content-center align-items-center"
-      style={{ flexBasis: '20%' }}>
+
+export const General = {
+  parameters: {
+    docs: {
+      source: {
+        code: `
+        <>
+    <div className="display-flex flex-wrap margin-l justify-content-center align-items-center">
       <div className="margin-xxs">
         <div className="background-primary-1 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
         <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">background-primary-1</div>
@@ -74,9 +76,7 @@ const TemplateGeneral: StoryFn<typeof Siux> = () => (
         <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">background-primary-5</div>
       </div>
     </div>
-    <div
-      className="display-flex flex-wrap margin-l justify-content-center align-items-center"
-      style={{ flexBasis: '20%' }}>
+    <div className="display-flex flex-wrap margin-l justify-content-center align-items-center">
       <div className="margin-xxs">
         <div className="background-primary-6 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
         <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">background-primary-6</div>
@@ -100,10 +100,7 @@ const TemplateGeneral: StoryFn<typeof Siux> = () => (
         </div>
       </div>
     </div>
-    <div className="margin-s font-size-s font-weight-600 text-align-left">Secondary</div>
-    <div
-      className="display-flex flex-wrap margin-l justify-content-center align-items-center"
-      style={{ flexBasis: '20%' }}>
+    <div className="display-flex flex-wrap margin-l justify-content-center align-items-center">
       <div className="margin-xxs">
         <div className="background-secondary-1 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
         <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">
@@ -135,9 +132,7 @@ const TemplateGeneral: StoryFn<typeof Siux> = () => (
         </div>
       </div>
     </div>
-    <div
-      className="display-flex flex-wrap margin-l justify-content-center align-items-center"
-      style={{ flexBasis: '20%' }}>
+    <div className="display-flex flex-wrap margin-l justify-content-center align-items-center">
       <div className="margin-xxs">
         <div className="background-secondary-6 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
         <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">
@@ -169,10 +164,7 @@ const TemplateGeneral: StoryFn<typeof Siux> = () => (
         </div>
       </div>
     </div>
-    <div className="margin-s font-size-s font-weight-600 text-align-left">Tertiary</div>
-    <div
-      className="display-flex flex-wrap margin-l justify-content-center align-items-center"
-      style={{ flexBasis: '20%' }}>
+    <div className="display-flex flex-wrap margin-l justify-content-center align-items-center">
       <div className="margin-xxs">
         <div className="background-tertiary-1 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
         <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">
@@ -204,9 +196,7 @@ const TemplateGeneral: StoryFn<typeof Siux> = () => (
         </div>
       </div>
     </div>
-    <div
-      className="display-flex flex-wrap margin-l justify-content-center align-items-center"
-      style={{ flexBasis: '20%' }}>
+    <div className="display-flex flex-wrap margin-l justify-content-center align-items-center">
       <div className="margin-xxs">
         <div className="background-tertiary-6 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
         <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">
@@ -238,11 +228,221 @@ const TemplateGeneral: StoryFn<typeof Siux> = () => (
         </div>
       </div>
     </div>
-  </>
-);
-
-export const General = {
-  render: TemplateGeneral,
+  </>`,
+      },
+    },
+  },
+  render: () => (
+    <>
+      <div className="margin-s font-size-s font-weight-600 text-align-left">Primary</div>
+      <div
+        className="display-flex flex-wrap margin-l justify-content-center align-items-center"
+        style={{ flexBasis: '20%' }}>
+        <div className="margin-xxs">
+          <div className="background-primary-1 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
+          <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">
+            background-primary-1
+          </div>
+        </div>
+        <div className="margin-xxs">
+          <div className="background-primary-2 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
+          <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">
+            background-primary-2
+          </div>
+        </div>
+        <div className="margin-xxs">
+          <div className="background-primary-3 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
+          <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">
+            background-primary-3
+          </div>
+        </div>
+        <div className="margin-xxs">
+          <div className="background-primary-4 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
+          <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">
+            background-primary-4
+          </div>
+        </div>
+        <div className="margin-xxs">
+          <div className="background-primary-5 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
+          <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">
+            background-primary-5
+          </div>
+        </div>
+      </div>
+      <div
+        className="display-flex flex-wrap margin-l justify-content-center align-items-center"
+        style={{ flexBasis: '20%' }}>
+        <div className="margin-xxs">
+          <div className="background-primary-6 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
+          <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">
+            background-primary-6
+          </div>
+        </div>
+        <div className="margin-xxs">
+          <div className="background-primary-7 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
+          <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">
+            background-primary-7
+          </div>
+        </div>
+        <div className="margin-xxs">
+          <div className="background-primary-8 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
+          <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">
+            background-primary-8
+          </div>
+        </div>
+        <div className="margin-xxs">
+          <div className="background-primary-9 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
+          <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">
+            background-primary-9
+          </div>
+        </div>
+        <div className="margin-xxs">
+          <div className="background-primary-10 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
+          <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">
+            background-primary-10
+          </div>
+        </div>
+      </div>
+      <div className="margin-s font-size-s font-weight-600 text-align-left">Secondary</div>
+      <div
+        className="display-flex flex-wrap margin-l justify-content-center align-items-center"
+        style={{ flexBasis: '20%' }}>
+        <div className="margin-xxs">
+          <div className="background-secondary-1 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
+          <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">
+            background-secondary-1
+          </div>
+        </div>
+        <div className="margin-xxs">
+          <div className="background-secondary-2 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
+          <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">
+            background-secondary-2
+          </div>
+        </div>
+        <div className="margin-xxs">
+          <div className="background-secondary-3 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
+          <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">
+            background-secondary-3
+          </div>
+        </div>
+        <div className="margin-xxs">
+          <div className="background-secondary-4 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
+          <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">
+            background-secondary-4
+          </div>
+        </div>
+        <div className="margin-xxs">
+          <div className="background-secondary-5 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
+          <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">
+            background-secondary-5
+          </div>
+        </div>
+      </div>
+      <div
+        className="display-flex flex-wrap margin-l justify-content-center align-items-center"
+        style={{ flexBasis: '20%' }}>
+        <div className="margin-xxs">
+          <div className="background-secondary-6 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
+          <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">
+            background-secondary-6
+          </div>
+        </div>
+        <div className="margin-xxs">
+          <div className="background-secondary-7 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
+          <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">
+            background-secondary-7
+          </div>
+        </div>
+        <div className="margin-xxs">
+          <div className="background-secondary-8 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
+          <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">
+            background-secondary-8
+          </div>
+        </div>
+        <div className="margin-xxs">
+          <div className="background-secondary-9 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
+          <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">
+            background-secondary-9
+          </div>
+        </div>
+        <div className="margin-xxs">
+          <div className="background-secondary-10 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
+          <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">
+            background-secondary-10
+          </div>
+        </div>
+      </div>
+      <div className="margin-s font-size-s font-weight-600 text-align-left">Tertiary</div>
+      <div
+        className="display-flex flex-wrap margin-l justify-content-center align-items-center"
+        style={{ flexBasis: '20%' }}>
+        <div className="margin-xxs">
+          <div className="background-tertiary-1 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
+          <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">
+            background-tertiary-1
+          </div>
+        </div>
+        <div className="margin-xxs">
+          <div className="background-tertiary-2 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
+          <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">
+            background-tertiary-2
+          </div>
+        </div>
+        <div className="margin-xxs">
+          <div className="background-tertiary-3 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
+          <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">
+            background-tertiary-3
+          </div>
+        </div>
+        <div className="margin-xxs">
+          <div className="background-tertiary-4 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
+          <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">
+            background-tertiary-4
+          </div>
+        </div>
+        <div className="margin-xxs">
+          <div className="background-tertiary-5 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
+          <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">
+            background-tertiary-5
+          </div>
+        </div>
+      </div>
+      <div
+        className="display-flex flex-wrap margin-l justify-content-center align-items-center"
+        style={{ flexBasis: '20%' }}>
+        <div className="margin-xxs">
+          <div className="background-tertiary-6 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
+          <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">
+            background-tertiary-6
+          </div>
+        </div>
+        <div className="margin-xxs">
+          <div className="background-tertiary-7 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
+          <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">
+            background-tertiary-7
+          </div>
+        </div>
+        <div className="margin-xxs">
+          <div className="background-tertiary-8 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
+          <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">
+            background-tertiary-8
+          </div>
+        </div>
+        <div className="margin-xxs">
+          <div className="background-tertiary-9 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
+          <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">
+            background-tertiary-9
+          </div>
+        </div>
+        <div className="margin-xxs">
+          <div className="background-tertiary-10 box-shadow-xs padding-xxl border-radius-m margin-l width-m height-m" />
+          <div className="text-align-center color-neutral-7 font-family-secondary font-size-xs">
+            background-tertiary-10
+          </div>
+        </div>
+      </div>
+    </>
+  ),
 };
 
 export const Primary1 = {

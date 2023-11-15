@@ -4,22 +4,25 @@ import { StoryFn, Meta } from '@storybook/react';
 
 interface IZIndexProperties {
   className?: string;
-  zIndex: 'z-index-1'|
-  'z-index-2'|
-  'z-index-3'|
-  'z-index-4'|
-  'z-index-5'|
-  'z-index-6'|
-  'z-index-7'|
-  'z-index-8'|
-  'z-index-9'|
-  'z-index-10';
+  zIndex:
+    | 'z-index-1'
+    | 'z-index-2'
+    | 'z-index-3'
+    | 'z-index-4'
+    | 'z-index-5'
+    | 'z-index-6'
+    | 'z-index-7'
+    | 'z-index-8'
+    | 'z-index-9'
+    | 'z-index-10';
 }
 
 const Template: StoryFn<IZIndexProperties> = ({ ...arguments_ }) => {
   return (
     <div
-      className={`${arguments_['zIndex']} transition-all  background-neutral-${arguments_.zIndex.split('-').pop()} box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 `}
+      className={`${arguments_['zIndex']} transition-all  background-neutral-${arguments_.zIndex
+        .split('-')
+        .pop()} box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 `}
     />
   );
 };
@@ -46,108 +49,186 @@ export default {
   },
 } as Meta<typeof Siux>;
 
-const TemplateGeneral: StoryFn<typeof Siux> = () => (
-  <>
-    <div className="margin-s font-size-s font-weight-600 text-align-left">Z Index</div>
-    <div className="display-flex ">
-      <div className="display-flex aligin-items-center justify-content-center">
-        <div
-          className="box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-1 display-flex align-items-center justify-content-center"
-          style={{ marginRight: '-20px' }}>
-          <div
-            className="text-align-center color-neutral-10 font-family-secondary font-size-xs margin-left-xxs line-height-m"
-            style={{ marginLeft: '-6px' }}>
-            1
-          </div>
-        </div>
-      </div>
-      <div className="display-flex aligin-items-center justify-content-center">
-        <div
-          className="box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-2 display-flex align-items-center justify-content-center"
-          style={{ marginRight: '-20px' }}>
-          <div className="text-align-center color-neutral-10 font-family-secondary font-size-xs margin-l line-height-m margin-left-m">
-            2
-          </div>
-        </div>
-      </div>
-      <div className="display-flex aligin-items-center justify-content-center">
-        <div
-          className="box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-3 display-flex align-items-center justify-content-center"
-          style={{ marginRight: '-20px' }}>
-          <div className="text-align-center color-neutral-10 font-family-secondary font-size-xs margin-l line-height-m margin-left-m">
-            3
-          </div>
-        </div>
-      </div>
-      <div className="display-flex aligin-items-center justify-content-center">
-        <div
-          className="box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-4 display-flex align-items-center justify-content-center"
-          style={{ marginRight: '-20px' }}>
-          <div className="text-align-center color-neutral-10 font-family-secondary font-size-xs margin-l line-height-m margin-left-m">
-            4
-          </div>
-        </div>
-      </div>
-      <div className="display-flex aligin-items-center justify-content-center">
-        <div
-          className="box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-5 display-flex align-items-center justify-content-center"
-          style={{ marginRight: '-20px' }}>
-          <div className="text-align-center color-neutral-10 font-family-secondary font-size-xs margin-l line-height-m margin-left-m">
-            5
-          </div>
-        </div>
-      </div>
-      <div className="display-flex aligin-items-center justify-content-center">
-        <div
-          className="box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-6 display-flex align-items-center justify-content-center"
-          style={{ marginRight: '-20px' }}>
-          <div className="text-align-center color-neutral-1 font-family-secondary font-size-xs margin-l line-height-m margin-left-m">
-            6
-          </div>
-        </div>
-      </div>
-      <div className="display-flex aligin-items-center justify-content-center">
-        <div
-          className="box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-7 display-flex align-items-center justify-content-center"
-          style={{ marginRight: '-20px' }}>
-          <div className="text-align-center color-neutral-1 font-family-secondary font-size-xs margin-l line-height-m margin-left-m">
-            7
-          </div>
-        </div>
-      </div>
-      <div className="display-flex aligin-items-center justify-content-center">
-        <div
-          className="box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-8 display-flex align-items-center justify-content-center "
-          style={{ marginRight: '-20px' }}>
-          <div className="text-align-center color-neutral-1 font-family-secondary font-size-xs margin-l line-height-m margin-left-m">
-            8
-          </div>
-        </div>
-      </div>
-      <div className="display-flex aligin-items-center justify-content-center">
-        <div
-          className="box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-9 display-flex align-items-center justify-content-center"
-          style={{ marginRight: '-20px' }}>
-          <div className="text-align-center color-neutral-1 font-family-secondary font-size-xs margin-l line-height-m margin-left-m">
-            9
-          </div>
-        </div>
-      </div>
-      <div className="display-flex aligin-items-center justify-content-center">
-        <div
-          className="box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-10 display-flex align-items-center justify-content-center"
-          style={{ marginRight: '-20px' }}>
-          <div className="text-align-center color-neutral-1 font-family-secondary font-size-xs margin-l line-height-m">
-            10
-          </div>
-        </div>
-      </div>
-    </div>
-  </>
-);
-
 export const General = {
-  render: TemplateGeneral,
+  parameters: {
+    docs: {
+      source: {
+        code: `
+        <>
+      <div className="display-flex ">
+        <div className="display-flex aligin-items-center justify-content-center">
+          <div className="z-index-1 box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-1 display-flex align-items-center justify-content-center">
+            <div className="text-align-center color-neutral-10 font-family-secondary font-size-xs margin-left-xxs line-height-m">
+              1
+            </div>
+          </div>
+        </div>
+        <div className="display-flex aligin-items-center justify-content-center">
+          <div className="z-index-2 box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-2 display-flex align-items-center justify-content-center">
+            <div className="text-align-center color-neutral-10 font-family-secondary font-size-xs margin-l line-height-m margin-left-m">
+              2
+            </div>
+          </div>
+        </div>
+        <div className="display-flex aligin-items-center justify-content-center">
+          <div className="z-index-3 box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-3 display-flex align-items-center justify-content-center">
+            <div className="text-align-center color-neutral-10 font-family-secondary font-size-xs margin-l line-height-m margin-left-m">
+              3
+            </div>
+          </div>
+        </div>
+        <div className="display-flex aligin-items-center justify-content-center">
+          <div className="z-index-4 box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-4 display-flex align-items-center justify-content-center">
+            <div className="text-align-center color-neutral-10 font-family-secondary font-size-xs margin-l line-height-m margin-left-m">
+              4
+            </div>
+          </div>
+        </div>
+        <div className="display-flex aligin-items-center justify-content-center">
+          <div className="z-index-5 box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-5 display-flex align-items-center justify-content-center">
+            <div className="text-align-center color-neutral-10 font-family-secondary font-size-xs margin-l line-height-m margin-left-m">
+              5
+            </div>
+          </div>
+        </div>
+        <div className="display-flex aligin-items-center justify-content-center">
+          <div className="z-index-6 box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-6 display-flex align-items-center justify-content-center">
+            <div className="text-align-center color-neutral-1 font-family-secondary font-size-xs margin-l line-height-m margin-left-m">
+              6
+            </div>
+          </div>
+        </div>
+        <div className="display-flex aligin-items-center justify-content-center">
+          <div className="z-index-7 box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-7 display-flex align-items-center justify-content-center">
+            <div className="text-align-center color-neutral-1 font-family-secondary font-size-xs margin-l line-height-m margin-left-m">
+              7
+            </div>
+          </div>
+        </div>
+        <div className="display-flex aligin-items-center justify-content-center">
+          <div className="z-index-8 box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-8 display-flex align-items-center justify-content-center ">
+            <div className="text-align-center color-neutral-1 font-family-secondary font-size-xs margin-l line-height-m margin-left-m">
+              8
+            </div>
+          </div>
+        </div>
+        <div className="display-flex aligin-items-center justify-content-center">
+          <div className="z-index-9 box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-9 display-flex align-items-center justify-content-center">
+            <div className="text-align-center color-neutral-1 font-family-secondary font-size-xs margin-l line-height-m margin-left-m">
+              9
+            </div>
+          </div>
+        </div>
+        <div className="display-flex aligin-items-center justify-content-center">
+          <div className="z-index-10 box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-10 display-flex align-items-center justify-content-center">
+            <div className="text-align-center color-neutral-1 font-family-secondary font-size-xs margin-l line-height-m">
+              10
+            </div>
+          </div>
+        </div>
+      </div>`,
+      },
+    },
+  },
+  render: () => (
+    <>
+      <div className="margin-s font-size-s font-weight-600 text-align-left">Z Index</div>
+      <div className="display-flex ">
+        <div className="display-flex aligin-items-center justify-content-center">
+          <div
+            className="box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-1 display-flex align-items-center justify-content-center"
+            style={{ marginRight: '-20px' }}>
+            <div
+              className="text-align-center color-neutral-10 font-family-secondary font-size-xs margin-left-xxs line-height-m"
+              style={{ marginLeft: '-6px' }}>
+              1
+            </div>
+          </div>
+        </div>
+        <div className="display-flex aligin-items-center justify-content-center">
+          <div
+            className="box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-2 display-flex align-items-center justify-content-center"
+            style={{ marginRight: '-20px' }}>
+            <div className="text-align-center color-neutral-10 font-family-secondary font-size-xs margin-l line-height-m margin-left-m">
+              2
+            </div>
+          </div>
+        </div>
+        <div className="display-flex aligin-items-center justify-content-center">
+          <div
+            className="box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-3 display-flex align-items-center justify-content-center"
+            style={{ marginRight: '-20px' }}>
+            <div className="text-align-center color-neutral-10 font-family-secondary font-size-xs margin-l line-height-m margin-left-m">
+              3
+            </div>
+          </div>
+        </div>
+        <div className="display-flex aligin-items-center justify-content-center">
+          <div
+            className="box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-4 display-flex align-items-center justify-content-center"
+            style={{ marginRight: '-20px' }}>
+            <div className="text-align-center color-neutral-10 font-family-secondary font-size-xs margin-l line-height-m margin-left-m">
+              4
+            </div>
+          </div>
+        </div>
+        <div className="display-flex aligin-items-center justify-content-center">
+          <div
+            className="box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-5 display-flex align-items-center justify-content-center"
+            style={{ marginRight: '-20px' }}>
+            <div className="text-align-center color-neutral-10 font-family-secondary font-size-xs margin-l line-height-m margin-left-m">
+              5
+            </div>
+          </div>
+        </div>
+        <div className="display-flex aligin-items-center justify-content-center">
+          <div
+            className="box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-6 display-flex align-items-center justify-content-center"
+            style={{ marginRight: '-20px' }}>
+            <div className="text-align-center color-neutral-1 font-family-secondary font-size-xs margin-l line-height-m margin-left-m">
+              6
+            </div>
+          </div>
+        </div>
+        <div className="display-flex aligin-items-center justify-content-center">
+          <div
+            className="box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-7 display-flex align-items-center justify-content-center"
+            style={{ marginRight: '-20px' }}>
+            <div className="text-align-center color-neutral-1 font-family-secondary font-size-xs margin-l line-height-m margin-left-m">
+              7
+            </div>
+          </div>
+        </div>
+        <div className="display-flex aligin-items-center justify-content-center">
+          <div
+            className="box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-8 display-flex align-items-center justify-content-center "
+            style={{ marginRight: '-20px' }}>
+            <div className="text-align-center color-neutral-1 font-family-secondary font-size-xs margin-l line-height-m margin-left-m">
+              8
+            </div>
+          </div>
+        </div>
+        <div className="display-flex aligin-items-center justify-content-center">
+          <div
+            className="box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-9 display-flex align-items-center justify-content-center"
+            style={{ marginRight: '-20px' }}>
+            <div className="text-align-center color-neutral-1 font-family-secondary font-size-xs margin-l line-height-m margin-left-m">
+              9
+            </div>
+          </div>
+        </div>
+        <div className="display-flex aligin-items-center justify-content-center">
+          <div
+            className="box-shadow-xs width-xxl height-xxl border-solid border-width-4 border-radius-xxl border-neutral-9 background-neutral-10 display-flex align-items-center justify-content-center"
+            style={{ marginRight: '-20px' }}>
+            <div className="text-align-center color-neutral-1 font-family-secondary font-size-xs margin-l line-height-m">
+              10
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  ),
 };
 
 export const z1 = {
